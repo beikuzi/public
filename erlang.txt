@@ -1,0 +1,281 @@
+erlang启动
+1.19任务：安装好erlang环境
+1.20任务
+		写一个斐波那契数列
+		字符串处理
+1.21任务：小程序上线一个erlang小游戏
+
+
+如何理解socket
+otp： open telecom palaform
+
+beam是虚拟机，可以回收
+
+最基本的代码（
+	% hello world program
+	-module(test).
+	-author("beikuzi").
+
+	-import(io,[fwrite/1]).
+	-export([hello/0]).
+
+	hello()->
+	  helloworld.
+
+	其中export导出函数,其中后面是参数的个数
+		用erl进入运行环境，之后所有语法句号结尾，任意换行
+		c(文件名).来编译，c是compile
+		test:hello()
+
+函数参数(参数只大写？)
+	-export([hello/0,hello/1]).
+
+	hello()->
+	  helloworld.
+	hello(X)->
+	  X.
+
+对于函数
+	使用逗号可以连续写语句
+	如果只定义一个变量，那么会输出这个变量
+	如果用逗号有变量有输出，那么变量不会被输出
+
+基本变量
+	整数运算无上限
+	5/2正常实数计算
+	5 div 2 整除
+	5 rem 2 取余
+
+如果列表是数字，并且在ascii里面，那么直接会把当成字符串
+	[97,98,99,100].			"abcd"
+	否则正常数字
+双引号正常字符串
+	"hello world"
+
+显示所有变量
+	b().
+
+打印历史执行语句
+	h().
+
+重复指令
+	e(-1).
+	如果为正就重复第n个指令，如果为负就倒序的第n个指令
+
+引入头文件
+	-import (modulename, [functionname/parameter]).
+
+控制台输出语句
+	引入头文件
+		-import(io,[fwrite/1]).
+	io:fwrite("Hello, world!\n").
+	如果使用~w，输出一定要求是个列表
+	(拼写检查不一定对，编译正确也不一定对，执行对应函数才知道对不对（热更新？)
+	不能是表达式，也不能是数字
+	但是可以是判断（？
+
+小写开头是原子，即常量，只能被定义一次，但可以解绑
+	解绑f(X).
+	X是常量，如果参数为空，那么直接全部变量解绑
+	如果用单引号括住，那么里面就是常量，哪怕以非小写字母开头
+	也就是变量命名都得大写开头
+
+元组（tuple，有序，创建后不可变.(当结构体用，元组第一个是结构体变量名？)
+	start() -> 
+	   P = {john,24,{june,25}} , 
+	   io:fwrite("~w",[tuple_size(P)]).
+
+映射map
+	start() -> 
+	   M1 = #{name=>john,age=>25}, 
+	   io:fwrite("~w",[map_size(M1)]).
+
+列表list
+	start() -> 
+	   L = [10,20,30] , 
+	   io:fwrite("~w",[length(L)]).
+
+位串(bit string有个转列表函数，并不知道有什么用)
+	start() ->
+	   Bin1 = <<10,20>>,
+	   X = binary_to_list(Bin1),
+	   io:fwrite("~w",[X]).
+
+浮点数，~f是6位。另一个是科学计数法。好像用~n来表示换行
+	start() -> 
+	   X = 40.00, 
+	   Y = 50.00, 
+	   io:fwrite("~f~n",[X]), 
+	   io:fwrite("~e",[Y]).
+
+	40.000000
+	5.00000e+1
+
+比较不同之处
+		/=		不等于
+		=<		小于
+
+位运算符在前面加b即可
+		band、bor、bxor、bnot
+
+使用全部函数导出
+	-compile(export_all).
+
+可以将函数写成这种形式，其中_是任意参数,相当于多函数重载的分号
+	calc(add,X,Y)->X+Y;
+	calc(sub,X,Y)->X-Y;
+	calc(_,_,_)->nothing.
+
+	使用
+	test:calc(add,1,2).
+使用switch case的类似方式
+	func(OP,VAL1,VAL2)->
+	  case OP of
+	    add->VAL1+VAL2;
+	    sub->VAL1-VAL2;
+	    _->nothing
+	  end.
+
+[H|T]=[{apple,5},{bpple,6},{cpple,7}].
+	使用这个指令后，用H.
+		{apple,5}
+	用T.
+		[{bpple,6},{cpple,7}]
+	即H.会取出头部,T.会取出剩下部分
+
+递归写函数
+	cost(apple)->5;
+	cost(bpple)->6;
+	cost(cpple)->7.
+
+	shop([])->0;
+	shop([{Name,Num}|T])->
+	  cost(Name)*Num+shop(T).
+
+	hello() ->
+	  Fruits=[{apple,5},{bpple,6},{cpple,7}],
+	  shop(Fruits).
+
+
+尝试写一个斐波那契
+	myfun2(0)->0;
+	myfun2(1)->1;
+	myfun2(2)->1;
+	myfun2(N)->
+	  myfun2(N-2)+myfun2(N-1).
+
+列表反转函数
+	lists:reverse(Acc);
+
+递推的斐波那契（他甚至没有if-else
+	generate_fibonacci(N) ->
+	  case N of
+	    0->[];
+	    1->[1];
+	    2->[1,1];
+	    _->generate_fibonacci(N-2, [1, 1])
+	  end.
+
+	generate_fibonacci(0, Acc) ->
+	    lists:reverse(Acc); % 逆转列表，使得最新计算的在前面
+	generate_fibonacci(N, [H1, H2 | T]) ->
+	    NextValue = H1 + H2,
+	    generate_fibonacci(N - 1, [NextValue, H1 ,H2 | T]).
+
+对于单个元素可以用多个逗号隔开，但是多个元素的列表似乎会有问题
+	generate_fibonacci(N - 1, [NextValue , H1 , H2 | T]).
+
+设计一个1加到N的函数
+	loop(0,Sum)->
+	  Sum;
+	loop(N,Sum)->
+	  loop(N-1,Sum+N).
+
+	add(N)->
+	  Sum=loop(N,0),
+	  io:write(Sum).
+
+fwrite
+	~w: 智能打印（smart print），根据值的类型选择适当的打印格式。
+	~p: 打印（print），以更详细的方式打印复杂的数据结构。
+	~s: 打印字符串。
+	~f: 打印浮点数。
+	~e: 打印浮点数（科学计数法）。
+	~a: 打印任何数据类型，类似于 ~w。
+	~n: 打印换行符。
+
+得知这个传入的函数有几个参数
+	getArg(Func)->
+	  Info = erlang:fun_info(Func),
+	  case lists:keyfind(arity, 1, Info) of
+	        {arity, Arity} -> Arity;
+	        false -> -1
+	  end.
+
+	output()->
+	  io:fwrite("hello world").
+
+	myfun4() ->
+	  Res=[getArg(fun myfun/1),getArg(fun calc/3), getArg(fun output/0)],
+	  io:fwrite("~w",[Res]).
+
+
+if语句
+	if 
+      A == B -> 
+         io:fwrite("A is equal to B"); 
+      A < B -> 
+         io:fwrite("A is less than B"); 
+      true -> 
+         io:fwrite("False") 
+   	end.
+
+嵌套if
+	if 
+      A < B ->
+         if 
+            A > 5 -> 
+               io:fwrite("A is greater than 5"); 
+            true -> 
+               io:fwrite("A is less than 5")
+         end;
+      true -> 
+         io:fwrite("A is greater than B") 
+
+普通的循环
+	put(N) ->
+	    io:fwrite("~w~n", [N]).
+
+	while(0,Func) -> ok;
+	while(N, Func) when N > 0 ->
+	    while(N-1, Func),
+	    Func(N).
+
+	myfun5() ->
+	    while(5, fun put/1).
+
+匿名函数
+	-module(helloworld). 
+	-export([start/0]). 
+
+	start() -> 
+	   Fn = fun() -> 
+	      io:fwrite("Anonymous Function") end, 
+	   Fn().
+
+其中，fun里面是参数，大家使用This 或者Self来表示自身
+	While = fun (Self, N) when N > 0 ->
+        io:format("N = ~w~n", [N]),
+        Self(Self, N - 1);
+      (_Self, 0) ->
+        ok
+    end,
+    
+    % 调用匿名函数
+    While(While, 5).
+
+其中，下划线 _ 通常用作匿名变量的占位符。匿名变量是一种在模式匹配中用于忽略某个特定值的机制。在这里，(_Self, 0) 意味着我们并不关心匿名函数自身的值（即 Self 的值），我们只关心 N 是否为 0。
+
+把计算结果放进列表的循环
+
+首先得要回搓一个匿名函数while

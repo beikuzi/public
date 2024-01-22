@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "Windows",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "D:/env/opencv455_build/install/include",
+                "D:/env/opencv455_build/install/include/opencv2"
+            ],
+            "defines": [],
+            "compilerPath": "D:/env/mingw64/bin/g++.exe",
+            "cStandard": "c17",
+            "cppStandard": "c++17"
+        }
+    ],
+    "version": 4
+}

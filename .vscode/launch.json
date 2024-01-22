@@ -1,0 +1,25 @@
+{
+    "configurations": [
+        {
+            "name": "(Windows) 启动",
+            "type": "cppvsdbg",
+            "console": "externalTerminal",
+            "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+            // "type": "cppdbg", // 配置类型，cppdbg对应cpptools提供的调试功能
+            // "program": "C:\\Windows\\System32\\cmd.exe", // 将要进行调试的程序的路径
+            // "externalConsole": true,
+            // "args": [
+            //     "/C",
+            //     "${fileDirname}/${fileBasenameNoExtension}.exe",
+            //     "&",
+            //     "pause"
+            // ],
+            // "miDebuggerPath": "D:/env/mingw64/bin/gdb.exe",
+            "request": "launch",
+            "cwd": "${fileDirname}",
+            //"cwd":"D:\\env\\mingw64\\bin",
+            "environment": [],
+            "preLaunchTask": "task g++",
+        },
+    ]
+}

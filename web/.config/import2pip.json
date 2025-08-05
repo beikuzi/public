@@ -1,0 +1,9 @@
+{
+    "pkg_resources": "setuptools",
+    "cv2": "opencv-python",
+    "PIL": "Pillow",
+    "bs4": "beautifulsoup4",
+    "yaml": "PyYAML",
+    "sklearn": "scikit-learn",
+    "websocket": "websocket-client"
+}

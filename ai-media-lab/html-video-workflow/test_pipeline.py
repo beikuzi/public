@@ -41,6 +41,15 @@ class PipelineSafetyTests(unittest.TestCase):
    with self.assertRaises(ValueError):render.prepare_output('file')
    (root/'link').symlink_to(own,target_is_directory=True)
    with self.assertRaises(ValueError):render.prepare_output('link',True)
+ def test_neural_requires_vetted_local_model(self):
+  from neural_voice import NeuralVoice
+  with self.assertRaises(ValueError):NeuralVoice(None)
+  with self.assertRaises(ValueError):NeuralVoice(None,model_type="melo")
+  with self.assertRaises(ValueError):NeuralVoice(None,model_type="remote")
+  with tempfile.TemporaryDirectory() as d:
+   with self.assertRaises(ValueError):NeuralVoice(d)
+   (pathlib.Path(d)/'model.onnx').write_bytes(b'not an approved model')
+   with self.assertRaises(ValueError):NeuralVoice(d)
  def test_html_is_self_contained(self):
   markup=render.make_html(self.project)
   self.assertNotIn('<script',markup);self.assertNotIn('src=',markup);self.assertNotIn('url(',markup)

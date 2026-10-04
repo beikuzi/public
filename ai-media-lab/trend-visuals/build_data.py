@@ -13,7 +13,13 @@ for name in ['bili-xhs','weibo-douyin','wechat','x','douyin-official-snapshot','
   records.append(r)
 payload={'snapshot':'2026-10-04','records':records}
 s=src/'analysis'/'synthesis.json'
-if s.exists():payload['synthesis']=json.loads(s.read_text())
+if s.exists():
+ payload['synthesis']=json.loads(s.read_text())
+ for group in payload['synthesis'].get('groups',[]):
+  if group['id']=='review-cost':
+   group['evidence_ids']=list(dict.fromkeys(group['evidence_ids']+['X14','X15']))
+   group['limitations']=['小红书材料仍为二手；X08及两条回复已直接读取，但回复可见样本很少。','Karpathy相关转载可能同源，不能按独立支持证据叠加。']
+
 (root/'dist'/'data.json').write_text(json.dumps(payload,ensure_ascii=False,indent=2))
 manifest=json.loads((root/'.openai/hosting.json').read_text());manifest['static']={'directory':'dist'}
 (root/'.openai/hosting.json').write_text(json.dumps(manifest,indent=2))

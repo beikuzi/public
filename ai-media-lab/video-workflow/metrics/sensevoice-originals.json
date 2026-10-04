@@ -1,0 +1,105 @@
+{
+  "model": "sherpa-onnx-sense-voice-zh-en-ja-ko-yue-int8-2024-07-17",
+  "model_bytes": 239233841,
+  "runtime": "1.13.8",
+  "model_load_seconds": 1.0705791939981282,
+  "license": "FunASR MODEL_LICENSE1.1 (custom)",
+  "runs": [
+    {
+      "sample": "subway_eval",
+      "repeat": 0,
+      "duration_seconds": 17.94,
+      "inference_seconds": 0.6734191709983861,
+      "rtf": 0.03753730050158228,
+      "cer": 0.6,
+      "reference_characters": 65,
+      "edit_distance": 39,
+      "token_timestamp_checks": {
+        "nondecreasing": true,
+        "within_audio": true,
+        "count": 40,
+        "alignment_accuracy_manually_verified": false
+      }
+    },
+    {
+      "sample": "subway_eval",
+      "repeat": 1,
+      "duration_seconds": 17.94,
+      "inference_seconds": 0.5920522260057623,
+      "rtf": 0.033001796321391434,
+      "cer": 0.6,
+      "reference_characters": 65,
+      "edit_distance": 39,
+      "token_timestamp_checks": {
+        "nondecreasing": true,
+        "within_audio": true,
+        "count": 40,
+        "alignment_accuracy_manually_verified": false
+      }
+    },
+    {
+      "sample": "clean_interview",
+      "repeat": 0,
+      "duration_seconds": 68.41325,
+      "inference_seconds": 2.43617080799595,
+      "rtf": 0.035609634215535,
+      "cer": null,
+      "reference_characters": null,
+      "edit_distance": null,
+      "token_timestamp_checks": {
+        "nondecreasing": true,
+        "within_audio": true,
+        "count": 224,
+        "alignment_accuracy_manually_verified": false
+      }
+    },
+    {
+      "sample": "clean_interview",
+      "repeat": 1,
+      "duration_seconds": 68.41325,
+      "inference_seconds": 2.427404704001674,
+      "rtf": 0.03548149962180826,
+      "cer": null,
+      "reference_characters": null,
+      "edit_distance": null,
+      "token_timestamp_checks": {
+        "nondecreasing": true,
+        "within_audio": true,
+        "count": 224,
+        "alignment_accuracy_manually_verified": false
+      }
+    },
+    {
+      "sample": "html_espeak",
+      "repeat": 0,
+      "duration_seconds": 38.033375,
+      "inference_seconds": 1.2887324650000664,
+      "rtf": 0.03388425205494034,
+      "cer": 0.3253012048192771,
+      "reference_characters": 166,
+      "edit_distance": 54,
+      "token_timestamp_checks": {
+        "nondecreasing": true,
+        "within_audio": true,
+        "count": 154,
+        "alignment_accuracy_manually_verified": false
+      }
+    },
+    {
+      "sample": "html_espeak",
+      "repeat": 1,
+      "duration_seconds": 38.033375,
+      "inference_seconds": 1.32686492799985,
+      "rtf": 0.03488685734568257,
+      "cer": 0.3253012048192771,
+      "reference_characters": 166,
+      "edit_distance": 54,
+      "token_timestamp_checks": {
+        "nondecreasing": true,
+        "within_audio": true,
+        "count": 154,
+        "alignment_accuracy_manually_verified": false
+      }
+    }
+  ]
+}

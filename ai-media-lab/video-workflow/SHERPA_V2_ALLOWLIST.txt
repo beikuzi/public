@@ -1,0 +1,12 @@
+quality_gates.py
+sherpa_lab/recognize_audio.py
+sherpa_lab/test_recognize_audio.py
+sherpa_lab/requirements-sherpa.txt
+sherpa_lab/REPRODUCE.md
+sherpa_lab/HARDENING_V2.json
+sherpa_lab/MODEL_LICENSE
+sherpa_lab/noise_presets/run.py
+sherpa_lab/noise_presets/presets.json
+sherpa_lab/noise_presets/REPORT.md
+sherpa_lab/noise_presets/metrics-only.json
+SHERPA_V2_ALLOWLIST.txt

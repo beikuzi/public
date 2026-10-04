@@ -1,0 +1,86 @@
+{
+  "source_video": "https://commons.wikimedia.org/wiki/File:Beijing_Subway_Line_9_Arriving_at_Military_Museum_Station.webm",
+  "license": "2014Best / CC BY-SA 4.0",
+  "source_frames": "outputs/subway_full_tiny_beam5/frames",
+  "timing_note": "历史v1抽帧的近似时间；不是新v2精确PTS索引。",
+  "method": "助手直接查看纠正排序后的抽帧图并标记可观察/不可回答项。",
+  "evaluation_note": "这是带证据的视觉分析示范，不是独立金标准或盲测，因此不报告准确率百分比。",
+  "items": [
+    {
+      "question": "画面里主要是什么场景？",
+      "answer": "站台一侧可见轨道和列车，另一侧为走道和墙面，属于地铁/轨道站台场景。",
+      "basis": "直接可见画面",
+      "frame_files": [
+        "uniform_001.jpg",
+        "uniform_003.jpg"
+      ],
+      "approximate_seconds": [
+        5,
+        25
+      ],
+      "status": "supported"
+    },
+    {
+      "question": "画面序列显示了什么变化？",
+      "answer": "远处车灯逐渐靠近，随后列车前部和侧面依次进入画面。可描述为列车进站过程；仅凭抽样不能确定开门时间或完整停站动作。",
+      "basis": "多帧顺序对照",
+      "frame_files": [
+        "uniform_001.jpg",
+        "uniform_002.jpg",
+        "uniform_003.jpg",
+        "uniform_004.jpg"
+      ],
+      "approximate_seconds": [
+        5,
+        15,
+        25,
+        35
+      ],
+      "status": "supported_with_limit"
+    },
+    {
+      "question": "列车有哪些可见外观特征？",
+      "answer": "可见深色车窗、偏银灰的车体和横向绿色带。",
+      "basis": "直接可见画面",
+      "frame_files": [
+        "uniform_003.jpg",
+        "uniform_004.jpg"
+      ],
+      "approximate_seconds": [
+        25,
+        35
+      ],
+      "status": "supported"
+    },
+    {
+      "question": "能从这些帧准确读出红色车头显示屏文字吗？",
+      "answer": "不能可靠读出；亮度和分辨率不足，不补写站名。",
+      "basis": "信息不足",
+      "frame_files": [
+        "uniform_002.jpg"
+      ],
+      "approximate_seconds": [
+        15
+      ],
+      "status": "unanswerable"
+    },
+    {
+      "question": "能断定整个视频都没有乘客或所有车门均已打开吗？",
+      "answer": "不能。稀疏采样与有限视角无法支持这种全片、全车的断言。",
+      "basis": "覆盖不足",
+      "frame_files": [
+        "uniform_001.jpg",
+        "uniform_002.jpg",
+        "uniform_003.jpg",
+        "uniform_004.jpg"
+      ],
+      "approximate_seconds": [
+        5,
+        15,
+        25,
+        35
+      ],
+      "status": "unanswerable"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+-r requirements.lock.txt
+sherpa-onnx==1.13.8
+sherpa-onnx-core==1.13.8

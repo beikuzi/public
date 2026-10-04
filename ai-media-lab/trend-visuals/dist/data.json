@@ -1148,23 +1148,27 @@
       "platform": "x",
       "topic": "自主智能体输出的人类可读性",
       "domain": "AI",
-      "published_at": "2026-10-02",
-      "captured_at": "2026-10-04T14:25:57.269373+00:00",
+      "published_at": "2026-10-01",
+      "captured_at": "2026-10-04T22:54:54+08:00",
       "url": "https://x.com/karpathy/status/2105819303471976479",
       "title": "Karpathy讨论如何理解自主LLM输出",
-      "source_type": "secondary_report",
-      "observed_metrics": null,
-      "claim": "HeadsUpAI转述其建议使用受控语言、图表、交互HTML和解释视频，降低人类理解自主系统产物的负担。",
+      "source_type": "primary_post",
+      "observed_metrics": {
+        "views_display": "662.2万 浏览量",
+        "note": "页面显示的约数；不是独立读者或赞同人数。"
+      },
+      "claim": "原帖直接可读：Karpathy建议用受控语言、图表、交互HTML和解释视频帮助人理解语言模型输出，并把人类工作重心描述为监督与理解。",
       "stance_summary": "关注监督与理解成本；单一作者建议，未观察到对立立场。",
-      "evidence_excerpt": "",
+      "evidence_excerpt": "ask for output \"in HTML\"",
       "limitations": [
-        "X原帖403。",
-        "日期来自聚合页；不是官方热榜。",
-        "未把提议当作被实验证实有效的方法。"
+        "2026-10-01 17:37为页面显示时间，时区未确认。",
+        "是作者的经验与建议，未当作验证过的普遍效果。",
+        "匿名可见回复很少，不能推算X用户立场比例。"
       ],
       "secondary_source_url": "https://headsupai.io/ai-news-and-updates",
       "author": "Andrej Karpathy",
       "author_profile": null,
+      "primary_access_note": "普通云端浏览器直接读取原帖；此前web文本工具403只是该方法失败，当前原帖可读。",
       "background": false,
       "excluded_from_metrics": false
     },
@@ -1295,6 +1299,58 @@
       "author_profile": null,
       "background": false,
       "excluded_from_metrics": true
+    },
+    {
+      "id": "X14",
+      "platform": "x",
+      "topic": "自主智能体输出的人类可读性",
+      "domain": "AI",
+      "published_at": "2026-10-01",
+      "captured_at": "2026-10-04T22:54:54+08:00",
+      "url": "https://x.com/bondsnbourbon/status/2105892170263650792",
+      "title": "回复者尝试生成随机微积分解释视频",
+      "source_type": "primary_post",
+      "observed_metrics": null,
+      "claim": "在原帖下匿名可见回复中，作者称按建议制作了随机微积分解释视频，并表达感谢。",
+      "stance_summary": "支持定制解释视频的学习价值；个人体验，不是受控评估。",
+      "evidence_excerpt": "",
+      "limitations": [
+        "回复尾部折叠，未读取全部文字或验证所附视频。",
+        "不从专业教育的自述推定其职业或学历。"
+      ],
+      "author_profile": {
+        "role": "自述已尝试该方法的回复者",
+        "basis": "可见回复明确称已制作解释视频"
+      },
+      "parent_post_url": "https://x.com/karpathy/status/2105819303471976479",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "X15",
+      "platform": "x",
+      "topic": "自主智能体输出的人类可读性",
+      "domain": "AI",
+      "published_at": "2026-10-01",
+      "captured_at": "2026-10-04T22:54:54+08:00",
+      "url": "https://x.com/Grady_Booch/status/2105864893887082857",
+      "title": "回复者以UML提醒图示方法并非新概念",
+      "source_type": "primary_post",
+      "observed_metrics": null,
+      "claim": "Grady Booch引用图示更易理解的建议，并用UML作类比提醒。",
+      "stance_summary": "强调既有图示工具的连续性，不足以推断其反对所有AI解释视频。",
+      "evidence_excerpt": "there's this thing called the UML",
+      "limitations": [
+        "只对图示的新颖性作有限解读，不扩大为全盘反AI立场。",
+        "没有代表性回复样本。"
+      ],
+      "author_profile": {
+        "role": "提出既有建模语言类比的回复者",
+        "basis": "当前可见回复内容"
+      },
+      "parent_post_url": "https://x.com/karpathy/status/2105819303471976479",
+      "background": false,
+      "excluded_from_metrics": false
     },
     {
       "id": "DYH01",
@@ -1924,7 +1980,9 @@
           "BX06",
           "BX09",
           "X08",
-          "WX01"
+          "WX01",
+          "X14",
+          "X15"
         ],
         "relation": "共同议题与不同侧重；部分同源传播",
         "positions": [
@@ -1934,7 +1992,7 @@
         ],
         "assessment": "更快地产出不等于更快完成任务；应同时记录纠错、审阅和验收时间。现有材料可以提出这一评估框架，不能量化各平台赞成者比例。",
         "limitations": [
-          "小红书与X部分材料均为二手。",
+          "小红书材料仍为二手；X08及两条回复已直接读取，但回复可见样本很少。",
           "Karpathy相关转载可能同源，不能按独立支持证据叠加。"
         ]
       },

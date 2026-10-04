@@ -19,7 +19,8 @@
       "quality": "失败 · 重复幻觉",
       "note": "CER 是与已发布字幕的字符差异；不是人工核对的语音错误率。",
       "run": "首次推理",
-      "source": "https://github.com/SYSTRAN/faster-whisper"
+      "source": "https://github.com/SYSTRAN/faster-whisper",
+      "scenario": "subway-crop"
     },
     {
       "id": "tiny-5-17.966-1",
@@ -34,7 +35,8 @@
       "quality": "失败 · 重复幻觉",
       "note": "CER 是与已发布字幕的字符差异；不是人工核对的语音错误率。",
       "run": "热运行",
-      "source": "https://github.com/SYSTRAN/faster-whisper"
+      "source": "https://github.com/SYSTRAN/faster-whisper",
+      "scenario": "subway-crop"
     },
     {
       "id": "tiny-1-17.966-0",
@@ -49,7 +51,8 @@
       "quality": "失败 · 空输出",
       "note": "CER 是与已发布字幕的字符差异；不是人工核对的语音错误率。",
       "run": "首次推理",
-      "source": "https://github.com/SYSTRAN/faster-whisper"
+      "source": "https://github.com/SYSTRAN/faster-whisper",
+      "scenario": "subway-crop"
     },
     {
       "id": "tiny-1-17.966-1",
@@ -64,7 +67,8 @@
       "quality": "失败 · 空输出",
       "note": "CER 是与已发布字幕的字符差异；不是人工核对的语音错误率。",
       "run": "热运行",
-      "source": "https://github.com/SYSTRAN/faster-whisper"
+      "source": "https://github.com/SYSTRAN/faster-whisper",
+      "scenario": "subway-crop"
     },
     {
       "id": "tiny-5-40.103-0",
@@ -79,7 +83,8 @@
       "quality": "失败 · 重复幻觉",
       "note": "全片没有完整参考文本，未计算 CER。",
       "run": "首次推理",
-      "source": "https://github.com/SYSTRAN/faster-whisper"
+      "source": "https://github.com/SYSTRAN/faster-whisper",
+      "scenario": "subway-full"
     },
     {
       "id": "tiny-5-40.103-1",
@@ -94,7 +99,8 @@
       "quality": "失败 · 重复幻觉",
       "note": "全片没有完整参考文本，未计算 CER。",
       "run": "热运行",
-      "source": "https://github.com/SYSTRAN/faster-whisper"
+      "source": "https://github.com/SYSTRAN/faster-whisper",
+      "scenario": "subway-full"
     },
     {
       "id": "caption",
@@ -107,7 +113,8 @@
       "currency": "USD",
       "quality": "6 条字幕 · 未独立听校",
       "note": "仅解析耗时，不含网络获取与人工核验。导入不是语音识别。",
-      "source": "https://commons.wikimedia.org/wiki/TimedText:Beijing_Subway_Line_9_Arriving_at_Military_Museum_Station.webm.zh-hans.srt"
+      "source": "https://commons.wikimedia.org/wiki/TimedText:Beijing_Subway_Line_9_Arriving_at_Military_Museum_Station.webm.zh-hans.srt",
+      "scenario": "preparation"
     },
     {
       "id": "audio",
@@ -120,7 +127,8 @@
       "currency": "USD",
       "quality": "16 kHz PCM",
       "note": "40.103 秒素材，单次运行。",
-      "source": "https://ffmpeg.org/"
+      "source": "https://ffmpeg.org/",
+      "scenario": "preparation"
     },
     {
       "id": "frames",
@@ -133,7 +141,8 @@
       "currency": "USD",
       "quality": "4 张帧图",
       "note": "约 5 / 15 / 25 / 35 秒；非精确 PTS。周期采样可能漏过短暂事件。",
-      "source": "https://ffmpeg.org/ffmpeg-filters.html"
+      "source": "https://ffmpeg.org/ffmpeg-filters.html",
+      "scenario": "preparation"
     },
     {
       "id": "ocr",
@@ -146,7 +155,8 @@
       "currency": "USD",
       "quality": "质量较低",
       "note": "7 张默认裁切，14 次执行的均值。另一个人工精选紧裁切 CER 为 38.46%，不可当作代表性总体准确率。",
-      "source": "https://github.com/tesseract-ocr/tessdata_fast"
+      "source": "https://github.com/tesseract-ocr/tessdata_fast",
+      "scenario": "ocr-default"
     },
     {
       "id": "base",
@@ -159,7 +169,8 @@
       "currency": "USD",
       "quality": "下载未完成",
       "note": "无运行耗时或准确率。未绕过下载访问限制。",
-      "source": "https://github.com/SYSTRAN/faster-whisper"
+      "source": "https://github.com/SYSTRAN/faster-whisper",
+      "scenario": "unexecuted"
     },
     {
       "id": "groq",
@@ -172,7 +183,8 @@
       "currency": "USD / 音频小时",
       "quality": "仅官方价格",
       "note": "未调用。最低按每请求 10 秒计费；价格核对日期 2026-10-04。",
-      "source": "https://console.groq.com/docs/speech-to-text"
+      "source": "https://console.groq.com/docs/speech-to-text",
+      "scenario": "pricing"
     },
     {
       "id": "mini",
@@ -185,7 +197,8 @@
       "currency": "USD / 分钟（估算）",
       "quality": "仅官方价格",
       "note": "未调用。基于 token 计费的估算，不保证固定分钟价格。",
-      "source": "https://platform.openai.com/pricing"
+      "source": "https://platform.openai.com/pricing",
+      "scenario": "pricing"
     },
     {
       "id": "paraformer",
@@ -198,7 +211,8 @@
       "currency": "CNY / 音频小时",
       "quality": "仅官方价格",
       "note": "北京地域；不含 OSS、传输等成本。未调用。",
-      "source": "https://help.aliyun.com/zh/model-studio/model-pricing"
+      "source": "https://help.aliyun.com/zh/model-studio/model-pricing",
+      "scenario": "pricing"
     },
     {
       "id": "bili",
@@ -211,7 +225,8 @@
       "currency": "",
       "quality": "登录 / 30秒试看限制",
       "note": "直接 HTTP/API 请求曾返回 412。普通浏览器匿名页面现已取得元数据和 3 条可见评论（2 根 + 1 表情回复），但完整视频/字幕及页面显示的 49 条完整评论仍需登录。不得将方法失败描述为全站不可访问。",
-      "source": "https://www.bilibili.com/video/BV1NHmsBwEbT/"
+      "source": "https://www.bilibili.com/video/BV1NHmsBwEbT/",
+      "scenario": "bili-acquire"
     },
     {
       "id": "ocr-heldout-baseline",
@@ -224,7 +239,8 @@
       "currency": "USD",
       "quality": "同视频留出集 · 4 帧 / 99 字",
       "note": "另一个公开访谈样本的烧录字幕，不是地铁 ASR，也不是语音准确率。参考由助手目读，不是人工金标准。在 2 帧开发集选择预处理，另 4 帧仅评估一次。基线 480px JPEG 对比 848px PNG + 固定裁切 + 白字阈值 160 + 3倍放大 + psm6，不能分离各改动贡献。耗时含预处理与文件保存；不能泛化到其他字体或视频。",
-      "source": "https://github.com/tesseract-ocr/tesseract"
+      "source": "https://github.com/tesseract-ocr/tesseract",
+      "scenario": "ocr-heldout"
     },
     {
       "id": "ocr-heldout-improved",
@@ -237,7 +253,8 @@
       "currency": "USD",
       "quality": "同视频留出集 · 4 帧 / 99 字",
       "note": "另一个公开访谈样本的烧录字幕，不是地铁 ASR，也不是语音准确率。参考由助手目读，不是人工金标准。在 2 帧开发集选择预处理，另 4 帧仅评估一次。基线 480px JPEG 对比 848px PNG + 固定裁切 + 白字阈值 160 + 3倍放大 + psm6，不能分离各改动贡献。耗时含预处理与文件保存；不能泛化到其他字体或视频。",
-      "source": "https://github.com/tesseract-ocr/tesseract"
+      "source": "https://github.com/tesseract-ocr/tesseract",
+      "scenario": "ocr-heldout"
     },
     {
       "id": "vosk",
@@ -250,7 +267,8 @@
       "currency": "USD",
       "quality": "运行环境安装受阻",
       "note": "官方模型下载成功（11.594s / 43,898,754 字节），但 runtime 安装返回代理 403。没有执行推理；下载时间不等于转录耗时。",
-      "source": "https://alphacephei.com/vosk/models"
+      "source": "https://alphacephei.com/vosk/models",
+      "scenario": "unexecuted"
     },
     {
       "id": "bili-browser",
@@ -263,7 +281,104 @@
       "currency": "USD",
       "quality": "部分成功 · 3 条可见记录",
       "note": "2026-10-04 22:47:21 +08:00 普通浏览器观察；页面标题、15:19 时长和少量默认最热评论可见。2 条根评论与 1 条表情回复，仅 1 条明确评价；不报告总体立场占比。耗时未测。",
-      "source": "https://www.bilibili.com/video/BV1NHmsBwEbT/"
+      "source": "https://www.bilibili.com/video/BV1NHmsBwEbT/",
+      "scenario": "bili-acquire"
+    },
+    {
+      "id": "sense-subway_eval-0",
+      "name": "SenseVoice INT8 · 地铁",
+      "status": "measured",
+      "stage": "ASR",
+      "seconds": 0.6734191709983861,
+      "cer": 0.6,
+      "duration": 17.94,
+      "cost": 0,
+      "currency": "USD",
+      "run": "首次推理",
+      "quality": "CER 60% · 仍需核验",
+      "note": "独立路线 sherpa-onnx 1.13.8 / 4 CPU 线程 / INT8 / Mandarin / greedy / ITN 关闭。载入 1.071s，权重 239,233,841 bytes。地铁 65 字参考中 39 编辑，CER 60%，tiny 同参考为 100%。通过空白/重复质量门不等于准确率认证。token 时间戳范围与单调性检查通过，但未人工对齐验证。长片固定 20s 切块；两次运行不能建立稳定时延排名。FunASR MODEL_LICENSE 1.1 自定义许可，不是 Apache 2；复现前须查看当前许可。",
+      "source": "https://k2-fsa.github.io/sherpa/onnx/sense-voice/pretrained.html",
+      "scenario": "subway-crop"
+    },
+    {
+      "id": "sense-subway_eval-1",
+      "name": "SenseVoice INT8 · 地铁",
+      "status": "measured",
+      "stage": "ASR",
+      "seconds": 0.5920522260057623,
+      "cer": 0.6,
+      "duration": 17.94,
+      "cost": 0,
+      "currency": "USD",
+      "run": "热运行",
+      "quality": "CER 60% · 仍需核验",
+      "note": "独立路线 sherpa-onnx 1.13.8 / 4 CPU 线程 / INT8 / Mandarin / greedy / ITN 关闭。载入 1.071s，权重 239,233,841 bytes。地铁 65 字参考中 39 编辑，CER 60%，tiny 同参考为 100%。通过空白/重复质量门不等于准确率认证。token 时间戳范围与单调性检查通过，但未人工对齐验证。长片固定 20s 切块；两次运行不能建立稳定时延排名。FunASR MODEL_LICENSE 1.1 自定义许可，不是 Apache 2；复现前须查看当前许可。",
+      "source": "https://k2-fsa.github.io/sherpa/onnx/sense-voice/pretrained.html",
+      "scenario": "subway-crop"
+    },
+    {
+      "id": "sense-clean_interview-0",
+      "name": "SenseVoice INT8 · 清晰访谈",
+      "status": "measured",
+      "stage": "ASR",
+      "seconds": 2.43617080799595,
+      "cer": null,
+      "duration": 68.41325,
+      "cost": 0,
+      "currency": "USD",
+      "run": "首次推理",
+      "quality": "无完整独立参考，未评分",
+      "note": "独立路线 sherpa-onnx 1.13.8 / 4 CPU 线程 / INT8 / Mandarin / greedy / ITN 关闭。载入 1.071s，权重 239,233,841 bytes。地铁 65 字参考中 39 编辑，CER 60%，tiny 同参考为 100%。通过空白/重复质量门不等于准确率认证。token 时间戳范围与单调性检查通过，但未人工对齐验证。长片固定 20s 切块；两次运行不能建立稳定时延排名。FunASR MODEL_LICENSE 1.1 自定义许可，不是 Apache 2；复现前须查看当前许可。",
+      "source": "https://k2-fsa.github.io/sherpa/onnx/sense-voice/pretrained.html",
+      "scenario": "clean-interview"
+    },
+    {
+      "id": "sense-clean_interview-1",
+      "name": "SenseVoice INT8 · 清晰访谈",
+      "status": "measured",
+      "stage": "ASR",
+      "seconds": 2.427404704001674,
+      "cer": null,
+      "duration": 68.41325,
+      "cost": 0,
+      "currency": "USD",
+      "run": "热运行",
+      "quality": "无完整独立参考，未评分",
+      "note": "独立路线 sherpa-onnx 1.13.8 / 4 CPU 线程 / INT8 / Mandarin / greedy / ITN 关闭。载入 1.071s，权重 239,233,841 bytes。地铁 65 字参考中 39 编辑，CER 60%，tiny 同参考为 100%。通过空白/重复质量门不等于准确率认证。token 时间戳范围与单调性检查通过，但未人工对齐验证。长片固定 20s 切块；两次运行不能建立稳定时延排名。FunASR MODEL_LICENSE 1.1 自定义许可，不是 Apache 2；复现前须查看当前许可。",
+      "source": "https://k2-fsa.github.io/sherpa/onnx/sense-voice/pretrained.html",
+      "scenario": "clean-interview"
+    },
+    {
+      "id": "sense-noise-speech_bandpass",
+      "name": "SenseVoice · 语音带通",
+      "status": "measured",
+      "stage": "ASR",
+      "scenario": "subway-crop",
+      "seconds": 0.8987274769970099,
+      "duration": 17.94,
+      "cer": 0.8615384615384616,
+      "cost": 0,
+      "currency": "USD",
+      "run": "热运行 · 预处理另计",
+      "quality": "降噪后 CER 变差",
+      "note": "相同 17.940s 噪声地铁裁切、65 字参考、SenseVoice INT8 设置。滤波器 highpass=f=120,lowpass=f=3800；预处理 0.094s，热推理 0.899s，二者合计 0.992s。参考编辑 56，CER 86.15%，未处理基线为 60%。两个预设都降低本片段质量，保留原音频；单片探索，不证明降噪普遍有害或有效。未继续参数搜索。",
+      "source": "https://ffmpeg.org/ffmpeg-filters.html"
+    },
+    {
+      "id": "sense-noise-mild_afftdn",
+      "name": "SenseVoice · 轻度 afftdn",
+      "status": "measured",
+      "stage": "ASR",
+      "scenario": "subway-crop",
+      "seconds": 0.4899503039996489,
+      "duration": 17.94,
+      "cer": 0.8153846153846154,
+      "cost": 0,
+      "currency": "USD",
+      "run": "热运行 · 预处理另计",
+      "quality": "降噪后 CER 变差",
+      "note": "相同 17.940s 噪声地铁裁切、65 字参考、SenseVoice INT8 设置。滤波器 afftdn=nr=8:nf=-40:tn=1；预处理 0.106s，热推理 0.490s，二者合计 0.596s。参考编辑 53，CER 81.54%，未处理基线为 60%。两个预设都降低本片段质量，保留原音频；单片探索，不证明降噪普遍有害或有效。未继续参数搜索。",
+      "source": "https://ffmpeg.org/ffmpeg-filters.html"
     }
   ],
   "captions": [
@@ -337,5 +452,73 @@
       "另 1 条仅为表情回复，语义不足。"
     ],
     "limit": "3 条可见记录并非 49 条全量；样本极小且有选择偏差。完整视频、字幕及完整评论均不可用。"
+  },
+  "senseVoice": {
+    "modelBytes": 239233841,
+    "loadSeconds": 1.0705791939981282,
+    "subwayCER": 0.6,
+    "warmSeconds": 0.5920522260057623,
+    "license": "FunASR MODEL_LICENSE 1.1 (custom)",
+    "licenseUrl": "https://github.com/modelscope/FunASR/blob/main/MODEL_LICENSE"
+  },
+  "visualEvidence": {
+    "timingNote": "历史v1抽帧的近似时间；不是新v2精确PTS索引。",
+    "method": "助手直接查看纠正排序后的抽帧图并标记可观察/不可回答项。",
+    "evaluationNote": "这是带证据的视觉分析示范，不是独立金标准或盲测，因此不报告准确率百分比。",
+    "items": [
+      {
+        "question": "画面里主要是什么场景？",
+        "answer": "站台一侧可见轨道和列车，另一侧为走道和墙面，属于地铁/轨道站台场景。",
+        "basis": "直接可见画面",
+        "approximate_seconds": [
+          5,
+          25
+        ],
+        "status": "supported"
+      },
+      {
+        "question": "画面序列显示了什么变化？",
+        "answer": "远处车灯逐渐靠近，随后列车前部和侧面依次进入画面。可描述为列车进站过程；仅凭抽样不能确定开门时间或完整停站动作。",
+        "basis": "多帧顺序对照",
+        "approximate_seconds": [
+          5,
+          15,
+          25,
+          35
+        ],
+        "status": "supported_with_limit"
+      },
+      {
+        "question": "列车有哪些可见外观特征？",
+        "answer": "可见深色车窗、偏银灰的车体和横向绿色带。",
+        "basis": "直接可见画面",
+        "approximate_seconds": [
+          25,
+          35
+        ],
+        "status": "supported"
+      },
+      {
+        "question": "能从这些帧准确读出红色车头显示屏文字吗？",
+        "answer": "不能可靠读出；亮度和分辨率不足，不补写站名。",
+        "basis": "信息不足",
+        "approximate_seconds": [
+          15
+        ],
+        "status": "unanswerable"
+      },
+      {
+        "question": "能断定整个视频都没有乘客或所有车门均已打开吗？",
+        "answer": "不能。稀疏采样与有限视角无法支持这种全片、全车的断言。",
+        "basis": "覆盖不足",
+        "approximate_seconds": [
+          5,
+          15,
+          25,
+          35
+        ],
+        "status": "unanswerable"
+      }
+    ]
   }
 }

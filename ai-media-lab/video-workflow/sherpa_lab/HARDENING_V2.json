@@ -1,0 +1,19 @@
+{
+  "cli_version": "2.0.0",
+  "portable_tests_passed": 15,
+  "actual_offline_smoke": {
+    "input_codec": "mp3",
+    "source_sha256": "0d29010e8f8d420f37f56d8fe79c7a90e74662f1217d7fea6b04e4f357ec34da",
+    "decoded_pcm_rate": 16000,
+    "duration_seconds": 38.3666875,
+    "reference_provided": false,
+    "cer": null,
+    "accuracy_status": "unverified_no_reference",
+    "quality_gate_status": "unverified_requires_review",
+    "inference_seconds": 1.6445353449962568,
+    "status": "completed"
+  },
+  "previous_benchmarks_unchanged": true,
+  "model_downloads_performed": false,
+  "clean_allowlist_test_verified": true
+}

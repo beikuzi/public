@@ -1,16 +1,18 @@
 # 文字 → HTML 分镜 → 视频：低成本可复现工作流
 
-验证日期：2026-10-04。附带一条原创的 38.03 秒中文演示片，四页 HTML/CSS/SVG 分镜、真实本地合成旁白、烧录字幕与独立 SRT/VTT。无需录屏，无需付费 API，无需 GPU。
+验证日期：2026-10-04。
+
+**v1.3包入口：`neural-melo-preview/` 为新增Melo试听版（训练数据来源未公开，见 `MELO_PREVIEW.md`）；`baseline-espeak/` 和 `neural-aishell3-preview/` 保留先前版本。三种声音都未经过真人可懂度/自然度验收。Melo精确成片旁白的独立SenseVoice回译CER为9.64%，仅作识别诊断。**附带一条原创的 38.03 秒中文演示片，四页 HTML/CSS/SVG 分镜、真实本地合成旁白、烧录字幕与独立 SRT/VTT。无需录屏，无需付费 API，无需 GPU。
 
 ## 先看结果
 
-- `final/demo.mp4`：1280×720，30 fps，H.264/yuv420p + AAC，支持 fast-start。
-- `final/contact-sheet.jpg`：从成片抽取的四页预览。
-- `final/slides.html`：实际渲染的原始 HTML，图形内联，无远程字体或素材。
+- `baseline-espeak/demo.mp4`：1280×720，30 fps，H.264/yuv420p + AAC，支持 fast-start。
+- `baseline-espeak/contact-sheet.jpg`：从成片抽取的四页预览。
+- `baseline-espeak/slides.html`：实际渲染的原始 HTML，图形内联，无远程字体或素材。
 - `project.json`：修改标题、卡片文案、配色、逐句旁白的入口。
-- `final/narration.wav` / `.txt`：完整声音与稿件。
-- `final/subtitles.srt` / `.vtt`、`final/timing.json`：同源字幕与时间轴。
-- `final/benchmark.json` / `validation.json` / `ffprobe.json`：实测数据与验证证据。
+- `baseline-espeak/narration.wav` / `.txt`：完整声音与稿件。
+- `baseline-espeak/subtitles.srt` / `.vtt`、`baseline-espeak/timing.json`：同源字幕与时间轴。
+- `baseline-espeak/benchmark.json` / `validation.json` / `ffprobe.json`：实测数据与验证证据。
 
 旁白是 eSpeak-NG 的 Mandarin `cmn` 合成音，通过官方 PyPI `piper-tts` wheel 内附的 eSpeak 库生成。**没有调用 Piper 神经模型，也没有克隆任何人的声音。声音明显机械，适合验证流程，不代表成片级中文配音。**
 
@@ -27,7 +29,7 @@ python3 -m venv .venv
 
 本目录已经有安装好的 `.venv`；交付 ZIP 不包含它。安装需要联网；**安装后渲染完全离线**，没有模型下载、云 API 或浏览器依赖。锁文件固定本次安装版本；不是跨操作系统二进制复现保证。
 
-模板源码版本：1.1.0。旧版实测保存在 `benchmark-history.json`，当前版本的实测和源码哈希见 `final/benchmark.json`。
+模板源码版本：1.3.0。新增Melo试听后端，详见 `MELO_PREVIEW.md`；AISHELL版本说明仍见 `NEURAL_PREVIEW.md`。旧版实测保存在 `benchmark-history.json`，各版本的实测和源码哈希见三个输出目录内的 `benchmark.json`，其中v1.3新增结果为 `neural-melo-preview/benchmark.json`。
 
 CLI：`--rate 225` 调整 eSpeak 语速；`--threads 4` 控制编码线程；`--preset veryfast` 调整 x264 速度/压缩率；`--out` 选择输出目录。默认拒绝非空输出目录；`--overwrite` 仅允许更新带有本流程标记的目录，且目录必须在项目下、不能经过符号链接。不要将手工编辑的重要文件放进去。
 
@@ -50,7 +52,7 @@ CLI：`--rate 225` 调整 eSpeak 语速；`--threads 4` 控制编码线程；`--
 
 ## 实测与成本
 
-本次机器可用约 9 个 CPU、9.7GiB 内存；编码使用 4 线程、无 GPU。v1.0 首次完整渲染约 8.90 秒、最终一次为 7.241 秒；v1.1 当前版本的精确耗时见 `final/benchmark.json`（依赖已安装、系统缓存可能热）。
+本次机器可用约 9 个 CPU、9.7GiB 内存；编码使用 4 线程、无 GPU。v1.0 首次完整渲染约 8.90 秒、最终一次为 7.241 秒；各源码版本的三种后端的精确耗时见各自目录的 `benchmark.json`（依赖已安装、系统缓存可能热）。
 
 费用：付费 API 调用 **$0**；软件没有按视频收取的调用费用。这不等于零总成本：未计入订阅、机器、人工、安装时间、电费或商业发行可能涉及的编码专利费用。若按假设 $0.10/机器小时计，8.90秒纯渲染时间约 $0.00025；这只是算术示例，**不是本环境价格或账单**。批量时另算排队、启动、储存与带宽。
 
@@ -93,4 +95,4 @@ CLI：`--rate 225` 调整 eSpeak 语速；`--threads 4` 控制编码线程；`--
 .venv/bin/python render.py --out output-new --overwrite
 ```
 
-七项回归测试覆盖正常结构、空旁白、超长内容、HTML/URL/CSS注入、危险路径、非空/非目录/符号链接输出、内联HTML。成片验证另检查所有字幕单调、分镜内边界和音视频帧数。
+八项回归测试覆盖正常结构、空旁白、超长内容、HTML/URL/CSS注入、危险路径、非空/非目录/符号链接输出、内联HTML。成片验证另检查所有字幕单调、分镜内边界和音视频帧数。

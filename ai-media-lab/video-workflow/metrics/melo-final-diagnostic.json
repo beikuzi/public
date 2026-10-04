@@ -1,0 +1,29 @@
+{
+  "source": {
+    "sample_rate": 44100,
+    "channels": 1,
+    "sample_width": 2,
+    "duration_seconds": 38.36666666666667,
+    "audio_sha256": "6ae7f1f0cde6202a7624d393551896c85dd53b0eec05606e5aa1ce8e3760f5ce",
+    "reference_sha256": "bfaf373e835a235e1caa9f6edf919e179675c9828399e69f0493f7d1ae7e5a52",
+    "filename": "narration.wav"
+  },
+  "resampled_sha256": "af37a10075bf501dec88cd657eeb3cfef51d6da5d066f0752caec4ed5a15c0ee",
+  "resampled_rate": 16000,
+  "reference_characters": 166,
+  "edits": 16,
+  "cer": 0.0963855421686747,
+  "first_inference_seconds": 1.1954325289989356,
+  "warm_inference_seconds": 1.2403673070002696,
+  "model": "sherpa-onnx-sense-voice-zh-en-ja-ko-yue-int8-2024-07-17",
+  "runtime": "1.13.8",
+  "options": {
+    "threads": 4,
+    "language": "zh",
+    "itn": false,
+    "decoding": "greedy_search",
+    "maximum_chunk_seconds": 20,
+    "script_hint": false
+  },
+  "warning": "Exact final waveform ASR roundtrip diagnostic; no human listening/naturalness validation. Earlier candidate score must not substitute."
+}

@@ -3,7 +3,7 @@
 import argparse, ctypes, hashlib, html, importlib.util, json, math, os, pathlib, re, subprocess, time, wave
 ROOT=pathlib.Path(__file__).resolve().parent
 
-SOURCE_VERSION='1.1.0'
+SOURCE_VERSION='1.3.0'
 MARKER='.html-video-output.json'
 
 def plain_text(value, name, maximum, multiline=False):
@@ -83,14 +83,14 @@ def robot(accent, word):
     <text x="162" y="198" text-anchor="middle" font-family="Noto Sans CJK SC" font-size="25" font-weight="700" fill="#141b2d">{html.escape(word)}</text>
     </svg>'''
 
-def make_html(project):
+def make_html(project, voice_footer="合成旁白 · eSpeak-NG 中文机械音"):
     validate_project(project)
     css='''@page {size:1280px 720px;margin:0} *{box-sizing:border-box}body{margin:0;font-family:"Noto Sans CJK SC",sans-serif;color:#f4f3ec;background:#101728}section{width:1280px;height:720px;position:relative;overflow:hidden;break-after:page;background:#101728;padding:40px 58px}section:last-child{break-after:auto}.top{font-size:17px;letter-spacing:2px;color:#a9b4c5}.brand{float:right;font-size:14px;letter-spacing:1px}.rule{height:2px;background:#364051;margin-top:17px}.left{position:absolute;left:58px;top:113px;width:600px}.label{font-size:16px;font-weight:700;letter-spacing:3px}h1{font-size:64px;line-height:1.22;margin:17px 0 24px;letter-spacing:-2px}.note{font-size:21px;color:#c4cede;margin-top:13px}.robot{position:absolute;left:88px;top:366px;transform:rotate(-5deg) scale(.85);transform-origin:top left}.cards{position:absolute;left:660px;right:58px;top:124px}.card{border:2px solid #364051;border-radius:16px;padding:18px 23px;margin-bottom:17px;background:#172137;height:128px}.cardhead{font-size:16px;letter-spacing:3px;font-weight:bold}.cardtext{font-size:25px;line-height:1.45;margin-top:9px}.footer{position:absolute;left:58px;right:58px;bottom:99px;font-size:14px;color:#91a0b7}.counter{float:right}.subzone{position:absolute;left:0;right:0;bottom:0;height:88px;background:#080d17}.dots{position:absolute;left:440px;top:425px;font-size:29px;line-height:1.6;color:#4b5972}'''
     out=['<!doctype html><html lang="zh-CN"><meta charset="utf-8"><title>'+html.escape(project['title'])+'</title><style>'+css+'</style><body>']
     for i,s in enumerate(project['slides']):
         a=s['accent']; title=html.escape(s['title']).replace('\n','<br>')
         cards=''.join(f'<div class="card"><div class="cardhead" style="color:{a}">{html.escape(k)}</div><div class="cardtext">{html.escape(v)}</div></div>' for k,v in s['cards'])
-        out.append(f'<section><div class="top">TEXT → VIDEO LAB<span class="brand">原创分镜 / 本地合成演示</span></div><div class="rule"></div><div class="left"><div class="label" style="color:{a}">{html.escape(s["label"])}</div><h1>{title}</h1><div class="note">{html.escape(s["note"])}</div></div><div class="robot">{robot(a,s["keyword"])}</div><div class="dots">· · ·<br>· · ·<br>· · ·</div><div class="cards">{cards}</div><div class="footer">合成旁白 · eSpeak-NG 中文机械音<span class="counter">{i+1:02d} / 04</span></div><div class="subzone"></div></section>')
+        out.append(f'<section><div class="top">TEXT → VIDEO LAB<span class="brand">原创分镜 / 本地合成演示</span></div><div class="rule"></div><div class="left"><div class="label" style="color:{a}">{html.escape(s["label"])}</div><h1>{title}</h1><div class="note">{html.escape(s["note"])}</div></div><div class="robot">{robot(a,s["keyword"])}</div><div class="dots">· · ·<br>· · ·<br>· · ·</div><div class="cards">{cards}</div><div class="footer">{html.escape(voice_footer)}<span class="counter">{i+1:02d} / 04</span></div><div class="subzone"></div></section>')
     return ''.join(out)+'</body></html>'
 
 class Voice:
@@ -123,12 +123,19 @@ def timestamp(t,sep=','):
     return f'{h:02d}:{m:02d}:{s:02d}{sep}{ms:03d}'
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--out',default='output');p.add_argument('--overwrite',action='store_true');p.add_argument('--rate',type=int,default=225);p.add_argument('--preset',default='veryfast');p.add_argument('--threads',type=int,default=4);args=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--out',default='output');p.add_argument('--backend',choices=['espeak','aishell3','melo'],default='espeak');p.add_argument('--model-dir');p.add_argument('--speaker',type=int);p.add_argument('--speed',type=float,default=1.0);p.add_argument('--overwrite',action='store_true');p.add_argument('--rate',type=int,default=225);p.add_argument('--preset',default='veryfast');p.add_argument('--threads',type=int,default=4);args=p.parse_args()
     if not 80<=args.rate<=350:p.error('--rate must be between 80 and 350')
     if not 1<=args.threads<=32:p.error('--threads must be between 1 and 32')
     if args.preset not in {'ultrafast','superfast','veryfast','faster','fast','medium','slow','slower','veryslow'}:p.error('Invalid x264 preset')
+    if not .5<=args.speed<=2:p.error('--speed must be between 0.5 and 2')
+    if args.backend!='espeak' and not args.model_dir:p.error('--model-dir is required for neural backends')
+    if args.backend=='espeak' and args.model_dir:p.error('--model-dir only applies to neural backends')
+    if args.speaker is None:args.speaker=0 if args.backend=='melo' else 10
     start=time.perf_counter();metrics={};project=validate_project(json.loads((ROOT/'project.json').read_text()))
-    out=prepare_output(args.out,args.overwrite);source=make_html(project);(out/'slides.html').write_text(source)
+    out=prepare_output(args.out,args.overwrite)
+    voice_name='eSpeak-NG cmn (synthetic)' if args.backend=='espeak' else f'{args.backend} VITS neural preset {args.speaker} (unreviewed preview)'
+    voice_footer='合成旁白 · eSpeak-NG 中文机械音' if args.backend=='espeak' else f'{args.backend} 神经配音试听版 · 未经过人工可懂度/自然度验收'
+    source=make_html(project,voice_footer);(out/'slides.html').write_text(source)
     (ROOT/'.cache').mkdir(exist_ok=True)
     os.environ['XDG_CACHE_HOME']=str(ROOT/'.cache')
     from weasyprint import HTML
@@ -136,7 +143,13 @@ def main():
         raise ValueError('External resources are disabled; use inline authored assets')
     t=time.perf_counter();HTML(string=source,url_fetcher=deny_network).write_pdf(out/'slides.pdf');run('pdftoppm','-png','-r','96',out/'slides.pdf',out/'slide');metrics['html_pdf_png_seconds']=time.perf_counter()-t
     assert len(list(out.glob('slide-*.png')))==len(project['slides'])
-    t=time.perf_counter();voice=Voice(args.rate);pcm=bytearray();cues=[];scenes=[];fps=30
+    t=time.perf_counter();load_start=time.perf_counter()
+    if args.backend=='espeak':voice=Voice(args.rate)
+    else:
+        from neural_voice import NeuralVoice
+        voice=NeuralVoice(args.model_dir,args.speaker,args.speed,args.backend)
+    metrics['voice_load_seconds']=time.perf_counter()-load_start
+    synthesis_start=time.perf_counter();pcm=bytearray();cues=[];scenes=[];fps=30
     for i,slide in enumerate(project['slides']):
         scene_start=len(pcm)/(2*voice.sr)
         pcm.extend(bytes(round(.18*voice.sr)*2))
@@ -146,12 +159,20 @@ def main():
         duration=len(pcm)/(2*voice.sr)-scene_start+.20;nframes=math.ceil(duration*fps)
         target=round((scene_start+nframes/fps)*voice.sr)*2
         pcm.extend(bytes(max(0,target-len(pcm))));scenes.append(dict(slide=i+1,start=scene_start,end=len(pcm)/(2*voice.sr),frames=nframes))
+    metrics['sentence_synthesis_and_timing_seconds']=time.perf_counter()-synthesis_start
+    metrics['audio_gain']=1.0
+    if args.backend!='espeak':
+        import numpy as np
+        samples=np.frombuffer(pcm,dtype='<i2').astype(np.float64)
+        peak=float(np.abs(samples).max())
+        gain=(32767*10**(-3/20))/peak if peak else 1.0
+        pcm=bytearray(np.round(samples*gain).astype('<i2').tobytes());metrics['audio_gain']=gain
     with wave.open(str(out/'narration.wav'),'wb') as w:w.setnchannels(1);w.setsampwidth(2);w.setframerate(voice.sr);w.writeframes(pcm)
     (out/'narration.txt').write_text('\n'.join(c['text'] for c in cues))
     for ext,sep in [('srt',','),('vtt','.')]:
         text=('WEBVTT\n\n' if ext=='vtt' else '')+'\n\n'.join(f'{i+1}\n{timestamp(c["start"],sep)} --> {timestamp(c["end"],sep)}\n{c["text"]}' for i,c in enumerate(cues))+'\n'
         (out/f'subtitles.{ext}').write_text(text)
-    (out/'timing.json').write_text(json.dumps(dict(fps=fps,voice='eSpeak-NG cmn (synthetic)',sample_rate=voice.sr,cues=cues,scenes=scenes),ensure_ascii=False,indent=2));metrics['tts_timing_seconds']=time.perf_counter()-t
+    (out/'timing.json').write_text(json.dumps(dict(fps=fps,voice=voice_name,backend=args.backend,sample_rate=voice.sr,cues=cues,scenes=scenes),ensure_ascii=False,indent=2));metrics['tts_timing_seconds']=time.perf_counter()-t
     t=time.perf_counter()
     for scene in scenes:
         i=scene['slide'];dur=scene['frames']/fps
@@ -160,9 +181,9 @@ def main():
     (out/'concat.txt').write_text(''.join(f"file 'clip-{s['slide']}.mp4'\n" for s in scenes))
     run('ffmpeg','-y','-v','error','-f','concat','-safe','0','-i',out/'concat.txt','-c','copy',out/'visuals.mp4')
     style='FontName=Noto Sans CJK SC,FontSize=20,PrimaryColour=&H00F3F3F4,OutlineColour=&H00170D08,Outline=1,Alignment=2,MarginV=18'
-    run('ffmpeg','-y','-v','error','-i',out/'visuals.mp4','-i',out/'narration.wav','-vf',f"subtitles='{out/'subtitles.srt'}':force_style='{style}'",'-c:v','libx264','-preset',args.preset,'-crf','20','-threads',args.threads,'-c:a','aac','-b:a','128k','-movflags','+faststart','-shortest',out/'demo.mp4')
+    run('ffmpeg','-y','-v','error','-i',out/'visuals.mp4','-i',out/'narration.wav','-vf',f"subtitles='{out/'subtitles.srt'}':force_style='{style}'",'-c:v','libx264','-preset',args.preset,'-crf','20','-threads',args.threads,'-c:a','aac','-ar','48000','-b:a','128k','-movflags','+faststart','-shortest',out/'demo.mp4')
     metrics['ffmpeg_encode_seconds']=time.perf_counter()-t
     probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_format','-show_streams','-of','json',str(out/'demo.mp4')]))
-    (out/'ffprobe.json').write_text(json.dumps(probe,indent=2));metrics.update(source_version=SOURCE_VERSION,render_py_sha256=hashlib.sha256(pathlib.Path(__file__).read_bytes()).hexdigest(),project_sha256=hashlib.sha256((ROOT/'project.json').read_bytes()).hexdigest(),total_seconds=time.perf_counter()-start,video_seconds=float(probe['format']['duration']),bytes=(out/'demo.mp4').stat().st_size,fps=fps,width=1280,height=720,threads=args.threads,paid_api_cost_usd=0,render_strategy='4 offline HTML static rasterizations; FFmpeg fades; audio-derived sentence subtitles')
+    (out/'ffprobe.json').write_text(json.dumps(probe,indent=2));metrics.update(training_data_provenance='undisclosed in reviewed upstream sources' if args.backend=='melo' else 'see provenance documentation',backend=args.backend,voice=voice_name,source_sample_rate=voice.sr,model_sha256=getattr(voice,'model_sha256',None),neural_voice_py_sha256=hashlib.sha256((ROOT/'neural_voice.py').read_bytes()).hexdigest() if args.backend!='espeak' else None,source_version=SOURCE_VERSION,render_py_sha256=hashlib.sha256(pathlib.Path(__file__).read_bytes()).hexdigest(),project_sha256=hashlib.sha256((ROOT/'project.json').read_bytes()).hexdigest(),total_seconds=time.perf_counter()-start,video_seconds=float(probe['format']['duration']),bytes=(out/'demo.mp4').stat().st_size,fps=fps,width=1280,height=720,threads=args.threads,paid_api_cost_usd=0,render_strategy='4 offline HTML static rasterizations; FFmpeg fades; audio-derived sentence subtitles')
     (out/'benchmark.json').write_text(json.dumps(metrics,indent=2));print(json.dumps(metrics,indent=2))
 if __name__=='__main__':main()

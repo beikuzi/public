@@ -1,0 +1,30 @@
+{
+  "recognizer": "SenseVoiceINT8 sherpa-onnx1.13.8",
+  "options": {
+    "threads": 4,
+    "language": "zh",
+    "itn": false,
+    "decoding": "greedy_search",
+    "maximum_chunk_seconds": 20,
+    "script_hint": false
+  },
+  "reference_sha256": "bfaf373e835a235e1caa9f6edf919e179675c9828399e69f0493f7d1ae7e5a52",
+  "reference_characters": 166,
+  "espeak_original": {
+    "source_seconds": 38.033333,
+    "cer": 0.3253012048192771,
+    "edits": 54,
+    "warm_inference_seconds": 1.32686492799985,
+    "asr_input_sha256": "488c4a6860e4cb156772e21e59f4b3585befb37e5b40f3ef261b6c63c49af7e0"
+  },
+  "aishell3_sentence_aligned": {
+    "source_seconds": 37.46675,
+    "source_sample_rate": 8000,
+    "asr_sample_rate": 16000,
+    "source_sha256": "a2299aa5f6ca07e5775f249e0b970ed29b391887f8ab0d5162e90eb7357b8911",
+    "cer": 0.5120481927710844,
+    "edits": 85,
+    "warm_inference_seconds": 1.4162827399995876
+  },
+  "interpretation": "Neural candidate did not improve this ASR roundtrip score. Cannot infer human naturalness or isolate TTS quality from ASR model compatibility. Human audition required."
+}

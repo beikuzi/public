@@ -1,0 +1,40 @@
+{
+  "scope": "Predefined single-clip exploratory noise preprocessing; no held-out/generalization claim",
+  "reference_characters": 65,
+  "baseline": {
+    "cer": 0.6,
+    "edits": 39,
+    "first_inference_seconds": 0.6734191709983861,
+    "warm_inference_seconds": 0.5920522260057623,
+    "source_sha256": "aa3b3ea525633747247aa67d481396261a9e221aceae92a25fc3081940616f40"
+  },
+  "variants": [
+    {
+      "name": "speech_bandpass",
+      "ffmpeg_filter": "highpass=f=120,lowpass=f=3800",
+      "preprocessing_seconds": 0.09357507700042333,
+      "wav_sha256": "d4f2bcd0cabe197b14f233bae6253d9cea5e06bf1281c7a057a7bb70930464a2",
+      "pcm_sha256": "2f26542f2c259ac2b5158c16046bf3be71f99dc9835ff8e2b44634196e19f00c",
+      "duration_seconds": 17.94,
+      "reference_edits": 56,
+      "cer": 0.8615384615384616,
+      "first_inference_seconds": 0.7117722850016435,
+      "warm_inference_seconds": 0.8987274769970099,
+      "warm_preprocess_plus_inference_seconds": 0.9923025539974333
+    },
+    {
+      "name": "mild_afftdn",
+      "ffmpeg_filter": "afftdn=nr=8:nf=-40:tn=1",
+      "preprocessing_seconds": 0.10588069799996447,
+      "wav_sha256": "39aea6788b5033b0fb40c8f1afdd365b14460c69877df7bfe393f5b4f967b473",
+      "pcm_sha256": "2498135aa14b1980730b735efe59c25654a83508318f6367204a8a76bad78a53",
+      "duration_seconds": 17.94,
+      "reference_edits": 53,
+      "cer": 0.8153846153846154,
+      "first_inference_seconds": 0.48741002500173636,
+      "warm_inference_seconds": 0.4899503039996489,
+      "warm_preprocess_plus_inference_seconds": 0.5958310019996134
+    }
+  ],
+  "conclusion": "Both tested filters worsen caption-reference disagreement; keep untreated audio for this sample. No further parameter search."
+}

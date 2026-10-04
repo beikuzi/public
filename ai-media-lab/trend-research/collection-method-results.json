@@ -1,0 +1,54 @@
+{
+  "as_of": "2026-10-04T23:10:41+08:00",
+  "rows": [
+    {
+      "platform": "B站",
+      "first_method": "直接页面/API请求",
+      "first_result": "HTTP412，未取到媒体或评论",
+      "permitted_alternative": "普通浏览器渲染",
+      "observed_result": "公开元数据、3条匿名可见记录成功；完整视频及49条评论需登录",
+      "remaining_limit": "仅30秒预览；可解释意见1条，不报告比例"
+    },
+    {
+      "platform": "微博",
+      "first_method": "文本抓取",
+      "first_result": "InternalError",
+      "permitted_alternative": "普通浏览器渲染公开榜单",
+      "observed_result": "综合50条及科技分类30条可读；保存12条科技样本",
+      "remaining_limit": "话题点击进入登录页；不采完整评论"
+    },
+    {
+      "platform": "抖音",
+      "first_method": "文本抓取",
+      "first_result": "零可读行",
+      "permitted_alternative": "普通浏览器渲染；关闭可选登录推广弹窗",
+      "observed_result": "50个排名条目可读；保存前10条及热度",
+      "remaining_limit": "没有完整评论样本，热度不等于人数"
+    },
+    {
+      "platform": "X",
+      "first_method": "文本工具读原帖",
+      "first_result": "403",
+      "permitted_alternative": "普通浏览器直接查看公开原帖",
+      "observed_result": "Karpathy原帖及2条可解释回复直接可读",
+      "remaining_limit": "未取得官方趋势榜或代表性回复样本"
+    },
+    {
+      "platform": "微信公众号",
+      "first_method": "检索与署名转载",
+      "first_result": "转载可读，原文未取到",
+      "permitted_alternative": "从转载页点击确切原文链接",
+      "observed_result": "原文入口已核实；当前云端浏览器站点安全策略明确阻止微信原文访问",
+      "remaining_limit": "不绕过策略；使用明确署名转载，不冒充原文评论/阅读量"
+    },
+    {
+      "platform": "小红书",
+      "first_method": "检索与二手汇总",
+      "first_result": "原笔记未读到",
+      "permitted_alternative": "普通浏览器直接打开已知原笔记",
+      "observed_result": "当前笔记暂时无法浏览，error_code300031",
+      "remaining_limit": "不伪造访问令牌或猜测隐藏URL；保留二手等级"
+    }
+  ],
+  "interpretation": "方法失败与平台完全不可访问不同；可选弹窗关闭不是登录，任何明确权限/安全边界均未绕过。"
+}

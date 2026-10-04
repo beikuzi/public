@@ -43,7 +43,7 @@ Subtitle OCR stress sample: Ma Jian VOA interview20181112, Wikimedia file page m
 Models: https://huggingface.co/Systran/faster-whisper-tiny ; https://github.com/SYSTRAN/faster-whisper
 OCR data: https://github.com/tesseract-ocr/tessdata_fast/blob/main/chi_sim.traineddata
 
-Bilibili access and comments work is in `bilibili/` and `analysis/`. Acquisition was blocked by HTTP412; no real Bilibili media/comments were obtained. Never present fixtures as collected data or inferred audience proportions.
+Bilibili access and comments work is in `bilibili/` and `analysis/`. The direct HTTP/API acquisition attempt returned HTTP412. A later ordinary anonymous browser visit retrieved public metadata and3 visible comment records (2 roots and1 emoji reply), with only1 clear evaluative opinion. Full video/captions and the49-comment corpus remained login-gated; only a30-second preview was offered. See bilibili/browser-evidence.json. Do not report overall opinion proportions or treat fixtures as collected data.
 
 ## Caption-first route
 
@@ -62,3 +62,6 @@ Bilibili access and comments work is in `bilibili/` and `analysis/`. Acquisition
 Output must be new or empty; a repeated nonempty destination is rejected before existing evidence changes. Each input therefore needs a fresh `--output`. Clips shorter than the sampling interval always receive an initial frame and contact sheet. Video without an audio track still produces visual evidence and ASR status `unavailable_no_audio_track`. Exact selected source PTS comes from FFmpeg `showinfo` with `-copyts`; manifest includes both sourcePTS and video-relative time. `run_manifest.json` records SHA256, source bytes, options, library/tool versions, and completion/failure status.
 
 Version1 benchmark measurements and frame snapshots were preserved; `pipeline_snapshot_v1.py` is their historical implementation. Version2 changes sampling from FPS nearest-frame sampling(~5/15s) to first-frame plus elapsed-interval selection(0/10s), so do not mix frame sets. Version2 has9 portable tests and one separate offline ASR smoke rerun; historical performance numbers remain version1 and were not silently relabeled.
+
+## Independent Mandarin ASR and noise trials
+See sherpa_lab/REPORT.md for licensed SenseVoice INT8 local evaluation. On the same noisy17.94s published-caption-reference span, CER60% versus tiny100%; neither is high-accuracy. Predefined bandpass and afftdn presets worsened this clip to86.15% and81.54%; keep the unmodified source. Model weights are not distributed, and custom FunASR MODEL_LICENSE1.1 applies (not Apache/MIT). Passing repetition/empty gates still does not certify transcript correctness.

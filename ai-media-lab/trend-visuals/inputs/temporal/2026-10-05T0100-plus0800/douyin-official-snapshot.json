@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "method": "cloud CUA anonymous official-page AX plus read-only rendered DOM",
+  "captureTimeSource": "developer UTC clock at observation",
+  "platformDataTimestamp": null,
+  "baselineComparison": "matched comparison in comparison.json",
+  "claimsVerified": false,
+  "limitations": [
+    "Ranking topic wording records a platform observation, not factual verification of the topic claim.",
+    "Metrics are platform-specific, not unique people, support, or comparable across platforms.",
+    "Server refresh time and caching status are unknown."
+  ],
+  "platform": "douyin",
+  "sourceUrl": "https://www.douyin.com/hot",
+  "capturedAt": "2026-10-04T17:01:48Z",
+  "captureWindowStart": "2026-10-04T17:01:13Z",
+  "scope": "抖音热榜 numbered top10 plus two tracked baseline top10 exits; excludes unnumbered leading featured item",
+  "status": "success_public_ranking_visible",
+  "loginNote": "Login panel appeared but public ranking was readable; no login interaction performed.",
+  "metricLabel": "热度",
+  "rankNote": "Ranks 1–3 inferred from ordered podium positions immediately before explicit rank 4.",
+  "featuredUnnumbered": [
+    {
+      "topicId": "2681453",
+      "title": "把个人小我融入国家大我",
+      "rank": null,
+      "metric": null
+    }
+  ],
+  "entries": [
+    {
+      "rank": 1,
+      "topicId": "2680834",
+      "title": "市井人家的炊烟笑语总是令人心安",
+      "metricRaw": "1245.4万",
+      "metricApprox": 12454000
+    },
+    {
+      "rank": 2,
+      "topicId": "2681101",
+      "title": "是谁在重庆免费听了soldout",
+      "metricRaw": "1167.1万",
+      "metricApprox": 11671000
+    },
+    {
+      "rank": 3,
+      "topicId": "2681400",
+      "title": "我国假日经济持续升温",
+      "metricRaw": "1125.4万",
+      "metricApprox": 11254000
+    },
+    {
+      "rank": 4,
+      "topicId": "2681416",
+      "title": "你说得对人是应该多出去走走",
+      "metricRaw": "1114.4万",
+      "metricApprox": 11144000
+    },
+    {
+      "rank": 5,
+      "topicId": "2680433",
+      "title": "国庆自驾搭子集体陷入沉默",
+      "metricRaw": "1054.7万",
+      "metricApprox": 10547000
+    },
+    {
+      "rank": 6,
+      "topicId": "2681268",
+      "title": "第二十届亚运会闭幕",
+      "metricRaw": "1054.7万",
+      "metricApprox": 10547000
+    },
+    {
+      "rank": 7,
+      "topicId": "2681231",
+      "title": "张堃鹏追平个人最佳战绩",
+      "metricRaw": "937.6万",
+      "metricApprox": 9376000
+    },
+    {
+      "rank": 8,
+      "topicId": "2680661",
+      "title": "长长长假美食判官",
+      "metricRaw": "927.2万",
+      "metricApprox": 9272000
+    },
+    {
+      "rank": 9,
+      "topicId": "2681346",
+      "title": "苏超苏州2:1常州",
+      "metricRaw": "922.2万",
+      "metricApprox": 9222000
+    },
+    {
+      "rank": 10,
+      "topicId": "2681350",
+      "title": "苏超盐城2:0宿迁",
+      "metricRaw": "921.1万",
+      "metricApprox": 9211000
+    },
+    {
+      "rank": 11,
+      "topicId": "2680419",
+      "title": "这顿饭已严肃品鉴不烧心",
+      "metricRaw": "914.6万",
+      "metricApprox": 9146000
+    },
+    {
+      "rank": 17,
+      "topicId": "2680932",
+      "title": "国庆假期宅家无聊怎么办",
+      "metricRaw": "907.2万",
+      "metricApprox": 9072000
+    }
+  ]
+}

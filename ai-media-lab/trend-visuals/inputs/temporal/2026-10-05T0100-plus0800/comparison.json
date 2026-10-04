@@ -1,0 +1,758 @@
+{
+  "schemaVersion": 1,
+  "rankDeltaConvention": "current rank minus baseline rank; negative means rise",
+  "metricDeltaConvention": "current displayed numeric value minus prior displayed numeric value; rounded display arithmetic only",
+  "baselineProvenance": "baseline-records.json",
+  "comparisons": [
+    {
+      "platform": "bilibili",
+      "scope": "全站排行榜 top10 plus tracked baseline top10 exit and two known AI entries; full100 inspected in AX",
+      "elapsedSeconds": 4506.0,
+      "baselineSavedCount": 12,
+      "currentSavedCount": 13,
+      "changes": [
+        {
+          "baselineId": "BH01",
+          "title": "ピノキオピー - えねみぃ feat. 初音ミク・重音テト",
+          "oldRank": 1,
+          "newRank": 1,
+          "rankDelta": 0,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T23:49:23+08:00",
+          "newCapturedAt": "2026-10-04T17:04:29Z",
+          "metrics": [
+            {
+              "name": "views_display",
+              "oldDisplay": "194.3万",
+              "newDisplay": "196.3万",
+              "displayNumericDelta": 20000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            },
+            {
+              "name": "danmaku_display",
+              "oldDisplay": "4.1万",
+              "newDisplay": "4.1万",
+              "displayNumericDelta": 0.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            }
+          ]
+        },
+        {
+          "baselineId": "BH02",
+          "title": "逻辑折叠深度解析！华为Mate 90系列韬定律芯片有多强？",
+          "oldRank": 2,
+          "newRank": 2,
+          "rankDelta": 0,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T23:49:23+08:00",
+          "newCapturedAt": "2026-10-04T17:04:29Z",
+          "metrics": [
+            {
+              "name": "views_display",
+              "oldDisplay": "217.3万",
+              "newDisplay": "218.6万",
+              "displayNumericDelta": 13000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            },
+            {
+              "name": "danmaku_display",
+              "oldDisplay": "1.7万",
+              "newDisplay": "1.7万",
+              "displayNumericDelta": 0.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            }
+          ]
+        },
+        {
+          "baselineId": "BH03",
+          "title": "你离开的事实原创高至豪偶遇粉丝，于是为她演奏一曲",
+          "oldRank": 3,
+          "newRank": 3,
+          "rankDelta": 0,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T23:49:23+08:00",
+          "newCapturedAt": "2026-10-04T17:04:29Z",
+          "metrics": [
+            {
+              "name": "views_display",
+              "oldDisplay": "323.0万",
+              "newDisplay": "325.4万",
+              "displayNumericDelta": 24000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            },
+            {
+              "name": "danmaku_display",
+              "oldDisplay": "2110",
+              "newDisplay": "2119",
+              "displayNumericDelta": 9.0,
+              "precision": "displayed integer"
+            }
+          ]
+        },
+        {
+          "baselineId": "BH04",
+          "title": "章鱼哥，快乐都去哪了呢？",
+          "oldRank": 4,
+          "newRank": 4,
+          "rankDelta": 0,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T23:49:23+08:00",
+          "newCapturedAt": "2026-10-04T17:04:29Z",
+          "metrics": [
+            {
+              "name": "views_display",
+              "oldDisplay": "395.7万",
+              "newDisplay": "397.7万",
+              "displayNumericDelta": 20000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            },
+            {
+              "name": "danmaku_display",
+              "oldDisplay": "7693",
+              "newDisplay": "7744",
+              "displayNumericDelta": 51.0,
+              "precision": "displayed integer"
+            }
+          ]
+        },
+        {
+          "baselineId": "BH05",
+          "title": "24位博主为粉丝争夺30万元！",
+          "oldRank": 5,
+          "newRank": 5,
+          "rankDelta": 0,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T23:49:23+08:00",
+          "newCapturedAt": "2026-10-04T17:04:29Z",
+          "metrics": [
+            {
+              "name": "views_display",
+              "oldDisplay": "237.4万",
+              "newDisplay": "238.8万",
+              "displayNumericDelta": 14000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            },
+            {
+              "name": "danmaku_display",
+              "oldDisplay": "2.1万",
+              "newDisplay": "2.1万",
+              "displayNumericDelta": 0.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            }
+          ]
+        },
+        {
+          "baselineId": "BH06",
+          "title": "4名枪匪闯入豪宅，中国男子4秒13枪疯狂反击！",
+          "oldRank": 6,
+          "newRank": 6,
+          "rankDelta": 0,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T23:49:23+08:00",
+          "newCapturedAt": "2026-10-04T17:04:29Z",
+          "metrics": [
+            {
+              "name": "views_display",
+              "oldDisplay": "1114.3万",
+              "newDisplay": "1123.3万",
+              "displayNumericDelta": 90000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            },
+            {
+              "name": "danmaku_display",
+              "oldDisplay": "2.7万",
+              "newDisplay": "2.7万",
+              "displayNumericDelta": 0.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            }
+          ]
+        },
+        {
+          "baselineId": "BH07",
+          "title": "【亿万级特效！】猫核老鼠：量子网球对决！（全程高能！）",
+          "oldRank": 7,
+          "newRank": 7,
+          "rankDelta": 0,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T23:49:23+08:00",
+          "newCapturedAt": "2026-10-04T17:04:29Z",
+          "metrics": [
+            {
+              "name": "views_display",
+              "oldDisplay": "323.2万",
+              "newDisplay": "324.4万",
+              "displayNumericDelta": 12000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            },
+            {
+              "name": "danmaku_display",
+              "oldDisplay": "3171",
+              "newDisplay": "3185",
+              "displayNumericDelta": 14.0,
+              "precision": "displayed integer"
+            }
+          ]
+        },
+        {
+          "baselineId": "BH08",
+          "title": "《原神》剧情PV-「燕归来」",
+          "oldRank": 8,
+          "newRank": 8,
+          "rankDelta": 0,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T23:49:23+08:00",
+          "newCapturedAt": "2026-10-04T17:04:29Z",
+          "metrics": [
+            {
+              "name": "views_display",
+              "oldDisplay": "119.3万",
+              "newDisplay": "120.4万",
+              "displayNumericDelta": 11000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            },
+            {
+              "name": "danmaku_display",
+              "oldDisplay": "3381",
+              "newDisplay": "3413",
+              "displayNumericDelta": 32.0,
+              "precision": "displayed integer"
+            }
+          ]
+        },
+        {
+          "baselineId": "BH09",
+          "title": "《下一个是谁》第七季（5）",
+          "oldRank": 9,
+          "newRank": 11,
+          "rankDelta": 2,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T23:49:23+08:00",
+          "newCapturedAt": "2026-10-04T17:04:29Z",
+          "metrics": [
+            {
+              "name": "views_display",
+              "oldDisplay": "287.5万",
+              "newDisplay": "288.9万",
+              "displayNumericDelta": 14000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            },
+            {
+              "name": "danmaku_display",
+              "oldDisplay": "14.2万",
+              "newDisplay": "14.3万",
+              "displayNumericDelta": 1000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            }
+          ]
+        },
+        {
+          "baselineId": "BH10",
+          "title": "有用版新植物：空调寒冰",
+          "oldRank": 10,
+          "newRank": 9,
+          "rankDelta": -1,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T23:49:23+08:00",
+          "newCapturedAt": "2026-10-04T17:04:29Z",
+          "metrics": [
+            {
+              "name": "views_display",
+              "oldDisplay": "627.9万",
+              "newDisplay": "634.5万",
+              "displayNumericDelta": 66000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            },
+            {
+              "name": "danmaku_display",
+              "oldDisplay": "1594",
+              "newDisplay": "1615",
+              "displayNumericDelta": 21.0,
+              "precision": "displayed integer"
+            }
+          ]
+        },
+        {
+          "baselineId": "BH49",
+          "title": "我的东京留学生活不可能那么二次元！【AI全民制作人】",
+          "oldRank": 49,
+          "newRank": 54,
+          "rankDelta": 5,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T23:49:23+08:00",
+          "newCapturedAt": "2026-10-04T17:04:29Z",
+          "metrics": [
+            {
+              "name": "views_display",
+              "oldDisplay": "103.9万",
+              "newDisplay": "104.6万",
+              "displayNumericDelta": 7000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            },
+            {
+              "name": "danmaku_display",
+              "oldDisplay": "1323",
+              "newDisplay": "1338",
+              "displayNumericDelta": 15.0,
+              "precision": "displayed integer"
+            }
+          ]
+        },
+        {
+          "baselineId": "BH98",
+          "title": "有一个人前来借寿【AI全民制作人】",
+          "oldRank": 98,
+          "newRank": 98,
+          "rankDelta": 0,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T23:49:23+08:00",
+          "newCapturedAt": "2026-10-04T17:04:29Z",
+          "metrics": [
+            {
+              "name": "views_display",
+              "oldDisplay": "126.2万",
+              "newDisplay": "128.4万",
+              "displayNumericDelta": 22000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            },
+            {
+              "name": "danmaku_display",
+              "oldDisplay": "6099",
+              "newDisplay": "6255",
+              "displayNumericDelta": 156.0,
+              "precision": "displayed integer"
+            }
+          ]
+        }
+      ],
+      "cacheAssessment": "Changes observed; caching cannot be ruled out for individual values; no server freshness timestamp.",
+      "top10RetainedCount": 9,
+      "newlyObservedInTop10": [
+        "77年前的今天 新中国成立了"
+      ],
+      "leftObservedTop10": [
+        "《下一个是谁》第七季（5）"
+      ]
+    },
+    {
+      "platform": "douyin",
+      "scope": "抖音热榜 numbered top10 plus two tracked baseline top10 exits; excludes unnumbered leading featured item",
+      "elapsedSeconds": 8390.0,
+      "baselineSavedCount": 10,
+      "currentSavedCount": 12,
+      "changes": [
+        {
+          "baselineId": "DYH01",
+          "title": "市井人家的炊烟笑语总是令人心安",
+          "oldRank": 1,
+          "newRank": 1,
+          "rankDelta": 0,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T22:41:58+08:00",
+          "newCapturedAt": "2026-10-04T17:01:48Z",
+          "metrics": [
+            {
+              "name": "heat_display",
+              "oldDisplay": "1242.5万 热度",
+              "newDisplay": "1245.4万",
+              "displayNumericDelta": 29000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            }
+          ]
+        },
+        {
+          "baselineId": "DYH02",
+          "title": "是谁在重庆免费听了soldout",
+          "oldRank": 2,
+          "newRank": 2,
+          "rankDelta": 0,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T22:41:58+08:00",
+          "newCapturedAt": "2026-10-04T17:01:48Z",
+          "metrics": [
+            {
+              "name": "heat_display",
+              "oldDisplay": "1127.6万 热度",
+              "newDisplay": "1167.1万",
+              "displayNumericDelta": 395000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            }
+          ]
+        },
+        {
+          "baselineId": "DYH03",
+          "title": "我国假日经济持续升温",
+          "oldRank": 3,
+          "newRank": 3,
+          "rankDelta": 0,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T22:41:58+08:00",
+          "newCapturedAt": "2026-10-04T17:01:48Z",
+          "metrics": [
+            {
+              "name": "heat_display",
+              "oldDisplay": "1112.3万 热度",
+              "newDisplay": "1125.4万",
+              "displayNumericDelta": 131000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            }
+          ]
+        },
+        {
+          "baselineId": "DYH04",
+          "title": "国庆自驾搭子集体陷入沉默",
+          "oldRank": 4,
+          "newRank": 5,
+          "rankDelta": 1,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T22:41:58+08:00",
+          "newCapturedAt": "2026-10-04T17:01:48Z",
+          "metrics": [
+            {
+              "name": "heat_display",
+              "oldDisplay": "1110.5万 热度",
+              "newDisplay": "1054.7万",
+              "displayNumericDelta": -558000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            }
+          ]
+        },
+        {
+          "baselineId": "DYH05",
+          "title": "这顿饭已严肃品鉴不烧心",
+          "oldRank": 5,
+          "newRank": 11,
+          "rankDelta": 6,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T22:41:58+08:00",
+          "newCapturedAt": "2026-10-04T17:01:48Z",
+          "metrics": [
+            {
+              "name": "heat_display",
+              "oldDisplay": "1045.9万 热度",
+              "newDisplay": "914.6万",
+              "displayNumericDelta": -1313000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            }
+          ]
+        },
+        {
+          "baselineId": "DYH06",
+          "title": "第二十届亚运会闭幕",
+          "oldRank": 6,
+          "newRank": 6,
+          "rankDelta": 0,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T22:41:58+08:00",
+          "newCapturedAt": "2026-10-04T17:01:48Z",
+          "metrics": [
+            {
+              "name": "heat_display",
+              "oldDisplay": "1041.5万 热度",
+              "newDisplay": "1054.7万",
+              "displayNumericDelta": 132000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            }
+          ]
+        },
+        {
+          "baselineId": "DYH07",
+          "title": "长长长假美食判官",
+          "oldRank": 7,
+          "newRank": 8,
+          "rankDelta": 1,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T22:41:58+08:00",
+          "newCapturedAt": "2026-10-04T17:01:48Z",
+          "metrics": [
+            {
+              "name": "heat_display",
+              "oldDisplay": "924.3万 热度",
+              "newDisplay": "927.2万",
+              "displayNumericDelta": 29000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            }
+          ]
+        },
+        {
+          "baselineId": "DYH08",
+          "title": "苏超盐城2:0宿迁",
+          "oldRank": 8,
+          "newRank": 10,
+          "rankDelta": 2,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T22:41:58+08:00",
+          "newCapturedAt": "2026-10-04T17:01:48Z",
+          "metrics": [
+            {
+              "name": "heat_display",
+              "oldDisplay": "920.2万 热度",
+              "newDisplay": "921.1万",
+              "displayNumericDelta": 9000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            }
+          ]
+        },
+        {
+          "baselineId": "DYH09",
+          "title": "苏超苏州2:1常州",
+          "oldRank": 9,
+          "newRank": 9,
+          "rankDelta": 0,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T22:41:58+08:00",
+          "newCapturedAt": "2026-10-04T17:01:48Z",
+          "metrics": [
+            {
+              "name": "heat_display",
+              "oldDisplay": "916.4万 热度",
+              "newDisplay": "922.2万",
+              "displayNumericDelta": 58000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            }
+          ]
+        },
+        {
+          "baselineId": "DYH10",
+          "title": "国庆假期宅家无聊怎么办",
+          "oldRank": 10,
+          "newRank": 17,
+          "rankDelta": 7,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T22:41:58+08:00",
+          "newCapturedAt": "2026-10-04T17:01:48Z",
+          "metrics": [
+            {
+              "name": "heat_display",
+              "oldDisplay": "913.8万 热度",
+              "newDisplay": "907.2万",
+              "displayNumericDelta": -66000.0,
+              "precision": "displayed rounded figures; not exact underlying change"
+            }
+          ]
+        }
+      ],
+      "cacheAssessment": "Changes observed; caching cannot be ruled out for individual values; no server freshness timestamp.",
+      "top10RetainedCount": 8,
+      "newlyObservedInTop10": [
+        "张堃鹏追平个人最佳战绩",
+        "你说得对人是应该多出去走走"
+      ],
+      "leftObservedTop10": [
+        "国庆假期宅家无聊怎么办",
+        "这顿饭已严肃品鉴不烧心"
+      ]
+    },
+    {
+      "platform": "weibo",
+      "scope": "微博热搜 科技 category top 30, not overall hot search",
+      "elapsedSeconds": 8216.0,
+      "baselineSavedCount": 12,
+      "currentSavedCount": 30,
+      "changes": [
+        {
+          "baselineId": "WBH01",
+          "title": "中国正编织六张超级大网",
+          "oldRank": 1,
+          "newRank": 2,
+          "rankDelta": 1,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T22:44:52+08:00",
+          "newCapturedAt": "2026-10-04T17:01:48Z",
+          "metrics": [
+            {
+              "name": "displayed_heat",
+              "oldDisplay": 129491,
+              "newDisplay": 105250,
+              "displayNumericDelta": -24241.0,
+              "precision": "displayed integer"
+            }
+          ]
+        },
+        {
+          "baselineId": "WBH02",
+          "title": "芯片制程提升故事讲不下去",
+          "oldRank": 2,
+          "newRank": 4,
+          "rankDelta": 2,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T22:44:52+08:00",
+          "newCapturedAt": "2026-10-04T17:01:48Z",
+          "metrics": [
+            {
+              "name": "displayed_heat",
+              "oldDisplay": 116541,
+              "newDisplay": 85252,
+              "displayNumericDelta": -31289.0,
+              "precision": "displayed integer"
+            }
+          ]
+        },
+        {
+          "baselineId": "WBH03",
+          "title": "全网最压抑的AI视频太窒息了",
+          "oldRank": 3,
+          "newRank": 13,
+          "rankDelta": 10,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T22:44:52+08:00",
+          "newCapturedAt": "2026-10-04T17:01:48Z",
+          "metrics": [
+            {
+              "name": "displayed_heat",
+              "oldDisplay": 104887,
+              "newDisplay": 33028,
+              "displayNumericDelta": -71859.0,
+              "precision": "displayed integer"
+            }
+          ]
+        },
+        {
+          "baselineId": "WBH10",
+          "title": "开启智驾不能脱手脱眼",
+          "oldRank": 10,
+          "newRank": 6,
+          "rankDelta": -4,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T22:44:52+08:00",
+          "newCapturedAt": "2026-10-04T17:01:48Z",
+          "metrics": [
+            {
+              "name": "displayed_heat",
+              "oldDisplay": 50167,
+              "newDisplay": 69054,
+              "displayNumericDelta": 18887.0,
+              "precision": "displayed integer"
+            }
+          ]
+        },
+        {
+          "baselineId": "WBH11",
+          "title": "看完才发现视频是AI生成",
+          "oldRank": 11,
+          "newRank": 12,
+          "rankDelta": 1,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T22:44:52+08:00",
+          "newCapturedAt": "2026-10-04T17:01:48Z",
+          "metrics": [
+            {
+              "name": "displayed_heat",
+              "oldDisplay": 45150,
+              "newDisplay": 36698,
+              "displayNumericDelta": -8452.0,
+              "precision": "displayed integer"
+            }
+          ]
+        },
+        {
+          "baselineId": "WBH14",
+          "title": "德国AI影响下岗位逆势增长",
+          "oldRank": 14,
+          "newRank": 18,
+          "rankDelta": 4,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T22:44:52+08:00",
+          "newCapturedAt": "2026-10-04T17:01:48Z",
+          "metrics": [
+            {
+              "name": "displayed_heat",
+              "oldDisplay": 32914,
+              "newDisplay": 19516,
+              "displayNumericDelta": -13398.0,
+              "precision": "displayed integer"
+            }
+          ]
+        },
+        {
+          "baselineId": "WBH18",
+          "title": "绘圈为什么反感AI",
+          "oldRank": 18,
+          "newRank": 16,
+          "rankDelta": -2,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T22:44:52+08:00",
+          "newCapturedAt": "2026-10-04T17:01:48Z",
+          "metrics": [
+            {
+              "name": "displayed_heat",
+              "oldDisplay": 21595,
+              "newDisplay": 24094,
+              "displayNumericDelta": 2499.0,
+              "precision": "displayed integer"
+            }
+          ]
+        },
+        {
+          "baselineId": "WBH19",
+          "title": "越来越多开发者不逐个审代码",
+          "oldRank": 19,
+          "newRank": 22,
+          "rankDelta": 3,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T22:44:52+08:00",
+          "newCapturedAt": "2026-10-04T17:01:48Z",
+          "metrics": [
+            {
+              "name": "displayed_heat",
+              "oldDisplay": 19435,
+              "newDisplay": 14220,
+              "displayNumericDelta": -5215.0,
+              "precision": "displayed integer"
+            }
+          ]
+        },
+        {
+          "baselineId": "WBH21",
+          "title": "当AI开始制造AI",
+          "oldRank": 21,
+          "newRank": null,
+          "rankDelta": null,
+          "status": "not_in_current_sample",
+          "oldCapturedAt": "2026-10-04T22:44:52+08:00",
+          "newCapturedAt": "2026-10-04T17:01:48Z"
+        },
+        {
+          "baselineId": "WBH24",
+          "title": "阿莫迪称人工智能或引发失业潮",
+          "oldRank": 24,
+          "newRank": null,
+          "rankDelta": null,
+          "status": "not_in_current_sample",
+          "oldCapturedAt": "2026-10-04T22:44:52+08:00",
+          "newCapturedAt": "2026-10-04T17:01:48Z"
+        },
+        {
+          "baselineId": "WBH27",
+          "title": "AI时代体面的定义变了",
+          "oldRank": 27,
+          "newRank": 26,
+          "rankDelta": -1,
+          "status": "matched",
+          "oldCapturedAt": "2026-10-04T22:44:52+08:00",
+          "newCapturedAt": "2026-10-04T17:01:48Z",
+          "metrics": [
+            {
+              "name": "displayed_heat",
+              "oldDisplay": 9290,
+              "newDisplay": 9329,
+              "displayNumericDelta": 39.0,
+              "precision": "displayed integer"
+            }
+          ]
+        },
+        {
+          "baselineId": "WBH29",
+          "title": "赴非劳工热帖被指AI编造",
+          "oldRank": 29,
+          "newRank": null,
+          "rankDelta": null,
+          "status": "not_in_current_sample",
+          "oldCapturedAt": "2026-10-04T22:44:52+08:00",
+          "newCapturedAt": "2026-10-04T17:01:48Z"
+        }
+      ],
+      "cacheAssessment": "Changes observed; caching cannot be ruled out for individual values; no server freshness timestamp.",
+      "baselineCompletenessNote": "Only 12 selected baseline rows retained out of originally observed category30; no exhaustive current-entry/new-entry claim possible."
+    }
+  ]
+}

@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Offline authored HTML → PDF → PNG → H264/AAC. No browser, API or model download."""
 import argparse, ctypes, hashlib, html, importlib.util, json, math, os, pathlib, re, subprocess, time, wave
+from safe_io import checked_path, guard_directory, safe_target, write_text
 ROOT=pathlib.Path(__file__).resolve().parent
 
-SOURCE_VERSION='1.3.0'
+SOURCE_VERSION='1.4.0'
 MARKER='.html-video-output.json'
 
 def plain_text(value, name, maximum, multiline=False):
@@ -56,16 +57,22 @@ def prepare_output(name, overwrite=False):
     out=out.resolve()
     if ROOT not in out.parents or (out.exists() and not out.is_dir()):
         raise ValueError('Output must be a directory inside this project')
+    if out.exists():guard_directory(out)
     marker=out/MARKER
+    checked_path(marker,allow_missing=True)
     if out.exists() and any(out.iterdir()):
         if not overwrite:raise ValueError('Output is nonempty; use a new directory or explicit --overwrite')
         if not marker.is_file() or json.loads(marker.read_text()).get('owner')!='html-video-workflow':
             raise ValueError('Refusing to overwrite an unrecognized directory')
     out.mkdir(parents=True,exist_ok=True)
-    marker.write_text(json.dumps({'owner':'html-video-workflow','source_version':SOURCE_VERSION}))
+    write_text(marker,json.dumps({'owner':'html-video-workflow','source_version':SOURCE_VERSION}))
     return out
 
 def run(*args):
+    for arg in args:
+        if isinstance(arg,pathlib.Path):
+            checked_path(arg,allow_missing=True)
+            guard_directory(arg.parent)
     subprocess.run(list(map(str,args)),check=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
 
 def robot(accent, word):
@@ -135,13 +142,15 @@ def main():
     out=prepare_output(args.out,args.overwrite)
     voice_name='eSpeak-NG cmn (synthetic)' if args.backend=='espeak' else f'{args.backend} VITS neural preset {args.speaker} (unreviewed preview)'
     voice_footer='合成旁白 · eSpeak-NG 中文机械音' if args.backend=='espeak' else f'{args.backend} 神经配音试听版 · 未经过人工可懂度/自然度验收'
-    source=make_html(project,voice_footer);(out/'slides.html').write_text(source)
+    source=make_html(project,voice_footer);write_text(out/'slides.html',source)
+    checked_path(ROOT/'.cache',allow_missing=True)
     (ROOT/'.cache').mkdir(exist_ok=True)
+    guard_directory(ROOT/'.cache')
     os.environ['XDG_CACHE_HOME']=str(ROOT/'.cache')
     from weasyprint import HTML
     def deny_network(url):
         raise ValueError('External resources are disabled; use inline authored assets')
-    t=time.perf_counter();HTML(string=source,url_fetcher=deny_network).write_pdf(out/'slides.pdf');run('pdftoppm','-png','-r','96',out/'slides.pdf',out/'slide');metrics['html_pdf_png_seconds']=time.perf_counter()-t
+    t=time.perf_counter();HTML(string=source,url_fetcher=deny_network).write_pdf(safe_target(out/'slides.pdf'));run('pdftoppm','-png','-r','96',out/'slides.pdf',out/'slide');metrics['html_pdf_png_seconds']=time.perf_counter()-t
     assert len(list(out.glob('slide-*.png')))==len(project['slides'])
     t=time.perf_counter();load_start=time.perf_counter()
     if args.backend=='espeak':voice=Voice(args.rate)
@@ -167,23 +176,23 @@ def main():
         peak=float(np.abs(samples).max())
         gain=(32767*10**(-3/20))/peak if peak else 1.0
         pcm=bytearray(np.round(samples*gain).astype('<i2').tobytes());metrics['audio_gain']=gain
-    with wave.open(str(out/'narration.wav'),'wb') as w:w.setnchannels(1);w.setsampwidth(2);w.setframerate(voice.sr);w.writeframes(pcm)
-    (out/'narration.txt').write_text('\n'.join(c['text'] for c in cues))
+    with wave.open(str(safe_target(out/'narration.wav')),'wb') as w:w.setnchannels(1);w.setsampwidth(2);w.setframerate(voice.sr);w.writeframes(pcm)
+    write_text(out/'narration.txt','\n'.join(c['text'] for c in cues))
     for ext,sep in [('srt',','),('vtt','.')]:
         text=('WEBVTT\n\n' if ext=='vtt' else '')+'\n\n'.join(f'{i+1}\n{timestamp(c["start"],sep)} --> {timestamp(c["end"],sep)}\n{c["text"]}' for i,c in enumerate(cues))+'\n'
-        (out/f'subtitles.{ext}').write_text(text)
-    (out/'timing.json').write_text(json.dumps(dict(fps=fps,voice=voice_name,backend=args.backend,sample_rate=voice.sr,cues=cues,scenes=scenes),ensure_ascii=False,indent=2));metrics['tts_timing_seconds']=time.perf_counter()-t
+        write_text(out/f'subtitles.{ext}',text)
+    write_text(out/'timing.json',json.dumps(dict(fps=fps,voice=voice_name,backend=args.backend,sample_rate=voice.sr,cues=cues,scenes=scenes),ensure_ascii=False,indent=2));metrics['tts_timing_seconds']=time.perf_counter()-t
     t=time.perf_counter()
     for scene in scenes:
         i=scene['slide'];dur=scene['frames']/fps
         filt=f'fade=t=in:st=0:d=0.18,fade=t=out:st={dur-.18}:d=0.18,format=yuv420p'
         run('ffmpeg','-y','-v','error','-loop','1','-framerate',fps,'-i',out/f'slide-{i}.png','-vf',filt,'-frames:v',scene['frames'],'-c:v','libx264','-preset',args.preset,'-crf','20','-threads',args.threads,out/f'clip-{i}.mp4')
-    (out/'concat.txt').write_text(''.join(f"file 'clip-{s['slide']}.mp4'\n" for s in scenes))
+    write_text(out/'concat.txt',''.join(f"file 'clip-{s['slide']}.mp4'\n" for s in scenes))
     run('ffmpeg','-y','-v','error','-f','concat','-safe','0','-i',out/'concat.txt','-c','copy',out/'visuals.mp4')
     style='FontName=Noto Sans CJK SC,FontSize=20,PrimaryColour=&H00F3F3F4,OutlineColour=&H00170D08,Outline=1,Alignment=2,MarginV=18'
     run('ffmpeg','-y','-v','error','-i',out/'visuals.mp4','-i',out/'narration.wav','-vf',f"subtitles='{out/'subtitles.srt'}':force_style='{style}'",'-c:v','libx264','-preset',args.preset,'-crf','20','-threads',args.threads,'-c:a','aac','-ar','48000','-b:a','128k','-movflags','+faststart','-shortest',out/'demo.mp4')
     metrics['ffmpeg_encode_seconds']=time.perf_counter()-t
     probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_format','-show_streams','-of','json',str(out/'demo.mp4')]))
-    (out/'ffprobe.json').write_text(json.dumps(probe,indent=2));metrics.update(training_data_provenance='undisclosed in reviewed upstream sources' if args.backend=='melo' else 'see provenance documentation',backend=args.backend,voice=voice_name,source_sample_rate=voice.sr,model_sha256=getattr(voice,'model_sha256',None),neural_voice_py_sha256=hashlib.sha256((ROOT/'neural_voice.py').read_bytes()).hexdigest() if args.backend!='espeak' else None,source_version=SOURCE_VERSION,render_py_sha256=hashlib.sha256(pathlib.Path(__file__).read_bytes()).hexdigest(),project_sha256=hashlib.sha256((ROOT/'project.json').read_bytes()).hexdigest(),total_seconds=time.perf_counter()-start,video_seconds=float(probe['format']['duration']),bytes=(out/'demo.mp4').stat().st_size,fps=fps,width=1280,height=720,threads=args.threads,paid_api_cost_usd=0,render_strategy='4 offline HTML static rasterizations; FFmpeg fades; audio-derived sentence subtitles')
-    (out/'benchmark.json').write_text(json.dumps(metrics,indent=2));print(json.dumps(metrics,indent=2))
+    write_text(out/'ffprobe.json',json.dumps(probe,indent=2));metrics.update(training_data_provenance='undisclosed in reviewed upstream sources' if args.backend=='melo' else 'see provenance documentation',backend=args.backend,voice=voice_name,source_sample_rate=voice.sr,model_sha256=getattr(voice,'model_sha256',None),neural_voice_py_sha256=hashlib.sha256((ROOT/'neural_voice.py').read_bytes()).hexdigest() if args.backend!='espeak' else None,source_version=SOURCE_VERSION,render_py_sha256=hashlib.sha256(pathlib.Path(__file__).read_bytes()).hexdigest(),project_sha256=hashlib.sha256((ROOT/'project.json').read_bytes()).hexdigest(),total_seconds=time.perf_counter()-start,video_seconds=float(probe['format']['duration']),bytes=(out/'demo.mp4').stat().st_size,fps=fps,width=1280,height=720,threads=args.threads,paid_api_cost_usd=0,render_strategy='4 offline HTML static rasterizations; FFmpeg fades; audio-derived sentence subtitles')
+    write_text(out/'benchmark.json',json.dumps(metrics,indent=2));print(json.dumps(metrics,indent=2))
 if __name__=='__main__':main()

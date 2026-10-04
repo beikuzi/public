@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": [
+    "missing required input blocks write",
+    "hash mismatch blocks write",
+    "deterministic same-input compilation",
+    "semantic rank mismatch blocks write",
+    "prior output remains intact on failure"
+  ],
+  "test_target": "disposable local copies only"
+}

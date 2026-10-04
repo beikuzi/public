@@ -1,0 +1,2 @@
+'use strict';
+fetch('/data.json').then(r=>{if(!r.ok)throw Error();return r.json();}).then(d=>{const m=d.metadata||{},el=document.getElementById('hub-checked');if(m.last_checked_at){const dt=new Date(m.last_checked_at);el.textContent='最近核查 '+new Intl.DateTimeFormat('zh-CN',{timeZone:m.display_timezone||'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).format(dt)+'（UTC+8）';}else el.textContent='最近核查时间未标明';}).catch(()=>{document.getElementById('hub-checked').textContent='最近核查时间暂不可用';});

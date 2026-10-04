@@ -2,17 +2,13 @@
 
 验证日期：2026-10-04。
 
-**v1.3包入口：`neural-melo-preview/` 为新增Melo试听版（训练数据来源未公开，见 `MELO_PREVIEW.md`）；`baseline-espeak/` 和 `neural-aishell3-preview/` 保留先前版本。三种声音都未经过真人可懂度/自然度验收。Melo精确成片旁白的独立SenseVoice回译CER为9.64%，仅作识别诊断。**附带一条原创的 38.03 秒中文演示片，四页 HTML/CSS/SVG 分镜、真实本地合成旁白、烧录字幕与独立 SRT/VTT。无需录屏，无需付费 API，无需 GPU。
+**此 GitHub 目录仅含源码、测试、许可说明及历史指标，不包含演示 MP4/WAV/图片/PDF、模型权重或虚拟环境。** 下文的输出目录和媒体路径指本地运行后生成的文件，或单独提供的演示包；不是本仓库内已附带的资产。三种声音均未经过真人可懂度或自然度验收。Melo 演示旁白的独立 SenseVoice 回译 CER 9.64% 仅作识别诊断。
 
-## 先看结果
+## 输出与输入
 
-- `baseline-espeak/demo.mp4`：1280×720，30 fps，H.264/yuv420p + AAC，支持 fast-start。
-- `baseline-espeak/contact-sheet.jpg`：从成片抽取的四页预览。
-- `baseline-espeak/slides.html`：实际渲染的原始 HTML，图形内联，无远程字体或素材。
-- `project.json`：修改标题、卡片文案、配色、逐句旁白的入口。
-- `baseline-espeak/narration.wav` / `.txt`：完整声音与稿件。
-- `baseline-espeak/subtitles.srt` / `.vtt`、`baseline-espeak/timing.json`：同源字幕与时间轴。
-- `baseline-espeak/benchmark.json` / `validation.json` / `ffprobe.json`：实测数据与验证证据。
+- `project.json`：标题、卡片、配色和逐句旁白输入。
+- 本地运行生成 `demo.mp4`、`narration.wav`、字幕、时间轴、预览图及验证报告。
+- `provenance/` 的哈希清单标识另行下载的模型文件，不表示包含模型。
 
 旁白是 eSpeak-NG 的 Mandarin `cmn` 合成音，通过官方 PyPI `piper-tts` wheel 内附的 eSpeak 库生成。**没有调用 Piper 神经模型，也没有克隆任何人的声音。声音明显机械，适合验证流程，不代表成片级中文配音。**
 
@@ -27,9 +23,9 @@ python3 -m venv .venv
 .venv/bin/python validate.py output
 ```
 
-本目录已经有安装好的 `.venv`；交付 ZIP 不包含它。安装需要联网；**安装后渲染完全离线**，没有模型下载、云 API 或浏览器依赖。锁文件固定本次安装版本；不是跨操作系统二进制复现保证。
+本源码快照不包含 `.venv`；请自行创建。安装需要联网；**安装后渲染完全离线**，没有模型下载、云 API 或浏览器依赖。锁文件固定本次安装版本；不是跨操作系统二进制复现保证。
 
-模板源码版本：1.3.0。新增Melo试听后端，详见 `MELO_PREVIEW.md`；AISHELL版本说明仍见 `NEURAL_PREVIEW.md`。旧版实测保存在 `benchmark-history.json`，各版本的实测和源码哈希见三个输出目录内的 `benchmark.json`，其中v1.3新增结果为 `neural-melo-preview/benchmark.json`。
+模板源码版本 1.4.0。当前 MP4 验证和输出路径保护见 `AUDIT_FIXES_v1.4.md`。18 项回归测试在普通及 Python -O 模式下通过。历史渲染计时仅对应原始演示样本，不代表本次重新测量。配音后端说明见 `MELO_PREVIEW.md`、`NEURAL_PREVIEW.md`；历史指标见 `benchmark-history.json`。
 
 CLI：`--rate 225` 调整 eSpeak 语速；`--threads 4` 控制编码线程；`--preset veryfast` 调整 x264 速度/压缩率；`--out` 选择输出目录。默认拒绝非空输出目录；`--overwrite` 仅允许更新带有本流程标记的目录，且目录必须在项目下、不能经过符号链接。不要将手工编辑的重要文件放进去。
 
@@ -95,4 +91,4 @@ CLI：`--rate 225` 调整 eSpeak 语速；`--threads 4` 控制编码线程；`--
 .venv/bin/python render.py --out output-new --overwrite
 ```
 
-八项回归测试覆盖正常结构、空旁白、超长内容、HTML/URL/CSS注入、危险路径、非空/非目录/符号链接输出、内联HTML。成片验证另检查所有字幕单调、分镜内边界和音视频帧数。
+18项回归测试覆盖正常结构、空旁白、超长内容、HTML/URL/CSS注入、危险路径、非空/非目录/符号链接输出、内联HTML。成片验证另检查所有字幕单调、分镜内边界和音视频帧数。

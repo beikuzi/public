@@ -1,0 +1,10 @@
+{
+  "fixture_only": true,
+  "schema_version": "2.0",
+  "audit_reproduction_succeeded": true,
+  "unknown_count": 1,
+  "like_share_status": "suppressed_incomplete_likes_coverage",
+  "analysis_tests": 16,
+  "importer_tests": 4,
+  "frozen_release_modified": false
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "baseline": {
+    "path": "inputs/v5-compiled-snapshot.json",
+    "sha256": "4136289e4dcdb773577dec617dfd476c35bb9e408768982cfe091f9c8f4099e0"
+  },
+  "baseline_provenance": {
+    "kind": "versioned_compiled_snapshot",
+    "raw_source_archive_included": false
+  },
+  "expected_baseline": {
+    "records": 90,
+    "coverage_records": 88,
+    "synthesis_groups": 5
+  },
+  "temporal_batches": [
+    {
+      "id": "2026-10-05T0100-plus0800",
+      "comparison": {
+        "path": "inputs/temporal/2026-10-05T0100-plus0800/comparison.json",
+        "sha256": "e2dba28e5e2df96a6d0758b83f7f9e62568b1f3d1c7d6e731eca33f9f2d57213"
+      },
+      "snapshots": [
+        {
+          "path": "inputs/temporal/2026-10-05T0100-plus0800/bilibili-official-snapshot.json",
+          "sha256": "9d2cefa36c0f8d50abadffa9fbde8a0c91476c9769a91347bb47285f0310b98a"
+        },
+        {
+          "path": "inputs/temporal/2026-10-05T0100-plus0800/douyin-official-snapshot.json",
+          "sha256": "7f9ee0b76e655023a7691481a099a8899743e49962fa5e14082c2a21247ccd39"
+        },
+        {
+          "path": "inputs/temporal/2026-10-05T0100-plus0800/weibo-official-snapshot.json",
+          "sha256": "322b1b4def53bc086fde2125f83534abcee6248292cb960c1bce05ab01977b88"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2584 @@
+{
+  "snapshot": "2026-10-04",
+  "metadata": {
+    "last_checked_at": "2026-10-04T23:50:21+08:00",
+    "display_timezone": "Asia/Shanghai",
+    "snapshot_date": "2026-10-04",
+    "recent_content_start": "2026-10-01",
+    "known_content_date_range": {
+      "earliest": "2025-04-24",
+      "latest": "2026-10-04"
+    },
+    "official_snapshots": {
+      "douyin": {
+        "captured_at": "2026-10-04T22:41:58+08:00",
+        "coverage": {
+          "scope": "公开官方热榜，保存前10个有热度排名条目。另有1个置顶条目，不计入名次。",
+          "observed_total_ranked_items": 50,
+          "saved_ranked_items": 10,
+          "ai_note": "本次前10条没有明确AI议题；不能据此断定抖音没有AI热度。",
+          "metrics_note": "热度不是用户人数，不能与其他平台阅读/点赞直接相比。"
+        },
+        "saved_records": 10,
+        "ranking_rule_display": null
+      },
+      "weibo": {
+        "captured_at": "2026-10-04T22:44:52+08:00",
+        "coverage": {
+          "observed_category_rows": 30,
+          "saved_category_rows": 12,
+          "selection": "科技分类榜中AI重点及2项硬件/基建背景，有选择采样，不能用12条推算30条类别占比。"
+        },
+        "saved_records": 12,
+        "ranking_rule_display": null
+      },
+      "bilibili": {
+        "captured_at": "2026-10-04T23:49:23+08:00",
+        "coverage": {
+          "saved": 12,
+          "observed": 100,
+          "selection": "前10条，另加明确AI标签第49/98条；不是随机抽样。",
+          "note": "不把仅两条显式AI标签解释为榜单只有两条AI视频。"
+        },
+        "saved_records": 12,
+        "ranking_rule_display": "排行榜根据稿件内容质量，近期的数据综合展示，动态更新"
+      }
+    }
+  },
+  "records": [
+    {
+      "platform": "bilibili",
+      "topic": "Agent驱动宣传片制作",
+      "domain": "AI/创意生产",
+      "published_at": "2026-10-02",
+      "captured_at": "2026-10-04T22:22:30+08:00",
+      "url": "https://www.bilibili.com/video/BV1pSa16EEQc",
+      "title": "我让 Opus 5.5 给我的开源 Agent 做宣传片，全程它自己重建UI，自己设计转场....",
+      "source_type": "secondary_report",
+      "observed_metrics": {
+        "likes_display": "137",
+        "comments_display": "21",
+        "provenance": "https://scitiger.cn/reports/daily",
+        "measurement_time": "报告数据日2026-10-02；具体抓取时分未知"
+      },
+      "claim": "二手汇总收录此题材。",
+      "stance_summary": "标题呈现成果演示；不能判断评论是否认同。",
+      "evidence_excerpt": null,
+      "limitations": "第三方10月4日报告转录10月2日帖子；原帖/评论未直接核验，不是官方热榜或代表性样本。互动数为该报告显示的历史值，不是本次直读；标题主张不能当事实，评论立场与受众身份未知。",
+      "evidence_url": "https://scitiger.cn/reports/daily",
+      "author_name": "程序员阿江-Relakkes",
+      "audience_role": null,
+      "id": "BX01",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "platform": "bilibili",
+      "topic": "Agent工具接入",
+      "domain": "AI/开发",
+      "published_at": "2026-10-02",
+      "captured_at": "2026-10-04T22:22:30+08:00",
+      "url": "https://www.bilibili.com/video/BV1Lcay6AEJ6",
+      "title": "Pi Agent 把 MCP 加进核心：三种工具模式到底有什么区别？",
+      "source_type": "secondary_report",
+      "observed_metrics": {
+        "likes_display": "138",
+        "comments_display": "20",
+        "provenance": "https://scitiger.cn/reports/daily",
+        "measurement_time": "报告数据日2026-10-02；具体抓取时分未知"
+      },
+      "claim": "二手汇总收录此题材。",
+      "stance_summary": "教程型标题，比较工具模式。",
+      "evidence_excerpt": null,
+      "limitations": "第三方10月4日报告转录10月2日帖子；原帖/评论未直接核验，不是官方热榜或代表性样本。互动数为该报告显示的历史值，不是本次直读；标题主张不能当事实，评论立场与受众身份未知。",
+      "evidence_url": "https://scitiger.cn/reports/daily",
+      "author_name": "五里墩茶社",
+      "audience_role": null,
+      "id": "BX02",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "platform": "bilibili",
+      "topic": "AI形象二创争议",
+      "domain": "AI/ACG",
+      "published_at": "2026-10-02",
+      "captured_at": "2026-10-04T22:22:30+08:00",
+      "url": "https://www.bilibili.com/video/BV1icay6AEV2",
+      "title": "蓝色大肥鱼爆红引人眼红！AI形象之争谁是正统？媚宅？二游大战仍然在继续！爽吃瓜！网友们为何全面力挺保护鲸鱼女仆？子午D老师能代表DeepSeek吗？",
+      "source_type": "secondary_report",
+      "observed_metrics": {
+        "likes_display": "2.6k",
+        "comments_display": "957",
+        "provenance": "https://scitiger.cn/reports/daily",
+        "measurement_time": "报告数据日2026-10-02；具体抓取时分未知"
+      },
+      "claim": "二手汇总收录此题材。",
+      "stance_summary": "标题提出形象代表权问题；‘网友全面力挺’仅是作者标题，不能当评论结论。",
+      "evidence_excerpt": null,
+      "limitations": "第三方10月4日报告转录10月2日帖子；原帖/评论未直接核验，不是官方热榜或代表性样本。互动数为该报告显示的历史值，不是本次直读；标题主张不能当事实，评论立场与受众身份未知。",
+      "evidence_url": "https://scitiger.cn/reports/daily",
+      "author_name": "老懂是我了_DongGaming",
+      "audience_role": null,
+      "id": "BX03",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "platform": "bilibili",
+      "topic": "AI入门学习路径",
+      "domain": "AI/教育",
+      "published_at": "2026-10-02",
+      "captured_at": "2026-10-04T22:22:30+08:00",
+      "url": "https://www.bilibili.com/video/BV1GVaZ6aEMK",
+      "title": "【导师放养】研一入门AI，机器学习和深度学习，到底应该先学哪个？",
+      "source_type": "secondary_report",
+      "observed_metrics": {
+        "likes_display": "190",
+        "comments_display": "3",
+        "provenance": "https://scitiger.cn/reports/daily",
+        "measurement_time": "报告数据日2026-10-02；具体抓取时分未知"
+      },
+      "claim": "二手汇总收录此题材。",
+      "stance_summary": "标题提供学习路径；受众面向入门学习者只是内容定位，非观众身份测量。",
+      "evidence_excerpt": null,
+      "limitations": "第三方10月4日报告转录10月2日帖子；原帖/评论未直接核验，不是官方热榜或代表性样本。互动数为该报告显示的历史值，不是本次直读；标题主张不能当事实，评论立场与受众身份未知。",
+      "evidence_url": "https://scitiger.cn/reports/daily",
+      "author_name": "爱敲代码的余哆哆",
+      "audience_role": null,
+      "id": "BX04",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "platform": "bilibili",
+      "topic": "AI编程生成MV的人工迭代",
+      "domain": "AI/创意生产",
+      "published_at": "2026-09-25 03:40:08（网页时间，时区未标）",
+      "captured_at": "2026-10-04T22:22:30+08:00",
+      "url": "https://www.bilibili.com/video/BV1Anag6HEze/",
+      "title": "瘫坐！我让 Opus5.5 做了首 MV，它在歌里吐槽自己",
+      "source_type": "search_snippet",
+      "observed_metrics": null,
+      "claim": "搜索索引可读视频简介：作者自称独立游戏制作人，用任务书及多轮修改完成MV。",
+      "stance_summary": "作者肯定创作用途，同时描述AI完成宣称与实际故障之间差距。评论未读。",
+      "evidence_excerpt": "不是一句话生成的，是一份任务书加好几轮修改。",
+      "limitations": "搜索缓存不是实时页面；视频生成过程/模型能力未经独立复现；索引顶部数值无标签未作为播放数使用。",
+      "author_role": "作者自述：独立游戏制作人",
+      "audience_role": null,
+      "id": "BX05",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "platform": "bilibili",
+      "topic": "代码生成产品广告及自检",
+      "domain": "AI/创意生产",
+      "published_at": "2026-09-29 06:48:26（网页时间，时区未标）",
+      "captured_at": "2026-10-04T22:22:30+08:00",
+      "url": "https://www.bilibili.com/video/BV1Tvan6QEDj/",
+      "title": "华为Mate90 发布会还没开，我让 Opus 5.5 用代码给它和华为睿影Z10 先做了支广告：没有一帧是拍的，35 分钟出片",
+      "source_type": "search_snippet",
+      "observed_metrics": null,
+      "claim": "作者介绍代码渲染广告、人工参考资料及验收流程，声明非官方个人作品。",
+      "stance_summary": "效率演示同时强调资料和质量校验；无法推算观众赞成比例。",
+      "evidence_excerpt": "个人作品，非华为官方，非商用。",
+      "limitations": "作者的产品预告和用时为自述，不作为已验证产品规格或能力基准；互动字段无清晰标签留空。",
+      "author_role": "个人创作者（简介明确个人作品）",
+      "audience_role": null,
+      "id": "BX06",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "platform": "bilibili",
+      "topic": "国庆ACG线下活动",
+      "domain": "ACG/线下文化",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:22:30+08:00",
+      "url": "https://mall.bilibili.com/neul-next/ticket-renovation/detail.html?from_spmid=mall.pers-shop.0.0&id=1005972&noTitleBar=1&track_id=__BGMT__",
+      "title": "金华·CCPARK动漫游戏嘉年华",
+      "source_type": "search_snippet",
+      "observed_metrics": {
+        "want_to_go": 1072,
+        "discussion_count_display": 6,
+        "measurement_time": "搜索索引，抓取日期不详"
+      },
+      "claim": "活动页载明10月1—2日；索引展示讨论中询问早鸟票、找同行及选择哪天。",
+      "stance_summary": "可见评论的需求是购票释疑和同好结伴，不存在可证实的两派争论。",
+      "evidence_excerpt": "早鸟票是什么意思啊",
+      "limitations": "活动已结束；只有4条可见评论，非完整样本；不能从活动愿望人数推全站热度。",
+      "event_dates": "2026-10-01/2026-10-02",
+      "audience_role": "可见评论自表达：计划逛展、寻找同行者；不推断人口属性",
+      "id": "BX07",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "platform": "bilibili",
+      "topic": "纪念日内容与游戏创作结合",
+      "domain": "游戏/节庆",
+      "published_at": "2026-09-30 17:27:31（网页时间，时区未标）",
+      "captured_at": "2026-10-04T22:22:30+08:00",
+      "url": "https://www.bilibili.com/video/BV1dAaZ6MEp8/",
+      "title": "烈士纪念日与明日国庆节的祝福，祝大家国庆节快乐。",
+      "source_type": "search_snippet",
+      "observed_metrics": null,
+      "claim": "带《我的世界》标签的纪念日和国庆祝福视频被搜索收录。",
+      "stance_summary": "标题为祝福表达；评论未知。",
+      "evidence_excerpt": null,
+      "limitations": "一条内容不能代表游戏区趋势；索引显示30万和47但字段未标注，避免误记播放/弹幕数。",
+      "author_role": "作者简介自述：我的世界视频创作者",
+      "audience_role": null,
+      "id": "BX08",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "platform": "xiaohongshu",
+      "topic": "AI输出阅读负担",
+      "domain": "AI/使用体验",
+      "published_at": "2026-10-02",
+      "captured_at": "2026-10-04T22:22:30+08:00",
+      "url": "https://www.xiaohongshu.com/explore/6abf35cc000000000200ce76",
+      "title": "Karpathy：用AI最累的是读它的输出",
+      "source_type": "secondary_report",
+      "observed_metrics": {
+        "likes_display": "1.7k",
+        "comments_display": "38",
+        "provenance": "https://scitiger.cn/reports/daily",
+        "measurement_time": "报告数据日2026-10-02；具体抓取时分未知"
+      },
+      "claim": "二手汇总收录此题材。",
+      "stance_summary": "标题将关注点放在输出审阅负担；不能确认是原始引语或评论共识。",
+      "evidence_excerpt": null,
+      "limitations": "第三方10月4日报告转录10月2日帖子；原帖/评论未直接核验，不是官方热榜或代表性样本。互动数为该报告显示的历史值，不是本次直读；标题主张不能当事实，评论立场与受众身份未知。",
+      "evidence_url": "https://scitiger.cn/reports/daily",
+      "author_name": "三木",
+      "audience_role": null,
+      "id": "BX09",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "platform": "xiaohongshu",
+      "topic": "AI订阅成本",
+      "domain": "AI/消费",
+      "published_at": "2026-10-02",
+      "captured_at": "2026-10-04T22:22:30+08:00",
+      "url": "https://www.xiaohongshu.com/explore/6abf3ced000000001c00f12d",
+      "title": "GPT PRO是AI时代的房贷吗",
+      "source_type": "secondary_report",
+      "observed_metrics": {
+        "likes_display": "206",
+        "comments_display": "82",
+        "provenance": "https://scitiger.cn/reports/daily",
+        "measurement_time": "报告数据日2026-10-02；具体抓取时分未知"
+      },
+      "claim": "二手汇总收录此题材。",
+      "stance_summary": "标题用房贷比喻表达成本疑问；无可审计评论。",
+      "evidence_excerpt": null,
+      "limitations": "第三方10月4日报告转录10月2日帖子；原帖/评论未直接核验，不是官方热榜或代表性样本。互动数为该报告显示的历史值，不是本次直读；标题主张不能当事实，评论立场与受众身份未知。",
+      "evidence_url": "https://scitiger.cn/reports/daily",
+      "author_name": "随便起的昵称",
+      "audience_role": null,
+      "browser_access_note": "2026-10-04 23:10UTC+8 普通云端浏览器打开原笔记，跳转页面显示当前笔记暂时无法浏览，error_code=300031；未取得原文。不能据此认定永久删除或普遍平台故障。",
+      "id": "BX10",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "platform": "xiaohongshu",
+      "topic": "AI论文配图工具",
+      "domain": "AI/科研创作",
+      "published_at": "2026-10-02",
+      "captured_at": "2026-10-04T22:22:30+08:00",
+      "url": "https://www.xiaohongshu.com/explore/6abeec91000000001203e245",
+      "title": "开源Skill⚡1.2万顶会配图，教会AI画论文图",
+      "source_type": "secondary_report",
+      "observed_metrics": {
+        "likes_display": "375",
+        "comments_display": "13",
+        "provenance": "https://scitiger.cn/reports/daily",
+        "measurement_time": "报告数据日2026-10-02；具体抓取时分未知"
+      },
+      "claim": "二手汇总收录此题材。",
+      "stance_summary": "工具分享导向；标题中的数据及开源情况未复核。",
+      "evidence_excerpt": null,
+      "limitations": "第三方10月4日报告转录10月2日帖子；原帖/评论未直接核验，不是官方热榜或代表性样本。互动数为该报告显示的历史值，不是本次直读；标题主张不能当事实，评论立场与受众身份未知。",
+      "evidence_url": "https://scitiger.cn/reports/daily",
+      "author_name": "Sleepy Avacado🥑",
+      "audience_role": null,
+      "id": "BX11",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "platform": "xiaohongshu",
+      "topic": "AI创作身份与真实性争议",
+      "domain": "AI/艺术",
+      "published_at": "2026-10-02",
+      "captured_at": "2026-10-04T22:22:30+08:00",
+      "url": "https://www.xiaohongshu.com/explore/6abf9849000000001500e773",
+      "title": "我入选美协展览的作品被举报使用ai创作？？",
+      "source_type": "secondary_report",
+      "observed_metrics": {
+        "likes_display": "477",
+        "comments_display": "63",
+        "provenance": "https://scitiger.cn/reports/daily",
+        "measurement_time": "报告数据日2026-10-02；具体抓取时分未知"
+      },
+      "claim": "二手汇总收录此题材。",
+      "stance_summary": "标题呈现作者对AI使用指控的异议；不可确认入选、举报、AI使用任一事实。",
+      "evidence_excerpt": null,
+      "limitations": "第三方10月4日报告转录10月2日帖子；原帖/评论未直接核验，不是官方热榜或代表性样本。互动数为该报告显示的历史值，不是本次直读；标题主张不能当事实，评论立场与受众身份未知。",
+      "evidence_url": "https://scitiger.cn/reports/daily",
+      "author_name": "-祁欢-",
+      "audience_role": null,
+      "id": "BX12",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "platform": "xiaohongshu",
+      "topic": "AI助手演示可信度",
+      "domain": "AI/产品体验",
+      "published_at": "2026-10-02",
+      "captured_at": "2026-10-04T22:22:30+08:00",
+      "url": "https://www.xiaohongshu.com/explore/6abe9b94000000001b020599",
+      "title": "OpenAI重发“dots”功能演示：以自嘲化解",
+      "source_type": "secondary_report",
+      "observed_metrics": {
+        "likes_display": "169",
+        "comments_display": "23",
+        "provenance": "https://scitiger.cn/reports/daily",
+        "measurement_time": "报告数据日2026-10-02；具体抓取时分未知"
+      },
+      "claim": "二手汇总收录此题材。",
+      "stance_summary": "标题是对演示争议的转述；原始事件与评论意见未独立核验。",
+      "evidence_excerpt": null,
+      "limitations": "第三方10月4日报告转录10月2日帖子；原帖/评论未直接核验，不是官方热榜或代表性样本。互动数为该报告显示的历史值，不是本次直读；标题主张不能当事实，评论立场与受众身份未知。",
+      "evidence_url": "https://scitiger.cn/reports/daily",
+      "author_name": "Michael-001",
+      "audience_role": null,
+      "id": "BX13",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "platform": "xiaohongshu",
+      "topic": "提示词优化简历",
+      "domain": "AI/求职",
+      "published_at": "2026-09-11 10:39（报道时间）",
+      "captured_at": "2026-10-04T22:22:30+08:00",
+      "url": "https://omnitools.ai/news/news_mtwtq6a544840f433a3146a7",
+      "title": "小红书用户热议AI提示词优化简历实践",
+      "source_type": "secondary_report",
+      "observed_metrics": null,
+      "claim": "报道称平台出现结构化提示词定制简历经验分享。",
+      "stance_summary": "报道为实操分享描述，没有相反意见或评论样本。",
+      "evidence_excerpt": "聚焦于提示词工程在求职场景中的轻量级应用。",
+      "limitations": "原笔记URL缺失；不能验证数量或‘热议’程度；较旧信号。",
+      "audience_role": null,
+      "author_role": null,
+      "id": "BX14",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "platform": "xiaohongshu",
+      "topic": "体验旅行和县域目的地",
+      "domain": "旅行",
+      "published_at": "2026-09-24 10:36（报道时间）",
+      "captured_at": "2026-10-04T22:22:30+08:00",
+      "url": "https://www.zhengguannews.cn/news/504074.html",
+      "title": "双节前《2026小红书兴趣游趋势报告》发布，体验类旅游搜索环比增长48%",
+      "source_type": "secondary_report",
+      "observed_metrics": {
+        "reported_experience_search_mom_growth": "48%",
+        "period": "截至2026年9月，具体环比基期未说明",
+        "provenance": "正观新闻转述小红书报告"
+      },
+      "claim": "报告转述显示手作、访古等体验导向旅行搜索增长。",
+      "stance_summary": "报道强调亲手体验与县域特色，非评论争论。",
+      "evidence_excerpt": "用户不仅搜索“去哪里”，也在寻找“到那里可以做什么”。",
+      "limitations": "平台报告的二手转述，未得到原始统计底表，非10月4日实时热榜；不采纳年龄画像。",
+      "author_role": "新闻媒体引用小红书旅行负责人",
+      "audience_role": null,
+      "id": "BX15",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "platform": "xiaohongshu",
+      "topic": "金融内容专业性与合规",
+      "domain": "财经/平台治理",
+      "published_at": "2026-09-15 17:47:48（报道时间）",
+      "captured_at": "2026-10-04T22:22:30+08:00",
+      "url": "https://www2.xinhuanet.com/tech/20260915/4f990d10aabc4c7ca35b90ef6c5d22a5/c.html",
+      "title": "小红书治理开放日发布社区首份金融生态公约",
+      "source_type": "secondary_report",
+      "observed_metrics": null,
+      "claim": "新华网报道平台鼓励专业科普、真实经历与风险提示，禁止非法荐股等行为。",
+      "stance_summary": "这是平台治理立场；未采到普通用户观点。",
+      "evidence_excerpt": "真诚分享的前提，是专业与合规。",
+      "limitations": "较旧政策背景，不作为当日讨论热度；不推断任何用户资产/财务状态。",
+      "author_role": "新闻媒体引述平台负责人",
+      "audience_role": null,
+      "id": "BX16",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "platform": "xiaohongshu",
+      "topic": "RED LAND线下兴趣活动",
+      "domain": "文化/线下活动",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:22:30+08:00",
+      "url": "https://apps.apple.com/cn/app/%E5%B0%8F%E7%BA%A2%E4%B9%A6-%E4%BD%A0%E7%9A%84%E7%94%9F%E6%B4%BB%E5%85%B4%E8%B6%A3%E7%A4%BE%E5%8C%BA/id741292507?platform=watch",
+      "title": "小红书App页面：RED LAND 2026",
+      "source_type": "search_snippet",
+      "observed_metrics": null,
+      "claim": "App Store活动信息列出10月2—6日上海复兴岛活动。",
+      "stance_summary": "官方活动宣传，无观众意见证据。",
+      "evidence_excerpt": "10月2日-10月6日 上海复兴岛",
+      "limitations": "未提供发布时间、入场人数或帖子量；活动存在不等于热榜。",
+      "event_dates": "2026-10-02/2026-10-06",
+      "author_role": "应用官方商店活动信息",
+      "audience_role": null,
+      "id": "BX17",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "captured_at": "2026-10-04T22:21:00+08:00",
+      "source_type": "search_snippet",
+      "observed_metrics": {
+        "video_views_display": "55.7万次观看",
+        "note": "Video count in index, not unique audience or endorsement"
+      },
+      "limitations": "Search-indexed primary-platform content; direct fetch unavailable. This is not an official rank or representative audience sample. Absolute posting time may be unavailable.",
+      "audience_role": null,
+      "id": "WD01",
+      "platform": "weibo",
+      "topic": "AI劳动与职业转型",
+      "domain": "AI/就业",
+      "published_at": "2026-10-04 (index: today; post: 5小时前)",
+      "url": "https://weibo.com/2/detail/5350228479706157",
+      "title": "李飞飞：十年后仅剩两类劳动",
+      "claim": "深蓝财经转述两类劳动观点；不证明预测为新发言。",
+      "stance_summary": "作者转述：顶尖专家获AI放大，主动跨领域通才驾驭AI。",
+      "evidence_excerpt": "垂直领域前1%的顶尖专家；高主动性的跨领域通才",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "captured_at": "2026-10-04T22:21:00+08:00",
+      "source_type": "search_snippet",
+      "observed_metrics": {
+        "video_views_display": "68.9万次观看",
+        "note": "May be shared underlying video; do not add counts"
+      },
+      "limitations": "Search-indexed primary-platform content; direct fetch unavailable. This is not an official rank or representative audience sample. Absolute posting time may be unavailable.",
+      "audience_role": null,
+      "id": "WD02",
+      "platform": "weibo",
+      "topic": "AI劳动与职业转型",
+      "domain": "AI/就业",
+      "published_at": "2026-10-04 (index: today; post: 10小时前)",
+      "url": "https://weibo.com/2/detail/5350231052127015",
+      "title": "用户参与#李飞飞称十年后只剩两类劳动# 话题讨论",
+      "claim": "陈震同学称自己偏向第二类；只有该作者自述，不扩展职业或观众身份。",
+      "stance_summary": "自我定位为主动跨领域一类，语气偏认同。",
+      "evidence_excerpt": "我觉得我偏向于第二类，你呢",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "captured_at": "2026-10-04T22:21:00+08:00",
+      "source_type": "search_snippet",
+      "observed_metrics": null,
+      "limitations": "Search-indexed primary-platform content; direct fetch unavailable. This is not an official rank or representative audience sample. Absolute posting time may be unavailable.",
+      "audience_role": null,
+      "id": "WD03",
+      "platform": "weibo",
+      "topic": "AI劳动与成本压力",
+      "domain": "AI/就业",
+      "published_at": "2026-10-03 (search publication; post shows16分钟前; conflict retained)",
+      "url": "https://m.weibo.cn/2/detail/5350271018336712",
+      "title": "联播投资眼2026年10月3日梳理五大财经产业动态",
+      "claim": "张好多钞票女士发帖质疑雇主以AI压成本。",
+      "stance_summary": "对AI替代叙事持劳动者处境的警惕；不据此认定其真实职业。",
+      "evidence_excerpt": "老板先拿AI当借口压成本了",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "captured_at": "2026-10-04T22:21:00+08:00",
+      "source_type": "search_snippet",
+      "observed_metrics": {
+        "video_views_display": "7343次观看"
+      },
+      "limitations": "Search-indexed primary-platform content; direct fetch unavailable. This is not an official rank or representative audience sample. Absolute posting time may be unavailable.",
+      "audience_role": null,
+      "id": "WD04",
+      "platform": "weibo",
+      "topic": "AI面试恐怖谷",
+      "domain": "AI/招聘",
+      "published_at": "2026-10-03 (index:yesterday;post:14小时前)",
+      "url": "https://weibo.com/2/detail/5349909886402764",
+      "title": "AI面试恐怖谷：AI为面试者打分 假人HR眨眼",
+      "claim": "还真是颜之有理对拟真人面试官与微表情打分表达不适。",
+      "stance_summary": "质疑机器化招聘体验。",
+      "evidence_excerpt": "HR是个假人还会眨眼",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "captured_at": "2026-10-04T22:21:00+08:00",
+      "source_type": "search_snippet",
+      "observed_metrics": null,
+      "limitations": "Search-indexed primary-platform content; direct fetch unavailable. This is not an official rank or representative audience sample. Absolute posting time may be unavailable.",
+      "audience_role": null,
+      "id": "WD05",
+      "platform": "weibo",
+      "topic": "AI面试尊重与效率",
+      "domain": "AI/招聘",
+      "published_at": null,
+      "url": "https://weibo.com/2/detail/5349975313879076",
+      "title": "微博正文：AI面试被指不尊重人",
+      "claim": "甜野尔主张AI可做初筛，深度面试难替真人；对支持/反对阵营的描述只是作者概括。",
+      "stance_summary": "条件性使用：效率与标准化有价值，情绪与共情有短板。",
+      "evidence_excerpt": "目前适合初筛，很难完全替代真人深度面试",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "captured_at": "2026-10-04T22:21:00+08:00",
+      "source_type": "search_snippet",
+      "observed_metrics": null,
+      "limitations": "Search-indexed primary-platform content; direct fetch unavailable. This is not an official rank or representative audience sample. Absolute posting time may be unavailable.",
+      "audience_role": null,
+      "id": "WD06",
+      "platform": "weibo",
+      "topic": "AI面试情绪劳动",
+      "domain": "AI/招聘",
+      "published_at": "2026-10-03 (index:yesterday;post:13小时前)",
+      "url": "https://weibo.com/2/detail/5349920722914684",
+      "title": "面对AI面试的无力感慨 感慨其引发的恐怖谷体验",
+      "claim": "-片姊Blue表达明知是AI仍须投入情绪表演的无力感；未自述真实求职身份。",
+      "stance_summary": "担忧单向互动与被迫表演。",
+      "evidence_excerpt": "违心的无可奈何地无力感",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "captured_at": "2026-10-04T22:21:00+08:00",
+      "source_type": "search_snippet",
+      "observed_metrics": {
+        "unlabelled_post_values": [
+          "6",
+          "1"
+        ],
+        "account_followers_display": "6",
+        "account_total_likes_display": "473",
+        "note": "Unlabelled post values not assigned to likes/shares without UI confirmation"
+      },
+      "limitations": "Search-indexed primary-platform content; direct fetch unavailable. This is not an official rank or representative audience sample. Absolute posting time may be unavailable.",
+      "audience_role": null,
+      "id": "WD07",
+      "platform": "douyin",
+      "topic": "AI短视频生产",
+      "domain": "AI/内容创作",
+      "published_at": "2026-10-03 00:28 (platform timezone not stated)",
+      "url": "https://www.douyin.com/video/7692108134139858313",
+      "title": "做短视频并没有那么难，一天随便更新#ai #智能体 #短视频 #自媒体 #口播",
+      "claim": "刘宇(AI智能体)标题宣传AI降低短视频生产难度。",
+      "stance_summary": "实用效率与创作便利导向；仅标题判断。",
+      "evidence_excerpt": "做短视频并没有那么难",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "captured_at": "2026-10-04T22:21:00+08:00",
+      "source_type": "search_snippet",
+      "observed_metrics": {
+        "account_followers_display": "8",
+        "account_total_likes_display": "21",
+        "note": "Account totals are not video engagement"
+      },
+      "limitations": "Search-indexed primary-platform content; direct fetch unavailable. This is not an official rank or representative audience sample. Absolute posting time may be unavailable.",
+      "audience_role": null,
+      "id": "WD08",
+      "platform": "douyin",
+      "topic": "AI秋日人像",
+      "domain": "AI/内容创作",
+      "published_at": "2026-10-02 20:47 (platform timezone not stated)",
+      "url": "https://www.douyin.com/video/7692051380346206811",
+      "title": "#AI秋日逆光治愈人像#抖音ai创作",
+      "claim": "源源酱。以AI创作标签展示秋日人像内容。",
+      "stance_summary": "审美/娱乐应用，不能推导作者对AI总体态度。",
+      "evidence_excerpt": "AI秋日逆光治愈人像",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "captured_at": "2026-10-04T22:21:00+08:00",
+      "source_type": "search_snippet",
+      "observed_metrics": {
+        "account_followers_display": "4",
+        "account_total_likes_display": "39"
+      },
+      "limitations": "Search-indexed primary-platform content; direct fetch unavailable. This is not an official rank or representative audience sample. Absolute posting time may be unavailable.",
+      "audience_role": null,
+      "id": "WD09",
+      "platform": "douyin",
+      "topic": "AI对齐",
+      "domain": "AI/安全",
+      "published_at": "2026-09-23 14:27 (platform timezone not stated)",
+      "url": "https://www.douyin.com/video/7688613523823548008",
+      "title": "假设你让AI腾点手机空间，它把照片全删了。算完成任务吗？",
+      "claim": "AI对齐研究组标题以删照片场景解释AI对齐；历史补充，不列今日热点。",
+      "stance_summary": "关注能力之外的目标与行为安全。",
+      "evidence_excerpt": "我们仍然需要研究它到底在追求什么",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "captured_at": "2026-10-04T22:21:00+08:00",
+      "source_type": "search_snippet",
+      "observed_metrics": null,
+      "limitations": "Search-indexed primary-platform content; direct fetch unavailable. This is not an official rank or representative audience sample. Absolute posting time may be unavailable.",
+      "audience_role": null,
+      "id": "WD10",
+      "platform": "douyin",
+      "topic": "两类劳动旧素材",
+      "domain": "AI/就业",
+      "published_at": "2026-06-28",
+      "url": "https://jingxuan.douyin.com/m/video/7656423577880677667",
+      "title": "近期最反焦虑的一场访谈，AI教母李飞飞谈未来。李飞飞说未来职场上两类人不会被淘汰。",
+      "claim": "得乐6月28日已发布类似题材；证实题材非10月首次出现，但未核验完整访谈。",
+      "stance_summary": "标题采取反焦虑框架，历史对照。",
+      "evidence_excerpt": "近期最反焦虑的一场访谈",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "captured_at": "2026-10-04T22:21:00+08:00",
+      "source_type": "search_snippet",
+      "observed_metrics": null,
+      "limitations": "Search-indexed primary-platform content; direct fetch unavailable. This is not an official rank or representative audience sample. Absolute posting time may be unavailable.",
+      "audience_role": null,
+      "id": "WD11",
+      "platform": "douyin",
+      "topic": "国庆烟花",
+      "domain": "文化/假日",
+      "published_at": "2026-10-02",
+      "url": "https://jingxuan.douyin.com/m/video/7691991374685670710",
+      "title": "“万家灯火，盛世如愿”！国庆节当晚，港澳举办烟花汇演",
+      "claim": "南方网账号呈现国庆烟花汇演。",
+      "stance_summary": "节庆景观呈现。",
+      "evidence_excerpt": "国庆节当晚，港澳举办烟花汇演",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "captured_at": "2026-10-04T22:21:00+08:00",
+      "source_type": "search_snippet",
+      "observed_metrics": null,
+      "limitations": "Search-indexed primary-platform content; direct fetch unavailable. This is not an official rank or representative audience sample. Absolute posting time may be unavailable.",
+      "audience_role": null,
+      "id": "WD12",
+      "platform": "weibo",
+      "topic": "陈楚生国庆音乐节",
+      "domain": "文化/演出",
+      "published_at": "index:last week; exact date unavailable",
+      "url": "https://weibo.com/2/detail/5347295602409638",
+      "title": "陈楚生2026中秋多舞台表现 国庆巡演音乐节行程公布",
+      "claim": "-花生地-发布多站演出期待帖，包含10月4日常州安排；行程未官方核验。",
+      "stance_summary": "赞赏表演并期待后续演出；不能据此断言粉丝人口构成。",
+      "evidence_excerpt": "一起期待陈楚生国庆期间演唱会、音乐节",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "captured_at": "2026-10-04T22:21:00+08:00",
+      "source_type": "secondary_report",
+      "observed_metrics": {
+        "displayed_items": [
+          {
+            "topic": "第二十届亚运会闭幕",
+            "position": 2,
+            "heat": "1122万",
+            "age": "3小时前"
+          },
+          {
+            "topic": "我国假日经济持续升温",
+            "position": 3,
+            "heat": "1121万",
+            "age": "1小时前"
+          },
+          {
+            "topic": "国庆自驾搭子集体陷入沉默",
+            "position": 5,
+            "heat": "1045万",
+            "age": "13小时前"
+          }
+        ]
+      },
+      "limitations": "Secondary aggregator; date only relative, cache freshness unclear; do not equate heat with viewers, use only discovery leads.",
+      "audience_role": null,
+      "id": "WD13",
+      "platform": "douyin",
+      "topic": "假日旅游/体育/文化",
+      "domain": "跨领域",
+      "published_at": null,
+      "url": "https://hot.fiveyoboy.com/",
+      "title": "五岁热榜：抖音区块",
+      "claim": "第三方聚合页可见体育、假日经济、自驾等榜单线索；不是官方榜核验。",
+      "stance_summary": null,
+      "evidence_excerpt": "第二十届亚运会闭幕；我国假日经济持续升温；国庆自驾搭子集体陷入沉默",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "captured_at": "2026-10-04T22:21:00+08:00",
+      "source_type": "secondary_report",
+      "observed_metrics": {
+        "displayed_items": [
+          {
+            "topic": "国庆景区热度前10被小城包揽",
+            "position": 4,
+            "heat": "94万",
+            "age": "1小时前"
+          },
+          {
+            "topic": "亚运会闭幕式",
+            "position": 10,
+            "heat": "22万",
+            "age": "1小时前"
+          }
+        ]
+      },
+      "limitations": "Secondary aggregator not official rank; dynamic view differs from search snippet; cannot infer platform rank from snippet.",
+      "audience_role": null,
+      "id": "WD14",
+      "platform": "weibo",
+      "topic": "假日小城/体育",
+      "domain": "跨领域",
+      "published_at": null,
+      "url": "https://hot.fiveyoboy.com/",
+      "title": "五岁热榜：微博区块",
+      "claim": "第三方聚合微博区块呈现小城旅游、亚运闭幕线索；官方排名未验证。",
+      "stance_summary": null,
+      "evidence_excerpt": "国庆景区热度前10被小城包揽；亚运会闭幕式",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "captured_at": "2026-10-04T22:21:00+08:00",
+      "source_type": "secondary_report",
+      "observed_metrics": {
+        "displayed_position": 4,
+        "displayed_heat": "1143.2万"
+      },
+      "limitations": "Site explicitly continues last complete snapshot on refresh failure. Not official validation or evening real-time rank.",
+      "audience_role": null,
+      "id": "WD15",
+      "platform": "douyin",
+      "topic": "国庆文旅消费",
+      "domain": "旅行/消费",
+      "published_at": "snapshot:2026/10/04 06:31 (site timezone unstated)",
+      "url": "https://dev.flamelens.com/hotlist",
+      "title": "社媒平台今日热榜",
+      "claim": "第三方服务商备用数据源在10/04 06:31快照列出‘解锁国庆文旅消费新趋势’。",
+      "stance_summary": null,
+      "evidence_excerpt": "服务商备用数据源 · 快照生成于10/04 06:31",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "WX01",
+      "platform": "wechat",
+      "topic": "AI输出可理解性",
+      "domain": "AI/工具",
+      "published_at": "2026-10-03 18:01",
+      "original_published_at": null,
+      "captured_at": "2026-10-04T22:24:00+08:00",
+      "url": "https://eu.36kr.com/zh/p/4009626690539397",
+      "original_url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2651061019&idx=1&sn=f85b9efa4ead173c2a425f58c10b5157&chksm=85c2b3a60e7b067d3cdf5537231001d14e33b4c9f9e22e5cdac436dae76c62e57ef1668ce62d&scene=0&xtrack=1#rd",
+      "title": "Karpathy的新玩法！40年前的航空规范，救了爱说废话的AI",
+      "account_name": "机器之心",
+      "account_id": "almosthuman2014",
+      "author": "关注AI的",
+      "source_relationship": "经授权转载",
+      "claim": "使用约束写作、图示及定制可视化改善AI输出的可理解性。",
+      "stance_summary": "偏实用乐观，同时保留简单问题未见明显改善的对照。",
+      "evidence_excerpt": "36氪经授权发布。",
+      "source_type": "secondary_report",
+      "observed_metrics": null,
+      "limitations": "Date belongs to visible republication. Original WeChat post, read/like counts, and selected comments not directly retrieved; no audience claims. Reposts are not independent corroboration of the article's underlying claims.",
+      "original_access_note": "在36氪授权转载页直接核实原文链接；打开后受当前云端浏览器站点安全策略限制，未读取原微信文章或留言，不重试/绕过。",
+      "browser_republication_verified_at": "2026-10-04T23:06:13+08:00",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "WX02",
+      "platform": "wechat",
+      "topic": "Agent授权边界",
+      "domain": "AI/智能体",
+      "published_at": "2026-10-03 11:26",
+      "original_published_at": null,
+      "captured_at": "2026-10-04T22:24:00+08:00",
+      "url": "https://www.huxiu.com/article/4895239.html",
+      "original_url": null,
+      "title": "Agent 时代，最重要的新对象，可能不是Agent",
+      "account_name": "AIGC从0到1",
+      "account_id": null,
+      "author": "王零壹",
+      "source_relationship": "经授权转载",
+      "claim": "作者主张长期管理目标、权限、边界、证据和责任构成的委托关系。",
+      "stance_summary": "强调治理和可追责，认为能力增强仍需边界及结果证据。",
+      "evidence_excerpt": "本文来自微信公众号：AIGC从0到1",
+      "source_type": "secondary_report",
+      "observed_metrics": null,
+      "limitations": "Date belongs to visible republication. Original WeChat post, read/like counts, and selected comments not directly retrieved; no audience claims. Reposts are not independent corroboration of the article's underlying claims.",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "WX03",
+      "platform": "wechat",
+      "topic": "AI收益分配与真实需求",
+      "domain": "AI/商业社会",
+      "published_at": "2026-10-03 12:11",
+      "original_published_at": null,
+      "captured_at": "2026-10-04T22:24:00+08:00",
+      "url": "https://www.huxiu.com/article/4895241.html",
+      "original_url": null,
+      "title": "放假以后，我突然觉得世界有点假",
+      "account_name": "小丸子酱酱酱聊商业",
+      "account_id": null,
+      "author": "小丸子酱",
+      "source_relationship": "转载来源标注；直接打开超时",
+      "claim": "作者认为降低工具门槛并不自动缩小资源和收益差距。",
+      "stance_summary": "对简单技术平权叙事持批评，重视真实生活结果、时间与可信判断。",
+      "evidence_excerpt": "降低工具门槛，不等于降低社会差距。",
+      "source_type": "search_snippet",
+      "observed_metrics": null,
+      "limitations": "Date belongs to visible republication. Original WeChat post, read/like counts, and selected comments not directly retrieved; no audience claims. Reposts are not independent corroboration of the article's underlying claims.",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "WX04",
+      "platform": "wechat",
+      "topic": "AI旅游攻略可靠性",
+      "domain": "AI/旅行",
+      "published_at": "2026-10-03 11:34",
+      "original_published_at": null,
+      "captured_at": "2026-10-04T22:24:00+08:00",
+      "url": "https://news.pedaily.cn/202610/569835.shtml",
+      "original_url": null,
+      "title": "国庆出游用AI，第一批人已经被坑惨了",
+      "account_name": "定焦One",
+      "account_id": null,
+      "author": "李梦冉、王汉星、雷晶、王璐、陈丹",
+      "source_relationship": "转载明确来源",
+      "claim": "文章转述受访者在假期使用AI攻略的踩坑案例，主张信息整理后仍需人工核实。",
+      "stance_summary": "条件性工具使用：认可整理效率，批评实时信息和落地可靠性。",
+      "evidence_excerpt": "微信公众号：定焦One",
+      "source_type": "secondary_report",
+      "observed_metrics": null,
+      "limitations": "Date belongs to visible republication. Original WeChat post, read/like counts, and selected comments not directly retrieved; no audience claims. Reposts are not independent corroboration of the article's underlying claims.",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "WX05",
+      "platform": "wechat",
+      "topic": "AI内容生产分工",
+      "domain": "AI/内容运营",
+      "published_at": "2026-10-03 09:38",
+      "original_published_at": null,
+      "captured_at": "2026-10-04T22:24:00+08:00",
+      "url": "https://www.agecms.com/insights/restaurant-ai-content",
+      "original_url": null,
+      "title": "三个人管六个号，日更断在第三周：一家连锁餐饮把内容生产交给舍予AI智能体后，这笔账怎么算",
+      "account_name": "舍予基业",
+      "account_id": null,
+      "author": "舍予基业",
+      "source_relationship": "网站标称来自同名公众号；商业服务方自述",
+      "claim": "作者描述把初稿与配图交给AI、保留选题排期等人工环节的餐饮内容运营案例。",
+      "stance_summary": "支持限定环节自动化并核算人力成本；为商业自述，案例效果未独立验证。",
+      "evidence_excerpt": "来源:公众号「舍予基业」",
+      "source_type": "search_snippet",
+      "observed_metrics": null,
+      "limitations": "Date belongs to visible republication. Original WeChat post, read/like counts, and selected comments not directly retrieved; no audience claims. Reposts are not independent corroboration of the article's underlying claims.",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "WX06",
+      "platform": "wechat",
+      "topic": "AI面试体验",
+      "domain": "AI/招聘",
+      "published_at": "2026-10-04 14:53",
+      "original_published_at": null,
+      "captured_at": "2026-10-04T22:24:00+08:00",
+      "url": "https://k.sina.com.cn/article_5061312402_12dad7f9202002m7xe.html?from=tech",
+      "original_url": null,
+      "title": "冲上热搜！求职者们被大厂AI面试官整崩溃，太吓人了",
+      "account_name": "小雷哔哔",
+      "account_id": "xiaoleibbb",
+      "author": null,
+      "source_relationship": "新浪雷科技官方账号文章提及小雷哔哔；未直接确认公众号原文",
+      "claim": "作者认可标准化初筛的AI效率，批评拟人面试替代双向沟通。",
+      "stance_summary": "强调求职者体验与信息时效，不主张一概否定AI。",
+      "evidence_excerpt": "小雷哔哔（ID：xiaoleibbb）",
+      "source_type": "search_snippet",
+      "observed_metrics": null,
+      "limitations": "Date belongs to visible republication. Original WeChat post, read/like counts, and selected comments not directly retrieved; no audience claims. Reposts are not independent corroboration of the article's underlying claims.",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "WX07",
+      "platform": "wechat",
+      "topic": "国庆反诈提醒",
+      "domain": "公共服务/安全",
+      "published_at": "2026-10-04 08:54",
+      "original_published_at": null,
+      "captured_at": "2026-10-04T22:24:00+08:00",
+      "url": "https://www.cnjsjy.cn/article?from=bdj&id=617786",
+      "original_url": null,
+      "title": "公安机关发布国庆假期防范电信网络诈骗安全提示",
+      "account_name": "公安部",
+      "account_id": null,
+      "author": null,
+      "source_relationship": "江阴网明确来源：公安部微信公众号",
+      "claim": "报道假期机票退改签等骗局防范提示，并介绍国家反诈AI。",
+      "stance_summary": "预防诈骗的服务导向；这里只记录传播主题，不额外验证系统能力。",
+      "evidence_excerpt": "公安部微信公众号",
+      "source_type": "search_snippet",
+      "observed_metrics": null,
+      "limitations": "Date belongs to visible republication. Original WeChat post, read/like counts, and selected comments not directly retrieved; no audience claims. Reposts are not independent corroboration of the article's underlying claims.",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "WX08",
+      "platform": "wechat",
+      "topic": "演唱会与旅游联动",
+      "domain": "文化/旅行",
+      "published_at": "2026-10-03 07:36",
+      "original_published_at": null,
+      "captured_at": "2026-10-04T22:24:00+08:00",
+      "url": "https://m.thepaper.cn/newsDetail_forward_34193924",
+      "original_url": null,
+      "title": "凭演唱会门票，可免费游玩云南这五大景区！就在……",
+      "account_name": "云南网",
+      "account_id": null,
+      "author": null,
+      "source_relationship": "澎湃云南网官方媒体号转载正文致意公众号读者",
+      "claim": "报道演唱会门票与弥勒景区通行证联动，呈现假日文旅促消费主题。",
+      "stance_summary": "服务信息与活动推广；不把优惠细节当购买建议。",
+      "evidence_excerpt": "感谢关注云南网微信公众号",
+      "source_type": "secondary_report",
+      "observed_metrics": null,
+      "limitations": "Date belongs to visible republication. Original WeChat post, read/like counts, and selected comments not directly retrieved; no audience claims. Reposts are not independent corroboration of the article's underlying claims.",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "WX09",
+      "platform": "wechat",
+      "topic": "假日岗位与动物故事",
+      "domain": "文化/公共服务",
+      "published_at": "2026-10-04 07:57:00",
+      "original_published_at": null,
+      "captured_at": "2026-10-04T22:24:00+08:00",
+      "url": "https://www.yzwb.net/news/sh/202610/t20261004_399505.html",
+      "original_url": null,
+      "title": "国庆假期，天安门执勤点的那只猫又来了！前爪分开60度，站得笔直，有模有样",
+      "account_name": "新华社",
+      "account_id": null,
+      "author": null,
+      "source_relationship": "扬子晚报明确来源：新华社微信公众号",
+      "claim": "文章以执勤岗哨与小猫的场景呈现安宁与守护。",
+      "stance_summary": "情感叙事；文中摘引网友留言不等于可审计微信精选留言样本。",
+      "evidence_excerpt": "来源：新华社微信公众号",
+      "source_type": "search_snippet",
+      "observed_metrics": null,
+      "limitations": "Date belongs to visible republication. Original WeChat post, read/like counts, and selected comments not directly retrieved; no audience claims. Reposts are not independent corroboration of the article's underlying claims.",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "X01",
+      "platform": "x",
+      "topic": "模型福利与机器意识",
+      "domain": "AI",
+      "published_at": "2026-10-04T00:50:21+00:00",
+      "captured_at": "2026-10-04T14:25:57.269373+00:00",
+      "url": "https://x.com/fchollet/status/2106547436244304232",
+      "title": "Chollet质疑计算即意识推论",
+      "source_type": "secondary_report",
+      "observed_metrics": null,
+      "claim": "Chollet认为：AI运行在计算基底之上，并不足以推出其有意识。",
+      "stance_summary": "反对将计算等同意识；该样本不能代表所有研究者。",
+      "evidence_excerpt": "since this rock is made of atoms, it is likely alive.",
+      "limitations": [
+        "原帖未能直接读取；证据来自公开二手报道，不代表X全站热度或观众比例。"
+      ],
+      "secondary_source_url": "https://aibriefs.news/card/947744c8-04a5-4571-b58d-4eb10c3ba176",
+      "author": "François Chollet",
+      "author_profile": {
+        "role": "Ndea与ARC Prize联合创始人、Keras和ARC-AGI创建者、作者",
+        "basis": "公开自述bio，由AIBriefs转录，未直接核验实时X资料"
+      },
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "X02",
+      "platform": "x",
+      "topic": "模型福利与机器意识",
+      "domain": "AI",
+      "published_at": "2026-09-28T12:54:36+00:00",
+      "captured_at": "2026-10-04T14:25:57.269373+00:00",
+      "url": "https://x.com/sapinker/status/2104555373101256891",
+      "title": "Pinker支持Suleyman对模型福利的批评",
+      "source_type": "secondary_report",
+      "observed_metrics": null,
+      "claim": "公开二手转录显示，Pinker赞同Suleyman的批评，担心赋予AI拟人利益会与人类利益冲突。",
+      "stance_summary": "批评模型福利；未找到同期、可直接读取的X对立原帖。",
+      "evidence_excerpt": "Brilliant and urgent essay",
+      "limitations": [
+        "原帖未能直接读取；证据来自公开二手报道，不代表X全站热度或观众比例。"
+      ],
+      "secondary_source_url": "https://aibriefs.news/card/947744c8-04a5-4571-b58d-4eb10c3ba176",
+      "author": "Steven Pinker",
+      "author_profile": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "X03",
+      "platform": "x",
+      "topic": "模型福利与机器意识",
+      "domain": "AI",
+      "published_at": "2025-04-24",
+      "captured_at": "2026-10-04T14:25:57.269373+00:00",
+      "url": "https://www.anthropic.com/research/exploring-model-welfare",
+      "title": "Anthropic关于模型福利的既有研究立场",
+      "source_type": "primary_post",
+      "observed_metrics": null,
+      "claim": "Anthropic将意识与福利视为未解决问题，主张研究何时、是否应给予道德考虑，并明确承认科学上无共识。",
+      "stance_summary": "与批评方构成真实立场差异，但这是2025年背景材料，不能冒充本周反驳。",
+      "evidence_excerpt": "There’s no scientific consensus",
+      "limitations": [
+        "这是官网研究声明，不是X帖子；仅作背景。",
+        "主张研究不等于宣称现有模型已被证实有意识。"
+      ],
+      "secondary_source_url": null,
+      "author": null,
+      "author_profile": null,
+      "background": true,
+      "excluded_from_metrics": true
+    },
+    {
+      "id": "X04",
+      "platform": "x",
+      "topic": "编码智能体性能与成本",
+      "domain": "AI",
+      "published_at": "2026-10-02T00:17:12+00:00",
+      "captured_at": "2026-10-04T14:25:57.269373+00:00",
+      "url": "https://x.com/ArtificialAnlys/status/2105814318294114720",
+      "title": "Artificial Analysis比较模型加工具链",
+      "source_type": "secondary_report",
+      "observed_metrics": null,
+      "claim": "该评测机构称Sonnet 5.5、GPT-6.1 Sol、Gemini 4 Argon处于编码智能体榜单前列，但成本与性能取舍不同。其对象是模型与工具链组合。",
+      "stance_summary": "反对只用一个得分决定最佳模型；未观察到对立原帖。",
+      "evidence_excerpt": "each has a different balance of performance and cost",
+      "limitations": [
+        "原帖未能直接读取；证据来自公开二手报道，不代表X全站热度或观众比例。"
+      ],
+      "secondary_source_url": "https://aibriefs.news/card/bc08e9b2-a967-4791-8235-15abbed1ea8e",
+      "author": "Artificial Analysis",
+      "author_profile": {
+        "role": "独立AI分析机构",
+        "basis": "自述bio：Independent analysis of AI；由公开二手页面转录"
+      },
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "X05",
+      "platform": "x",
+      "topic": "Kolibri开放权重与欧洲自主部署",
+      "domain": "AI",
+      "published_at": "2026-10-03T08:54:18+00:00",
+      "captured_at": "2026-10-04T14:25:57.269373+00:00",
+      "url": "https://x.com/Aleph__Alpha/status/2106306840657297814",
+      "title": "Aleph Alpha发布Kolibri",
+      "source_type": "secondary_report",
+      "observed_metrics": null,
+      "claim": "公开转录中的发布方宣布Kolibri，强调开放权重、欧洲构建和可在自有硬件运行。",
+      "stance_summary": "发布方的自主部署与开放许可叙事；性能应另行核验。",
+      "evidence_excerpt": "Now the weights are yours.",
+      "limitations": [
+        "原帖未能直接读取；证据来自公开二手报道，不代表X全站热度或观众比例。"
+      ],
+      "secondary_source_url": "https://aibriefs.news/card/be576f90-5847-479c-b465-3154ea045f3a",
+      "author": "Aleph Alpha",
+      "author_profile": {
+        "role": "发布方机构账号",
+        "basis": "本帖自述发布自家模型，非受众画像"
+      },
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "X06",
+      "platform": "x",
+      "topic": "Kolibri开放权重与欧洲自主部署",
+      "domain": "AI",
+      "published_at": "2026-10-03T15:11:18+00:00",
+      "captured_at": "2026-10-04T14:25:57.269373+00:00",
+      "url": "https://x.com/aidangomez/status/2106401716417568841",
+      "title": "Gomez支持Kolibri发布",
+      "source_type": "secondary_report",
+      "observed_metrics": null,
+      "claim": "Gomez称赞德英双语模型及其详尽技术报告，并邀请试用。",
+      "stance_summary": "支持；样本中未检索到有证据的反对方，不能制造两极争议。",
+      "evidence_excerpt": "very detailed technical report",
+      "limitations": [
+        "原帖未能直接读取；证据来自公开二手报道，不代表X全站热度或观众比例。"
+      ],
+      "secondary_source_url": "https://aibriefs.news/card/be576f90-5847-479c-b465-3154ea045f3a",
+      "author": "Aidan Gomez",
+      "author_profile": {
+        "role": "Cohere联合创始人",
+        "basis": "公开自述bio：cofounder @cohere；由二手页面转录"
+      },
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "X07",
+      "platform": "x",
+      "topic": "自愿AI安全承诺与治理",
+      "domain": "AI",
+      "published_at": "2026-09-30",
+      "captured_at": "2026-10-04T14:25:57.269373+00:00",
+      "url": "https://x.com/sundarpichai/status/2105121763176894804",
+      "title": "Pichai谈白宫AI安全承诺",
+      "source_type": "secondary_report",
+      "observed_metrics": null,
+      "claim": "HeadsUpAI报道Pichai介绍Google签署安全承诺，涵盖内部监测、独立审计和董事会监督。",
+      "stance_summary": "公司支持自愿承诺；未能核验原帖全文与同期对立X原帖。",
+      "evidence_excerpt": "",
+      "limitations": [
+        "X原帖403。",
+        "日期来自聚合页；不是官方热榜。",
+        "聚合页Viral标签没有公开可复现阈值，未采纳为热度指标。"
+      ],
+      "secondary_source_url": "https://headsupai.io/ai-news-and-updates",
+      "author": "Sundar Pichai",
+      "author_profile": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "X08",
+      "platform": "x",
+      "topic": "自主智能体输出的人类可读性",
+      "domain": "AI",
+      "published_at": "2026-10-01",
+      "captured_at": "2026-10-04T22:54:54+08:00",
+      "url": "https://x.com/karpathy/status/2105819303471976479",
+      "title": "Karpathy讨论如何理解自主LLM输出",
+      "source_type": "primary_post",
+      "observed_metrics": {
+        "views_display": "662.2万 浏览量",
+        "note": "页面显示的约数；不是独立读者或赞同人数。"
+      },
+      "claim": "原帖直接可读：Karpathy建议用受控语言、图表、交互HTML和解释视频帮助人理解语言模型输出，并把人类工作重心描述为监督与理解。",
+      "stance_summary": "关注监督与理解成本；单一作者建议，未观察到对立立场。",
+      "evidence_excerpt": "ask for output \"in HTML\"",
+      "limitations": [
+        "2026-10-01 17:37为页面显示时间，时区未确认。",
+        "是作者的经验与建议，未当作验证过的普遍效果。",
+        "匿名可见回复很少，不能推算X用户立场比例。"
+      ],
+      "secondary_source_url": "https://headsupai.io/ai-news-and-updates",
+      "author": "Andrej Karpathy",
+      "author_profile": null,
+      "primary_access_note": "普通云端浏览器直接读取原帖；此前web文本工具403只是该方法失败，当前原帖可读。",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "X09",
+      "platform": "x",
+      "topic": "亚运板球决赛：夺金与表现评价",
+      "domain": "体育",
+      "published_at": "2026-10-03",
+      "captured_at": "2026-10-04T14:25:57.269373+00:00",
+      "url": "https://x.com/BCCI/status/2106293551634284624",
+      "title": "BCCI庆祝卫冕",
+      "source_type": "secondary_report",
+      "observed_metrics": null,
+      "claim": "报道嵌入BCCI帖子庆祝印度卫冕男子板球金牌。",
+      "stance_summary": "正面评价结果。",
+      "evidence_excerpt": "GOLD MEDALLISTS AGAIN",
+      "limitations": [
+        "原帖未能直接读取；证据来自公开二手报道，不代表X全站热度或观众比例。"
+      ],
+      "secondary_source_url": "https://www.indiatimes.com/trending/desperately-need-to-work-on-it-fans-tear-into-indias-pathetic-fielding-and-bowling-despite-gold-medal-win-over-pakistan-at-asian-games-2026/articleshow/134655586.html",
+      "author": "BCCI",
+      "author_profile": {
+        "role": "赛事相关机构账号",
+        "basis": "媒体标注BCCI；未读取实时个人资料"
+      },
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "X10",
+      "platform": "x",
+      "topic": "亚运板球决赛：夺金与表现评价",
+      "domain": "体育",
+      "published_at": "2026-10-03",
+      "captured_at": "2026-10-04T14:25:57.269373+00:00",
+      "url": "https://x.com/RoyShashwat004/status/2106293435397505358",
+      "title": "用户批评投球与接球表现",
+      "source_type": "secondary_report",
+      "observed_metrics": null,
+      "claim": "报道引用用户承认夺金，同时批评投球和接球表现。",
+      "stance_summary": "对同一赛事给出负面过程评价，与庆祝夺金并不逻辑互斥。",
+      "evidence_excerpt": "the bowling & fielding effort was really scratchy",
+      "limitations": [
+        "仅二手嵌入帖子；职业未自述，保持未知。",
+        "不同报道出现94与96的击球得分差异，因此不在结论中使用该分数。",
+        "未推断国籍、政治立场或整个球迷群体。"
+      ],
+      "secondary_source_url": "https://www.indiatimes.com/trending/desperately-need-to-work-on-it-fans-tear-into-indias-pathetic-fielding-and-bowling-despite-gold-medal-win-over-pakistan-at-asian-games-2026/articleshow/134655586.html",
+      "author": "Shashwat Roy",
+      "author_profile": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "X11",
+      "platform": "x",
+      "topic": "比特币趋势：长期看多与短期风险",
+      "domain": "财经",
+      "published_at": "2026-10-04T12:50:00Z",
+      "captured_at": "2026-10-04T14:25:57.269373+00:00",
+      "url": "https://finance.yahoo.com/markets/crypto/articles/bitcoin-weekly-chart-flips-bullish-125027358.html",
+      "title": "Thorne称周线走强",
+      "source_type": "search_snippet",
+      "observed_metrics": null,
+      "claim": "检索结果中的报道引用Thorne在X的看多论点，认为周线均线转向支持长期上升趋势。",
+      "stance_summary": "看多长期走势。",
+      "evidence_excerpt": "Super Cycle",
+      "limitations": [
+        "报道正文读取失败；仅使用检索摘要。",
+        "原帖链接未取得；不能当作直接核验原帖。",
+        "职业来自报道而非自述，因此不纳入自述画像。",
+        "金融观点不等于事实或投资建议。"
+      ],
+      "secondary_source_url": null,
+      "author": "James E. Thorne",
+      "author_profile": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "X12",
+      "platform": "x",
+      "topic": "比特币趋势：长期看多与短期风险",
+      "domain": "财经",
+      "published_at": "2026-10-04",
+      "captured_at": "2026-10-04T14:25:57.269373+00:00",
+      "url": "https://blockonomi.com/bitcoin-crash-warning-flags-monday-risk-as-bitcoin-cash-gains/",
+      "title": "X上另一则帖子警示周一风险",
+      "source_type": "search_snippet",
+      "observed_metrics": null,
+      "claim": "检索摘要报道称Lucky在10月3日发帖，将周一风险与收益率和美联储政策联系；报道自身提醒周期比较并不能确定崩盘日期。",
+      "stance_summary": "短期看空风险提示；与长期看多时间尺度不同，不应包装为直接相互反驳。",
+      "evidence_excerpt": "does not establish a scheduled crash",
+      "limitations": [
+        "公开正文403；仅搜索摘要。",
+        "原帖精确URL未取得。",
+        "没有采用或推算市场价格、帖子热度和受众比例。"
+      ],
+      "secondary_source_url": null,
+      "author": "Lucky (@Lucky_m_X)",
+      "author_profile": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "X13",
+      "platform": "x",
+      "topic": "巴黎时装周明星粉丝标签协同",
+      "domain": "时尚娱乐",
+      "published_at": null,
+      "captured_at": "2026-10-04T14:25:57.269373+00:00",
+      "url": "https://www.sotwe.com/LU_HK_NG",
+      "title": "转录的活动账号号召使用统一标签",
+      "source_type": "search_snippet",
+      "observed_metrics": null,
+      "claim": "检索摘要转录Solenn Entertainment关于Freen参与Valentino秀的日期与标签安排，显示有组织的标签动员线索。",
+      "stance_summary": "推广与参与号召；不是自发热度或榜单排名的证明。",
+      "evidence_excerpt": "SAROCHA X VALENTINO PFW SS27",
+      "limitations": [
+        "只读取搜索结果；未访问第三方镜像正文，也未取得原帖ID。",
+        "原帖发表时间未知；所述活动日期为2026-10-04。",
+        "公告时区标注疑有夏令时歧义，不用于确定活动发生时间。",
+        "证据强度低，仅候选，建议主报告省略。"
+      ],
+      "secondary_source_url": null,
+      "author": "Solenn Entertainment（转录）",
+      "author_profile": null,
+      "background": false,
+      "excluded_from_metrics": true
+    },
+    {
+      "id": "X14",
+      "platform": "x",
+      "topic": "自主智能体输出的人类可读性",
+      "domain": "AI",
+      "published_at": "2026-10-01",
+      "captured_at": "2026-10-04T22:54:54+08:00",
+      "url": "https://x.com/bondsnbourbon/status/2105892170263650792",
+      "title": "回复者尝试生成随机微积分解释视频",
+      "source_type": "primary_post",
+      "observed_metrics": null,
+      "claim": "在原帖下匿名可见回复中，作者称按建议制作了随机微积分解释视频，并表达感谢。",
+      "stance_summary": "支持定制解释视频的学习价值；个人体验，不是受控评估。",
+      "evidence_excerpt": "",
+      "limitations": [
+        "回复尾部折叠，未读取全部文字或验证所附视频。",
+        "不从专业教育的自述推定其职业或学历。"
+      ],
+      "author_profile": {
+        "role": "自述已尝试该方法的回复者",
+        "basis": "可见回复明确称已制作解释视频"
+      },
+      "parent_post_url": "https://x.com/karpathy/status/2105819303471976479",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "X15",
+      "platform": "x",
+      "topic": "自主智能体输出的人类可读性",
+      "domain": "AI",
+      "published_at": "2026-10-01",
+      "captured_at": "2026-10-04T22:54:54+08:00",
+      "url": "https://x.com/Grady_Booch/status/2105864893887082857",
+      "title": "回复者以UML提醒图示方法并非新概念",
+      "source_type": "primary_post",
+      "observed_metrics": null,
+      "claim": "Grady Booch引用图示更易理解的建议，并用UML作类比提醒。",
+      "stance_summary": "强调既有图示工具的连续性，不足以推断其反对所有AI解释视频。",
+      "evidence_excerpt": "there's this thing called the UML",
+      "limitations": [
+        "只对图示的新颖性作有限解读，不扩大为全盘反AI立场。",
+        "没有代表性回复样本。"
+      ],
+      "author_profile": {
+        "role": "提出既有建模语言类比的回复者",
+        "basis": "当前可见回复内容"
+      },
+      "parent_post_url": "https://x.com/karpathy/status/2105819303471976479",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "DYH01",
+      "platform": "douyin",
+      "topic": "市井人家的炊烟笑语总是令人心安",
+      "domain": "文化生活",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:41:58+08:00",
+      "url": "https://www.douyin.com/hot/2680834/%E5%B8%82%E4%BA%95%E4%BA%BA%E5%AE%B6%E7%9A%84%E7%82%8A%E7%83%9F%E7%AC%91%E8%AF%AD%E6%80%BB%E6%98%AF%E4%BB%A4%E4%BA%BA%E5%BF%83%E5%AE%89",
+      "title": "市井人家的炊烟笑语总是令人心安",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "rank": 1,
+        "heat_display": "1242.5万 热度",
+        "measurement": "平台显示热度值，非播放量、评论量或赞同人数"
+      },
+      "claim": "在本次直接读取的抖音官方热榜中出现。这里只证实上榜显示，不核实标题所述事件本身。",
+      "stance_summary": null,
+      "evidence_excerpt": "市井人家的炊烟笑语总是令人心安",
+      "limitations": [
+        "单次榜单快照，不代表长期趋势。",
+        "未读取相关视频评论，不能推断观众立场或人群画像。"
+      ],
+      "source_url": "https://www.douyin.com/hot",
+      "author_role": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "DYH02",
+      "platform": "douyin",
+      "topic": "是谁在重庆免费听了soldout",
+      "domain": "音乐娱乐",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:41:58+08:00",
+      "url": "https://www.douyin.com/hot/2681101/%E6%98%AF%E8%B0%81%E5%9C%A8%E9%87%8D%E5%BA%86%E5%85%8D%E8%B4%B9%E5%90%AC%E4%BA%86soldout",
+      "title": "是谁在重庆免费听了soldout",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "rank": 2,
+        "heat_display": "1127.6万 热度",
+        "measurement": "平台显示热度值，非播放量、评论量或赞同人数"
+      },
+      "claim": "在本次直接读取的抖音官方热榜中出现。这里只证实上榜显示，不核实标题所述事件本身。",
+      "stance_summary": null,
+      "evidence_excerpt": "是谁在重庆免费听了soldout",
+      "limitations": [
+        "单次榜单快照，不代表长期趋势。",
+        "未读取相关视频评论，不能推断观众立场或人群画像。"
+      ],
+      "source_url": "https://www.douyin.com/hot",
+      "author_role": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "DYH03",
+      "platform": "douyin",
+      "topic": "我国假日经济持续升温",
+      "domain": "假日消费",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:41:58+08:00",
+      "url": "https://www.douyin.com/hot/2681400/%E6%88%91%E5%9B%BD%E5%81%87%E6%97%A5%E7%BB%8F%E6%B5%8E%E6%8C%81%E7%BB%AD%E5%8D%87%E6%B8%A9",
+      "title": "我国假日经济持续升温",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "rank": 3,
+        "heat_display": "1112.3万 热度",
+        "measurement": "平台显示热度值，非播放量、评论量或赞同人数"
+      },
+      "claim": "在本次直接读取的抖音官方热榜中出现。这里只证实上榜显示，不核实标题所述事件本身。",
+      "stance_summary": null,
+      "evidence_excerpt": "我国假日经济持续升温",
+      "limitations": [
+        "单次榜单快照，不代表长期趋势。",
+        "未读取相关视频评论，不能推断观众立场或人群画像。"
+      ],
+      "source_url": "https://www.douyin.com/hot",
+      "author_role": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "DYH04",
+      "platform": "douyin",
+      "topic": "国庆自驾搭子集体陷入沉默",
+      "domain": "旅行",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:41:58+08:00",
+      "url": "https://www.douyin.com/hot/2680433/%E5%9B%BD%E5%BA%86%E8%87%AA%E9%A9%BE%E6%90%AD%E5%AD%90%E9%9B%86%E4%BD%93%E9%99%B7%E5%85%A5%E6%B2%89%E9%BB%98",
+      "title": "国庆自驾搭子集体陷入沉默",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "rank": 4,
+        "heat_display": "1110.5万 热度",
+        "measurement": "平台显示热度值，非播放量、评论量或赞同人数"
+      },
+      "claim": "在本次直接读取的抖音官方热榜中出现。这里只证实上榜显示，不核实标题所述事件本身。",
+      "stance_summary": null,
+      "evidence_excerpt": "国庆自驾搭子集体陷入沉默",
+      "limitations": [
+        "单次榜单快照，不代表长期趋势。",
+        "未读取相关视频评论，不能推断观众立场或人群画像。"
+      ],
+      "source_url": "https://www.douyin.com/hot",
+      "author_role": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "DYH05",
+      "platform": "douyin",
+      "topic": "这顿饭已严肃品鉴不烧心",
+      "domain": "美食",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:41:58+08:00",
+      "url": "https://www.douyin.com/hot/2680419/%E8%BF%99%E9%A1%BF%E9%A5%AD%E5%B7%B2%E4%B8%A5%E8%82%83%E5%93%81%E9%89%B4%E4%B8%8D%E7%83%A7%E5%BF%83",
+      "title": "这顿饭已严肃品鉴不烧心",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "rank": 5,
+        "heat_display": "1045.9万 热度",
+        "measurement": "平台显示热度值，非播放量、评论量或赞同人数"
+      },
+      "claim": "在本次直接读取的抖音官方热榜中出现。这里只证实上榜显示，不核实标题所述事件本身。",
+      "stance_summary": null,
+      "evidence_excerpt": "这顿饭已严肃品鉴不烧心",
+      "limitations": [
+        "单次榜单快照，不代表长期趋势。",
+        "未读取相关视频评论，不能推断观众立场或人群画像。"
+      ],
+      "source_url": "https://www.douyin.com/hot",
+      "author_role": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "DYH06",
+      "platform": "douyin",
+      "topic": "第二十届亚运会闭幕",
+      "domain": "体育",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:41:58+08:00",
+      "url": "https://www.douyin.com/hot/2681268/%E7%AC%AC%E4%BA%8C%E5%8D%81%E5%B1%8A%E4%BA%9A%E8%BF%90%E4%BC%9A%E9%97%AD%E5%B9%95",
+      "title": "第二十届亚运会闭幕",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "rank": 6,
+        "heat_display": "1041.5万 热度",
+        "measurement": "平台显示热度值，非播放量、评论量或赞同人数"
+      },
+      "claim": "在本次直接读取的抖音官方热榜中出现。这里只证实上榜显示，不核实标题所述事件本身。",
+      "stance_summary": null,
+      "evidence_excerpt": "第二十届亚运会闭幕",
+      "limitations": [
+        "单次榜单快照，不代表长期趋势。",
+        "未读取相关视频评论，不能推断观众立场或人群画像。"
+      ],
+      "source_url": "https://www.douyin.com/hot",
+      "author_role": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "DYH07",
+      "platform": "douyin",
+      "topic": "长长长假美食判官",
+      "domain": "美食",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:41:58+08:00",
+      "url": "https://www.douyin.com/hot/2680661/%E9%95%BF%E9%95%BF%E9%95%BF%E5%81%87%E7%BE%8E%E9%A3%9F%E5%88%A4%E5%AE%98",
+      "title": "长长长假美食判官",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "rank": 7,
+        "heat_display": "924.3万 热度",
+        "measurement": "平台显示热度值，非播放量、评论量或赞同人数"
+      },
+      "claim": "在本次直接读取的抖音官方热榜中出现。这里只证实上榜显示，不核实标题所述事件本身。",
+      "stance_summary": null,
+      "evidence_excerpt": "长长长假美食判官",
+      "limitations": [
+        "单次榜单快照，不代表长期趋势。",
+        "未读取相关视频评论，不能推断观众立场或人群画像。"
+      ],
+      "source_url": "https://www.douyin.com/hot",
+      "author_role": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "DYH08",
+      "platform": "douyin",
+      "topic": "苏超盐城2:0宿迁",
+      "domain": "体育",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:41:58+08:00",
+      "url": "https://www.douyin.com/hot/2681350/%E8%8B%8F%E8%B6%85%E7%9B%90%E5%9F%8E2%3A0%E5%AE%BF%E8%BF%81",
+      "title": "苏超盐城2:0宿迁",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "rank": 8,
+        "heat_display": "920.2万 热度",
+        "measurement": "平台显示热度值，非播放量、评论量或赞同人数"
+      },
+      "claim": "在本次直接读取的抖音官方热榜中出现。这里只证实上榜显示，不核实标题所述事件本身。",
+      "stance_summary": null,
+      "evidence_excerpt": "苏超盐城2:0宿迁",
+      "limitations": [
+        "单次榜单快照，不代表长期趋势。",
+        "未读取相关视频评论，不能推断观众立场或人群画像。"
+      ],
+      "source_url": "https://www.douyin.com/hot",
+      "author_role": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "DYH09",
+      "platform": "douyin",
+      "topic": "苏超苏州2:1常州",
+      "domain": "体育",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:41:58+08:00",
+      "url": "https://www.douyin.com/hot/2681346/%E8%8B%8F%E8%B6%85%E8%8B%8F%E5%B7%9E2%3A1%E5%B8%B8%E5%B7%9E",
+      "title": "苏超苏州2:1常州",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "rank": 9,
+        "heat_display": "916.4万 热度",
+        "measurement": "平台显示热度值，非播放量、评论量或赞同人数"
+      },
+      "claim": "在本次直接读取的抖音官方热榜中出现。这里只证实上榜显示，不核实标题所述事件本身。",
+      "stance_summary": null,
+      "evidence_excerpt": "苏超苏州2:1常州",
+      "limitations": [
+        "单次榜单快照，不代表长期趋势。",
+        "未读取相关视频评论，不能推断观众立场或人群画像。"
+      ],
+      "source_url": "https://www.douyin.com/hot",
+      "author_role": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "DYH10",
+      "platform": "douyin",
+      "topic": "国庆假期宅家无聊怎么办",
+      "domain": "假日生活",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:41:58+08:00",
+      "url": "https://www.douyin.com/hot/2680932/%E5%9B%BD%E5%BA%86%E5%81%87%E6%9C%9F%E5%AE%85%E5%AE%B6%E6%97%A0%E8%81%8A%E6%80%8E%E4%B9%88%E5%8A%9E",
+      "title": "国庆假期宅家无聊怎么办",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "rank": 10,
+        "heat_display": "913.8万 热度",
+        "measurement": "平台显示热度值，非播放量、评论量或赞同人数"
+      },
+      "claim": "在本次直接读取的抖音官方热榜中出现。这里只证实上榜显示，不核实标题所述事件本身。",
+      "stance_summary": null,
+      "evidence_excerpt": "国庆假期宅家无聊怎么办",
+      "limitations": [
+        "单次榜单快照，不代表长期趋势。",
+        "未读取相关视频评论，不能推断观众立场或人群画像。"
+      ],
+      "source_url": "https://www.douyin.com/hot",
+      "author_role": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "WBH01",
+      "platform": "weibo",
+      "topic": "中国正编织六张超级大网",
+      "domain": "科技基础设施",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:44:52+08:00",
+      "url": "https://s.weibo.com/top/summary?cate=tech",
+      "title": "中国正编织六张超级大网",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "category_rank": 1,
+        "displayed_heat": 129491,
+        "rank_scope": "微博科技分类榜；不是综合榜",
+        "measurement": "页面显示数值，非独立参与者或赞同人数"
+      },
+      "claim": "本次直接浏览科技分类榜可见该话题及数值；仅核实榜单呈现，不为标题事实背书。",
+      "stance_summary": null,
+      "evidence_excerpt": "中国正编织六张超级大网",
+      "limitations": [
+        "单次榜单快照。",
+        "没有该话题实际评论样本，不能从标题计算态度比例。",
+        "原帖/事件日期未核实。"
+      ],
+      "author_role": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "WBH02",
+      "platform": "weibo",
+      "topic": "芯片制程提升故事讲不下去",
+      "domain": "芯片硬件",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:44:52+08:00",
+      "url": "https://s.weibo.com/top/summary?cate=tech",
+      "title": "芯片制程提升故事讲不下去",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "category_rank": 2,
+        "displayed_heat": 116541,
+        "rank_scope": "微博科技分类榜；不是综合榜",
+        "measurement": "页面显示数值，非独立参与者或赞同人数"
+      },
+      "claim": "本次直接浏览科技分类榜可见该话题及数值；仅核实榜单呈现，不为标题事实背书。",
+      "stance_summary": null,
+      "evidence_excerpt": "芯片制程提升故事讲不下去",
+      "limitations": [
+        "单次榜单快照。",
+        "没有该话题实际评论样本，不能从标题计算态度比例。",
+        "原帖/事件日期未核实。"
+      ],
+      "author_role": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "WBH03",
+      "platform": "weibo",
+      "topic": "全网最压抑的AI视频太窒息了",
+      "domain": "AI影像",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:44:52+08:00",
+      "url": "https://s.weibo.com/top/summary?cate=tech",
+      "title": "全网最压抑的AI视频太窒息了",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "category_rank": 3,
+        "displayed_heat": 104887,
+        "rank_scope": "微博科技分类榜；不是综合榜",
+        "measurement": "页面显示数值，非独立参与者或赞同人数"
+      },
+      "claim": "本次直接浏览科技分类榜可见该话题及数值；仅核实榜单呈现，不为标题事实背书。",
+      "stance_summary": null,
+      "evidence_excerpt": "全网最压抑的AI视频太窒息了",
+      "limitations": [
+        "单次榜单快照。",
+        "没有该话题实际评论样本，不能从标题计算态度比例。",
+        "原帖/事件日期未核实。"
+      ],
+      "author_role": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "WBH10",
+      "platform": "weibo",
+      "topic": "开启智驾不能脱手脱眼",
+      "domain": "AI应用安全",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:44:52+08:00",
+      "url": "https://s.weibo.com/top/summary?cate=tech",
+      "title": "开启智驾不能脱手脱眼",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "category_rank": 10,
+        "displayed_heat": 50167,
+        "rank_scope": "微博科技分类榜；不是综合榜",
+        "measurement": "页面显示数值，非独立参与者或赞同人数"
+      },
+      "claim": "本次直接浏览科技分类榜可见该话题及数值；仅核实榜单呈现，不为标题事实背书。",
+      "stance_summary": null,
+      "evidence_excerpt": "开启智驾不能脱手脱眼",
+      "limitations": [
+        "单次榜单快照。",
+        "没有该话题实际评论样本，不能从标题计算态度比例。",
+        "原帖/事件日期未核实。"
+      ],
+      "author_role": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "WBH11",
+      "platform": "weibo",
+      "topic": "看完才发现视频是AI生成",
+      "domain": "AI创作",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:44:52+08:00",
+      "url": "https://s.weibo.com/top/summary?cate=tech",
+      "title": "看完才发现视频是AI生成",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "category_rank": 11,
+        "displayed_heat": 45150,
+        "rank_scope": "微博科技分类榜；不是综合榜",
+        "measurement": "页面显示数值，非独立参与者或赞同人数"
+      },
+      "claim": "本次直接浏览科技分类榜可见该话题及数值；仅核实榜单呈现，不为标题事实背书。",
+      "stance_summary": null,
+      "evidence_excerpt": "看完才发现视频是AI生成",
+      "limitations": [
+        "单次榜单快照。",
+        "没有该话题实际评论样本，不能从标题计算态度比例。",
+        "原帖/事件日期未核实。"
+      ],
+      "author_role": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "WBH14",
+      "platform": "weibo",
+      "topic": "德国AI影响下岗位逆势增长",
+      "domain": "AI与就业",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:44:52+08:00",
+      "url": "https://s.weibo.com/top/summary?cate=tech",
+      "title": "德国AI影响下岗位逆势增长",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "category_rank": 14,
+        "displayed_heat": 32914,
+        "rank_scope": "微博科技分类榜；不是综合榜",
+        "measurement": "页面显示数值，非独立参与者或赞同人数"
+      },
+      "claim": "本次直接浏览科技分类榜可见该话题及数值；仅核实榜单呈现，不为标题事实背书。",
+      "stance_summary": null,
+      "evidence_excerpt": "德国AI影响下岗位逆势增长",
+      "limitations": [
+        "单次榜单快照。",
+        "没有该话题实际评论样本，不能从标题计算态度比例。",
+        "原帖/事件日期未核实。"
+      ],
+      "author_role": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "WBH18",
+      "platform": "weibo",
+      "topic": "绘圈为什么反感AI",
+      "domain": "AI与创作争议",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:44:52+08:00",
+      "url": "https://s.weibo.com/top/summary?cate=tech",
+      "title": "绘圈为什么反感AI",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "category_rank": 18,
+        "displayed_heat": 21595,
+        "rank_scope": "微博科技分类榜；不是综合榜",
+        "measurement": "页面显示数值，非独立参与者或赞同人数"
+      },
+      "claim": "本次直接浏览科技分类榜可见该话题及数值；仅核实榜单呈现，不为标题事实背书。",
+      "stance_summary": null,
+      "evidence_excerpt": "绘圈为什么反感AI",
+      "limitations": [
+        "单次榜单快照。",
+        "没有该话题实际评论样本，不能从标题计算态度比例。",
+        "原帖/事件日期未核实。"
+      ],
+      "author_role": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "WBH19",
+      "platform": "weibo",
+      "topic": "越来越多开发者不逐个审代码",
+      "domain": "AI编程",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:44:52+08:00",
+      "url": "https://s.weibo.com/top/summary?cate=tech",
+      "title": "越来越多开发者不逐个审代码",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "category_rank": 19,
+        "displayed_heat": 19435,
+        "rank_scope": "微博科技分类榜；不是综合榜",
+        "measurement": "页面显示数值，非独立参与者或赞同人数"
+      },
+      "claim": "本次直接浏览科技分类榜可见该话题及数值；仅核实榜单呈现，不为标题事实背书。",
+      "stance_summary": null,
+      "evidence_excerpt": "越来越多开发者不逐个审代码",
+      "limitations": [
+        "单次榜单快照。",
+        "没有该话题实际评论样本，不能从标题计算态度比例。",
+        "原帖/事件日期未核实。"
+      ],
+      "author_role": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "WBH21",
+      "platform": "weibo",
+      "topic": "当AI开始制造AI",
+      "domain": "AI研发",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:44:52+08:00",
+      "url": "https://s.weibo.com/top/summary?cate=tech",
+      "title": "当AI开始制造AI",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "category_rank": 21,
+        "displayed_heat": 17482,
+        "rank_scope": "微博科技分类榜；不是综合榜",
+        "measurement": "页面显示数值，非独立参与者或赞同人数"
+      },
+      "claim": "本次直接浏览科技分类榜可见该话题及数值；仅核实榜单呈现，不为标题事实背书。",
+      "stance_summary": null,
+      "evidence_excerpt": "当AI开始制造AI",
+      "limitations": [
+        "单次榜单快照。",
+        "没有该话题实际评论样本，不能从标题计算态度比例。",
+        "原帖/事件日期未核实。"
+      ],
+      "author_role": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "WBH24",
+      "platform": "weibo",
+      "topic": "阿莫迪称人工智能或引发失业潮",
+      "domain": "AI与就业",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:44:52+08:00",
+      "url": "https://s.weibo.com/top/summary?cate=tech",
+      "title": "阿莫迪称人工智能或引发失业潮",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "category_rank": 24,
+        "displayed_heat": 12744,
+        "rank_scope": "微博科技分类榜；不是综合榜",
+        "measurement": "页面显示数值，非独立参与者或赞同人数"
+      },
+      "claim": "本次直接浏览科技分类榜可见该话题及数值；仅核实榜单呈现，不为标题事实背书。",
+      "stance_summary": null,
+      "evidence_excerpt": "阿莫迪称人工智能或引发失业潮",
+      "limitations": [
+        "单次榜单快照。",
+        "没有该话题实际评论样本，不能从标题计算态度比例。",
+        "原帖/事件日期未核实。"
+      ],
+      "author_role": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "WBH27",
+      "platform": "weibo",
+      "topic": "AI时代体面的定义变了",
+      "domain": "AI社会讨论",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:44:52+08:00",
+      "url": "https://s.weibo.com/top/summary?cate=tech",
+      "title": "AI时代体面的定义变了",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "category_rank": 27,
+        "displayed_heat": 9290,
+        "rank_scope": "微博科技分类榜；不是综合榜",
+        "measurement": "页面显示数值，非独立参与者或赞同人数"
+      },
+      "claim": "本次直接浏览科技分类榜可见该话题及数值；仅核实榜单呈现，不为标题事实背书。",
+      "stance_summary": null,
+      "evidence_excerpt": "AI时代体面的定义变了",
+      "limitations": [
+        "单次榜单快照。",
+        "没有该话题实际评论样本，不能从标题计算态度比例。",
+        "原帖/事件日期未核实。"
+      ],
+      "author_role": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "WBH29",
+      "platform": "weibo",
+      "topic": "赴非劳工热帖被指AI编造",
+      "domain": "AI内容真实性",
+      "published_at": null,
+      "captured_at": "2026-10-04T22:44:52+08:00",
+      "url": "https://s.weibo.com/top/summary?cate=tech",
+      "title": "赴非劳工热帖被指AI编造",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "category_rank": 29,
+        "displayed_heat": 7703,
+        "rank_scope": "微博科技分类榜；不是综合榜",
+        "measurement": "页面显示数值，非独立参与者或赞同人数"
+      },
+      "claim": "本次直接浏览科技分类榜可见该话题及数值；仅核实榜单呈现，不为标题事实背书。",
+      "stance_summary": null,
+      "evidence_excerpt": "赴非劳工热帖被指AI编造",
+      "limitations": [
+        "单次榜单快照。",
+        "没有该话题实际评论样本，不能从标题计算态度比例。",
+        "原帖/事件日期未核实。"
+      ],
+      "author_role": null,
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "BH01",
+      "platform": "bilibili",
+      "topic": "ピノキオピー - えねみぃ feat. 初音ミク・重音テト",
+      "domain": "音乐",
+      "published_at": null,
+      "captured_at": "2026-10-04T23:49:23+08:00",
+      "url": "https://www.bilibili.com/video/BV1UGa961Ejt",
+      "title": "ピノキオピー - えねみぃ feat. 初音ミク・重音テト",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "rank": 1,
+        "views_display": "194.3万",
+        "danmaku_display": "4.1万",
+        "metric_note": "平台显示播放/弹幕；不是评论数、独立观众或赞成人数。"
+      },
+      "author_name": "ピノキオピー_official",
+      "claim": "在直接读取的B站官方全站榜中出现；这里只核实榜单呈现，不替标题事实背书。",
+      "stance_summary": null,
+      "evidence_excerpt": "ピノキオピー - えねみぃ feat. 初音ミク・重音テト",
+      "limitations": [
+        "近期数据综合动态榜，不能仅按播放量解释排名。",
+        "没有代表性评论语料，不报告观众立场比例。",
+        "标题中的身份/情境不作为发布者真实身份。"
+      ],
+      "author_profile": {
+        "role": "视频发布者",
+        "basis": "官方视频/排行页公开发布账号，不推定其职业。"
+      },
+      "source_url": "https://www.bilibili.com/v/popular/rank/all",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "BH02",
+      "platform": "bilibili",
+      "topic": "逻辑折叠深度解析！华为Mate 90系列韬定律芯片有多强？",
+      "domain": "芯片硬件",
+      "published_at": null,
+      "captured_at": "2026-10-04T23:49:23+08:00",
+      "url": "https://www.bilibili.com/video/BV1heam6TExz",
+      "title": "逻辑折叠深度解析！华为Mate 90系列韬定律芯片有多强？",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "rank": 2,
+        "views_display": "217.3万",
+        "danmaku_display": "1.7万",
+        "metric_note": "平台显示播放/弹幕；不是评论数、独立观众或赞成人数。"
+      },
+      "author_name": "极客湾Geekerwan",
+      "claim": "在直接读取的B站官方全站榜中出现；这里只核实榜单呈现，不替标题事实背书。",
+      "stance_summary": null,
+      "evidence_excerpt": "逻辑折叠深度解析！华为Mate 90系列韬定律芯片有多强？",
+      "limitations": [
+        "近期数据综合动态榜，不能仅按播放量解释排名。",
+        "没有代表性评论语料，不报告观众立场比例。",
+        "标题中的身份/情境不作为发布者真实身份。"
+      ],
+      "author_profile": {
+        "role": "视频发布者",
+        "basis": "官方视频/排行页公开发布账号，不推定其职业。"
+      },
+      "source_url": "https://www.bilibili.com/v/popular/rank/all",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "BH03",
+      "platform": "bilibili",
+      "topic": "你离开的事实原创高至豪偶遇粉丝，于是为她演奏一曲",
+      "domain": "音乐",
+      "published_at": null,
+      "captured_at": "2026-10-04T23:49:23+08:00",
+      "url": "https://www.bilibili.com/video/BV1wAYP6YEif",
+      "title": "你离开的事实原创高至豪偶遇粉丝，于是为她演奏一曲",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "rank": 3,
+        "views_display": "323.0万",
+        "danmaku_display": "2110",
+        "metric_note": "平台显示播放/弹幕；不是评论数、独立观众或赞成人数。"
+      },
+      "author_name": "Pianoboy高至豪",
+      "claim": "在直接读取的B站官方全站榜中出现；这里只核实榜单呈现，不替标题事实背书。",
+      "stance_summary": null,
+      "evidence_excerpt": "你离开的事实原创高至豪偶遇粉丝，于是为她演奏一曲",
+      "limitations": [
+        "近期数据综合动态榜，不能仅按播放量解释排名。",
+        "没有代表性评论语料，不报告观众立场比例。",
+        "标题中的身份/情境不作为发布者真实身份。"
+      ],
+      "author_profile": {
+        "role": "视频发布者",
+        "basis": "官方视频/排行页公开发布账号，不推定其职业。"
+      },
+      "source_url": "https://www.bilibili.com/v/popular/rank/all",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "BH04",
+      "platform": "bilibili",
+      "topic": "章鱼哥，快乐都去哪了呢？",
+      "domain": "动画",
+      "published_at": null,
+      "captured_at": "2026-10-04T23:49:23+08:00",
+      "url": "https://www.bilibili.com/video/BV1mjad6DEK1",
+      "title": "章鱼哥，快乐都去哪了呢？",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "rank": 4,
+        "views_display": "395.7万",
+        "danmaku_display": "7693",
+        "metric_note": "平台显示播放/弹幕；不是评论数、独立观众或赞成人数。"
+      },
+      "author_name": "就叫阿路8",
+      "claim": "在直接读取的B站官方全站榜中出现；这里只核实榜单呈现，不替标题事实背书。",
+      "stance_summary": null,
+      "evidence_excerpt": "章鱼哥，快乐都去哪了呢？",
+      "limitations": [
+        "近期数据综合动态榜，不能仅按播放量解释排名。",
+        "没有代表性评论语料，不报告观众立场比例。",
+        "标题中的身份/情境不作为发布者真实身份。"
+      ],
+      "author_profile": {
+        "role": "视频发布者",
+        "basis": "官方视频/排行页公开发布账号，不推定其职业。"
+      },
+      "source_url": "https://www.bilibili.com/v/popular/rank/all",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "BH05",
+      "platform": "bilibili",
+      "topic": "24位博主为粉丝争夺30万元！",
+      "domain": "综艺/创作",
+      "published_at": null,
+      "captured_at": "2026-10-04T23:49:23+08:00",
+      "url": "https://www.bilibili.com/video/BV15far6dEjT",
+      "title": "24位博主为粉丝争夺30万元！",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "rank": 5,
+        "views_display": "237.4万",
+        "danmaku_display": "2.1万",
+        "metric_note": "平台显示播放/弹幕；不是评论数、独立观众或赞成人数。"
+      },
+      "author_name": "飓多多StormCrew",
+      "claim": "在直接读取的B站官方全站榜中出现；这里只核实榜单呈现，不替标题事实背书。",
+      "stance_summary": null,
+      "evidence_excerpt": "24位博主为粉丝争夺30万元！",
+      "limitations": [
+        "近期数据综合动态榜，不能仅按播放量解释排名。",
+        "没有代表性评论语料，不报告观众立场比例。",
+        "标题中的身份/情境不作为发布者真实身份。"
+      ],
+      "author_profile": {
+        "role": "视频发布者",
+        "basis": "官方视频/排行页公开发布账号，不推定其职业。"
+      },
+      "source_url": "https://www.bilibili.com/v/popular/rank/all",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "BH06",
+      "platform": "bilibili",
+      "topic": "4名枪匪闯入豪宅，中国男子4秒13枪疯狂反击！",
+      "domain": "新闻",
+      "published_at": null,
+      "captured_at": "2026-10-04T23:49:23+08:00",
+      "url": "https://www.bilibili.com/video/BV18Bam6eEBd",
+      "title": "4名枪匪闯入豪宅，中国男子4秒13枪疯狂反击！",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "rank": 6,
+        "views_display": "1114.3万",
+        "danmaku_display": "2.7万",
+        "metric_note": "平台显示播放/弹幕；不是评论数、独立观众或赞成人数。"
+      },
+      "author_name": "红蓝守护者",
+      "claim": "在直接读取的B站官方全站榜中出现；这里只核实榜单呈现，不替标题事实背书。",
+      "stance_summary": null,
+      "evidence_excerpt": "4名枪匪闯入豪宅，中国男子4秒13枪疯狂反击！",
+      "limitations": [
+        "近期数据综合动态榜，不能仅按播放量解释排名。",
+        "没有代表性评论语料，不报告观众立场比例。",
+        "标题中的身份/情境不作为发布者真实身份。"
+      ],
+      "author_profile": {
+        "role": "视频发布者",
+        "basis": "官方视频/排行页公开发布账号，不推定其职业。"
+      },
+      "source_url": "https://www.bilibili.com/v/popular/rank/all",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "BH07",
+      "platform": "bilibili",
+      "topic": "【亿万级特效！】猫核老鼠：量子网球对决！（全程高能！）",
+      "domain": "动画",
+      "published_at": null,
+      "captured_at": "2026-10-04T23:49:23+08:00",
+      "url": "https://www.bilibili.com/video/BV1s3Yc68EJK",
+      "title": "【亿万级特效！】猫核老鼠：量子网球对决！（全程高能！）",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "rank": 7,
+        "views_display": "323.2万",
+        "danmaku_display": "3171",
+        "metric_note": "平台显示播放/弹幕；不是评论数、独立观众或赞成人数。"
+      },
+      "author_name": "6老铁2333",
+      "claim": "在直接读取的B站官方全站榜中出现；这里只核实榜单呈现，不替标题事实背书。",
+      "stance_summary": null,
+      "evidence_excerpt": "【亿万级特效！】猫核老鼠：量子网球对决！（全程高能！）",
+      "limitations": [
+        "近期数据综合动态榜，不能仅按播放量解释排名。",
+        "没有代表性评论语料，不报告观众立场比例。",
+        "标题中的身份/情境不作为发布者真实身份。"
+      ],
+      "author_profile": {
+        "role": "视频发布者",
+        "basis": "官方视频/排行页公开发布账号，不推定其职业。"
+      },
+      "source_url": "https://www.bilibili.com/v/popular/rank/all",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "BH08",
+      "platform": "bilibili",
+      "topic": "《原神》剧情PV-「燕归来」",
+      "domain": "游戏",
+      "published_at": null,
+      "captured_at": "2026-10-04T23:49:23+08:00",
+      "url": "https://www.bilibili.com/video/BV1cQap6UEr2",
+      "title": "《原神》剧情PV-「燕归来」",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "rank": 8,
+        "views_display": "119.3万",
+        "danmaku_display": "3381",
+        "metric_note": "平台显示播放/弹幕；不是评论数、独立观众或赞成人数。"
+      },
+      "author_name": "原神",
+      "claim": "在直接读取的B站官方全站榜中出现；这里只核实榜单呈现，不替标题事实背书。",
+      "stance_summary": null,
+      "evidence_excerpt": "《原神》剧情PV-「燕归来」",
+      "limitations": [
+        "近期数据综合动态榜，不能仅按播放量解释排名。",
+        "没有代表性评论语料，不报告观众立场比例。",
+        "标题中的身份/情境不作为发布者真实身份。"
+      ],
+      "author_profile": {
+        "role": "视频发布者",
+        "basis": "官方视频/排行页公开发布账号，不推定其职业。"
+      },
+      "source_url": "https://www.bilibili.com/v/popular/rank/all",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "BH09",
+      "platform": "bilibili",
+      "topic": "《下一个是谁》第七季（5）",
+      "domain": "综艺/创作",
+      "published_at": null,
+      "captured_at": "2026-10-04T23:49:23+08:00",
+      "url": "https://www.bilibili.com/video/BV1cAYP6YEvj",
+      "title": "《下一个是谁》第七季（5）",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "rank": 9,
+        "views_display": "287.5万",
+        "danmaku_display": "14.2万",
+        "metric_note": "平台显示播放/弹幕；不是评论数、独立观众或赞成人数。"
+      },
+      "author_name": "在下哲别",
+      "claim": "在直接读取的B站官方全站榜中出现；这里只核实榜单呈现，不替标题事实背书。",
+      "stance_summary": null,
+      "evidence_excerpt": "《下一个是谁》第七季（5）",
+      "limitations": [
+        "近期数据综合动态榜，不能仅按播放量解释排名。",
+        "没有代表性评论语料，不报告观众立场比例。",
+        "标题中的身份/情境不作为发布者真实身份。"
+      ],
+      "author_profile": {
+        "role": "视频发布者",
+        "basis": "官方视频/排行页公开发布账号，不推定其职业。"
+      },
+      "source_url": "https://www.bilibili.com/v/popular/rank/all",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "BH10",
+      "platform": "bilibili",
+      "topic": "有用版新植物：空调寒冰",
+      "domain": "游戏",
+      "published_at": null,
+      "captured_at": "2026-10-04T23:49:23+08:00",
+      "url": "https://www.bilibili.com/video/BV1W7HY6xErH",
+      "title": "有用版新植物：空调寒冰",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "rank": 10,
+        "views_display": "627.9万",
+        "danmaku_display": "1594",
+        "metric_note": "平台显示播放/弹幕；不是评论数、独立观众或赞成人数。"
+      },
+      "author_name": "小易EXS",
+      "claim": "在直接读取的B站官方全站榜中出现；这里只核实榜单呈现，不替标题事实背书。",
+      "stance_summary": null,
+      "evidence_excerpt": "有用版新植物：空调寒冰",
+      "limitations": [
+        "近期数据综合动态榜，不能仅按播放量解释排名。",
+        "没有代表性评论语料，不报告观众立场比例。",
+        "标题中的身份/情境不作为发布者真实身份。"
+      ],
+      "author_profile": {
+        "role": "视频发布者",
+        "basis": "官方视频/排行页公开发布账号，不推定其职业。"
+      },
+      "source_url": "https://www.bilibili.com/v/popular/rank/all",
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "BH49",
+      "platform": "bilibili",
+      "topic": "我的东京留学生活不可能那么二次元！【AI全民制作人】",
+      "domain": "AI/创作",
+      "published_at": "2026-09-30 18:37:16",
+      "captured_at": "2026-10-04T23:49:23+08:00",
+      "url": "https://www.bilibili.com/video/BV1mrao6WEKK",
+      "title": "我的东京留学生活不可能那么二次元！【AI全民制作人】",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "rank": 49,
+        "views_display": "103.9万",
+        "danmaku_display": "1323",
+        "metric_note": "平台显示播放/弹幕；不是评论数、独立观众或赞成人数。"
+      },
+      "author_name": "嘿秀文化",
+      "claim": "在直接读取的B站官方全站榜中出现；这里只核实榜单呈现，不替标题事实背书。 详情页明确标注含AI生成内容。",
+      "stance_summary": null,
+      "evidence_excerpt": "我的东京留学生活不可能那么二次元！【AI全民制作人】",
+      "limitations": [
+        "近期数据综合动态榜，不能仅按播放量解释排名。",
+        "没有代表性评论语料，不报告观众立场比例。",
+        "标题中的身份/情境不作为发布者真实身份。",
+        "历史最高名次不是本次名次，不能拿来计算采样期间涨跌。"
+      ],
+      "author_profile": {
+        "role": "自述制作动画的发布者",
+        "basis": "公开简介：做有趣的动画"
+      },
+      "source_url": "https://www.bilibili.com/v/popular/rank/all",
+      "date_note": "页面显示日期，时区未确认。",
+      "ai_disclosure": "含AI生成内容",
+      "detail_metrics": {
+        "captured_at": "2026-10-04T23:49:33+08:00",
+        "published_at_display": "2026-09-30 18:37:16",
+        "historical_best_rank_display": "全站排行榜最高第44名",
+        "views_display": "103.9万",
+        "danmaku_display": "1323",
+        "likes_display": "9.6万",
+        "coins_display": "1.8万",
+        "favorites_display": "4.2万"
+      },
+      "background": false,
+      "excluded_from_metrics": false
+    },
+    {
+      "id": "BH98",
+      "platform": "bilibili",
+      "topic": "有一个人前来借寿【AI全民制作人】",
+      "domain": "AI/创作",
+      "published_at": "2026-10-02 01:55:06",
+      "captured_at": "2026-10-04T23:49:23+08:00",
+      "url": "https://www.bilibili.com/video/BV17vak6wErn",
+      "title": "有一个人前来借寿【AI全民制作人】",
+      "source_type": "official_rank",
+      "observed_metrics": {
+        "rank": 98,
+        "views_display": "126.2万",
+        "danmaku_display": "6099",
+        "metric_note": "平台显示播放/弹幕；不是评论数、独立观众或赞成人数。"
+      },
+      "author_name": "伊介书生",
+      "claim": "在直接读取的B站官方全站榜中出现；这里只核实榜单呈现，不替标题事实背书。 详情页明确标注含AI生成内容。",
+      "stance_summary": null,
+      "evidence_excerpt": "有一个人前来借寿【AI全民制作人】",
+      "limitations": [
+        "近期数据综合动态榜，不能仅按播放量解释排名。",
+        "没有代表性评论语料，不报告观众立场比例。",
+        "标题中的身份/情境不作为发布者真实身份。",
+        "历史最高名次不是本次名次，不能拿来计算采样期间涨跌。"
+      ],
+      "author_profile": {
+        "role": "视频发布者",
+        "basis": "官方视频/排行页公开发布账号，不推定其职业。"
+      },
+      "source_url": "https://www.bilibili.com/v/popular/rank/all",
+      "date_note": "页面显示日期，时区未确认。",
+      "ai_disclosure": "含AI生成内容",
+      "detail_metrics": {
+        "captured_at": "2026-10-04T23:50:21+08:00",
+        "published_at_display": "2026-10-02 01:55:06",
+        "historical_best_rank_display": "全站排行榜最高第98名",
+        "views_display": "126.2万",
+        "danmaku_display": "6102",
+        "likes_display": "7.8万",
+        "coins_display": "6529",
+        "favorites_display": "1.5万"
+      },
+      "background": false,
+      "excluded_from_metrics": false
+    }
+  ],
+  "synthesis": {
+    "as_of": "2026-10-04T23:49:23+08:00",
+    "status": "qualitative_evidence_comparison_not_representative_poll",
+    "summary": "本轮可见AI讨论不止关注模型能力，也关注审阅负担、落地可靠性、成本与责任。下列是限定样本的主题比较，不是六个平台整体态度。",
+    "opinion_share": null,
+    "opinion_share_reason": "未取得统一抽样且可审计的真实评论语料，不能计算平台观点占比。",
+    "groups": [
+      {
+        "id": "review-cost",
+        "title": "生成变快，审阅是否成为新瓶颈？",
+        "platforms": [
+          "Bilibili",
+          "Xiaohongshu",
+          "X",
+          "WeChat"
+        ],
+        "evidence_ids": [
+          "BX05",
+          "BX06",
+          "BX09",
+          "X08",
+          "WX01",
+          "X14",
+          "X15"
+        ],
+        "relation": "共同议题与不同侧重；部分同源传播",
+        "positions": [
+          "B站创作者样本把成果展示与任务书、多轮修改和验收放在一起。",
+          "小红书标题线索关注阅读AI输出的负担。",
+          "X作者讨论自主输出的可理解性，公众号转载进一步介绍可读性规则。"
+        ],
+        "assessment": "更快地产出不等于更快完成任务；应同时记录纠错、审阅和验收时间。现有材料可以提出这一评估框架，不能量化各平台赞成者比例。",
+        "limitations": [
+          "小红书材料仍为二手；X08及两条回复已直接读取，但回复可见样本很少。",
+          "Karpathy相关转载可能同源，不能按独立支持证据叠加。"
+        ]
+      },
+      {
+        "id": "agent-reliability",
+        "title": "智能体效率展示，与授权和责任边界",
+        "platforms": [
+          "Bilibili",
+          "Douyin",
+          "WeChat"
+        ],
+        "evidence_ids": [
+          "BX01",
+          "BX06",
+          "WD07",
+          "WD09",
+          "WX02"
+        ],
+        "relation": "关注重点不同，不构成相互否定",
+        "positions": [
+          "B站及抖音部分创作者展示降低视频制作门槛。",
+          "抖音另一条内容用删除照片例子讨论目标是否真正完成。",
+          "公众号转载强调授权、责任和结果证据。"
+        ],
+        "assessment": "演示证明某一次输出可行，尚不足以证明稳定性或完整投入产出比；边界、失败回退和结果验证是补充条件。不能把效率叙事和治理叙事强行包装成对立阵营。",
+        "limitations": [
+          "部分仅有标题或索引摘要，未读取视频及评论。"
+        ]
+      },
+      {
+        "id": "ai-interview",
+        "title": "AI面试：效率初筛还是不被尊重的体验？",
+        "platforms": [
+          "Weibo",
+          "WeChat"
+        ],
+        "evidence_ids": [
+          "WD04",
+          "WD05",
+          "WD06",
+          "WX06"
+        ],
+        "relation": "同一议题的可见立场差异",
+        "positions": [
+          "微博样本质疑拟真人面试的恐怖谷体验与被迫情绪表演。",
+          "另一微博作者条件性认可标准化初筛，但保留真人深度沟通。",
+          "公众号转载强调求职者体验与信息时效问题。"
+        ],
+        "assessment": "体验批评与初筛效率各自涉及不同评价指标。合理比较应包含准确性、公平性、告知和申诉渠道；本轮来源未提供足够实验数据来判定哪种招聘流程更好。",
+        "limitations": [
+          "评论样本为零，比例未知。",
+          "公众号为署名转载，原微信文章与精选留言未直接取得。"
+        ]
+      },
+      {
+        "id": "ai-value",
+        "title": "AI的价值，是否覆盖订阅与使用成本？",
+        "platforms": [
+          "Xiaohongshu",
+          "X",
+          "WeChat"
+        ],
+        "evidence_ids": [
+          "BX10",
+          "X04",
+          "WX03",
+          "WX05"
+        ],
+        "relation": "相关主题，非同一个具体命题的直接交锋",
+        "positions": [
+          "小红书标题用房贷比喻表达AI订阅负担。",
+          "X的模型评测讨论工具链、性能与成本，避免只看单一分数。",
+          "公众号商业和评论文章分别谈分工核算与收益分配。"
+        ],
+        "assessment": "对不同使用者，价格、复核时间和可交付成果不同。建议用每项合格成果的总成本评估，而不是仅比较月费、token价格或榜单分数；商业案例自述不能替代独立验证。",
+        "limitations": [
+          "无法推断作者实际收入、职业或订阅支出。",
+          "没有统一量化成本样本，不能做平台收益排名。"
+        ]
+      },
+      {
+        "id": "ai-creation",
+        "title": "AI创作的传播，与真实性和使用边界",
+        "platforms": [
+          "Bilibili",
+          "Douyin",
+          "Weibo"
+        ],
+        "evidence_ids": [
+          "BH49",
+          "BH98",
+          "WD08",
+          "WBH03",
+          "WBH11",
+          "WBH18"
+        ],
+        "relation": "同领域的应用展示与争议焦点，并非全平台相反阵营",
+        "positions": [
+          "B站榜单中两条明确AI生成的动画/娱乐作品显示百万级播放，体现实际传播样本。",
+          "抖音近期索引样本以AI人像审美应用为切入。",
+          "微博科技榜话题包括AI影像效果、生成内容识别和创作群体的反感讨论。"
+        ],
+        "assessment": "应分别考察成片效果、素材授权、生成标识和观看者的具体反馈。上榜或播放量不能证明观众认同；对特定用法的质疑也不等于反对全部AI创作。",
+        "limitations": [
+          "B站选取前10及两个显式AI标签，不是完整AI内容分类。",
+          "未读取这些作品的完整评论，标题表达不能替代用户观点统计。",
+          "AI生成标识只说明页面披露，不证明训练或素材权利已全部解决。"
+        ]
+      }
+    ],
+    "non_ai_overview": "非AI可见材料涉及假日旅行与文旅活动、ACG线下活动、文化演出、公共服务及体育。新近与历史材料混合，必须按实际发布日期筛选；不把检索到的条目自动称为当前热搜。",
+    "audience_profile_rule": "仅展示公开自述/机构账号类型/创作角色；描述的是取样作者，而非平台用户总体。未知身份保持未知。",
+    "exclude_from_current_platform_metrics": [
+      "X03",
+      "X13"
+    ],
+    "date_correction": "李飞飞两类劳动说法在微博10月4日被重新讨论；抖音对照素材日期为6月28日，不能写成当天新预测。"
+  }
+}

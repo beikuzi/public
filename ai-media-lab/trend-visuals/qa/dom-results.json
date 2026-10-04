@@ -1,0 +1,129 @@
+{
+  "passed": true,
+  "kind": "DOM/source tests only; not browser QA",
+  "routes": [
+    {
+      "route": "editorial/summary",
+      "pass": true
+    },
+    {
+      "route": "editorial/bilibili",
+      "pass": true
+    },
+    {
+      "route": "editorial/xiaohongshu",
+      "pass": true
+    },
+    {
+      "route": "editorial/weibo",
+      "pass": true
+    },
+    {
+      "route": "editorial/douyin",
+      "pass": true
+    },
+    {
+      "route": "editorial/x",
+      "pass": true
+    },
+    {
+      "route": "editorial/wechat",
+      "pass": true
+    },
+    {
+      "route": "transit/summary",
+      "pass": true
+    },
+    {
+      "route": "transit/bilibili",
+      "pass": true
+    },
+    {
+      "route": "transit/xiaohongshu",
+      "pass": true
+    },
+    {
+      "route": "transit/weibo",
+      "pass": true
+    },
+    {
+      "route": "transit/douyin",
+      "pass": true
+    },
+    {
+      "route": "transit/x",
+      "pass": true
+    },
+    {
+      "route": "transit/wechat",
+      "pass": true
+    },
+    {
+      "route": "console/summary",
+      "pass": true
+    },
+    {
+      "route": "console/bilibili",
+      "pass": true
+    },
+    {
+      "route": "console/xiaohongshu",
+      "pass": true
+    },
+    {
+      "route": "console/weibo",
+      "pass": true
+    },
+    {
+      "route": "console/douyin",
+      "pass": true
+    },
+    {
+      "route": "console/x",
+      "pass": true
+    },
+    {
+      "route": "console/wechat",
+      "pass": true
+    },
+    {
+      "route": "atlas/summary",
+      "pass": true
+    },
+    {
+      "route": "atlas/bilibili",
+      "pass": true
+    },
+    {
+      "route": "atlas/xiaohongshu",
+      "pass": true
+    },
+    {
+      "route": "atlas/weibo",
+      "pass": true
+    },
+    {
+      "route": "atlas/douyin",
+      "pass": true
+    },
+    {
+      "route": "atlas/x",
+      "pass": true
+    },
+    {
+      "route": "atlas/wechat",
+      "pass": true
+    }
+  ],
+  "checks": [
+    "initial90/88 and5 groups unchanged",
+    "temporal panels on relevant16 routes",
+    "same-item temporal modal and missing-rank labels",
+    "independent temporal JSON exports",
+    "initial export date versus latest check date",
+    "sample keyword filters/reset",
+    "evidence and comparison dialogs",
+    "CSV formula protection",
+    "all28 routes execute"
+  ]
+}

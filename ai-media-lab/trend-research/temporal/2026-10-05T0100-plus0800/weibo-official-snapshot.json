@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "method": "cloud CUA anonymous official-page AX plus read-only rendered DOM",
+  "captureTimeSource": "developer UTC clock at observation",
+  "platformDataTimestamp": null,
+  "baselineComparison": "matched comparison in comparison.json",
+  "claimsVerified": false,
+  "limitations": [
+    "Ranking topic wording records a platform observation, not factual verification of the topic claim.",
+    "Metrics are platform-specific, not unique people, support, or comparable across platforms.",
+    "Server refresh time and caching status are unknown."
+  ],
+  "platform": "weibo",
+  "sourceUrl": "https://s.weibo.com/top/summary?cate=tech",
+  "capturedAt": "2026-10-04T17:01:48Z",
+  "captureWindowStart": "2026-10-04T17:01:31Z",
+  "scope": "微博热搜 科技 category top 30, not overall hot search",
+  "metricLabel": "unlabelled numeric value adjacent to keyword",
+  "metricMeaning": "not independently established from page",
+  "status": "success_public_ranking_visible",
+  "entries": [
+    {
+      "rank": 1,
+      "title": "教你一招彻底删除隐私记录",
+      "metricRaw": "116945",
+      "metricValue": 116945,
+      "analystTags": []
+    },
+    {
+      "rank": 2,
+      "title": "中国正编织六张超级大网",
+      "metricRaw": "105250",
+      "metricValue": 105250,
+      "analystTags": []
+    },
+    {
+      "rank": 3,
+      "title": "老胡称人工智能不是共产主义入口",
+      "metricRaw": "94725",
+      "metricValue": 94725,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "芯片制程提升故事讲不下去",
+      "metricRaw": "85252",
+      "metricValue": 85252,
+      "analystTags": [
+        "hardware"
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "苹果确认iPhone18ProMax存缺陷",
+      "metricRaw": "76727",
+      "metricValue": 76727,
+      "analystTags": [
+        "hardware"
+      ]
+    },
+    {
+      "rank": 6,
+      "title": "开启智驾不能脱手脱眼",
+      "metricRaw": "69054",
+      "metricValue": 69054,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 7,
+      "title": "荣耀称Magic9系列正24小时加急生产",
+      "metricRaw": "62149",
+      "metricValue": 62149,
+      "analystTags": [
+        "hardware"
+      ]
+    },
+    {
+      "rank": 8,
+      "title": "OPPO三2亿让青春有了高清版",
+      "metricRaw": "55934",
+      "metricValue": 55934,
+      "analystTags": [
+        "hardware"
+      ]
+    },
+    {
+      "rank": 9,
+      "title": "iPhone18ProMax网络",
+      "metricRaw": "50340",
+      "metricValue": 50340,
+      "analystTags": [
+        "hardware"
+      ]
+    },
+    {
+      "rank": 10,
+      "title": "马斯克称SpaceXAI将更名为SpaceXSI",
+      "metricRaw": "45306",
+      "metricValue": 45306,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 11,
+      "title": "固件或致量产机黑屏重启",
+      "metricRaw": "40776",
+      "metricValue": 40776,
+      "analystTags": [
+        "hardware"
+      ]
+    },
+    {
+      "rank": 12,
+      "title": "看完才发现视频是AI生成",
+      "metricRaw": "36698",
+      "metricValue": 36698,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 13,
+      "title": "全网最压抑的AI视频太窒息了",
+      "metricRaw": "33028",
+      "metricValue": 33028,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 14,
+      "title": "特朗普宣布成立超级智能特别工作组",
+      "metricRaw": "29746",
+      "metricValue": 29746,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 15,
+      "title": "麒麟9050Pro评测出炉",
+      "metricRaw": "26771",
+      "metricValue": 26771,
+      "analystTags": [
+        "hardware"
+      ]
+    },
+    {
+      "rank": 16,
+      "title": "绘圈为什么反感AI",
+      "metricRaw": "24094",
+      "metricValue": 24094,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 17,
+      "title": "雷军看了老章说车7个视频",
+      "metricRaw": "21684",
+      "metricValue": 21684,
+      "analystTags": []
+    },
+    {
+      "rank": 18,
+      "title": "德国AI影响下岗位逆势增长",
+      "metricRaw": "19516",
+      "metricValue": 19516,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 19,
+      "title": "国庆iPhone18Pro销量持续走高",
+      "metricRaw": "17564",
+      "metricValue": 17564,
+      "analystTags": [
+        "hardware"
+      ]
+    },
+    {
+      "rank": 20,
+      "title": "智驾功能下司机仍是最终责任主体",
+      "metricRaw": "15808",
+      "metricValue": 15808,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 21,
+      "title": "老章说车回应雷军看他视频",
+      "metricRaw": "15800",
+      "metricValue": 15800,
+      "analystTags": []
+    },
+    {
+      "rank": 22,
+      "title": "越来越多开发者不逐个审代码",
+      "metricRaw": "14220",
+      "metricValue": 14220,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 23,
+      "title": "美国AI投资比例骇人",
+      "metricRaw": "12798",
+      "metricValue": 12798,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 24,
+      "title": "iPhone18ProMax 品控",
+      "metricRaw": "11518",
+      "metricValue": 11518,
+      "analystTags": [
+        "hardware"
+      ]
+    },
+    {
+      "rank": 25,
+      "title": "中国空间站也有双节仪式感",
+      "metricRaw": "10366",
+      "metricValue": 10366,
+      "analystTags": []
+    },
+    {
+      "rank": 26,
+      "title": "AI时代体面的定义变了",
+      "metricRaw": "9329",
+      "metricValue": 9329,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 27,
+      "title": "余承东 余总转发文案",
+      "metricRaw": "8396",
+      "metricValue": 8396,
+      "analystTags": []
+    },
+    {
+      "rank": 28,
+      "title": "美版18ProMax用高通基带",
+      "metricRaw": "7557",
+      "metricValue": 7557,
+      "analystTags": [
+        "hardware"
+      ]
+    },
+    {
+      "rank": 29,
+      "title": "离职员工爆料OpenAI风险意识不足",
+      "metricRaw": "6801",
+      "metricValue": 6801,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 30,
+      "title": "麒麟9050Pro逻辑折叠",
+      "metricRaw": "6469",
+      "metricValue": 6469,
+      "analystTags": [
+        "hardware"
+      ]
+    }
+  ]
+}

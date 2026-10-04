@@ -1,34 +1,69 @@
-import json,pathlib
-root=pathlib.Path(__file__).parent
-src=pathlib.Path('/workspace/shared/trend-observatory')
-records=[]
-for name in ['bili-xhs','weibo-douyin','wechat','x','douyin-official-snapshot','weibo-official-snapshot']:
- d=json.loads((src/'research'/f'{name}.json').read_text())
- for i,r in enumerate(d['records']):
-  r={k:v for k,v in r.items() if k not in ['source_ref','raw_files']}
-  r['id']=r.get('id',f'BX{i+1:02d}')
-  r['platform']={'Bilibili':'bilibili','Xiaohongshu':'xiaohongshu','X':'x'}.get(r['platform'],r['platform'])
-  r['background']=r['id']=='X03'
-  r['excluded_from_metrics']=r['id'] in ['X03','X13']
-  records.append(r)
-payload={'snapshot':'2026-10-04','records':records}
-s=src/'analysis'/'synthesis.json'
-if s.exists():
- payload['synthesis']=json.loads(s.read_text())
- for group in payload['synthesis'].get('groups',[]):
-  if group['id']=='review-cost':
-   group['evidence_ids']=list(dict.fromkeys(group['evidence_ids']+['X14','X15']))
-   group['limitations']=['小红书材料仍为二手；X08及两条回复已直接读取，但回复可见样本很少。','Karpathy相关转载可能同源，不能按独立支持证据叠加。']
+"""Deterministic local compilation. Verified versioned inputs only; no network or fallback."""
+import argparse, hashlib, json, os
+from copy import deepcopy
+from datetime import datetime
+from pathlib import Path
+from zoneinfo import ZoneInfo
+ROOT=Path(__file__).resolve().parent
 
-(root/'dist'/'data.json').write_text(json.dumps(payload,ensure_ascii=False,indent=2))
-manifest=json.loads((root/'.openai/hosting.json').read_text());manifest['static']={'directory':'dist'}
-(root/'.openai/hosting.json').write_text(json.dumps(manifest,indent=2))
-styles={'editorial':'白昼编辑室','transit':'轨道信号站','console':'夜航控制台','atlas':'纸片研究所'}
-platforms={'summary':'跨平台综述','bilibili':'Bilibili','xiaohongshu':'小红书','weibo':'微博','douyin':'抖音','x':'X','wechat':'微信公众号'}
-for st,sn in styles.items():
- for p,pn in platforms.items():
-  path=root/'dist'/st/p;path.mkdir(parents=True,exist_ok=True)
-  title=sn+' · '+pn+'｜澄镜'
-  html='''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'''+title+'''</title><meta name="description" content="六平台公开讨论样本与可追溯观点证据，含微博与抖音官方榜单次快照。非全量舆情统计。"><meta name="theme-color" content="#f4f1ea"><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="/app.css"><script src="/app.js" defer></script></head><body data-style="'''+st+'" data-platform="'+p+'''"><a class="skip" href="#main">跳转至内容</a><div id="app"><p class="loading">正在载入公开证据…</p></div><dialog id="evidence"></dialog><dialog id="compare"></dialog><div id="toast" role="status"></div></body></html>'''
-  (path/'index.html').write_text(html)
-print(str(len(records))+' evidence records, 28 workspace routes generated')
+def read_verified(entry):
+    path=(ROOT/entry['path']).resolve()
+    if not path.is_relative_to(ROOT/'inputs'): raise ValueError('Input path must remain under inputs/')
+    raw=path.read_bytes()  # Missing input fails before any output write.
+    if hashlib.sha256(raw).hexdigest()!=entry['sha256']: raise ValueError('Input hash mismatch: '+entry['path'])
+    return json.loads(raw)
+
+def instant(value):
+    dt=datetime.fromisoformat(value.replace('Z','+00:00'))
+    if dt.tzinfo is None: raise ValueError('Observation timestamps require timezone')
+    return dt
+
+def compile_data():
+    manifest=json.loads((ROOT/'inputs/manifest.json').read_text())
+    if manifest.get('schema_version')!=1: raise ValueError('Unsupported manifest schema')
+    baseline=read_verified(manifest['baseline'])
+    expected=manifest['expected_baseline'];records=baseline['records'];by_id={r['id']:r for r in records}
+    if len(by_id)!=len(records) or len(records)!=expected['records']: raise ValueError('Baseline record count/IDs changed')
+    if sum(not r.get('excluded_from_metrics') for r in records)!=expected['coverage_records']: raise ValueError('Baseline coverage changed')
+    if len(baseline['synthesis']['groups'])!=expected['synthesis_groups']: raise ValueError('Baseline synthesis changed')
+    payload=deepcopy(baseline);batches=[];latest=instant(baseline['metadata']['last_checked_at'])
+    for entry in manifest['temporal_batches']:
+        comparison=read_verified(entry['comparison']);snapshots=[read_verified(e) for e in entry['snapshots']]
+        by_platform={s['platform']:s for s in snapshots}
+        if len(by_platform)!=len(snapshots): raise ValueError('Duplicate platform snapshot')
+        for c in comparison['comparisons']:
+            current=by_platform[c['platform']]
+            if len(current['entries'])!=c['currentSavedCount']: raise ValueError('Current saved count mismatch')
+            latest=max(latest,instant(current['capturedAt']))
+            for change in c['changes']:
+                r=by_id[change['baselineId']]
+                if r['platform']!=c['platform']: raise ValueError('Platform mismatch')
+                old=r['observed_metrics'].get('rank',r['observed_metrics'].get('category_rank'))
+                if old!=change['oldRank'] or instant(r['captured_at'])!=instant(change['oldCapturedAt']): raise ValueError('Baseline rank/time mismatch')
+                if instant(change['newCapturedAt'])!=instant(current['capturedAt']): raise ValueError('Current timestamp mismatch')
+                if instant(change['newCapturedAt'])<=instant(change['oldCapturedAt']): raise ValueError('Observations not chronological')
+                if change['newRank'] is not None:
+                    if change['rankDelta']!=change['newRank']-change['oldRank']: raise ValueError('Rank delta mismatch')
+                    matches=[row for row in current['entries'] if row.get('baselineRecordId')==r['id'] or row['title']==change['title']]
+                    if not matches or matches[0]['rank']!=change['newRank']: raise ValueError('Unmatched current item/rank')
+                elif change.get('rankDelta') is not None: raise ValueError('Missing rank cannot have numeric delta')
+        # Only bounded, collected evidence reaches the public payload, not browser/tool logs.
+        clean_snapshots=[{k:s[k] for k in ['platform','sourceUrl','capturedAt','captureWindowStart','platformDataTimestamp','scope','rankingRuleDisplay','metricLabel','metricMeaning','entries','limitations'] if k in s} for s in snapshots]
+        batches.append({'id':entry['id'],'comparison':comparison,'snapshots':clean_snapshots})
+    payload['metadata']['baseline_last_checked_at']=baseline['metadata']['last_checked_at']
+    payload['metadata']['baseline_snapshot_date']=baseline['metadata']['snapshot_date']
+    payload['metadata']['latest_observation_at']=latest.isoformat()
+    payload['metadata']['last_checked_at']=latest.isoformat()
+    payload['metadata']['updated_date']=latest.astimezone(ZoneInfo('Asia/Shanghai')).date().isoformat()
+    payload['temporal']={'schema_version':1,'initial_record_count':len(records),'initial_coverage_count':expected['coverage_records'],'baseline_provenance':manifest['baseline_provenance'],'batches':batches,'boundary':'后续榜单观察独立保存，不增加初始样本覆盖数；浏览器观察时间不等于服务器刷新时间，缓存新鲜度未知。'}
+    if payload['records']!=baseline['records']: raise ValueError('Initial records must remain unchanged')
+    return payload
+
+def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');args=parser.parse_args()
+    payload=compile_data();encoded=json.dumps(payload,ensure_ascii=False,indent=2)+'\n'
+    if not args.check:
+        target=ROOT/'dist/data.json';temporary=target.with_suffix('.json.tmp')
+        temporary.write_text(encoded);os.replace(temporary,target)
+    print(json.dumps({'validated':True,'written':not args.check,'initial_records':len(payload['records']),'temporal_batches':len(payload['temporal']['batches']),'latest_observation_at':payload['metadata']['latest_observation_at']}))
+if __name__=='__main__':main()

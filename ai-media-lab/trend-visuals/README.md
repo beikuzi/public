@@ -1,21 +1,21 @@
 # 澄镜 · 六平台讨论观察
 
-A static, owner-private research snapshot dated 2026-10-04. Four distinct layouts each expose six platform routes and a cross-platform overview (28 workspaces plus a chooser).
+Static observatory with four distinct layouts. Each includes six platform pages and one summary:28 workspaces plus chooser.
 
-Serve `dist/` as the public root. No build, runtime dependencies, API keys, accounts or backend required. All application data is in `dist/data.json`. Edit that compact evidence file to update research manually; `build_data.py` is the original local ingestion helper and expects the sibling research workspace.
+Serve `dist/` as the public root. No application runtime dependencies, backend or API keys. `python build_data.py --check` verifies local evidence inputs; `python build_data.py` performs an atomic data-only compilation. See `docs/PROVENANCE.md` for provenance and update rules.
 
-## Routes
-- `/` chooser
-- `/{editorial,transit,console,atlas}/{summary,bilibili,xiaohongshu,weibo,douyin,x,wechat}/`
+## Initial sample and temporal observations
 
-## Evidence rules
-78 retained evidence records, of which X03 (historical official background, not X post) and X13 (weak undated fashion lead) are excluded from platform coverage counts. Other historical and undated material is labeled and can be filtered. Ten official Douyin ranked entries were added from a single 2026-10-04 22:41:58 UTC+8 browser snapshot. Twelve selected Weibo technology-category ranked entries were added from a 22:44:52 UTC+8 snapshot of 30 entries; category ranks are not general ranks. Clicking Weibo topic results requires login; no topic comments were read. No verified official rankings for the other four platforms, total audience estimates, opinion percentages, or inferred demographic identities. Sources are primarily secondary reports and search indexes. Missing engagement is kept null, not zero. WeChat dates belong to visible republications unless separately known.
+The versioned initial dataset contains90 records,88 counted coverage records,3 official snapshot sources and5 bounded qualitative synthesis groups. X03 is historical official background rather than an X post; X13 is a weak undated lead. Both remain outside coverage metrics.
 
-## Interactions
-URL-backed keyword, domain, source and date filters; evidence dialogs; selected-record comparison; current-filter JSON and CSV downloads; layout switching preserving platform and query; responsive navigation; keyboard search shortcut; semantic dialogs and focus states.
+Later Bilibili, Weibo and Douyin ranking observations are separate. Compact panels compare only matched items and metrics, with original and subsequent capture times. Top10 interval entrants are not called new platform-wide trends. Weibo's incomplete initial selection cannot establish exhaustive new entries. Browser-observed changes do not prove cache or server freshness.
 
-## Limitations
-Static snapshot with no automatic refresh. All platform counts are retrieval coverage only. Source links may be blocked or require login. Shared-source republications are not independent corroboration. No attempt is made to circumvent platform access restrictions. Fonts have local fallbacks.
+## Interaction and export
 
-## Direct X update and role evidence
-X08 is directly read primary content. X14/X15 are two visible replies, not a representative survey. Primary links are preferred when direct source evidence exists. Role panels show self-described roles/account or publication relationships with exact evidence links, while unavailable identities stay unknown.
+Keyword, domain, source and content-date filters act on the initial sample. Evidence dialogs preserve roles, source grade, content/capture dates, original links, AI disclosures and separate detail metrics. Manual evidence comparison and CSV/JSON sample exports are supported. Temporal panels have an independent JSON export.
+
+CSV neutralizes spreadsheet formula prefixes after whitespace/control characters; JSON keeps original records. Missing values remain null. There are no audience/opinion percentages or inferred demographics. Role panels retain public self-descriptions or explicit publication/discussion relationships, with evidence and unknown identities.
+
+## QA limitations
+
+DOM and source checks are not full browser, mobile rendering or accessibility validation. This release does not claim those checks. The optional browser helper requires explicitly authorized sandboxed browser execution; it was syntax-checked only.

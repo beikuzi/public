@@ -22,3 +22,20 @@ python analysis/aggregate_stances.py comments.annotated.json stance_summary.json
 公开仓库默认只包含代码、合成测试、聚合结果、证据链接和必要短引文；原视频、完整字幕和评论语料不自动公开。Cookie、访问令牌、签名媒体链接、作者标识不提交。访问受阻则记录 failed/not_run，不能使用合成数据伪装真实结果。
 
 默认至少20条可解释评论才展示样本内百分比（可用--min-sample调整）；这是防止极小样本误导的展示阈值，不代表20条就具有统计代表性。低于阈值仍保存条数与排除原因。
+
+## 点赞缺失与覆盖率（汇总 schema2.0）
+- 缺少 likes、null 或空白字符串，均是「未知」，不能填成0。明确观测到0次点赞才是0。
+- 接受非负整数与仅含ASCII数字的整数字符串（可有首尾空白）。布尔值、负数、小数/浮点数、科学计数法、带逗号字符串及其他类型标为 invalid；不截断、不猜测、不静默归零。导入后用 likes_status 保留 observed/unknown/invalid。
+- likes_coverage 的分母是去重后、实际纳入观点统计的评论；被排除评论不影响该分母。保留第一条重复记录，不利用后续重复快照补点赞。
+- likes_received 只有该观点的点赞覆盖完整才有值；否则null。observed_likes_received 是已观测评论的部分合计，没有任何观测时也是null。两者不可混用。
+- 只要纳入评论有任何未知或无效点赞，所有 share_of_sample_likes_pct 均为null，like_share_status 标明 suppressed_incomplete_likes_coverage。评论条数占比仍可按原来的样本门槛单独显示。
+- 即使点赞覆盖完整，合计0次也没有可定义的点赞份额，保持null；样本量不足同样抑制显示。点赞份额仍不代表赞同人数。
+- 导入器保留 exclusion_reason；原始导出不改写，规范化记录和 provenance.json 保存校验状态与输入哈希。
+
+完整本地链路：
+python bilibili/import_comments.py user-export.json --out comments.normalized.json
+python analysis/aggregate_stances.py comments.normalized.json stance-summary.json
+
+回归测试（仅合成数据，无网络）：
+python -m unittest discover -s analysis -p 'test*.py' -v
+python -m unittest discover -s bilibili -p 'test*.py' -v

@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "duration_seconds": 90.0,
+  "bytes": 9047763,
+  "sha256": "93e6adf3a3a6b32c724e272116319623c639e812d1e86b285fed60d3e41272a2",
+  "media_probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 1280,
+        "height": 720,
+        "r_frame_rate": "24/1"
+      },
+      {
+        "codec_name": "aac",
+        "codec_type": "audio",
+        "sample_rate": "44100",
+        "channels": 2,
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "90.000000",
+      "size": "9047763"
+    }
+  },
+  "visual_review": "10 sampled encoded frames inspected; readable Chinese, intact artwork, no cropped dialogue, consistent nonofficial reconstruction label, creator credits present",
+  "audio_review": "decoded complete 90 seconds; original scene music plus fireworks, music fades at start/end, headroom checked; no voice generated",
+  "security_tests": "16 passed",
+  "script_excerpt": "7 original Chinese strings, same label zhs_A44, ordered source lines; English equivalents total 128 words",
+  "not_tested": "Original engine launch/gameplay recording; GitHub third-party unpacker execution (not authorized); arbitrary RenPy games or modern RPC2 formats",
+  "distribution_audit": "Source ZIP excludes input archive, game folder, extracted assets, private script text/AST, and private research notes"
+}

@@ -1,0 +1,31 @@
+{
+  "minimum_sample_for_display": 20,
+  "percentage_status": "suppressed_insufficient_sample",
+  "scope": "Observed sampled comments only; not all viewers, users, or public opinion.",
+  "received_rows": 3,
+  "deduplicated_comments": 3,
+  "included_comments": 1,
+  "excluded_comments": 2,
+  "exclusion_reasons": {
+    "展开前仅见学习笔记摘要，不据此推断完整立场": 1,
+    "仅表情回复，语义不足": 1
+  },
+  "sampling_groups": {
+    "anonymous_hot_visible": 3
+  },
+  "stances": [
+    {
+      "label": "肯定讲解与学习价值",
+      "count": 1,
+      "comment_share_pct": null,
+      "likes_received": 14,
+      "share_of_sample_likes_pct": null
+    }
+  ],
+  "caveats": [
+    "One primary stance per included comment; explicitly annotated before aggregation.",
+    "Likes measure engagement with sampled comments, not unique people or agreement.",
+    "Hot comments, replies and latest comments have different selection biases.",
+    "No population confidence interval is claimed for a convenience sample."
+  ]
+}

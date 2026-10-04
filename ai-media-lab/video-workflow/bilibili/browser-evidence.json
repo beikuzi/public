@@ -1,0 +1,33 @@
+{
+  "captured_at": "2026-10-04T22:47:21+08:00",
+  "video_url": "https://www.bilibili.com/video/BV1NHmsBwEbT/",
+  "title": "15分钟从Prompt Engineering 到 Agent！一口气理解四种大模型增强技术！",
+  "uploader": "数据范儿_范老师",
+  "uploader_public_self_description": "人大博士/高校教师/国家社科基金获得者",
+  "duration_display": "15:19",
+  "displayed_views": "2万",
+  "displayed_likes": 751,
+  "displayed_coins": 677,
+  "displayed_favorites": 599,
+  "displayed_shares": 85,
+  "displayed_comment_count": 49,
+  "visible_sample_count": 3,
+  "visible_root_count": 2,
+  "visible_reply_count": 1,
+  "publication_labels_observed": [
+    "2025-12-13 10:00:00",
+    "2025-12-12 18:00:00"
+  ],
+  "publication_caveat": "页面脚本加载前后显示时区不同，保留原始标签；不能称今日发布。",
+  "access_method": "普通云端浏览器正常公开访问；滚动后等待页面自身渲染，无登录、cookie替换或绕过。",
+  "video_access": "页面播放器提示登录享高清视频、试看30秒；未取得完整媒体/字幕。",
+  "comment_access": "页面明确提示登录后查看49条评论；未继续登录或突破此限制。",
+  "supersedes": "此前直接HTTP/API请求412只代表该方法失败；浏览器公开元数据和少量匿名可见评论成功。",
+  "sampling_bias": "匿名默认最热区可见样本，仅2根评论及1表情回复，严重选择偏差；不是49条全量。",
+  "opinion_percentage": null,
+  "percentage_reason": "可解释意见只有1条，不足以识别几种主流观点；不报告总体观点比例。",
+  "interpretation": "可见1条作者明确肯定教程的宏观框架与学习帮助，另见学习笔记摘要及表情回复。此结果不代表整个评论区。",
+  "evaluation": "赞赏学习体验的评论可以证明其作者的体验表达，不能独立验证视频技术内容；未取得完整视频，暂无内容事实核查。",
+  "privacy": "不保存评论者用户名、头像、主页或个人ID；本地观察ID不是平台评论ID。",
+  "sharing": "公开仓库只使用精简汇总、来源URL及必要短例证，不发布完整评论语料。"
+}

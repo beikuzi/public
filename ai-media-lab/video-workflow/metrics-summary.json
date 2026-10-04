@@ -1,0 +1,113 @@
+{
+  "benchmark_pipeline_version": "1 (historical timings)",
+  "asr": [
+    {
+      "sample": "subway_eval",
+      "duration_seconds": 17.966,
+      "runs": [
+        {
+          "model": "tiny",
+          "beam": 5,
+          "repeat": 0,
+          "inference_seconds": 0.6431589959975099,
+          "cer": 1.0,
+          "model_bytes": 78205070
+        },
+        {
+          "model": "tiny",
+          "beam": 5,
+          "repeat": 1,
+          "inference_seconds": 0.5571001030039042,
+          "cer": 1.0,
+          "model_bytes": 78205070
+        }
+      ]
+    },
+    {
+      "sample": "subway_eval_beam1",
+      "duration_seconds": 17.966,
+      "runs": [
+        {
+          "model": "tiny",
+          "beam": 1,
+          "repeat": 0,
+          "inference_seconds": 0.3965441570035182,
+          "cer": 1.0,
+          "model_bytes": 78205070
+        },
+        {
+          "model": "tiny",
+          "beam": 1,
+          "repeat": 1,
+          "inference_seconds": 0.274785236993921,
+          "cer": 1.0,
+          "model_bytes": 78205070
+        }
+      ]
+    },
+    {
+      "sample": "subway_full_tiny_beam5",
+      "duration_seconds": 40.103,
+      "runs": [
+        {
+          "model": "tiny",
+          "beam": 5,
+          "repeat": 0,
+          "inference_seconds": 1.8624202089995379,
+          "cer": null,
+          "model_bytes": 78205070
+        },
+        {
+          "model": "tiny",
+          "beam": 5,
+          "repeat": 1,
+          "inference_seconds": 1.627145662001567,
+          "cer": null,
+          "model_bytes": 78205070
+        }
+      ]
+    },
+    {
+      "sample": "ma_jian_tiny",
+      "duration_seconds": 68.409,
+      "runs": [
+        {
+          "model": "tiny",
+          "beam": 5,
+          "repeat": 0,
+          "inference_seconds": 1.6743922070018016,
+          "cer": null,
+          "model_bytes": 78205070
+        },
+        {
+          "model": "tiny",
+          "beam": 5,
+          "repeat": 1,
+          "inference_seconds": 1.6040076069984934,
+          "cer": null,
+          "model_bytes": 78205070
+        }
+      ]
+    }
+  ],
+  "ocr_heldout": {
+    "reference_kind": "assistant-read visible captions, not human gold",
+    "held_out_frames": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "reference_characters": 99,
+    "selected_preprocessing": "white160",
+    "selected_psm": 6,
+    "baseline_heldout_cer": 0.7575757575757576,
+    "improved_heldout_cer": 0.050505050505050504,
+    "baseline_mean_seconds": 0.30105108600218955,
+    "improved_mean_seconds": 0.1904732220009464,
+    "warning": "4 frames from same video/font, selected after2 development frames; not representative generalization. Baseline480px JPEG vs improved848px PNG+crop; cannot isolate which change caused improvement. Improved timings include preprocessing and file save.",
+    "aggregation": "micro CER: sum per-frame edit distances / sum reference characters"
+  },
+  "status": "Bilibili unavailable; no observed comment proportions",
+  "limits": "Small stress-test sample; published/assistant-read references; not general accuracy claims"
+}

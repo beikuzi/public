@@ -1,0 +1,9 @@
+.venv/
+models/
+.hf-cache/
+inputs/
+outputs/
+__pycache__/
+*.pyc
+*.log
+comments*.json*

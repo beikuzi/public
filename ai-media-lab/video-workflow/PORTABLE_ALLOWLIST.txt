@@ -1,0 +1,16 @@
+README.md
+BENCHMARK.md
+metrics-summary.json
+pipeline.py
+pipeline_snapshot_v1.py
+quality_gates.py
+import_captions.py
+ocr_benchmark.py
+improve_ocr.py
+vosk_benchmark.py
+requirements-lock.txt
+test_pipeline.py
+portable_test_results.txt
+PORTABLE_ALLOWLIST.txt
+HARDENING_RESULT.json
+portable_bundle_verification.txt

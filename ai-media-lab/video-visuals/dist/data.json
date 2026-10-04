@@ -1,0 +1,341 @@
+{
+  "schemaVersion": 1,
+  "title": "北京地铁 · 广播压力测试",
+  "date": "2026-10-04",
+  "duration": 40.103,
+  "source": "https://commons.wikimedia.org/wiki/File:Beijing_Subway_Line_9_Arriving_at_Military_Museum_Station.webm",
+  "license": "2014Best · CC BY-SA 4.0",
+  "rows": [
+    {
+      "id": "tiny-5-17.966-0",
+      "name": "Whisper tiny · beam 5",
+      "status": "measured",
+      "stage": "ASR",
+      "duration": 17.966,
+      "seconds": 0.6431589959975099,
+      "cer": 1.0,
+      "cost": 0,
+      "currency": "USD",
+      "quality": "失败 · 重复幻觉",
+      "note": "CER 是与已发布字幕的字符差异；不是人工核对的语音错误率。",
+      "run": "首次推理",
+      "source": "https://github.com/SYSTRAN/faster-whisper"
+    },
+    {
+      "id": "tiny-5-17.966-1",
+      "name": "Whisper tiny · beam 5",
+      "status": "measured",
+      "stage": "ASR",
+      "duration": 17.966,
+      "seconds": 0.5571001030039042,
+      "cer": 1.0,
+      "cost": 0,
+      "currency": "USD",
+      "quality": "失败 · 重复幻觉",
+      "note": "CER 是与已发布字幕的字符差异；不是人工核对的语音错误率。",
+      "run": "热运行",
+      "source": "https://github.com/SYSTRAN/faster-whisper"
+    },
+    {
+      "id": "tiny-1-17.966-0",
+      "name": "Whisper tiny · beam 1",
+      "status": "measured",
+      "stage": "ASR",
+      "duration": 17.966,
+      "seconds": 0.3965441570035182,
+      "cer": 1.0,
+      "cost": 0,
+      "currency": "USD",
+      "quality": "失败 · 空输出",
+      "note": "CER 是与已发布字幕的字符差异；不是人工核对的语音错误率。",
+      "run": "首次推理",
+      "source": "https://github.com/SYSTRAN/faster-whisper"
+    },
+    {
+      "id": "tiny-1-17.966-1",
+      "name": "Whisper tiny · beam 1",
+      "status": "measured",
+      "stage": "ASR",
+      "duration": 17.966,
+      "seconds": 0.274785236993921,
+      "cer": 1.0,
+      "cost": 0,
+      "currency": "USD",
+      "quality": "失败 · 空输出",
+      "note": "CER 是与已发布字幕的字符差异；不是人工核对的语音错误率。",
+      "run": "热运行",
+      "source": "https://github.com/SYSTRAN/faster-whisper"
+    },
+    {
+      "id": "tiny-5-40.103-0",
+      "name": "Whisper tiny · beam 5",
+      "status": "measured",
+      "stage": "ASR",
+      "duration": 40.103,
+      "seconds": 1.8624202089995379,
+      "cer": null,
+      "cost": 0,
+      "currency": "USD",
+      "quality": "失败 · 重复幻觉",
+      "note": "全片没有完整参考文本，未计算 CER。",
+      "run": "首次推理",
+      "source": "https://github.com/SYSTRAN/faster-whisper"
+    },
+    {
+      "id": "tiny-5-40.103-1",
+      "name": "Whisper tiny · beam 5",
+      "status": "measured",
+      "stage": "ASR",
+      "duration": 40.103,
+      "seconds": 1.627145662001567,
+      "cer": null,
+      "cost": 0,
+      "currency": "USD",
+      "quality": "失败 · 重复幻觉",
+      "note": "全片没有完整参考文本，未计算 CER。",
+      "run": "热运行",
+      "source": "https://github.com/SYSTRAN/faster-whisper"
+    },
+    {
+      "id": "caption",
+      "name": "已发布字幕导入",
+      "status": "measured",
+      "stage": "Captions",
+      "seconds": 0.00026,
+      "cer": null,
+      "cost": 0,
+      "currency": "USD",
+      "quality": "6 条字幕 · 未独立听校",
+      "note": "仅解析耗时，不含网络获取与人工核验。导入不是语音识别。",
+      "source": "https://commons.wikimedia.org/wiki/TimedText:Beijing_Subway_Line_9_Arriving_at_Military_Museum_Station.webm.zh-hans.srt"
+    },
+    {
+      "id": "audio",
+      "name": "FFmpeg 音频提取",
+      "status": "measured",
+      "stage": "Decode",
+      "seconds": 0.169,
+      "cer": null,
+      "cost": 0,
+      "currency": "USD",
+      "quality": "16 kHz PCM",
+      "note": "40.103 秒素材，单次运行。",
+      "source": "https://ffmpeg.org/"
+    },
+    {
+      "id": "frames",
+      "name": "均匀抽帧",
+      "status": "measured",
+      "stage": "Frames",
+      "seconds": 1.109,
+      "cer": null,
+      "cost": 0,
+      "currency": "USD",
+      "quality": "4 张帧图",
+      "note": "约 5 / 15 / 25 / 35 秒；非精确 PTS。周期采样可能漏过短暂事件。",
+      "source": "https://ffmpeg.org/ffmpeg-filters.html"
+    },
+    {
+      "id": "ocr",
+      "name": "Tesseract 中文 OCR",
+      "status": "measured",
+      "stage": "OCR",
+      "seconds": 0.262,
+      "cer": null,
+      "cost": 0,
+      "currency": "USD",
+      "quality": "质量较低",
+      "note": "7 张默认裁切，14 次执行的均值。另一个人工精选紧裁切 CER 为 38.46%，不可当作代表性总体准确率。",
+      "source": "https://github.com/tesseract-ocr/tessdata_fast"
+    },
+    {
+      "id": "base",
+      "name": "Whisper base / small",
+      "status": "blocked",
+      "stage": "ASR",
+      "seconds": null,
+      "cer": null,
+      "cost": null,
+      "currency": "USD",
+      "quality": "下载未完成",
+      "note": "无运行耗时或准确率。未绕过下载访问限制。",
+      "source": "https://github.com/SYSTRAN/faster-whisper"
+    },
+    {
+      "id": "groq",
+      "name": "Groq large-v3-turbo",
+      "status": "documented",
+      "stage": "ASR",
+      "seconds": null,
+      "cer": null,
+      "cost": 0.04,
+      "currency": "USD / 音频小时",
+      "quality": "仅官方价格",
+      "note": "未调用。最低按每请求 10 秒计费；价格核对日期 2026-10-04。",
+      "source": "https://console.groq.com/docs/speech-to-text"
+    },
+    {
+      "id": "mini",
+      "name": "OpenAI mini-transcribe",
+      "status": "documented",
+      "stage": "ASR",
+      "seconds": null,
+      "cer": null,
+      "cost": 0.003,
+      "currency": "USD / 分钟（估算）",
+      "quality": "仅官方价格",
+      "note": "未调用。基于 token 计费的估算，不保证固定分钟价格。",
+      "source": "https://platform.openai.com/pricing"
+    },
+    {
+      "id": "paraformer",
+      "name": "阿里 Paraformer-v2",
+      "status": "documented",
+      "stage": "ASR",
+      "seconds": null,
+      "cer": null,
+      "cost": 0.288,
+      "currency": "CNY / 音频小时",
+      "quality": "仅官方价格",
+      "note": "北京地域；不含 OSS、传输等成本。未调用。",
+      "source": "https://help.aliyun.com/zh/model-studio/model-pricing"
+    },
+    {
+      "id": "bili",
+      "name": "Bilibili 完整媒体与评论",
+      "status": "blocked",
+      "stage": "Acquire",
+      "seconds": null,
+      "cer": null,
+      "cost": null,
+      "currency": "",
+      "quality": "登录 / 30秒试看限制",
+      "note": "直接 HTTP/API 请求曾返回 412。普通浏览器匿名页面现已取得元数据和 3 条可见评论（2 根 + 1 表情回复），但完整视频/字幕及页面显示的 49 条完整评论仍需登录。不得将方法失败描述为全站不可访问。",
+      "source": "https://www.bilibili.com/video/BV1NHmsBwEbT/"
+    },
+    {
+      "id": "ocr-heldout-baseline",
+      "name": "字幕 OCR · 基线",
+      "status": "measured",
+      "stage": "OCR",
+      "seconds": 0.30105108600218955,
+      "cer": 0.7575757575757576,
+      "cost": 0,
+      "currency": "USD",
+      "quality": "同视频留出集 · 4 帧 / 99 字",
+      "note": "另一个公开访谈样本的烧录字幕，不是地铁 ASR，也不是语音准确率。参考由助手目读，不是人工金标准。在 2 帧开发集选择预处理，另 4 帧仅评估一次。基线 480px JPEG 对比 848px PNG + 固定裁切 + 白字阈值 160 + 3倍放大 + psm6，不能分离各改动贡献。耗时含预处理与文件保存；不能泛化到其他字体或视频。",
+      "source": "https://github.com/tesseract-ocr/tesseract"
+    },
+    {
+      "id": "ocr-heldout-improved",
+      "name": "字幕 OCR · 预处理后",
+      "status": "measured",
+      "stage": "OCR",
+      "seconds": 0.1904732220009464,
+      "cer": 0.050505050505050504,
+      "cost": 0,
+      "currency": "USD",
+      "quality": "同视频留出集 · 4 帧 / 99 字",
+      "note": "另一个公开访谈样本的烧录字幕，不是地铁 ASR，也不是语音准确率。参考由助手目读，不是人工金标准。在 2 帧开发集选择预处理，另 4 帧仅评估一次。基线 480px JPEG 对比 848px PNG + 固定裁切 + 白字阈值 160 + 3倍放大 + psm6，不能分离各改动贡献。耗时含预处理与文件保存；不能泛化到其他字体或视频。",
+      "source": "https://github.com/tesseract-ocr/tesseract"
+    },
+    {
+      "id": "vosk",
+      "name": "Vosk small Chinese 0.22",
+      "status": "blocked",
+      "stage": "ASR",
+      "seconds": null,
+      "cer": null,
+      "cost": null,
+      "currency": "USD",
+      "quality": "运行环境安装受阻",
+      "note": "官方模型下载成功（11.594s / 43,898,754 字节），但 runtime 安装返回代理 403。没有执行推理；下载时间不等于转录耗时。",
+      "source": "https://alphacephei.com/vosk/models"
+    },
+    {
+      "id": "bili-browser",
+      "name": "Bilibili 匿名可见页面",
+      "status": "measured",
+      "stage": "Acquire",
+      "seconds": null,
+      "cer": null,
+      "cost": 0,
+      "currency": "USD",
+      "quality": "部分成功 · 3 条可见记录",
+      "note": "2026-10-04 22:47:21 +08:00 普通浏览器观察；页面标题、15:19 时长和少量默认最热评论可见。2 条根评论与 1 条表情回复，仅 1 条明确评价；不报告总体立场占比。耗时未测。",
+      "source": "https://www.bilibili.com/video/BV1NHmsBwEbT/"
+    }
+  ],
+  "captions": [
+    {
+      "time": "00:00:10,954 --> 00:00:17,191",
+      "text": "乘客您好，开往国家图书馆站方向的列车即将到站。",
+      "id": "1"
+    },
+    {
+      "time": "00:00:17,192 --> 00:00:20,492",
+      "text": "请您配合我们共同维护乘车秩序。",
+      "id": "2"
+    },
+    {
+      "time": "00:00:20,493 --> 00:00:25,580",
+      "text": "候车时，请您站在上车指示箭头旁有序排队。",
+      "id": "3"
+    },
+    {
+      "time": "00:00:25,581 --> 00:00:28,894",
+      "text": "不要手扶或倚靠站台屏蔽门。",
+      "id": "4"
+    },
+    {
+      "time": "00:00:28,895 --> 00:00:32,249",
+      "text": "列车进站停稳后……",
+      "id": "5"
+    },
+    {
+      "time": "00:00:33,500 --> 00:00:39,073",
+      "text": "乘客您好，欢迎乘坐北京地铁。现在是乘车高峰时间。",
+      "id": "6"
+    }
+  ],
+  "comments": [],
+  "commentsStatus": "partial",
+  "frames": [
+    {
+      "time": 5,
+      "src": "assets/frame-1.jpg"
+    },
+    {
+      "time": 15,
+      "src": "assets/frame-2.jpg"
+    },
+    {
+      "time": 25,
+      "src": "assets/frame-3.jpg"
+    },
+    {
+      "time": 35,
+      "src": "assets/frame-4.jpg"
+    }
+  ],
+  "commentSummary": {
+    "capturedAt": "2026-10-04T22:47:21+08:00",
+    "source": "https://www.bilibili.com/video/BV1NHmsBwEbT/",
+    "title": "15分钟从Prompt Engineering 到 Agent！一口气理解四种大模型增强技术！",
+    "bvid": "BV1NHmsBwEbT",
+    "displayDuration": "15:19",
+    "displayedCount": 49,
+    "observedCount": 3,
+    "rootCount": 2,
+    "replyCount": 1,
+    "clearOpinionCount": 1,
+    "stancePercentage": null,
+    "method": "普通浏览器匿名访问，默认最热区可见部分；未登录或绕过限制。",
+    "positiveParaphrase": "一位评论作者肯定讲解的宏观框架与后续学习帮助。",
+    "excluded": [
+      "学习笔记仅见未展开摘要，无法确定完整立场。",
+      "另 1 条仅为表情回复，语义不足。"
+    ],
+    "limit": "3 条可见记录并非 49 条全量；样本极小且有选择偏差。完整视频、字幕及完整评论均不可用。"
+  }
+}

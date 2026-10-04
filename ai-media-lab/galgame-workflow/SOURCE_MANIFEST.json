@@ -1,0 +1,99 @@
+{
+  "game": "Katawa Shoujo Act 1 v5",
+  "publisher": "Four Leaf Studios",
+  "source": "https://www.katawa-shoujo.com/download",
+  "download": "https://cdn.fhs.sh/ks/bin/a1v5/%5B4ls%5D_katawa_shoujo_act1_v5_%5Blinux-x86%5D%5B97624142%5D.tar.bz2",
+  "sha256": "2c1c95aa8c23968a458c5c9cab4a6d337f0c61093172ea925cc4412bef772e8a",
+  "bytes": 189876864,
+  "permission_source": "https://ks.fhs.sh/viewtopic.php?f=13&p=248149",
+  "base_license": "CC BY-NC-ND 3.0, with separately published November 2022 fanwork exception and August 2024 streaming statement",
+  "scene": "Act 1, Sunday, Shizune festival rooftop/fireworks",
+  "language": "official bundled Simplified Chinese (ZHS)",
+  "output_type": "unofficial abridged code-rendered reconstruction; not original gameplay recording",
+  "selected_string_indices_zhs": [
+    1469,
+    1492,
+    1493,
+    1504,
+    1506,
+    1522,
+    1540
+  ],
+  "selected_string_indices_en": [
+    1468,
+    1491,
+    1492,
+    1503,
+    1505,
+    1521,
+    1539
+  ],
+  "equivalent_english_word_count": 128,
+  "rights_limits": [
+    "No sale or monetization",
+    "Credit original creators and translators",
+    "Individual creators retain rights over their own assets",
+    "Do not distribute whole game, full script, or raw proprietary asset package",
+    "Not endorsed by Four Leaf Studios"
+  ],
+  "github_tools_reviewed": [
+    "https://github.com/shizmob/rpatool",
+    "https://github.com/CensoredUsername/unrpyc"
+  ],
+  "github_tools_executed": false,
+  "music": {
+    "archive_member": "bgm/Aria.ogg",
+    "original_scene_symbol": "music_twinkle",
+    "title": "Aria de l’etoile",
+    "evidence": "bundled ui_settings.rpyc and ui_i18n.rpyc, inspected without execution"
+  },
+  "output": {
+    "duration_seconds": 90,
+    "dimensions": [
+      1280,
+      720
+    ],
+    "fps": 24,
+    "video": "H.264",
+    "audio": "AAC"
+  },
+  "source_script_sha256": "5e7a7c75fc00524cb2aadb8f9b7b1650a2b083214283b65c134c0b2fd56b3d15",
+  "selected_asset_hashes": {
+    "sfx/fireworks.ogg": "385af87ebf70f68401cf38acaf042ed1dce2809eb622aee2186ec1c32dfb8e0e",
+    "bgm/Aria.ogg": "b3f7c59c3f75b32eb3934c3871a57df2ee9205bd9d83a2a2aef9b467d467b7ee",
+    "bgs/school_roof_ni.jpg": "6be887fd017a00ce90d06cfb59aaa4e62850a7ddf60701861348a652f8028424",
+    "bgs/misc_sky_ni.jpg": "8160763e5b945c0731635bbb1345d11d9699054c8e0e1b89ff8b4146276ca604",
+    "vfx/fw5.png": "c51917c8d58cf1fe4a4714e84d4dae0853ba23c3d12c876ae74e1c93cf053b60",
+    "vfx/fw2.png": "8587b8ec85458361f75c04b6f2011d7ae7ce0a167714da2253c6210e4ba8f47b",
+    "vfx/fw4.png": "b60fccda76d62a0acd8e2f2e63cdba630ae38f60786e79e8bfce63dee4737f37",
+    "vfx/hillpair2.png": "be085fe4e3a8dc543eeeaa598be5e58affa341f592056e46354cbe01d84560d2",
+    "vfx/fw6.png": "98577bd276bc1a1bb10c60e71dd61c34c546fd8f9fb325f4fe38c03876eee58e",
+    "vfx/cityscape.png": "db05604cb8568cbee2678a2bf16c3b402c4f741cdd02c6f67441600ae9a015c6",
+    "vfx/hillouette.png": "4e393dd8356786ef9ee86d0f4c4ca35a4bbee937306bc35a2bbefccd37e51669",
+    "vfx/fw8.png": "2f3c72670544866f50a9001917df115d8a8762ec61b7d5912a76a8da997f8e0d",
+    "vfx/fw9.png": "191c33bb886433df19d1a9d5b67f15fede3e0bdfb7b7356da84626bdfe8fed70",
+    "vfx/hillpair1.png": "82eb3ae76b139fab71ea540497bd7b770194758f4137085f7f59f446e9555f90",
+    "vfx/fw7.png": "5659652d426b8eac0e3c6ba9bebc3c5a0b66567386e0892f87159b47e682cffc",
+    "vfx/fw1.png": "e7c73983ba1707052dfa99ce4850dbd90ebd59d648afefea0b6ff6ec28089a3c",
+    "vfx/fw3.png": "a1e477a3ddf2d95dd97aba740e90d3afde93064b0ca4e7e8fa15968d96ed43df",
+    "sprites/shizu/close/shizu_behind_frustrated_close.png": "c57d6af5bccfe9df610ad63e08b04dcbe11064c83b83d66aa0b4cb76b6d0cc9d",
+    "sprites/shizu/close/shizu_out_serious_close.png": "542c5d42b62ff7268236321686d8e7fb1a767170b269cbd3daa844b78953d098"
+  },
+  "source_scene_label": "zhs_A44",
+  "source_lines": [
+    2103,
+    2147,
+    2151,
+    2165,
+    2173,
+    2196,
+    2247
+  ],
+  "verification": {
+    "selected_texts": "Each exactly matches one original Say record; all seven in same scene, increasing source order",
+    "dialogue_speaker": "hi only on source line 2173; remaining six are narrator",
+    "security_tests": 16,
+    "game_execution": false,
+    "arbitrary_pickle_execution": false
+  }
+}

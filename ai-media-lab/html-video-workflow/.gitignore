@@ -1,0 +1,8 @@
+.venv/
+models/
+.cache/
+output/
+final/
+__pycache__/
+*.wav
+*.log

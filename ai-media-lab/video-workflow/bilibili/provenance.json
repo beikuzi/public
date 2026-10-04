@@ -1,0 +1,23 @@
+{
+  "capture_utc": "2026-10-04T14:14:24Z",
+  "status": "blocked",
+  "candidate": {
+    "bvid": "BV1NHmsBwEbT",
+    "url": "https://www.bilibili.com/video/BV1NHmsBwEbT/",
+    "title_from_search_index": "15分钟从Prompt Engineering 到 Agent！一口气理解四种大模型增强技术！",
+    "duration_seconds": null,
+    "duration_note": "Title says 15 minutes; actual media duration unverified.",
+    "uploader": null,
+    "selection_reason": "Public search indexed Mandarin AI technology explainer; suitability of comment diversity unverified."
+  },
+  "observations": [
+    {"url":"https://www.bilibili.com/video/BV1NHmsBwEbT/", "method":"anonymous urllib.request GET", "http_status":412, "error":"HTTP Error 412: Precondition Failed"},
+    {"url":"https://api.bilibili.com/x/web-interface/view?bvid=BV1NHmsBwEbT", "method":"anonymous urllib.request GET", "http_status":412, "error":"HTTP Error 412: Precondition Failed"},
+    {"url":"https://www.bilibili.com/video/BV1NHmsBwEbT/", "method":"web open", "http_status":412, "error":"Failed to fetch: (412) Precondition Failed"}
+  ],
+  "comments_count": 0,
+  "media_downloaded": false,
+  "captions_downloaded": false,
+  "access_policy": "Stopped on HTTP 412; no login, CAPTCHA solving, cookie/credential use, spoofing, proxy change, or access-control bypass attempted.",
+  "local_dataset": "comments.jsonl is intentionally empty, not a successful zero-comment sample."
+}

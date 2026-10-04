@@ -1,0 +1,14 @@
+test_repeat_output_rejected_without_mutation (test_pipeline.PortableIntegrationTests.test_repeat_output_rejected_without_mutation) ... ok
+test_short_no_audio_has_initial_frame (test_pipeline.PortableIntegrationTests.test_short_no_audio_has_initial_frame) ... ok
+test_source_pts_offset_preserved (test_pipeline.PortableIntegrationTests.test_source_pts_offset_preserved) ... ok
+test_empty_blocks (test_pipeline.UnitTests.test_empty_blocks) ... ok
+test_no_silent_translation (test_pipeline.UnitTests.test_no_silent_translation) ... ok
+test_nonempty_stays_unverified (test_pipeline.UnitTests.test_nonempty_stays_unverified) ... ok
+test_normalization (test_pipeline.UnitTests.test_normalization) ... ok
+test_refuse_nonempty_directory (test_pipeline.UnitTests.test_refuse_nonempty_directory) ... ok
+test_repetition_blocks (test_pipeline.UnitTests.test_repetition_blocks) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 1.356s
+
+OK

@@ -25,7 +25,7 @@ python3 -m venv .venv
 
 本源码快照不包含 `.venv`；请自行创建。安装需要联网；**安装后渲染完全离线**，没有模型下载、云 API 或浏览器依赖。锁文件固定本次安装版本；不是跨操作系统二进制复现保证。
 
-模板源码版本 1.4.0。当前 MP4 验证和输出路径保护见 `AUDIT_FIXES_v1.4.md`。18 项回归测试在普通及 Python -O 模式下通过。历史渲染计时仅对应原始演示样本，不代表本次重新测量。配音后端说明见 `MELO_PREVIEW.md`、`NEURAL_PREVIEW.md`；历史指标见 `benchmark-history.json`。
+发行包版本1.4.1；生产源码版本1.4.0。当前 MP4 验证和输出路径保护见 `AUDIT_FIXES_v1.4.1.md`。18 项回归测试在普通及 Python -O 模式下通过。历史渲染计时仅对应原始演示样本，不代表本次重新测量。配音后端说明见 `MELO_PREVIEW.md`、`NEURAL_PREVIEW.md`；历史指标见 `benchmark-history.json`。
 
 CLI：`--rate 225` 调整 eSpeak 语速；`--threads 4` 控制编码线程；`--preset veryfast` 调整 x264 速度/压缩率；`--out` 选择输出目录。默认拒绝非空输出目录；`--overwrite` 仅允许更新带有本流程标记的目录，且目录必须在项目下、不能经过符号链接。不要将手工编辑的重要文件放进去。
 

@@ -1,0 +1,9 @@
+{
+  "package_version": "1.4.1",
+  "production_source_version": "1.4.0",
+  "distribution": "source-only",
+  "media_included": false,
+  "models_included": false,
+  "regression_fixture": "generated synthetic 4-second FFmpeg color/sine input",
+  "production_code_unchanged": true
+}

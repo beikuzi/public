@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "evidence": "Actual Elephants Dream production WAVs and final-film audio; not a synthetic benchmark",
+  "source_files": 20,
+  "all_mono_pcm16_48000": true,
+  "container_seconds": 646.5107291666667,
+  "vad_seconds_including_duplicates": 242.616,
+  "duplicate_caveat": "Alternative production tracks repeat material; totals are not unique usable speech.",
+  "quality": "Authored role-labelled production source; machine-screened candidate; clean purity unverified",
+  "selected_crops": [
+    {
+      "role": "Proog",
+      "duration_seconds": 8.075,
+      "frames": 387600,
+      "vad_speech_seconds": 7.7509999999999994,
+      "vad_fraction": 0.959876160990712,
+      "full_scale_sample_count": 0,
+      "asr_word_count": 19,
+      "machine_screen_pass": true,
+      "gates": {
+        "duration_5_to_10_seconds": true,
+        "no_full_scale_samples": true,
+        "sufficient_vad": true,
+        "asr_support": true,
+        "low_file_nonvad_energy": true,
+        "not_known_alternate": true
+      }
+    },
+    {
+      "role": "Proog",
+      "duration_seconds": 6.6,
+      "frames": 316800,
+      "vad_speech_seconds": 6.412000000000001,
+      "vad_fraction": 0.9715151515151517,
+      "full_scale_sample_count": 0,
+      "asr_word_count": 9,
+      "machine_screen_pass": true,
+      "gates": {
+        "duration_5_to_10_seconds": true,
+        "no_full_scale_samples": true,
+        "sufficient_vad": true,
+        "asr_support": true,
+        "low_file_nonvad_energy": true,
+        "not_known_alternate": true
+      }
+    },
+    {
+      "role": "Proog",
+      "duration_seconds": 6.9,
+      "frames": 331200,
+      "vad_speech_seconds": 6.8999999999999995,
+      "vad_fraction": 1.0,
+      "full_scale_sample_count": 0,
+      "asr_word_count": 14,
+      "machine_screen_pass": true,
+      "gates": {
+        "duration_5_to_10_seconds": true,
+        "no_full_scale_samples": true,
+        "sufficient_vad": true,
+        "asr_support": true,
+        "low_file_nonvad_energy": true,
+        "not_known_alternate": true
+      }
+    },
+    {
+      "role": "Proog",
+      "duration_seconds": 6.85,
+      "frames": 328800,
+      "vad_speech_seconds": 6.849999999999998,
+      "vad_fraction": 1.0,
+      "full_scale_sample_count": 0,
+      "asr_word_count": 14,
+      "machine_screen_pass": true,
+      "gates": {
+        "duration_5_to_10_seconds": true,
+        "no_full_scale_samples": true,
+        "sufficient_vad": true,
+        "asr_support": true,
+        "low_file_nonvad_energy": true,
+        "not_known_alternate": true
+      }
+    }
+  ],
+  "actual_film_separation": {
+    "separation_complete": true,
+    "segments": 4,
+    "total_context_seconds": 43.0,
+    "wall_seconds": 11.50500991701847,
+    "signal_layout_issues": []
+  },
+  "validation": {
+    "source_wavs_unchanged": true,
+    "all20_audit_complete": true,
+    "before_after_asr_vad_complete": true,
+    "unit_tests_passed": 8
+  },
+  "qualifications": {
+    "human_listening": false,
+    "clean_purity_verified": false,
+    "target_speaker_only_verified": false,
+    "overlap_absence_verified": false,
+    "music_absence_verified": false,
+    "reference_sdr_computed": false,
+    "all_vocals_not_target_character_isolation": true,
+    "nonvad_rms_not_noise_ground_truth": true,
+    "speech_vad_not_usable_duration": true,
+    "api_cost_usd": 0,
+    "infrastructure_cost": "not priced"
+  }
+}

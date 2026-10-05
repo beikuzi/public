@@ -1,0 +1,130 @@
+[
+  {
+    "file": "Bomber-BlockoutMap-Windows.pak",
+    "file_bytes": 12176,
+    "sha256": "78f1dfaa4c43de9963dc8d57286ad13a960735500a33685279acb8f5dd4e98de",
+    "pak_version": 12,
+    "encrypted_index": true,
+    "status": "blocked_encrypted_index"
+  },
+  {
+    "file": "Bomber-BombStorm-Windows.pak",
+    "file_bytes": 16416,
+    "sha256": "c559d5e96f025f076b1dd51e431aa1856adbce54219068a01f941d3f9e4eacd3",
+    "pak_version": 12,
+    "encrypted_index": true,
+    "status": "blocked_encrypted_index"
+  },
+  {
+    "file": "Bomber-Bomber-Windows.pak",
+    "file_bytes": 67043259,
+    "sha256": "40229e3552548be0aaa9a389b53ffa0a20233d91d5213e25ce18aee3ca392aef",
+    "pak_version": 12,
+    "encrypted_index": true,
+    "status": "blocked_encrypted_index"
+  },
+  {
+    "file": "Bomber-CreditsSystem-Windows.pak",
+    "file_bytes": 31286,
+    "sha256": "82f0f493b6d9db8cfc3e452395248b19aac038607b1211701ea7b0cbf6e41aa2",
+    "pak_version": 12,
+    "encrypted_index": true,
+    "status": "blocked_encrypted_index"
+  },
+  {
+    "file": "Bomber-FootTrailsGenerator-Windows.pak",
+    "file_bytes": 16381,
+    "sha256": "cf8e1027169f7db2fe10523afb5646d77b0704a6df24c074902912605c4c11db",
+    "pak_version": 12,
+    "encrypted_index": true,
+    "status": "blocked_encrypted_index"
+  },
+  {
+    "file": "Bomber-LevelActorsMovement-Windows.pak",
+    "file_bytes": 13838,
+    "sha256": "faafa3fc78038381c5baa9fb9c0c409767cdb57763a2e309cd292fb106024fdd",
+    "pak_version": 12,
+    "encrypted_index": true,
+    "status": "blocked_encrypted_index"
+  },
+  {
+    "file": "Bomber-MayaMap-Windows.pak",
+    "file_bytes": 139964,
+    "sha256": "7031fc82e43a5e992fd556a31edeecf995af9968f56847da0cbd3c61fc940123",
+    "pak_version": 12,
+    "encrypted_index": true,
+    "status": "blocked_encrypted_index"
+  },
+  {
+    "file": "Bomber-NewMainMenu-Windows.pak",
+    "file_bytes": 9918,
+    "sha256": "664abbf008e0a7f5701a6d866fac3cc781dbbc1b068c2a3c5ffad30872f56ca1",
+    "pak_version": 12,
+    "encrypted_index": true,
+    "status": "blocked_encrypted_index"
+  },
+  {
+    "file": "Bomber-PlayAreaSurrounder-Windows.pak",
+    "file_bytes": 3515,
+    "sha256": "0d0d1dcae45d7d7bc6980b0e8ae9cb4fa8cf2d94e43df6e6268ca4668fbfb638",
+    "pak_version": 12,
+    "encrypted_index": true,
+    "status": "blocked_encrypted_index"
+  },
+  {
+    "file": "Bomber-ProgressionSystem-Windows.pak",
+    "file_bytes": 11599,
+    "sha256": "2fb76f45588f3e21a0f160a3947428f83356f798564fbf5363cf89f6437100bb",
+    "pak_version": 12,
+    "encrypted_index": true,
+    "status": "blocked_encrypted_index"
+  },
+  {
+    "file": "DLC-pakchunk0-Windows.pak",
+    "file_bytes": 172868465,
+    "sha256": "f9b9797c19afe398eaf0f014429e9fa12edc45eedc63137ce931b61c100307e4",
+    "pak_version": 11,
+    "encrypted_index": false,
+    "status": "index_inspected_payloads_not_decoded"
+  },
+  {
+    "file": "DLC-pakchunk1000-Windows.pak",
+    "file_bytes": 9368544,
+    "sha256": "69a229cf4f01f818a984e2b22559de2e92050a4f3b228c802444102d54a32393",
+    "pak_version": 11,
+    "encrypted_index": false,
+    "status": "index_inspected_payloads_not_decoded"
+  },
+  {
+    "file": "DLC-pakchunk1001-Windows.pak",
+    "file_bytes": 227291,
+    "sha256": "68893d080319ee71b64413ec5050fc64c775f1283a97c28b2ac889f2202f3b73",
+    "pak_version": 11,
+    "encrypted_index": false,
+    "status": "index_inspected_payloads_not_decoded"
+  },
+  {
+    "file": "DLC-pakchunk1002-Windows.pak",
+    "file_bytes": 1346654,
+    "sha256": "0ad7f3fdc7e9a47f973b27d3d9f395870cb6e9f752f21cd2602780435f06cb0b",
+    "pak_version": 11,
+    "encrypted_index": false,
+    "status": "index_inspected_payloads_not_decoded"
+  },
+  {
+    "file": "DLC-pakchunk1003-Windows.pak",
+    "file_bytes": 1815199,
+    "sha256": "211cb2d41831e65d9e464c3b2434f10f66ad62e582eef00fbcec4afabf477e6a",
+    "pak_version": 11,
+    "encrypted_index": false,
+    "status": "index_inspected_payloads_not_decoded"
+  },
+  {
+    "file": "ShooterGame-WindowsNoEditor.pak",
+    "file_bytes": 930445254,
+    "sha256": "bb7df1f411c9d2df69a4a166a4d2452aba13409b522fef610c56b49dceb6d514",
+    "pak_version": 11,
+    "encrypted_index": true,
+    "status": "blocked_encrypted_index"
+  }
+]

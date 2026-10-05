@@ -1,0 +1,61 @@
+{
+  "status": "packaged_game_text_extraction_not_established",
+  "executables_run": false,
+  "keys_sought": false,
+  "decryption_attempted": false,
+  "downloads": [
+    {
+      "archive": "ShooterGameWindowsBenchmark-v1.3.zip",
+      "bytes": 458958667,
+      "sha256": "98d70d54492dbefcde8eeaa48a85a0504ccd07e4cd6118ccf1cbb6941b1d7c83",
+      "author_source": "https://github.com/cqcallaw/shootergame/releases/tag/benchmark-v1.3"
+    },
+    {
+      "archive": "Bomberrage_build_23-06-2026.zip",
+      "bytes": 958496637,
+      "sha256": "05394f5838162c458f5e5e156db247fdb86c2b81a138cb777627372c5d7766e5",
+      "author_source": "https://github.com/JanSeliv/Bomber/releases/tag/23-06-2026"
+    },
+    {
+      "archive": "DLC-Simulator.zip",
+      "bytes": 454747233,
+      "sha256": "5507c8d8b410b51f65054697881d0928ee646cb8f585980592f2528c0c1d7ec4",
+      "author_source": "https://elementalcode.itch.io/dlc-simulator"
+    }
+  ],
+  "findings": [
+    {
+      "sample": "ShooterGame benchmark-v1.3",
+      "pak_version": 11,
+      "encrypted_index": true,
+      "outcome": "Stopped before index decoding; no key sought."
+    },
+    {
+      "sample": "Bomberrage 23-06-2026",
+      "pak_version": 12,
+      "pak_count": 10,
+      "all_encrypted_index": true,
+      "outcome": "Stopped before index decoding; no key sought. Independent localization archives exist but do not prove package extraction."
+    },
+    {
+      "sample": "DLC Simulator",
+      "pak_version": 11,
+      "encrypted_index": false,
+      "main_pak_bytes": 172868465,
+      "primary_index_sha1_match": true,
+      "path_hash_index_sha1_match": true,
+      "directory_index_sha1_match": true,
+      "main_pak_entry_count": 2172,
+      "main_pak_locres_count": 3,
+      "game_locres_count_in_main_pak": 0,
+      "locres_scope": [
+        "Engine",
+        "OnlineSubsystem",
+        "OnlineSubsystemUtils"
+      ],
+      "locres_compression": "Oodle",
+      "outcome": "Index readable; locres compressed payloads not decoded. No game localization resource found in main package. Cannot claim actual game text extraction."
+    }
+  ],
+  "delivered_v1_changed": false
+}

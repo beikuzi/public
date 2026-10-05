@@ -1,0 +1,66 @@
+{
+  "format": "unreal-pak-index-inspection",
+  "file": "DLC-pakchunk0-Windows.pak",
+  "file_bytes": 172868465,
+  "pak_version": 11,
+  "encrypted_index": false,
+  "index_offset": 172690007,
+  "index_bytes": 54098,
+  "payloads_extracted": 0,
+  "text_extraction_validated": false,
+  "status": "index_inspected_payloads_not_decoded",
+  "mount_point": "../../../",
+  "declared_entry_count": 2172,
+  "enumerated_entry_count": 2172,
+  "pruned_entries": 0,
+  "index_regions": {
+    "primary": {
+      "offset": 172690007,
+      "bytes": 54098,
+      "sha1_verified": true
+    },
+    "path_hash": {
+      "offset": 172744105,
+      "bytes": 51540,
+      "sha1_verified": true
+    },
+    "directory": {
+      "offset": 172795645,
+      "bytes": 72599,
+      "sha1_verified": true
+    }
+  },
+  "locres_count": 3,
+  "locres": [
+    {
+      "path": "Engine/Content/Localization/Engine/en/Engine.locres",
+      "offset": 166383616,
+      "compressed_bytes": 1004417,
+      "uncompressed_bytes": 2666729,
+      "compression": "Oodle",
+      "encrypted_payload": false,
+      "compression_blocks": 41,
+      "compression_block_size": 65536
+    },
+    {
+      "path": "Engine/Plugins/Online/OnlineSubsystem/Content/Localization/OnlineSubsystem/en/OnlineSubsystem.locres",
+      "offset": 172652544,
+      "compressed_bytes": 811,
+      "uncompressed_bytes": 1162,
+      "compression": "Oodle",
+      "encrypted_payload": false,
+      "compression_blocks": 1,
+      "compression_block_size": 0
+    },
+    {
+      "path": "Engine/Plugins/Online/OnlineSubsystemUtils/Content/Localization/OnlineSubsystemUtils/en/OnlineSubsystemUtils.locres",
+      "offset": 172656640,
+      "compressed_bytes": 809,
+      "uncompressed_bytes": 1391,
+      "compression": "Oodle",
+      "encrypted_payload": false,
+      "compression_blocks": 1,
+      "compression_block_size": 0
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+[
+  {
+    "format": "unreal-pak-index-inspection",
+    "file": "Bomber-BlockoutMap-Windows.pak",
+    "file_bytes": 12176,
+    "pak_version": 12,
+    "encrypted_index": true,
+    "index_offset": 10819,
+    "index_bytes": 224,
+    "payloads_extracted": 0,
+    "text_extraction_validated": false,
+    "status": "blocked_encrypted_index",
+    "sha256": "78f1dfaa4c43de9963dc8d57286ad13a960735500a33685279acb8f5dd4e98de"
+  },
+  {
+    "format": "unreal-pak-index-inspection",
+    "file": "Bomber-BombStorm-Windows.pak",
+    "file_bytes": 16416,
+    "pak_version": 12,
+    "encrypted_index": true,
+    "index_offset": 15363,
+    "index_bytes": 192,
+    "payloads_extracted": 0,
+    "text_extraction_validated": false,
+    "status": "blocked_encrypted_index",
+    "sha256": "c559d5e96f025f076b1dd51e431aa1856adbce54219068a01f941d3f9e4eacd3"
+  },
+  {
+    "format": "unreal-pak-index-inspection",
+    "file": "Bomber-Bomber-Windows.pak",
+    "file_bytes": 67043259,
+    "pak_version": 12,
+    "encrypted_index": true,
+    "index_offset": 66710510,
+    "index_bytes": 71696,
+    "payloads_extracted": 0,
+    "text_extraction_validated": false,
+    "status": "blocked_encrypted_index",
+    "sha256": "40229e3552548be0aaa9a389b53ffa0a20233d91d5213e25ce18aee3ca392aef"
+  },
+  {
+    "format": "unreal-pak-index-inspection",
+    "file": "Bomber-CreditsSystem-Windows.pak",
+    "file_bytes": 31286,
+    "pak_version": 12,
+    "encrypted_index": true,
+    "index_offset": 30233,
+    "index_bytes": 208,
+    "payloads_extracted": 0,
+    "text_extraction_validated": false,
+    "status": "blocked_encrypted_index",
+    "sha256": "82f0f493b6d9db8cfc3e452395248b19aac038607b1211701ea7b0cbf6e41aa2"
+  },
+  {
+    "format": "unreal-pak-index-inspection",
+    "file": "Bomber-FootTrailsGenerator-Windows.pak",
+    "file_bytes": 16381,
+    "pak_version": 12,
+    "encrypted_index": true,
+    "index_offset": 14976,
+    "index_bytes": 240,
+    "payloads_extracted": 0,
+    "text_extraction_validated": false,
+    "status": "blocked_encrypted_index",
+    "sha256": "cf8e1027169f7db2fe10523afb5646d77b0704a6df24c074902912605c4c11db"
+  },
+  {
+    "format": "unreal-pak-index-inspection",
+    "file": "Bomber-LevelActorsMovement-Windows.pak",
+    "file_bytes": 13838,
+    "pak_version": 12,
+    "encrypted_index": true,
+    "index_offset": 13025,
+    "index_bytes": 192,
+    "payloads_extracted": 0,
+    "text_extraction_validated": false,
+    "status": "blocked_encrypted_index",
+    "sha256": "faafa3fc78038381c5baa9fb9c0c409767cdb57763a2e309cd292fb106024fdd"
+  },
+  {
+    "format": "unreal-pak-index-inspection",
+    "file": "Bomber-MayaMap-Windows.pak",
+    "file_bytes": 139964,
+    "pak_version": 12,
+    "encrypted_index": true,
+    "index_offset": 138639,
+    "index_bytes": 272,
+    "payloads_extracted": 0,
+    "text_extraction_validated": false,
+    "status": "blocked_encrypted_index",
+    "sha256": "7031fc82e43a5e992fd556a31edeecf995af9968f56847da0cbd3c61fc940123"
+  },
+  {
+    "format": "unreal-pak-index-inspection",
+    "file": "Bomber-NewMainMenu-Windows.pak",
+    "file_bytes": 9918,
+    "pak_version": 12,
+    "encrypted_index": true,
+    "index_offset": 8849,
+    "index_bytes": 208,
+    "payloads_extracted": 0,
+    "text_extraction_validated": false,
+    "status": "blocked_encrypted_index",
+    "sha256": "664abbf008e0a7f5701a6d866fac3cc781dbbc1b068c2a3c5ffad30872f56ca1"
+  },
+  {
+    "format": "unreal-pak-index-inspection",
+    "file": "Bomber-PlayAreaSurrounder-Windows.pak",
+    "file_bytes": 3515,
+    "pak_version": 12,
+    "encrypted_index": true,
+    "index_offset": 2654,
+    "index_bytes": 176,
+    "payloads_extracted": 0,
+    "text_extraction_validated": false,
+    "status": "blocked_encrypted_index",
+    "sha256": "0d0d1dcae45d7d7bc6980b0e8ae9cb4fa8cf2d94e43df6e6268ca4668fbfb638"
+  },
+  {
+    "format": "unreal-pak-index-inspection",
+    "file": "Bomber-ProgressionSystem-Windows.pak",
+    "file_bytes": 11599,
+    "pak_version": 12,
+    "encrypted_index": true,
+    "index_offset": 10146,
+    "index_bytes": 240,
+    "payloads_extracted": 0,
+    "text_extraction_validated": false,
+    "status": "blocked_encrypted_index",
+    "sha256": "2fb76f45588f3e21a0f160a3947428f83356f798564fbf5363cf89f6437100bb"
+  },
+  {
+    "format": "unreal-pak-index-inspection",
+    "file": "DLC-pakchunk0-Windows.pak",
+    "file_bytes": 172868465,
+    "pak_version": 11,
+    "encrypted_index": false,
+    "index_offset": 172690007,
+    "index_bytes": 54098,
+    "payloads_extracted": 0,
+    "text_extraction_validated": false,
+    "status": "index_inspected_payloads_not_decoded",
+    "mount_point": "../../../",
+    "declared_entry_count": 2172,
+    "enumerated_entry_count": 2172,
+    "pruned_entries": 0,
+    "index_regions": {
+      "primary": {
+        "offset": 172690007,
+        "bytes": 54098,
+        "sha1_verified": true
+      },
+      "path_hash": {
+        "offset": 172744105,
+        "bytes": 51540,
+        "sha1_verified": true
+      },
+      "directory": {
+        "offset": 172795645,
+        "bytes": 72599,
+        "sha1_verified": true
+      }
+    },
+    "locres_count": 3,
+    "locres": [
+      {
+        "path": "Engine/Content/Localization/Engine/en/Engine.locres",
+        "offset": 166383616,
+        "compressed_bytes": 1004417,
+        "uncompressed_bytes": 2666729,
+        "compression": "Oodle",
+        "encrypted_payload": false,
+        "compression_blocks": 41,
+        "compression_block_size": 65536
+      },
+      {
+        "path": "Engine/Plugins/Online/OnlineSubsystem/Content/Localization/OnlineSubsystem/en/OnlineSubsystem.locres",
+        "offset": 172652544,
+        "compressed_bytes": 811,
+        "uncompressed_bytes": 1162,
+        "compression": "Oodle",
+        "encrypted_payload": false,
+        "compression_blocks": 1,
+        "compression_block_size": 0
+      },
+      {
+        "path": "Engine/Plugins/Online/OnlineSubsystemUtils/Content/Localization/OnlineSubsystemUtils/en/OnlineSubsystemUtils.locres",
+        "offset": 172656640,
+        "compressed_bytes": 809,
+        "uncompressed_bytes": 1391,
+        "compression": "Oodle",
+        "encrypted_payload": false,
+        "compression_blocks": 1,
+        "compression_block_size": 0
+      }
+    ],
+    "sha256": "f9b9797c19afe398eaf0f014429e9fa12edc45eedc63137ce931b61c100307e4"
+  },
+  {
+    "format": "unreal-pak-index-inspection",
+    "file": "DLC-pakchunk1000-Windows.pak",
+    "file_bytes": 9368544,
+    "pak_version": 11,
+    "encrypted_index": false,
+    "index_offset": 9361852,
+    "index_bytes": 2231,
+    "payloads_extracted": 0,
+    "text_extraction_validated": false,
+    "status": "index_inspected_payloads_not_decoded",
+    "mount_point": "../../../DLCSimulator/Content/",
+    "declared_entry_count": 91,
+    "enumerated_entry_count": 91,
+    "pruned_entries": 0,
+    "index_regions": {
+      "primary": {
+        "offset": 9361852,
+        "bytes": 2231,
+        "sha1_verified": true
+      },
+      "path_hash": {
+        "offset": 9364083,
+        "bytes": 1100,
+        "sha1_verified": true
+      },
+      "directory": {
+        "offset": 9365183,
+        "bytes": 3140,
+        "sha1_verified": true
+      }
+    },
+    "locres_count": 0,
+    "locres": [],
+    "sha256": "69a229cf4f01f818a984e2b22559de2e92050a4f3b228c802444102d54a32393"
+  },
+  {
+    "format": "unreal-pak-index-inspection",
+    "file": "DLC-pakchunk1001-Windows.pak",
+    "file_bytes": 227291,
+    "pak_version": 11,
+    "encrypted_index": false,
+    "index_offset": 225005,
+    "index_bytes": 680,
+    "payloads_extracted": 0,
+    "text_extraction_validated": false,
+    "status": "index_inspected_payloads_not_decoded",
+    "mount_point": "../../../DLCSimulator/Content/DLCSimulator/Animals/",
+    "declared_entry_count": 34,
+    "enumerated_entry_count": 34,
+    "pruned_entries": 0,
+    "index_regions": {
+      "primary": {
+        "offset": 225005,
+        "bytes": 680,
+        "sha1_verified": true
+      },
+      "path_hash": {
+        "offset": 225685,
+        "bytes": 416,
+        "sha1_verified": true
+      },
+      "directory": {
+        "offset": 226101,
+        "bytes": 969,
+        "sha1_verified": true
+      }
+    },
+    "locres_count": 0,
+    "locres": [],
+    "sha256": "68893d080319ee71b64413ec5050fc64c775f1283a97c28b2ac889f2202f3b73"
+  },
+  {
+    "format": "unreal-pak-index-inspection",
+    "file": "DLC-pakchunk1002-Windows.pak",
+    "file_bytes": 1346654,
+    "pak_version": 11,
+    "encrypted_index": false,
+    "index_offset": 1337162,
+    "index_bytes": 2593,
+    "payloads_extracted": 0,
+    "text_extraction_validated": false,
+    "status": "index_inspected_payloads_not_decoded",
+    "mount_point": "../../../DLCSimulator/Content/DLCSimulator/Skeleton/",
+    "declared_entry_count": 148,
+    "enumerated_entry_count": 148,
+    "pruned_entries": 0,
+    "index_regions": {
+      "primary": {
+        "offset": 1337162,
+        "bytes": 2593,
+        "sha1_verified": true
+      },
+      "path_hash": {
+        "offset": 1339755,
+        "bytes": 1784,
+        "sha1_verified": true
+      },
+      "directory": {
+        "offset": 1341539,
+        "bytes": 4894,
+        "sha1_verified": true
+      }
+    },
+    "locres_count": 0,
+    "locres": [],
+    "sha256": "0ad7f3fdc7e9a47f973b27d3d9f395870cb6e9f752f21cd2602780435f06cb0b"
+  },
+  {
+    "format": "unreal-pak-index-inspection",
+    "file": "DLC-pakchunk1003-Windows.pak",
+    "file_bytes": 1815199,
+    "pak_version": 11,
+    "encrypted_index": false,
+    "index_offset": 1807609,
+    "index_bytes": 2063,
+    "payloads_extracted": 0,
+    "text_extraction_validated": false,
+    "status": "index_inspected_payloads_not_decoded",
+    "mount_point": "../../../DLCSimulator/Content/",
+    "declared_entry_count": 123,
+    "enumerated_entry_count": 123,
+    "pruned_entries": 0,
+    "index_regions": {
+      "primary": {
+        "offset": 1807609,
+        "bytes": 2063,
+        "sha1_verified": true
+      },
+      "path_hash": {
+        "offset": 1809672,
+        "bytes": 1484,
+        "sha1_verified": true
+      },
+      "directory": {
+        "offset": 1811156,
+        "bytes": 3822,
+        "sha1_verified": true
+      }
+    },
+    "locres_count": 0,
+    "locres": [],
+    "sha256": "211cb2d41831e65d9e464c3b2434f10f66ad62e582eef00fbcec4afabf477e6a"
+  },
+  {
+    "format": "unreal-pak-index-inspection",
+    "file": "ShooterGame-WindowsNoEditor.pak",
+    "file_bytes": 930445254,
+    "pak_version": 11,
+    "encrypted_index": true,
+    "index_offset": 930219865,
+    "index_bytes": 41968,
+    "payloads_extracted": 0,
+    "text_extraction_validated": false,
+    "status": "blocked_encrypted_index",
+    "sha256": "bb7df1f411c9d2df69a4a166a4d2452aba13409b522fef610c56b49dceb6d514"
+  }
+]

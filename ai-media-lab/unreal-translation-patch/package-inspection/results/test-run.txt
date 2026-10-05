@@ -1,0 +1,17 @@
+test_all_truncations (test_pak_index.PakIndexTests.test_all_truncations) ... ok
+test_cli_refuses_existing_output (test_pak_index.PakIndexTests.test_cli_refuses_existing_output) ... ok
+test_directory_hash_rejects_tampering (test_pak_index.PakIndexTests.test_directory_hash_rejects_tampering) ... ok
+test_encrypted_stops_before_index_read (test_pak_index.PakIndexTests.test_encrypted_stops_before_index_read) ... ok
+test_index_offset_and_size_bounds (test_pak_index.PakIndexTests.test_index_offset_and_size_bounds) ... ok
+test_invalid_flag_and_version (test_pak_index.PakIndexTests.test_invalid_flag_and_version) ... ok
+test_metadata_bounds_counts (test_pak_index.PakIndexTests.test_metadata_bounds_counts) ... ok
+test_primary_hash_rejects_tampering (test_pak_index.PakIndexTests.test_primary_hash_rejects_tampering) ... ok
+test_replay_has_source_side_baseline (test_pak_index.PakIndexTests.test_replay_has_source_side_baseline) ... ok
+test_string_bounds_and_encoding (test_pak_index.PakIndexTests.test_string_bounds_and_encoding) ... ok
+test_v12_footer_recognized_without_index_claim (test_pak_index.PakIndexTests.test_v12_footer_recognized_without_index_claim) ... ok
+test_valid_index_only (test_pak_index.PakIndexTests.test_valid_index_only) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.055s
+
+OK

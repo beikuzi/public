@@ -1,0 +1,27 @@
+{
+  "purpose": "Exploratory within-film acoustic consistency audit, not biometric identity proof or calibrated error-rate evaluation",
+  "pre_scores_protocol": true,
+  "anchor_candidates": {
+    "Sintel": [
+      "srt_013",
+      "srt_014"
+    ],
+    "Shaman": [
+      "srt_007",
+      "srt_009"
+    ]
+  },
+  "anchor_selection": "Sintel 013/014 continuous injury-treatment scene with only Sintel and dragon; Shaman007 wide shot, Shaman009 close-up. Scene support and caption length selected before embedding scores. Static frames and narrative support are not audited lip-sync.",
+  "rules": {
+    "minimum_caption_duration_seconds": 2.0,
+    "minimum_lexical_word_count": 3,
+    "minimum_cosine_to_winning_centroid": 0.35,
+    "minimum_margin": 0.1,
+    "both_center_and_stereo_must_agree": true,
+    "anchor_scoring": "leave-one-anchor-out",
+    "human_auditory_reviewed": false,
+    "overlap": "unknown_for_all",
+    "training_ready": false
+  },
+  "threshold_note": "Exploratory conservative engineering gates selected before scores, uncalibrated to this movie and not evidence of false-accept rates. Caption duration is not measured speech duration; short lexically sparse calls remain quarantined."
+}

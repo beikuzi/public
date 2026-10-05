@@ -1,0 +1,11 @@
+{
+ "name":"boundary-aware exploratory v2, fixed before v2 scores",
+ "anchor_sets":{"fixed_original":{"Sintel":["srt_013","srt_014"],"Shaman":["srt_007","srt_009"]},"asr_supported":{"Sintel":["srt_008","srt_012","srt_020"],"Shaman":["srt_007","srt_009"]}},
+ "new_anchor_selection":"Sintel008/012/020 selected before new scores by exact multiword contextual ASR agreement plus VAD and scene labels. Sintel012 is2.008s VAD-positive narration;008+020 form a composite2.640s reference spanning two utterances. No claim of two individually>=2s Sintel utterances. Shaman007/009 unchanged, each>=2s VAD-positive.",
+ "regions":"Use boundary-proposals machine_supported_candidate proposed_regions, concatenated without added silence. For rejected boundary proposals, use each modality contextual VAD clipped to the original caption solely for diagnostics; never admit these automatically. This clipping keeps neighboring utterances out but can truncate early speech.",
+ "primary_views":["center","stereo"],
+ "admission":{"boundary_machine_supported_required":true,"minimum_model_detected_speech_seconds":2.0,"minimum_winner_cosine":0.35,"minimum_margin":0.10,"both_views_must_agree_with_original_scene_label":true,"all_enrolled_ids_excluded_from_nonanchor_counts":true},
+ "enrollment_scoring":"Leave each scored enrolled ID out of its speaker reference centroid. Composite references are averaged utterance embeddings; not training or calibrated identity proof.",
+ "neural_diagnostic":"Where contextual neural stems exist, score against center reference centroids as an explicitly cross-condition diagnostic; not an admission gate.",
+ "not_accuracy_evaluation":true,"thresholds_not_calibrated":true,"human_auditory_review":false,"overlap_resolved":false,"training_ready":false
+}

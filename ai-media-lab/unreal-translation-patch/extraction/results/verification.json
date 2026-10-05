@@ -1,0 +1,65 @@
+{
+  "scope": "Real author-published loose compiled localization resources; not packaged-container or runtime validation.",
+  "total_resources": 5,
+  "total_entries": 17,
+  "resources": [
+    {
+      "sample": "video-example",
+      "engine": "5.3",
+      "language": "en",
+      "locres_version": 3,
+      "entries": 7,
+      "exact_match": true,
+      "sha256": "5e023427d8b04b201ea05c7aed148c95585f261f6d877a8c8fd8c707085bef5a",
+      "reference": "Content/Localization/Game/en/Game.archive"
+    },
+    {
+      "sample": "video-example",
+      "engine": "5.3",
+      "language": "fr-FR",
+      "locres_version": 3,
+      "entries": 7,
+      "exact_match": true,
+      "sha256": "953805c81228cdf4802c7b7cb82ff33c0249adea18cf38945a6672af35e33d15",
+      "reference": "Content/Localization/Game/fr-FR/Game.archive"
+    },
+    {
+      "sample": "easy-localization",
+      "engine": "4.27",
+      "language": "de",
+      "locres_version": 3,
+      "entries": 1,
+      "exact_match": true,
+      "sha256": "11f5a993c1db65cd012f8c13a8f85cee6bb057ab0755ceaad535ac66894c2e6c",
+      "reference": "Content/Localization/TestLocA.csv"
+    },
+    {
+      "sample": "easy-localization",
+      "engine": "4.27",
+      "language": "en",
+      "locres_version": 3,
+      "entries": 1,
+      "exact_match": true,
+      "sha256": "6a5279ed07120e63e099806e8116f0158d3f830a12aaf04e26bb4faf917396f2",
+      "reference": "Content/Localization/TestLocA.csv"
+    },
+    {
+      "sample": "easy-localization",
+      "engine": "4.27",
+      "language": "pl",
+      "locres_version": 3,
+      "entries": 1,
+      "exact_match": true,
+      "sha256": "f6cbfeb42219b8752e772a80bbebee5db542f1bf28868e708a72ddbeda4916d6",
+      "reference": "Content/Localization/TestLocA.csv"
+    }
+  ],
+  "not_validated": [
+    "PAK/IoStore unpacking",
+    "encrypted resources",
+    "runtime hooks or visible text",
+    "raw uasset StringTable parsing",
+    "whole-game text coverage",
+    "real-world locres versions 0/1/2"
+  ]
+}

@@ -1,0 +1,8 @@
+__pycache__/
+fixtures/
+results/*.csv
+results/*-en.json
+results/*-fr-FR.json
+results/*-de.json
+results/*-pl.json
+results/video-fr-FR.json

@@ -1,0 +1,48 @@
+[
+  {
+    "repository": "https://github.com/GuicLuca/UnrealEngine_VideoExampleProject",
+    "commit": "88d3dedf592337742542660a4f4aa4633bbb04ad",
+    "files": [
+      "LICENSE",
+      "VideoExample.uproject",
+      "Content/Localization/Game/Game.manifest",
+      "Content/Localization/Game/en/Game.archive",
+      "Content/Localization/Game/en/Game.locres",
+      "Content/Localization/Game/fr-FR/Game.archive",
+      "Content/Localization/Game/fr-FR/Game.locres"
+    ],
+    "sha256": {
+      "LICENSE": "8bbc5b70860a7a4e24446cc057d296f3a21fde724806aff822d98b77e6168d06",
+      "VideoExample.uproject": "2dd1e2c437acd53c620ebeff70b1e6543eca1e9958ab2fc70585f51c31e99330",
+      "Content/Localization/Game/Game.manifest": "6eb016a47fad25b300757a6df3c5968d71499202f89547e955b836d755bcd724",
+      "Content/Localization/Game/en/Game.archive": "b1fc43f74bf23dd4a2eff59c29d498f23d8781683b709383a6cdaffd8116e70b",
+      "Content/Localization/Game/en/Game.locres": "5e023427d8b04b201ea05c7aed148c95585f261f6d877a8c8fd8c707085bef5a",
+      "Content/Localization/Game/fr-FR/Game.archive": "adc9e3b79e31f86ec82082c2eb03c195ff957a4f16662ac41151377afc5bab0f",
+      "Content/Localization/Game/fr-FR/Game.locres": "953805c81228cdf4802c7b7cb82ff33c0249adea18cf38945a6672af35e33d15"
+    },
+    "name": "video-example"
+  },
+  {
+    "repository": "https://github.com/zompi2/UE4EasyLocalizationToolExample",
+    "commit": "84759eccb2f3c8b5644562c9ee5f3fcc2f86ddeb",
+    "files": [
+      "LICENSE",
+      "ELTExample.uproject",
+      "Content/Localization/TestLocA.csv",
+      "Content/Localization/TestLocB.csv",
+      "Content/Localization/Game/en/Game.locres",
+      "Content/Localization/Game/de/Game.locres",
+      "Content/Localization/Game/pl/Game.locres"
+    ],
+    "sha256": {
+      "LICENSE": "318a49f97a3870925051700cf76418f4d5d121505d16041a4f4fbdbd01772704",
+      "ELTExample.uproject": "756105a8329a4d73c21039f99f0b20352ee4a220b8b38ac8fb2cad427b680fe3",
+      "Content/Localization/TestLocA.csv": "86476fd8d7da8a0608e176be03324da5f729a2f80a36e654267b4c5ac0659705",
+      "Content/Localization/TestLocB.csv": "aead9316e3de7b508ea760922071d593c4a15c8b51eebcde94b682156e1ebe1e",
+      "Content/Localization/Game/en/Game.locres": "6a5279ed07120e63e099806e8116f0158d3f830a12aaf04e26bb4faf917396f2",
+      "Content/Localization/Game/de/Game.locres": "11f5a993c1db65cd012f8c13a8f85cee6bb057ab0755ceaad535ac66894c2e6c",
+      "Content/Localization/Game/pl/Game.locres": "f6cbfeb42219b8752e772a80bbebee5db542f1bf28868e708a72ddbeda4916d6"
+    },
+    "name": "easy-localization"
+  }
+]

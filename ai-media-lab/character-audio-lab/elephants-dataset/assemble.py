@@ -27,7 +27,7 @@ def source_audio_info(path):
 
 def validate_ref(ref,sources):
     source=sources[ref['source_id']];a=ref['start_frame'];b=ref['end_frame']
-    require(isinstance(a,int) and isinstance(b,int) and 0<=a<b<=source['audio']['frames'],'Invalid source frame interval')
+    require(type(a) is int and type(b) is int and 0<=a<b<=source['audio']['frames'],'Invalid source frame interval')
     require(b-a<=10*RATE,'Utterance exceeds10s; natural-pause reannotation required')
     return source,a,b
 
@@ -81,19 +81,21 @@ def build(config_path,output):
             if variant in s:s[variant]['source_sha256']=sources[s[variant]['source_id']]['sha256']
         if s.get('speaker')!=config['target_speaker']:reasons.append('other_role')
         if source.get('role')!=s.get('speaker'):reasons.append('source_role_label_mismatch')
-        if not s.get('machine_qc_pass'):reasons.append('machine_qc_not_passed')
+        if s.get('machine_qc_pass') is not True:reasons.append('machine_qc_not_passed')
         if source.get('kind')!='authored_role_labelled_production_wav':reasons.append('author_source_provenance_not_confirmed')
         if s.get('overlap_status')=='known_cross_role_overlap':reasons.append('known_cross_role_overlap')
         if s.get('quarantine_reason'):reasons.append(s['quarantine_reason'])
         for region in s.get('speech_regions',[]):
-            require(isinstance(region['start_frame'],int) and isinstance(region['end_frame'],int) and a<=region['start_frame']<region['end_frame']<=b,'VAD frame region outside author selection')
+            require(type(region['start_frame']) is int and type(region['end_frame']) is int and a<=region['start_frame']<region['end_frame']<=b,'VAD frame region outside author selection')
         if 'movie' in s:
-            _,ma,mb=validate_ref(s['movie'],sources)
+            movie_source,ma,mb=validate_ref(s['movie'],sources)
+            require(movie_source.get('kind')=='movie_mix','Movie reference must use movie_mix source kind')
             require(mb-ma==b-a,'Aligned movie and author intervals must preserve exact length')
-            if not s.get('alignment',{}).get('accepted'):reasons.append('movie_alignment_not_accepted')
+            if s.get('alignment',{}).get('accepted') is not True:reasons.append('movie_alignment_not_accepted')
         if 'separated' in s:
             require('movie' in s,'Separated result requires matched movie reference')
-            _,sa,sb=validate_ref(s['separated'],sources);require(sb-sa==b-a,'Separated source region duration differs')
+            separated_source,sa,sb=validate_ref(s['separated'],sources);require(sb-sa==b-a,'Separated source region duration differs')
+            require(separated_source.get('kind')=='contextual_separated_vocals','Separated reference must use contextual_separated_vocals source kind')
             require(sources[s['separated']['source_id']].get('model_provenance'),'Missing separator provenance')
         if reasons:s['exclusion_reasons']=reasons;excluded.append(s)
         else:selected.append(s)

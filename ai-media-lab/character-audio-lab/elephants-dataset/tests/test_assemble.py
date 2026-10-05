@@ -47,6 +47,19 @@ class MultiSourceTest(unittest.TestCase):
     def test_wrong_authored_role_cannot_be_relabelled(self):
         x=copy.deepcopy(self.base);x['sources']['a']['role']='B'
         with self.assertRaisesRegex(ValueError,'No admitted'):self.run_build(x)
+    def test_boolean_frame_is_not_integer_frame(self):
+        x=copy.deepcopy(self.base);x['segments'][0]['author']['start_frame']=False
+        with self.assertRaisesRegex(ValueError,'Invalid source frame'):self.run_build(x)
+    def test_truthy_strings_do_not_approve_qc_or_alignment(self):
+        x=copy.deepcopy(self.base);x['segments'][0]['machine_qc_pass']='false'
+        with self.assertRaisesRegex(ValueError,'No admitted'):self.run_build(x)
+        x=copy.deepcopy(self.base);x['segments'][0]['alignment']['accepted']='false'
+        with self.assertRaisesRegex(ValueError,'No admitted'):self.run_build(x)
+    def test_reference_source_kinds_are_checked(self):
+        x=copy.deepcopy(self.base);x['sources']['m']['kind']='authored_role_labelled_production_wav'
+        with self.assertRaisesRegex(ValueError,'movie_mix'):self.run_build(x)
+        x=copy.deepcopy(self.base);x['sources']['s']['kind']='movie_mix'
+        with self.assertRaisesRegex(ValueError,'contextual_separated_vocals'):self.run_build(x)
     def test_source_hash_guard(self):
         x=copy.deepcopy(self.base);x['sources']['a']['sha256']='bad'
         with self.assertRaisesRegex(ValueError,'hash'):self.run_build(x)

@@ -1,0 +1,1144 @@
+{
+  "method": "SpeechBrain ECAPA-TDNN, frozen public pretrained embeddings, 16kHz center and mono-downmixed stereo, cosine to scene anchors; enrollment samples leave-one-out",
+  "summary": {
+    "target_annotated_seconds": 40.87,
+    "target_annotated_spans": 15,
+    "target_quarantined_ids": [
+      "srt_005",
+      "srt_008",
+      "srt_010",
+      "srt_012",
+      "srt_015",
+      "srt_016",
+      "srt_017",
+      "srt_018",
+      "srt_019",
+      "srt_020",
+      "srt_024",
+      "srt_025",
+      "srt_026"
+    ],
+    "target_acoustically_consistent_ids": [
+      "srt_013",
+      "srt_014"
+    ],
+    "target_acoustically_consistent_caption_seconds": 6.0,
+    "non_anchor_target_pass_count": 0,
+    "non_target_consistent_count": 10,
+    "training_ready_seconds": 0,
+    "overlap_verified_absent_seconds": 0,
+    "human_auditory_reviewed_seconds": 0,
+    "label_accuracy_estimate": null
+  },
+  "coverage": {
+    "annotated_intervals": 26,
+    "full_film_diarization": false
+  },
+  "model_url": "https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb",
+  "model_sha256": "0575cb64845e6b9a10db9bcb74d5ac32b326b8dc90352671d345e2ee3d0126a2",
+  "source_annotation_sha256": "887fa854eba877d97d8cea53ecef407d2434b3b0252b6b27651384d4af88abfb",
+  "software": {
+    "speechbrain": "1.1.1",
+    "torch": "2.8.0+cpu"
+  },
+  "limitations": [
+    "Not human auditory verification.",
+    "Scores are similarities, not calibrated probabilities.",
+    "No overlap detector, ASR, or forced alignment was run.",
+    "Model domain differs from movie dialogue and effects.",
+    "Anchor labels rely on scene evidence and may be wrong.",
+    "Long subtitle intervals may contain very brief speech.",
+    "All outputs remain training_ready=false."
+  ],
+  "additional_limitations": [
+    "No anchor has >=2 seconds of speech established by human review or VAD; caption spans exceed2seconds but include silence/noise.",
+    "Two Sintel anchors are adjacent in one scene and are not independent recording-condition evidence.",
+    "Center and stereo originate from the same film mix; their agreement is not statistically independent.",
+    "Energy above -40dBFS is an arbitrary signal-activity diagnostic, NOT speech/VAD duration.",
+    "No non-anchor target passes; do not market the6seconds as an independently evaluated extracted-character dataset."
+  ],
+  "segments": [
+    {
+      "id": "srt_001",
+      "start": 107.206,
+      "end": 110.456,
+      "speaker": "Shaman",
+      "target": false,
+      "duration_seconds": 3.25,
+      "lexical_word_count": 6,
+      "anchor": false,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": -0.09020756930112839,
+            "Shaman": 0.5778620839118958
+          },
+          "winner": "Shaman",
+          "margin": 0.6680696532130241,
+          "rms_dbfs": -38.51513671875,
+          "energy_above_minus40dbfs_seconds": 1.38,
+          "peak_dbfs": -17.87711524963379
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": -0.07691582292318344,
+            "Shaman": 0.5831691026687622
+          },
+          "winner": "Shaman",
+          "margin": 0.6600849255919456,
+          "rms_dbfs": -39.50413513183594,
+          "energy_above_minus40dbfs_seconds": 1.28,
+          "peak_dbfs": -18.17835235595703
+        }
+      },
+      "triage": "acoustically_consistent_provisional",
+      "reasons": [],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_002",
+      "start": 111.756,
+      "end": 115.756,
+      "speaker": "Shaman",
+      "target": false,
+      "duration_seconds": 4.0,
+      "lexical_word_count": 6,
+      "anchor": false,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": -0.0398804247379303,
+            "Shaman": 0.5501251816749573
+          },
+          "winner": "Shaman",
+          "margin": 0.5900056064128876,
+          "rms_dbfs": -32.48984909057617,
+          "energy_above_minus40dbfs_seconds": 1.76,
+          "peak_dbfs": -11.156543731689453
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": -0.026243694126605988,
+            "Shaman": 0.5550417900085449
+          },
+          "winner": "Shaman",
+          "margin": 0.5812854841351509,
+          "rms_dbfs": -30.01943588256836,
+          "energy_above_minus40dbfs_seconds": 1.76,
+          "peak_dbfs": -5.947568893432617
+        }
+      },
+      "triage": "acoustically_consistent_provisional",
+      "reasons": [],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_003",
+      "start": 117.956,
+      "end": 121.406,
+      "speaker": "Shaman",
+      "target": false,
+      "duration_seconds": 3.45,
+      "lexical_word_count": 9,
+      "anchor": false,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": 0.030780909582972527,
+            "Shaman": 0.5890270471572876
+          },
+          "winner": "Shaman",
+          "margin": 0.5582461375743151,
+          "rms_dbfs": -29.605709075927734,
+          "energy_above_minus40dbfs_seconds": 2.22,
+          "peak_dbfs": -10.226947784423828
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": -0.012492166832089424,
+            "Shaman": 0.6174597144126892
+          },
+          "winner": "Shaman",
+          "margin": 0.6299518812447786,
+          "rms_dbfs": -30.2701473236084,
+          "energy_above_minus40dbfs_seconds": 2.24,
+          "peak_dbfs": -11.303373336791992
+        }
+      },
+      "triage": "acoustically_consistent_provisional",
+      "reasons": [],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_004",
+      "start": 121.706,
+      "end": 124.756,
+      "speaker": "Shaman",
+      "target": false,
+      "duration_seconds": 3.05,
+      "lexical_word_count": 6,
+      "anchor": false,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": 0.005792435258626938,
+            "Shaman": 0.5597211122512817
+          },
+          "winner": "Shaman",
+          "margin": 0.5539286769926548,
+          "rms_dbfs": -34.4218864440918,
+          "energy_above_minus40dbfs_seconds": 1.08,
+          "peak_dbfs": -15.52701187133789
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": 0.05966952070593834,
+            "Shaman": 0.5173330307006836
+          },
+          "winner": "Shaman",
+          "margin": 0.45766350999474525,
+          "rms_dbfs": -35.11637878417969,
+          "energy_above_minus40dbfs_seconds": 1.12,
+          "peak_dbfs": -15.95585823059082
+        }
+      },
+      "triage": "acoustically_consistent_provisional",
+      "reasons": [],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_005",
+      "start": 125.206,
+      "end": 126.256,
+      "speaker": "Sintel",
+      "target": true,
+      "duration_seconds": 1.05,
+      "lexical_word_count": 2,
+      "anchor": false,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": 0.09907861799001694,
+            "Shaman": 0.20982569456100464
+          },
+          "winner": "Shaman",
+          "margin": 0.1107470765709877,
+          "rms_dbfs": -48.5678825378418,
+          "energy_above_minus40dbfs_seconds": 0.06,
+          "peak_dbfs": -26.20122528076172
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": 0.1823052316904068,
+            "Shaman": 0.15251921117305756
+          },
+          "winner": "Sintel",
+          "margin": 0.029786020517349243,
+          "rms_dbfs": -47.02214813232422,
+          "energy_above_minus40dbfs_seconds": 0.06,
+          "peak_dbfs": -26.283246994018555
+        }
+      },
+      "triage": "quarantine",
+      "reasons": [
+        "caption_duration_below_2_seconds",
+        "fewer_than_3_lexical_words",
+        "center_cosine_below_exploratory_gate",
+        "center_disagrees_with_scene_label",
+        "stereo_cosine_below_exploratory_gate",
+        "stereo_margin_below_exploratory_gate",
+        "channel_winners_disagree"
+      ],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_006",
+      "start": 127.456,
+      "end": 128.956,
+      "speaker": "Shaman",
+      "target": false,
+      "duration_seconds": 1.5,
+      "lexical_word_count": 1,
+      "anchor": false,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": -0.036172762513160706,
+            "Shaman": 0.44450071454048157
+          },
+          "winner": "Shaman",
+          "margin": 0.4806734770536423,
+          "rms_dbfs": -36.87786102294922,
+          "energy_above_minus40dbfs_seconds": 0.46,
+          "peak_dbfs": -16.5980224609375
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": -0.04715482518076897,
+            "Shaman": 0.4410257339477539
+          },
+          "winner": "Shaman",
+          "margin": 0.4881805591285229,
+          "rms_dbfs": -37.3106689453125,
+          "energy_above_minus40dbfs_seconds": 0.52,
+          "peak_dbfs": -18.38835906982422
+        }
+      },
+      "triage": "quarantine",
+      "reasons": [
+        "caption_duration_below_2_seconds",
+        "fewer_than_3_lexical_words"
+      ],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_007",
+      "start": 129.356,
+      "end": 133.756,
+      "speaker": "Shaman",
+      "target": false,
+      "duration_seconds": 4.4,
+      "lexical_word_count": 9,
+      "anchor": true,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": 0.02224503830075264,
+            "Shaman": 0.42947936058044434
+          },
+          "winner": "Shaman",
+          "margin": 0.4072343222796917,
+          "rms_dbfs": -33.43417739868164,
+          "energy_above_minus40dbfs_seconds": 1.64,
+          "peak_dbfs": -12.697094917297363
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": 0.03339151665568352,
+            "Shaman": 0.45003747940063477
+          },
+          "winner": "Shaman",
+          "margin": 0.41664596274495125,
+          "rms_dbfs": -34.007083892822266,
+          "energy_above_minus40dbfs_seconds": 1.6,
+          "peak_dbfs": -14.008683204650879
+        }
+      },
+      "triage": "acoustically_consistent_provisional",
+      "reasons": [],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_008",
+      "start": 134.956,
+      "end": 137.456,
+      "speaker": "Sintel",
+      "target": true,
+      "duration_seconds": 2.5,
+      "lexical_word_count": 4,
+      "anchor": false,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": 0.3208376169204712,
+            "Shaman": 0.1584196239709854
+          },
+          "winner": "Sintel",
+          "margin": 0.16241799294948578,
+          "rms_dbfs": -32.370635986328125,
+          "energy_above_minus40dbfs_seconds": 0.9,
+          "peak_dbfs": -14.685098648071289
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": 0.2622159719467163,
+            "Shaman": 0.14572300016880035
+          },
+          "winner": "Sintel",
+          "margin": 0.11649297177791595,
+          "rms_dbfs": -32.95265197753906,
+          "energy_above_minus40dbfs_seconds": 0.88,
+          "peak_dbfs": -15.369268417358398
+        }
+      },
+      "triage": "quarantine",
+      "reasons": [
+        "center_cosine_below_exploratory_gate",
+        "stereo_cosine_below_exploratory_gate"
+      ],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_009",
+      "start": 137.956,
+      "end": 142.156,
+      "speaker": "Shaman",
+      "target": false,
+      "duration_seconds": 4.2,
+      "lexical_word_count": 6,
+      "anchor": true,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": 0.028980210423469543,
+            "Shaman": 0.4294793903827667
+          },
+          "winner": "Shaman",
+          "margin": 0.4004991799592972,
+          "rms_dbfs": -33.092708587646484,
+          "energy_above_minus40dbfs_seconds": 1.24,
+          "peak_dbfs": -11.590920448303223
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": 0.0876595675945282,
+            "Shaman": 0.45003753900527954
+          },
+          "winner": "Shaman",
+          "margin": 0.36237797141075134,
+          "rms_dbfs": -33.986572265625,
+          "energy_above_minus40dbfs_seconds": 1.26,
+          "peak_dbfs": -12.338489532470703
+        }
+      },
+      "triage": "acoustically_consistent_provisional",
+      "reasons": [],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_010",
+      "start": 143.356,
+      "end": 144.956,
+      "speaker": "Sintel",
+      "target": true,
+      "duration_seconds": 1.6,
+      "lexical_word_count": 2,
+      "anchor": false,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": 0.2867603898048401,
+            "Shaman": 0.2923282980918884
+          },
+          "winner": "Shaman",
+          "margin": 0.00556790828704834,
+          "rms_dbfs": -36.078826904296875,
+          "energy_above_minus40dbfs_seconds": 0.48,
+          "peak_dbfs": -15.814664840698242
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": 0.27451688051223755,
+            "Shaman": 0.29836058616638184
+          },
+          "winner": "Shaman",
+          "margin": 0.023843705654144287,
+          "rms_dbfs": -36.42814254760742,
+          "energy_above_minus40dbfs_seconds": 0.5,
+          "peak_dbfs": -16.67432403564453
+        }
+      },
+      "triage": "quarantine",
+      "reasons": [
+        "caption_duration_below_2_seconds",
+        "fewer_than_3_lexical_words",
+        "center_cosine_below_exploratory_gate",
+        "center_margin_below_exploratory_gate",
+        "center_disagrees_with_scene_label",
+        "stereo_cosine_below_exploratory_gate",
+        "stereo_margin_below_exploratory_gate",
+        "stereo_disagrees_with_scene_label"
+      ],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_011",
+      "start": 148.806,
+      "end": 151.706,
+      "speaker": "Shaman",
+      "target": false,
+      "duration_seconds": 2.9,
+      "lexical_word_count": 7,
+      "anchor": false,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": 0.023985672742128372,
+            "Shaman": 0.54276043176651
+          },
+          "winner": "Shaman",
+          "margin": 0.5187747590243816,
+          "rms_dbfs": -33.11784744262695,
+          "energy_above_minus40dbfs_seconds": 1.56,
+          "peak_dbfs": -12.18339729309082
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": 0.0054037608206272125,
+            "Shaman": 0.5349016785621643
+          },
+          "winner": "Shaman",
+          "margin": 0.5294979177415371,
+          "rms_dbfs": -33.74591827392578,
+          "energy_above_minus40dbfs_seconds": 1.56,
+          "peak_dbfs": -12.661661148071289
+        }
+      },
+      "triage": "acoustically_consistent_provisional",
+      "reasons": [],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_012",
+      "start": 152.906,
+      "end": 155.826,
+      "speaker": "Sintel",
+      "target": true,
+      "duration_seconds": 2.92,
+      "lexical_word_count": 10,
+      "anchor": false,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": 0.3232384920120239,
+            "Shaman": 0.1952730417251587
+          },
+          "winner": "Sintel",
+          "margin": 0.12796545028686523,
+          "rms_dbfs": -33.91078186035156,
+          "energy_above_minus40dbfs_seconds": 1.5,
+          "peak_dbfs": -19.42010498046875
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": 0.3313852548599243,
+            "Shaman": 0.22078630328178406
+          },
+          "winner": "Sintel",
+          "margin": 0.11059895157814026,
+          "rms_dbfs": -34.759315490722656,
+          "energy_above_minus40dbfs_seconds": 1.5,
+          "peak_dbfs": -19.74687385559082
+        }
+      },
+      "triage": "quarantine",
+      "reasons": [
+        "center_cosine_below_exploratory_gate",
+        "stereo_cosine_below_exploratory_gate"
+      ],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_013",
+      "start": 207.206,
+      "end": 210.456,
+      "speaker": "Sintel",
+      "target": true,
+      "duration_seconds": 3.25,
+      "lexical_word_count": 4,
+      "anchor": true,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": 0.4559229016304016,
+            "Shaman": 0.015168674290180206
+          },
+          "winner": "Sintel",
+          "margin": 0.4407542273402214,
+          "rms_dbfs": -34.6291389465332,
+          "energy_above_minus40dbfs_seconds": 1.72,
+          "peak_dbfs": -17.527162551879883
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": 0.47943544387817383,
+            "Shaman": 0.05514043569564819
+          },
+          "winner": "Sintel",
+          "margin": 0.42429500818252563,
+          "rms_dbfs": -34.93972396850586,
+          "energy_above_minus40dbfs_seconds": 1.7,
+          "peak_dbfs": -18.74791717529297
+        }
+      },
+      "triage": "acoustically_consistent_provisional",
+      "reasons": [],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_014",
+      "start": 210.706,
+      "end": 213.456,
+      "speaker": "Sintel",
+      "target": true,
+      "duration_seconds": 2.75,
+      "lexical_word_count": 3,
+      "anchor": true,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": 0.45592284202575684,
+            "Shaman": 0.036528196185827255
+          },
+          "winner": "Sintel",
+          "margin": 0.4193946458399296,
+          "rms_dbfs": -32.77299880981445,
+          "energy_above_minus40dbfs_seconds": 0.72,
+          "peak_dbfs": -13.221515655517578
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": 0.47943541407585144,
+            "Shaman": 0.06713157892227173
+          },
+          "winner": "Sintel",
+          "margin": 0.4123038351535797,
+          "rms_dbfs": -33.10055160522461,
+          "energy_above_minus40dbfs_seconds": 0.72,
+          "peak_dbfs": -14.26220417022705
+        }
+      },
+      "triage": "acoustically_consistent_provisional",
+      "reasons": [],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_015",
+      "start": 228.206,
+      "end": 232.206,
+      "speaker": "Sintel",
+      "target": true,
+      "duration_seconds": 4.0,
+      "lexical_word_count": 3,
+      "anchor": false,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": 0.4276406168937683,
+            "Shaman": 0.20062032341957092
+          },
+          "winner": "Sintel",
+          "margin": 0.2270202934741974,
+          "rms_dbfs": -44.7175407409668,
+          "energy_above_minus40dbfs_seconds": 0.28,
+          "peak_dbfs": -21.636369705200195
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": 0.3229331970214844,
+            "Shaman": 0.16231107711791992
+          },
+          "winner": "Sintel",
+          "margin": 0.16062211990356445,
+          "rms_dbfs": -40.304603576660156,
+          "energy_above_minus40dbfs_seconds": 0.9,
+          "peak_dbfs": -22.714012145996094
+        }
+      },
+      "triage": "quarantine",
+      "reasons": [
+        "stereo_cosine_below_exploratory_gate"
+      ],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_016",
+      "start": 250.306,
+      "end": 253.806,
+      "speaker": "Sintel",
+      "target": true,
+      "duration_seconds": 3.5,
+      "lexical_word_count": 5,
+      "anchor": false,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": 0.2250891923904419,
+            "Shaman": 0.00946525577455759
+          },
+          "winner": "Sintel",
+          "margin": 0.2156239366158843,
+          "rms_dbfs": -22.282352447509766,
+          "energy_above_minus40dbfs_seconds": 3.5,
+          "peak_dbfs": -4.88100004196167
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": 0.17919638752937317,
+            "Shaman": 0.004147529602050781
+          },
+          "winner": "Sintel",
+          "margin": 0.1750488579273224,
+          "rms_dbfs": -21.68886375427246,
+          "energy_above_minus40dbfs_seconds": 3.5,
+          "peak_dbfs": -3.328939437866211
+        }
+      },
+      "triage": "quarantine",
+      "reasons": [
+        "center_cosine_below_exploratory_gate",
+        "stereo_cosine_below_exploratory_gate"
+      ],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_017",
+      "start": 265.206,
+      "end": 268.206,
+      "speaker": "Sintel",
+      "target": true,
+      "duration_seconds": 3.0,
+      "lexical_word_count": 1,
+      "anchor": false,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": 0.17600658535957336,
+            "Shaman": 0.10621367394924164
+          },
+          "winner": "Sintel",
+          "margin": 0.06979291141033173,
+          "rms_dbfs": -42.21739196777344,
+          "energy_above_minus40dbfs_seconds": 0.2,
+          "peak_dbfs": -17.127418518066406
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": 0.11879139393568039,
+            "Shaman": 0.08623480796813965
+          },
+          "winner": "Sintel",
+          "margin": 0.03255658596754074,
+          "rms_dbfs": -41.936973571777344,
+          "energy_above_minus40dbfs_seconds": 0.2,
+          "peak_dbfs": -17.743309020996094
+        }
+      },
+      "triage": "quarantine",
+      "reasons": [
+        "fewer_than_3_lexical_words",
+        "center_cosine_below_exploratory_gate",
+        "center_margin_below_exploratory_gate",
+        "stereo_cosine_below_exploratory_gate",
+        "stereo_margin_below_exploratory_gate"
+      ],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_018",
+      "start": 303.956,
+      "end": 307.456,
+      "speaker": "Sintel",
+      "target": true,
+      "duration_seconds": 3.5,
+      "lexical_word_count": 3,
+      "anchor": false,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": 0.1321476399898529,
+            "Shaman": 0.09574759006500244
+          },
+          "winner": "Sintel",
+          "margin": 0.036400049924850464,
+          "rms_dbfs": -20.695819854736328,
+          "energy_above_minus40dbfs_seconds": 3.5,
+          "peak_dbfs": -3.2710061073303223
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": 0.13751205801963806,
+            "Shaman": 0.020671658217906952
+          },
+          "winner": "Sintel",
+          "margin": 0.11684039980173111,
+          "rms_dbfs": -17.898752212524414,
+          "energy_above_minus40dbfs_seconds": 3.5,
+          "peak_dbfs": -3.671574354171753
+        }
+      },
+      "triage": "quarantine",
+      "reasons": [
+        "center_cosine_below_exploratory_gate",
+        "center_margin_below_exploratory_gate",
+        "stereo_cosine_below_exploratory_gate"
+      ],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_019",
+      "start": 338.706,
+      "end": 341.956,
+      "speaker": "Sintel",
+      "target": true,
+      "duration_seconds": 3.25,
+      "lexical_word_count": 1,
+      "anchor": false,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": 0.1935109943151474,
+            "Shaman": 0.06215066835284233
+          },
+          "winner": "Sintel",
+          "margin": 0.13136032596230507,
+          "rms_dbfs": -24.298358917236328,
+          "energy_above_minus40dbfs_seconds": 1.34,
+          "peak_dbfs": -2.842451572418213
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": 0.16317585110664368,
+            "Shaman": 0.11896371841430664
+          },
+          "winner": "Sintel",
+          "margin": 0.044212132692337036,
+          "rms_dbfs": -23.344152450561523,
+          "energy_above_minus40dbfs_seconds": 3.24,
+          "peak_dbfs": -4.264226913452148
+        }
+      },
+      "triage": "quarantine",
+      "reasons": [
+        "fewer_than_3_lexical_words",
+        "center_cosine_below_exploratory_gate",
+        "stereo_cosine_below_exploratory_gate",
+        "stereo_margin_below_exploratory_gate"
+      ],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_020",
+      "start": 445.806,
+      "end": 447.456,
+      "speaker": "Sintel",
+      "target": true,
+      "duration_seconds": 1.65,
+      "lexical_word_count": 3,
+      "anchor": false,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": 0.24205389618873596,
+            "Shaman": 0.1396755576133728
+          },
+          "winner": "Sintel",
+          "margin": 0.10237833857536316,
+          "rms_dbfs": -32.33588790893555,
+          "energy_above_minus40dbfs_seconds": 0.38,
+          "peak_dbfs": -15.288143157958984
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": 0.24288497865200043,
+            "Shaman": 0.15152615308761597
+          },
+          "winner": "Sintel",
+          "margin": 0.09135882556438446,
+          "rms_dbfs": -32.879058837890625,
+          "energy_above_minus40dbfs_seconds": 0.38,
+          "peak_dbfs": -15.607918739318848
+        }
+      },
+      "triage": "quarantine",
+      "reasons": [
+        "caption_duration_below_2_seconds",
+        "center_cosine_below_exploratory_gate",
+        "stereo_cosine_below_exploratory_gate",
+        "stereo_margin_below_exploratory_gate"
+      ],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_021",
+      "start": 452.756,
+      "end": 456.456,
+      "speaker": "Shaman",
+      "target": false,
+      "duration_seconds": 3.7,
+      "lexical_word_count": 5,
+      "anchor": false,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": -0.009958064183592796,
+            "Shaman": 0.6262214183807373
+          },
+          "winner": "Shaman",
+          "margin": 0.6361794825643301,
+          "rms_dbfs": -33.382972717285156,
+          "energy_above_minus40dbfs_seconds": 1.36,
+          "peak_dbfs": -14.191822052001953
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": -0.03594502806663513,
+            "Shaman": 0.6178939342498779
+          },
+          "winner": "Shaman",
+          "margin": 0.6538389623165131,
+          "rms_dbfs": -33.53057098388672,
+          "energy_above_minus40dbfs_seconds": 1.36,
+          "peak_dbfs": -11.281045913696289
+        }
+      },
+      "triage": "acoustically_consistent_provisional",
+      "reasons": [],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_022",
+      "start": 457.756,
+      "end": 460.456,
+      "speaker": "Shaman",
+      "target": false,
+      "duration_seconds": 2.7,
+      "lexical_word_count": 5,
+      "anchor": false,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": 0.043258488178253174,
+            "Shaman": 0.6443949341773987
+          },
+          "winner": "Shaman",
+          "margin": 0.6011364459991455,
+          "rms_dbfs": -31.467504501342773,
+          "energy_above_minus40dbfs_seconds": 1.52,
+          "peak_dbfs": -11.771602630615234
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": 0.03190802037715912,
+            "Shaman": 0.6468601226806641
+          },
+          "winner": "Shaman",
+          "margin": 0.6149521023035049,
+          "rms_dbfs": -32.1441764831543,
+          "energy_above_minus40dbfs_seconds": 1.54,
+          "peak_dbfs": -11.779179573059082
+        }
+      },
+      "triage": "acoustically_consistent_provisional",
+      "reasons": [],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_023",
+      "start": 460.806,
+      "end": 463.956,
+      "speaker": "Shaman",
+      "target": false,
+      "duration_seconds": 3.15,
+      "lexical_word_count": 6,
+      "anchor": false,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": -0.06503278017044067,
+            "Shaman": 0.642831563949585
+          },
+          "winner": "Shaman",
+          "margin": 0.7078643441200256,
+          "rms_dbfs": -39.31536865234375,
+          "energy_above_minus40dbfs_seconds": 0.74,
+          "peak_dbfs": -20.200748443603516
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": -0.04001031070947647,
+            "Shaman": 0.6234143376350403
+          },
+          "winner": "Shaman",
+          "margin": 0.6634246483445168,
+          "rms_dbfs": -38.82296371459961,
+          "energy_above_minus40dbfs_seconds": 1.12,
+          "peak_dbfs": -20.512317657470703
+        }
+      },
+      "triage": "acoustically_consistent_provisional",
+      "reasons": [],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_024",
+      "start": 557.556,
+      "end": 559.456,
+      "speaker": "Sintel",
+      "target": true,
+      "duration_seconds": 1.9,
+      "lexical_word_count": 1,
+      "anchor": false,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": 0.26357004046440125,
+            "Shaman": 0.030737226828932762
+          },
+          "winner": "Sintel",
+          "margin": 0.23283281363546848,
+          "rms_dbfs": -17.460725784301758,
+          "energy_above_minus40dbfs_seconds": 1.9,
+          "peak_dbfs": -0.681848406791687
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": 0.09549262374639511,
+            "Shaman": 0.0813431665301323
+          },
+          "winner": "Sintel",
+          "margin": 0.014149457216262817,
+          "rms_dbfs": -17.731903076171875,
+          "energy_above_minus40dbfs_seconds": 1.9,
+          "peak_dbfs": -0.8961021304130554
+        }
+      },
+      "triage": "quarantine",
+      "reasons": [
+        "caption_duration_below_2_seconds",
+        "fewer_than_3_lexical_words",
+        "center_cosine_below_exploratory_gate",
+        "stereo_cosine_below_exploratory_gate",
+        "stereo_margin_below_exploratory_gate"
+      ],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_025",
+      "start": 621.556,
+      "end": 623.956,
+      "speaker": "Sintel",
+      "target": true,
+      "duration_seconds": 2.4,
+      "lexical_word_count": 1,
+      "anchor": false,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": 0.20729966461658478,
+            "Shaman": 0.131684809923172
+          },
+          "winner": "Sintel",
+          "margin": 0.07561485469341278,
+          "rms_dbfs": -30.31926155090332,
+          "energy_above_minus40dbfs_seconds": 1.0,
+          "peak_dbfs": -11.208647727966309
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": 0.2646985948085785,
+            "Shaman": 0.11422708630561829
+          },
+          "winner": "Sintel",
+          "margin": 0.1504715085029602,
+          "rms_dbfs": -31.260087966918945,
+          "energy_above_minus40dbfs_seconds": 1.8,
+          "peak_dbfs": -12.114209175109863
+        }
+      },
+      "triage": "quarantine",
+      "reasons": [
+        "fewer_than_3_lexical_words",
+        "center_cosine_below_exploratory_gate",
+        "center_margin_below_exploratory_gate",
+        "stereo_cosine_below_exploratory_gate"
+      ],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    },
+    {
+      "id": "srt_026",
+      "start": 626.156,
+      "end": 629.756,
+      "speaker": "Sintel",
+      "target": true,
+      "duration_seconds": 3.6,
+      "lexical_word_count": 1,
+      "anchor": false,
+      "acoustic_results": {
+        "center": {
+          "cosine": {
+            "Sintel": 0.15988335013389587,
+            "Shaman": 0.05666663125157356
+          },
+          "winner": "Sintel",
+          "margin": 0.10321671888232231,
+          "rms_dbfs": -21.18739128112793,
+          "energy_above_minus40dbfs_seconds": 2.46,
+          "peak_dbfs": -8.699813842773438
+        },
+        "stereo": {
+          "cosine": {
+            "Sintel": 0.15731213986873627,
+            "Shaman": 0.09697912633419037
+          },
+          "winner": "Sintel",
+          "margin": 0.0603330135345459,
+          "rms_dbfs": -22.90715980529785,
+          "energy_above_minus40dbfs_seconds": 3.6,
+          "peak_dbfs": -9.741180419921875
+        }
+      },
+      "triage": "quarantine",
+      "reasons": [
+        "fewer_than_3_lexical_words",
+        "center_cosine_below_exploratory_gate",
+        "stereo_cosine_below_exploratory_gate",
+        "stereo_margin_below_exploratory_gate"
+      ],
+      "speaker_overlap": null,
+      "training_ready": false,
+      "human_auditory_review": false
+    }
+  ],
+  "publication_note": "Scalar diagnostics and IDs only. Original transcripts, embeddings, audio, model weights, and local files are excluded. No ground-truth accuracy is claimed."
+}

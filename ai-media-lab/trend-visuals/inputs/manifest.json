@@ -34,6 +34,67 @@
           "sha256": "322b1b4def53bc086fde2125f83534abcee6248292cb960c1bce05ab01977b88"
         }
       ]
+    },
+    {
+      "id": "2026-10-05T0630-plus0800",
+      "comparison": {
+        "path": "inputs/temporal/2026-10-05T0630-plus0800/comparison-initial.json",
+        "sha256": "5b09d530f8e2d7cb48c92502697b05c65c73ee1459617c2281987630d6d4b036"
+      },
+      "previous_comparison": {
+        "path": "inputs/temporal/2026-10-05T0630-plus0800/comparison-0100.json",
+        "sha256": "65f56e313d5e865becad927f5177ce86fc7b29ca47c924a59880fc03779c2d9d"
+      },
+      "previous_batch_id": "2026-10-05T0100-plus0800",
+      "snapshots": [
+        {
+          "path": "inputs/temporal/2026-10-05T0630-plus0800/bilibili-official-snapshot.json",
+          "sha256": "a8d9ef8bcf5d07f731acc74620387923db60ab01e66aa04f523eacfa8c5f2f4b"
+        },
+        {
+          "path": "inputs/temporal/2026-10-05T0630-plus0800/douyin-official-snapshot.json",
+          "sha256": "830730ff84a93fc6f4a62f297f036fc33886ea8d825d2221830162916423687e"
+        },
+        {
+          "path": "inputs/temporal/2026-10-05T0630-plus0800/weibo-official-snapshot.json",
+          "sha256": "d20674f189b1be57ffe5d71c0e0c824e81985f6c968d174245f817245be7d0a7"
+        }
+      ]
+    },
+    {
+      "id": "2026-10-05T0830-plus0800",
+      "comparison": {
+        "path": "inputs/temporal/2026-10-05T0830-plus0800/comparison-initial.json",
+        "sha256": "fd771f444b5c0186dcec36d95b16bec93b9a8da0c95428971b643c8bf5ec5bb1"
+      },
+      "previous_comparison": {
+        "path": "inputs/temporal/2026-10-05T0830-plus0800/comparison-0630.json",
+        "sha256": "5b7f2ef7d115d9a13c80e34db5ae72b9ac01120d9d6aa84f3f586fe3c4d07fa5"
+      },
+      "previous_batch_id": "2026-10-05T0630-plus0800",
+      "additional_comparisons": [
+        {
+          "baseline_batch_id": "2026-10-05T0100-plus0800",
+          "comparison": {
+            "path": "inputs/temporal/2026-10-05T0830-plus0800/comparison-0100.json",
+            "sha256": "6925b7c1ac7fd165f5a31391d2b108997a652fa8986383ade0045592b87fe331"
+          }
+        }
+      ],
+      "snapshots": [
+        {
+          "path": "inputs/temporal/2026-10-05T0830-plus0800/bilibili-official-snapshot.json",
+          "sha256": "dab973d081dfeb28bf50c92be9a8b52764e31ab97456edefad1a6e2ef4c9c166"
+        },
+        {
+          "path": "inputs/temporal/2026-10-05T0830-plus0800/douyin-official-snapshot.json",
+          "sha256": "a0bc4498fd50d446c0c0406c4822cfaefbb8ed43a7fbbb3f8e82fde2d211c0fa"
+        },
+        {
+          "path": "inputs/temporal/2026-10-05T0830-plus0800/weibo-official-snapshot.json",
+          "sha256": "be1a82d8d404fa1f52b32748c9d0d061338caa7701c02a06258b2a9a461d2d10"
+        }
+      ]
     }
   ]
 }

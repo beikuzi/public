@@ -73,3 +73,13 @@ python pipeline/verify.py private-output --output private-output/qa.json
 The processed assemblies are float32 stereo WAV at 48 kHz to preserve model values. Their sample counts match raw PCM16 originals exactly. Mapping and model metadata identify every contextual file and trim. QA verifies hashes, frame counts, 5–10 second lengths, source-to-clip mapping and duration accounting; waveform metrics describe clipping/silence but do not establish perceptual quality. Synthetic fixtures are out-of-sample mechanical tests, never evidence of separation quality on the film.
 
 A segment can set `review_quarantine: true` plus a `review_quarantine_reason` to force exclusion while preserving its original speaker confidence and acoustic class. Independent speaker audits should use this rather than silently altering acoustic labels.
+
+## Optional source-bound voice activity accounting
+
+An annotation may contain `speech_activity: {"source_sha256":"...","method":"specific VAD/version","regions":[{"start_sample":48000,"end_sample":96000}]}`. These are integer 48 kHz source frames, clipped inside that annotation. The pipeline rejects hash mismatches and out-of-interval regions. Statistics report a separate machine-estimated speech union only when every selected segment has this evidence. This remains distinct from usable target voice, which requires identity, overlap and quality verification and stays null. No automatic gate is implied by attaching VAD results.
+
+Ordered dynamic-programming packing minimizes added padding first, then clip count, then duration imbalance. It retains utterance order and never splits an utterance. Thus a short final tail can be balanced with the previous group instead of unnecessarily padded.
+
+## Conservative routing of unknown background quality
+
+Strict mode excludes unknown acoustic quality. An explicit `--route-unknown-quality-to-noisy` permits diagnostic separation in the noisy folder while preserving every original `quality: "unknown"` label, measured evidence and routing reason. Mixed clips carry `quality_label: "contains_unknown_quality"`. This is a conservative processing destination, not a revised classifier or a clean/noisy quality assertion. Thresholds must not be changed merely to obtain enough audio. Combining this flag with unknown-overlap mode yields review material only; manifests explicitly set training readiness and verified identity to false.

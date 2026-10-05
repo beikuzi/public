@@ -92,5 +92,23 @@ class DatasetTests(unittest.TestCase):
         with raw.open('ab') as f: f.write(b'tampered')
         result=subprocess.run([sys.executable,'-O',str(Path(d.__file__).with_name('verify.py')),str(out)],capture_output=True,text=True)
         self.assertNotEqual(result.returncode,0); self.assertIn('Raw file hash mismatch',result.stderr)
+    def test_machine_speech_accounting_is_distinct(self):
+        r=self.row(0,3); r['speech_activity']={'source_sha256':d.sha256(self.source),'method':'synthetic known speech fixture','regions':[{'start_sample':d.RATE,'end_sample':2*d.RATE}]}
+        m=d.build(self.annotation([r]),self.source,self.root/'out')
+        self.assertEqual(m['statistics']['clean']['machine_estimated_speech_unique_seconds'],1)
+        self.assertEqual(m['statistics']['clean']['raw_file_duration_seconds'],5)
+        self.assertIsNone(m['statistics']['clean']['usable_voice_seconds'])
+    def test_packing_avoids_unnecessary_padding(self):
+        rows=[{'start_sample':0,'end_sample':round(n*d.RATE)} for n in (2.936,2.36,3.224,2.168)]
+        groups=list(d.batches(rows,round(.12*d.RATE)))
+        lengths=[sum(r['end_sample'] for r in g)/d.RATE+.12*(len(g)-1) for g in groups]
+        self.assertEqual(len(groups),2); self.assertTrue(all(5<=n<=10 for n in lengths)); self.assertAlmostEqual(sum(lengths),10.928)
+    def test_unknown_quality_routing_preserves_label(self):
+        r=self.row(0,5); r['quality']='unknown'; a=self.annotation([r])
+        strict=d.build(a,self.source,self.root/'strict'); self.assertFalse(strict['clips'])
+        m=d.build(a,self.source,self.root/'diagnostic',route_unknown_quality_to_noisy=True)
+        self.assertEqual(m['clips'][0]['quality'],'noisy')
+        self.assertEqual(m['clips'][0]['quality_label'],'contains_unknown_quality')
+        self.assertEqual(m['clips'][0]['source_mappings'][0]['quality'],'unknown')
     def test_union(self): self.assertEqual(d.union_seconds([(0,3),(1,4),(6,7)]),5)
 if __name__=='__main__': unittest.main()

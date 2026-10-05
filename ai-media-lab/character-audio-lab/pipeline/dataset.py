@@ -3,7 +3,7 @@
 import argparse, array, hashlib, json, math, os, shutil, subprocess, sys, tempfile, wave
 from pathlib import Path
 
-VERSION = '0.2.0'
+VERSION = '0.3.0'
 RATE = 48000
 CHANNELS = 2
 
@@ -37,7 +37,7 @@ def finite(value):
     if not math.isfinite(result): raise ValueError('Nonfinite annotation number')
     return result
 
-def prepare_segments(data, duration, threshold=.9, allow_unverified_overlap=False):
+def prepare_segments(data, duration, threshold=.9, allow_unverified_overlap=False, route_unknown_quality_to_noisy=False):
     target=data['target_speaker']; accepted=[]; excluded=[]; ids=set()
     rows=data['segments']
     for i,row in enumerate(rows):
@@ -48,6 +48,12 @@ def prepare_segments(data, duration, threshold=.9, allow_unverified_overlap=Fals
         if a<0 or b<=a or b>duration+1/RATE: raise ValueError(f'Invalid interval {s["id"]}: {a}, {b}; duration={duration}')
         s['start_sample']=round(a*RATE); s['end_sample']=min(round(b*RATE),round(duration*RATE))
         s['start']=s['start_sample']/RATE; s['end']=s['end_sample']/RATE
+        activity=s.get('speech_activity')
+        if activity is not None:
+            if activity.get('source_sha256')!=data['source_sha256'] or not activity.get('method'): raise ValueError('VAD source hash/method missing or mismatched')
+            for region in activity['regions']:
+                x,y=region['start_sample'],region['end_sample']
+                if not isinstance(x,int) or not isinstance(y,int) or not s['start_sample']<=x<y<=s['end_sample']: raise ValueError('Speech region must be integer source frames within annotation')
         reasons=[]
         if s.get('review_quarantine'): reasons.append('review_quarantine')
         confidence=finite(s.get('confidence',0))
@@ -56,7 +62,10 @@ def prepare_segments(data, duration, threshold=.9, allow_unverified_overlap=Fals
         if confidence<threshold: reasons.append('low_confidence')
         if s.get('overlap') is True: reasons.append('annotated_overlap')
         elif s.get('overlap') is not False and not allow_unverified_overlap: reasons.append('unverified_overlap')
-        if s.get('quality') not in ('clean','noisy'): reasons.append('unknown_quality')
+        if s.get('quality') not in ('clean','noisy'):
+            if s.get('quality')=='unknown' and route_unknown_quality_to_noisy:
+                s['routing_bucket']='noisy'; s['routing_reason']='Explicit provisional conservative processing bucket; acoustic quality remains unknown'
+            else: reasons.append('unknown_quality')
         if not s.get('quality_evidence'): reasons.append('missing_quality_evidence')
         if s['end_sample']-s['start_sample']>10*RATE: reasons.append('long_utterance_needs_natural_pause_annotation')
         if reasons: s['exclusion_reasons']=reasons; excluded.append(s)
@@ -72,12 +81,20 @@ def prepare_segments(data, duration, threshold=.9, allow_unverified_overlap=Fals
     return sorted(kept,key=lambda x:x['start']), excluded
 
 def batches(segments, gap_samples):
-    current=[]; size=0
-    for s in segments:
-        n=s['end_sample']-s['start_sample']; add=n+(gap_samples if current else 0)
-        if current and size+add>10*RATE: yield current; current=[]; size=0; add=n
-        current.append(s); size+=add
-    if current: yield current
+    """Ordered dynamic packing minimizes artificial padding, then clip count."""
+    n=len(segments); best=[None]*(n+1); best[n]=((0,0,0),n)
+    for i in range(n-1,-1,-1):
+        frames=0
+        for j in range(i,n):
+            frames+=segments[j]['end_sample']-segments[j]['start_sample']+(gap_samples if j>i else 0)
+            if frames>10*RATE: break
+            if best[j+1] is None: continue
+            tail=best[j+1][0]; score=(max(0,5*RATE-frames)+tail[0],1+tail[1],(max(5*RATE,frames)-7.5*RATE)**2+tail[2])
+            if best[i] is None or score<best[i][0]: best[i]=(score,j+1)
+    i=0
+    while i<n:
+        if best[i] is None: raise ValueError('Unpackable interval longer than 10 seconds')
+        j=best[i][1]; yield segments[i:j]; i=j
 
 def write_wav(path, samples, rate=RATE):
     with wave.open(str(path),'wb') as w:
@@ -97,7 +114,7 @@ def wav_info(path):
         rate=int(s['sample_rate']); duration=float(s['duration']); frames=round(duration*rate)
         return {'frames':frames,'sample_rate':rate,'channels':int(s['channels']),'sample_width':int(s.get('bits_per_sample',0))//8,'codec_name':s['codec_name'],'duration_seconds':frames/rate}
 
-def build(annotation_path, source, output, gap=.12, fade=.005, threshold=.9, allow_unverified_overlap=False):
+def build(annotation_path, source, output, gap=.12, fade=.005, threshold=.9, allow_unverified_overlap=False, route_unknown_quality_to_noisy=False):
     source=safe_path(source); annotation_path=safe_path(annotation_path); output=safe_path(output)
     if not source.is_file(): raise ValueError('Source is missing')
     if output.exists() and any(output.iterdir()): raise ValueError('Output must not already contain files')
@@ -115,15 +132,15 @@ def build(annotation_path, source, output, gap=.12, fade=.005, threshold=.9, all
         with wave.open(str(pcm),'rb') as w: audio=array.array('h',w.readframes(w.getnframes()))
         if sys.byteorder!='little': audio.byteswap()
         duration=len(audio)/(RATE*CHANNELS)
-        accepted,excluded=prepare_segments(data,duration,threshold,allow_unverified_overlap)
+        accepted,excluded=prepare_segments(data,duration,threshold,allow_unverified_overlap,route_unknown_quality_to_noisy)
         output.mkdir(parents=True,exist_ok=True)
         for group in ('clean','noisy'):
             (output/group/'raw').mkdir(parents=True,exist_ok=True)
         (output/'noisy'/'voice_only').mkdir(exist_ok=True)
-        manifest={'schema_version':1,'pipeline_version':VERSION,'provisional_unverified_overlap_allowed':allow_unverified_overlap,'ffmpeg_version':subprocess.check_output(['ffmpeg','-version'],text=True).splitlines()[0],'source':{'filename':source.name,'sha256':source_hash,'decoded_duration_seconds':duration,'timebase':'decoded_audio_seconds','input_probe':metadata},'annotation_sha256':sha256(annotation_path),'target_speaker':data['target_speaker'],'speaker_label_method':data.get('speaker_label_method','explicit annotations; not automatic speaker identification'),'quality_criteria':data.get('quality_criteria','clean requires affirmative listening/measurement evidence; unknown is excluded'),'rendering':{'sample_rate':RATE,'channels':CHANNELS,'pcm_bits':16,'downmix':'ffmpeg stereo rendering of first audio stream; preserves stereo when present','gap_seconds':gap,'edge_fade_seconds':fade,'time_stretch':False,'normalization':False},'clips':[],'excluded':excluded,'separation':{'status':'not_run','reason':'No separator output imported; raw is not voice_only'},'limitations':['Annotation-derived intervals are not measured pure speech; they may include breath or silence.','Concatenated utterances do not form a continuous original sentence.','Padding and inter-utterance gaps are not usable voice.','This pipeline does not automatically identify characters or certify training fitness.']}
+        manifest={'schema_version':1,'pipeline_version':VERSION,'training_ready':False,'human_auditory_review':False,'speaker_identity_verified':False,'provisional_unverified_overlap_allowed':allow_unverified_overlap,'provisional_unknown_quality_routed_to_noisy':route_unknown_quality_to_noisy,'ffmpeg_version':subprocess.check_output(['ffmpeg','-version'],text=True).splitlines()[0],'source':{'filename':source.name,'sha256':source_hash,'decoded_duration_seconds':duration,'timebase':'decoded_audio_seconds','input_probe':metadata},'annotation_sha256':sha256(annotation_path),'target_speaker':data['target_speaker'],'speaker_label_method':data.get('speaker_label_method','explicit annotations; not automatic speaker identification'),'quality_criteria':data.get('quality_criteria','clean requires affirmative listening/measurement evidence; unknown is excluded'),'rendering':{'sample_rate':RATE,'channels':CHANNELS,'pcm_bits':16,'downmix':'ffmpeg stereo rendering of first audio stream; preserves stereo when present','gap_seconds':gap,'edge_fade_seconds':fade,'time_stretch':False,'normalization':False,'packing':'ordered dynamic program: minimize padding, then clip count, then duration imbalance'},'clips':[],'excluded':excluded,'separation':{'status':'not_run','reason':'No separator output imported; raw is not voice_only'},'limitations':['Annotation-derived intervals are not measured pure speech; they may include breath or silence.','Concatenated utterances do not form a continuous original sentence.','Padding and inter-utterance gaps are not usable voice.','This pipeline does not automatically identify characters or certify training fitness.']}
         gap_n=round(gap*RATE); fade_n=round(fade*RATE)
         for group in ('clean','noisy'):
-            for idx,items in enumerate(batches([s for s in accepted if s['quality']==group],gap_n)):
+            for idx,items in enumerate(batches([s for s in accepted if s.get('routing_bucket',s['quality'])==group],gap_n)):
                 clip_id=f'{group}_{idx:04d}'; samples=array.array('h'); mappings=[]; gap_total=0
                 for s in items:
                     if samples: samples.extend([0]*(gap_n*CHANNELS)); gap_total+=gap_n
@@ -138,7 +155,7 @@ def build(annotation_path, source, output, gap=.12, fade=.005, threshold=.9, all
                 relative=f'{group}/raw/{clip_id}.wav'; path=output/relative; write_wav(path,samples)
                 info=wav_info(path)
                 if not 5<=info['duration_seconds']<=10: raise AssertionError('Clip duration violation')
-                manifest['clips'].append({'clip_id':clip_id,'quality':group,'raw_path':relative,'raw_sha256':sha256(path),'raw_audio':info,'source_mappings':mappings,'source_interval_seconds':sum(s['end']-s['start'] for s in items),'inserted_gap_seconds':gap_total/RATE,'trailing_padding_seconds':padding/RATE,'voice_only':None})
+                manifest['clips'].append({'clip_id':clip_id,'quality':group,'quality_label':'contains_unknown_quality' if any(s['quality']=='unknown' for s in items) else group,'raw_path':relative,'raw_sha256':sha256(path),'raw_audio':info,'source_mappings':mappings,'source_interval_seconds':sum(s['end']-s['start'] for s in items),'inserted_gap_seconds':gap_total/RATE,'trailing_padding_seconds':padding/RATE,'voice_only':None})
         manifest['statistics']=statistics(manifest)
         (output/'manifest.json').write_text(json.dumps(manifest,indent=2,ensure_ascii=False)+'\n')
         (output/'statistics.json').write_text(json.dumps(manifest['statistics'],indent=2)+'\n')
@@ -150,7 +167,10 @@ def statistics(m):
         clips=[c for c in m['clips'] if c['quality']==group]
         intervals=[(s['start'],s['end']) for c in clips for s in c['source_mappings']]
         processed=[c['voice_only'] for c in clips if c.get('voice_only')]
-        result[group]={'raw_clip_count':len(clips),'raw_file_duration_seconds':sum(c['raw_audio']['duration_seconds'] for c in clips),'unique_source_interval_seconds':union_seconds(intervals),'summed_source_interval_seconds':sum(b-a for a,b in intervals),'inserted_gap_seconds':sum(c['inserted_gap_seconds'] for c in clips),'trailing_padding_seconds':sum(c['trailing_padding_seconds'] for c in clips),'processed_clip_count':len(processed),'processed_file_duration_seconds':sum(v['audio']['duration_seconds'] for v in processed),'usable_voice_seconds':None,'usable_voice_seconds_note':'Not estimated: requires validated speech activity and separation quality review.'}
+        mappings=[s for c in clips for s in c['source_mappings']]
+        vad_regions=[(r['start_sample']/RATE,r['end_sample']/RATE) for s in mappings for r in s.get('speech_activity',{}).get('regions',[])]
+        vad_known=bool(mappings) and all(s.get('speech_activity') is not None for s in mappings)
+        result[group]={'raw_clip_count':len(clips),'raw_file_duration_seconds':sum(c['raw_audio']['duration_seconds'] for c in clips),'unique_source_interval_seconds':union_seconds(intervals),'summed_source_interval_seconds':sum(b-a for a,b in intervals),'inserted_gap_seconds':sum(c['inserted_gap_seconds'] for c in clips),'trailing_padding_seconds':sum(c['trailing_padding_seconds'] for c in clips),'processed_clip_count':len(processed),'processed_file_duration_seconds':sum(v['audio']['duration_seconds'] for v in processed),'machine_estimated_speech_unique_seconds':union_seconds(vad_regions) if vad_known else None,'machine_speech_estimate_complete':vad_known,'usable_voice_seconds':None,'usable_voice_seconds_note':'Not estimated: requires validated speech activity and separation quality review.'}
     all_intervals=[(s['start'],s['end']) for c in m['clips'] for s in c['source_mappings']]
     exclusions=[(s['start'],s['end']) for s in m['excluded']]
     target_exclusions=[(s['start'],s['end']) for s in m['excluded'] if s.get('speaker')==m['target_speaker']]
@@ -232,11 +252,11 @@ def assemble_separated_segments(dataset, report, allowed_root):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__); sub=p.add_subparsers(dest='command',required=True)
-    b=sub.add_parser('build'); b.add_argument('--annotations',required=True); b.add_argument('--source',required=True); b.add_argument('--output',required=True); b.add_argument('--gap',type=float,default=.12); b.add_argument('--fade',type=float,default=.005); b.add_argument('--confidence',type=float,default=.9); b.add_argument('--allow-unverified-overlap',action='store_true',help='Explicit experimental mode: retain unknown overlap labels; not training-ready')
+    b=sub.add_parser('build'); b.add_argument('--annotations',required=True); b.add_argument('--source',required=True); b.add_argument('--output',required=True); b.add_argument('--gap',type=float,default=.12); b.add_argument('--fade',type=float,default=.005); b.add_argument('--confidence',type=float,default=.9); b.add_argument('--allow-unverified-overlap',action='store_true',help='Explicit experimental mode: retain unknown overlap labels; not training-ready'); b.add_argument('--route-unknown-quality-to-noisy',action='store_true',help='Provisional conservative routing only: preserve unknown label, never classify as clean')
     s=sub.add_parser('import-separation'); s.add_argument('--dataset',required=True); s.add_argument('--report',required=True); s.add_argument('--allowed-root',required=True)
     g=sub.add_parser('assemble-separated-segments'); g.add_argument('--dataset',required=True); g.add_argument('--report',required=True); g.add_argument('--allowed-root',required=True)
     a=p.parse_args()
-    if a.command=='build': result=build(a.annotations,a.source,a.output,a.gap,a.fade,a.confidence,a.allow_unverified_overlap)
+    if a.command=='build': result=build(a.annotations,a.source,a.output,a.gap,a.fade,a.confidence,a.allow_unverified_overlap,a.route_unknown_quality_to_noisy)
     elif a.command=='import-separation': result=import_separation(a.dataset,a.report,a.allowed_root)
     else: result=assemble_separated_segments(a.dataset,a.report,a.allowed_root)
     print(json.dumps(result['statistics'],indent=2))

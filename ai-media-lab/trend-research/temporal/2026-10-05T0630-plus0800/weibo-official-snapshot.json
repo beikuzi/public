@@ -1,0 +1,279 @@
+{
+  "schemaVersion": 1,
+  "method": "Anonymous observation of the official rendered public ranking page",
+  "captureTimeSource": "UTC observation clock",
+  "platformDataTimestamp": null,
+  "baselineComparison": "comparison-initial.json and comparison-0100.json",
+  "claimsVerified": false,
+  "limitations": [
+    "Ranking topic wording records a platform observation, not factual verification of the topic claim.",
+    "Metrics are platform-specific, not unique people, support, or comparable across platforms.",
+    "Server refresh time and caching status are unknown."
+  ],
+  "platform": "weibo",
+  "sourceUrl": "https://s.weibo.com/top/summary?cate=tech",
+  "capturedAt": "2026-10-04T22:32:06Z",
+  "captureWindowStart": "2026-10-04T22:32:06Z",
+  "scope": "微博热搜 科技 category top 30, not overall hot search",
+  "metricLabel": "unlabelled numeric value adjacent to keyword",
+  "metricMeaning": "not independently established from page",
+  "status": "success_public_ranking_visible",
+  "entries": [
+    {
+      "rank": 1,
+      "title": "零跑汽车回应蔡康永事件",
+      "metricRaw": "169828",
+      "metricValue": 169828,
+      "analystTags": []
+    },
+    {
+      "rank": 2,
+      "title": "零跑汽车下架蔡康永内容",
+      "metricRaw": "152845",
+      "metricValue": 152845,
+      "analystTags": []
+    },
+    {
+      "rank": 3,
+      "title": "老胡称人工智能不是共产主义入口",
+      "metricRaw": "137560",
+      "metricValue": 137560,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "苹果确认iPhone18ProMax存缺陷",
+      "metricRaw": "123804",
+      "metricValue": 123804,
+      "analystTags": [
+        "hardware"
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "中国正编织六张超级大网",
+      "metricRaw": "111424",
+      "metricValue": 111424,
+      "analystTags": []
+    },
+    {
+      "rank": 6,
+      "title": "越来越多开发者不逐个审代码",
+      "metricRaw": "100281",
+      "metricValue": 100281,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 7,
+      "title": "OPPO三2亿让青春有了高清版",
+      "metricRaw": "90253",
+      "metricValue": 90253,
+      "analystTags": [
+        "hardware"
+      ]
+    },
+    {
+      "rank": 8,
+      "title": "国庆iPhone18Pro销量持续走高",
+      "metricRaw": "81228",
+      "metricValue": 81228,
+      "analystTags": [
+        "hardware"
+      ]
+    },
+    {
+      "rank": 9,
+      "title": "余承东 余总转发文案",
+      "metricRaw": "73105",
+      "metricValue": 73105,
+      "analystTags": []
+    },
+    {
+      "rank": 10,
+      "title": "中国空间站也有双节仪式感",
+      "metricRaw": "65794",
+      "metricValue": 65794,
+      "analystTags": []
+    },
+    {
+      "rank": 11,
+      "title": "教你一招彻底删除隐私记录",
+      "metricRaw": "59215",
+      "metricValue": 59215,
+      "analystTags": []
+    },
+    {
+      "rank": 12,
+      "title": "芯片制程提升故事讲不下去",
+      "metricRaw": "53293",
+      "metricValue": 53293,
+      "analystTags": [
+        "hardware"
+      ]
+    },
+    {
+      "rank": 13,
+      "title": "看完才发现视频是AI生成",
+      "metricRaw": "47964",
+      "metricValue": 47964,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 14,
+      "title": "全网最压抑的AI视频太窒息了",
+      "metricRaw": "43167",
+      "metricValue": 43167,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 15,
+      "title": "固件或致量产机黑屏重启",
+      "metricRaw": "38851",
+      "metricValue": 38851,
+      "analystTags": [
+        "hardware"
+      ]
+    },
+    {
+      "rank": 16,
+      "title": "特朗普宣布成立超级智能特别工作组",
+      "metricRaw": "34966",
+      "metricValue": 34966,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 17,
+      "title": "美国AI投资比例骇人",
+      "metricRaw": "31469",
+      "metricValue": 31469,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 18,
+      "title": "马斯克称SpaceXAI将更名为SpaceXSI",
+      "metricRaw": "28322",
+      "metricValue": 28322,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 19,
+      "title": "绘圈为什么反感AI",
+      "metricRaw": "25490",
+      "metricValue": 25490,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 20,
+      "title": "德国AI影响下岗位逆势增长",
+      "metricRaw": "22941",
+      "metricValue": 22941,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 21,
+      "title": "老章说车回应雷军看他视频",
+      "metricRaw": "20647",
+      "metricValue": 20647,
+      "analystTags": []
+    },
+    {
+      "rank": 22,
+      "title": "雷军看了老章说车7个视频",
+      "metricRaw": "18582",
+      "metricValue": 18582,
+      "analystTags": []
+    },
+    {
+      "rank": 23,
+      "title": "智驾功能下司机仍是最终责任主体",
+      "metricRaw": "16724",
+      "metricValue": 16724,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 24,
+      "title": "iPhone18ProMax 品控",
+      "metricRaw": "15051",
+      "metricValue": 15051,
+      "analystTags": [
+        "hardware"
+      ]
+    },
+    {
+      "rank": 25,
+      "title": "美版18ProMax用高通基带",
+      "metricRaw": "13546",
+      "metricValue": 13546,
+      "analystTags": [
+        "hardware"
+      ]
+    },
+    {
+      "rank": 26,
+      "title": "离职员工爆料OpenAI风险意识不足",
+      "metricRaw": "12191",
+      "metricValue": 12191,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 27,
+      "title": "荣耀称Magic9系列正24小时加急生产",
+      "metricRaw": "10972",
+      "metricValue": 10972,
+      "analystTags": [
+        "hardware"
+      ]
+    },
+    {
+      "rank": 28,
+      "title": "人工智能视频里的女性被造谣",
+      "metricRaw": "9875",
+      "metricValue": 9875,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 29,
+      "title": "阿莫迪称人工智能或引发失业潮",
+      "metricRaw": "8887",
+      "metricValue": 8887,
+      "analystTags": [
+        "AI_or_AI_adjacent"
+      ]
+    },
+    {
+      "rank": 30,
+      "title": "麒麟9050Pro评测出炉",
+      "metricRaw": "7999",
+      "metricValue": 7999,
+      "analystTags": [
+        "hardware"
+      ]
+    }
+  ],
+  "capturedAtPlus0800": "2026-10-05T06:32:06+08:00",
+  "serverFreshness": "Unknown; new browser observation is not proof of uncached server data."
+}

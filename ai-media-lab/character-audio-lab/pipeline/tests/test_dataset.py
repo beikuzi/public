@@ -85,5 +85,12 @@ class DatasetTests(unittest.TestCase):
         r=self.row(0,5); r['review_quarantine']=True
         m=d.build(self.annotation([r]),self.source,self.root/'out')
         self.assertFalse(m['clips']); self.assertIn('review_quarantine',m['excluded'][0]['exclusion_reasons'])
+    def test_optimized_python_still_rejects_tampering(self):
+        import subprocess
+        out=self.root/'out'; m=d.build(self.annotation([self.row(0,5)]),self.source,out)
+        raw=out/m['clips'][0]['raw_path']
+        with raw.open('ab') as f: f.write(b'tampered')
+        result=subprocess.run([sys.executable,'-O',str(Path(d.__file__).with_name('verify.py')),str(out)],capture_output=True,text=True)
+        self.assertNotEqual(result.returncode,0); self.assertIn('Raw file hash mismatch',result.stderr)
     def test_union(self): self.assertEqual(d.union_seconds([(0,3),(1,4),(6,7)]),5)
 if __name__=='__main__': unittest.main()

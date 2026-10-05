@@ -100,3 +100,8 @@
 5. 没有原帖证据时永不输出“已确认原作者”。
 6. 每个适配器固定依赖版本；网页解析器失败后保留人工入口，不绕过安全或访问限制。
 
+## 补充：SauceNAO 参数传输方式
+
+同日核对的第16个仓库是 [ClarityCafe/Sagiri](https://github.com/ClarityCafe/Sagiri)，MIT许可的Node.js SauceNAO包装库。其发布者的 [v4.3.0分发源码](https://app.unpkg.com/sagiri%404.3.0/files/dist/sagiri.cjs)把 `api_key`、`output_type`、`numres` 等参数放入 `FormData`，连同文件作为multipart请求体POST至 `/search.php`；因此“凭据放请求体而不是URL”有现有客户端实现证据。
+
+这不是官方服务端契约或本轮在线测试。受保护的官方API页仍未读取成功。建议保留请求体传参，同时明确标记在线适配器待真实授权调用验证；不要仅因为另一个客户端使用query参数就把秘密迁入URL。任何日志、异常和调试输出都应屏蔽凭据，请求体同样不能原样记入日志。

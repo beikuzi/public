@@ -43,7 +43,8 @@ class AnimeTraceTests(unittest.TestCase):
     def test_documented_success_codes_and_error(self):
         for code in (0, 200, 17720):
             self.assertEqual(parse_animetrace({"code":code,"data":[]}, "x")["status"], "no_match")
-        self.assertEqual(parse_animetrace({"code": 500}, "x")["status"], "service_error")
+        for invalid_code in (500, False, [], {}):
+            self.assertEqual(parse_animetrace({"code": invalid_code}, "x")["status"], "service_error")
         self.assertEqual(parse_animetrace({"code":0,"data":"bad"}, "x")["status"], "invalid_response")
 
 if __name__ == '__main__':

@@ -81,10 +81,10 @@ def write_private(path, content):
     path = Path(path)
     # Reject symlink output paths before writing; do not silently write elsewhere.
     for part in (path, *path.parents):
-        if part.is_symlink():
+        if part.is_symlink() or (hasattr(part, "is_junction") and part.is_junction()):
             raise OSError("Symlink report paths are not supported")
     path.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
-    if path.parent.stat().st_mode & 0o077:
+    if os.name == "posix" and path.parent.stat().st_mode & 0o077:
         raise OSError("Output directory must be private (mode 0700); choose a fresh directory")
     fd, name = tempfile.mkstemp(prefix=".report-", dir=path.parent)
     try:

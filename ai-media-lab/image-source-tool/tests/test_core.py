@@ -95,10 +95,11 @@ class CoreTests(unittest.TestCase):
 
     def test_malformed_payloads(self):
         self.assertEqual(parse_trace({})["status"], "invalid_response")
+        self.assertEqual(parse_trace({"result": [{}]})["status"], "invalid_response")
         self.assertEqual(parse_trace({"error": "internal error"})["status"], "service_error")
         self.assertEqual(parse_saucenao({})["status"], "invalid_response")
         self.assertEqual(parse_saucenao({"header": {"status": -1, "long_remaining": 0}})["status"], "rate_limited")
-        row = parse_trace({"result": [{"similarity": float("nan")}]})
+        row = parse_trace({"result": [{"anilist": 1, "similarity": float("nan")}]})
         self.assertIsNone(row["candidates"][0]["native_score"]["value"])
         json.dumps(row, allow_nan=False)
 
@@ -118,7 +119,8 @@ class CoreTests(unittest.TestCase):
         self.assertNotIn("private-name", html)
         output = Path(self.tmp.name) / "out"
         write_reports(report, output)
-        self.assertEqual((output / "report.json").stat().st_mode & 0o777, 0o600)
+        if os.name == "posix":
+            self.assertEqual((output / "report.json").stat().st_mode & 0o777, 0o600)
         self.assertEqual(json.loads((output / "report.json").read_text())["schema_version"], "1.0")
 
     def test_duplicate_link_is_single_lead(self):
@@ -148,6 +150,7 @@ class CoreTests(unittest.TestCase):
             Transport().post("trace_moe", b"safe")
         self.assertEqual(caught.exception.status, "blocked")
 
+    @unittest.skipUnless(os.name == "posix", "POSIX mode and symlink test; Windows requires user directory ACLs")
     def test_private_output_directory_and_symlinks(self):
         report = build_report(self.prepared, [])
         output = Path(self.tmp.name) / "shared"

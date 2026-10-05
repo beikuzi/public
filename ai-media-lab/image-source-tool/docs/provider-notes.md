@@ -7,3 +7,7 @@
 - Bing Search API is not integrated: the retired API is not a current search backend.
 
 Live availability is distinct from implementation readiness. Offline tests validate mocked provider payloads, never demonstrate live source coverage. The report records an individual adapter's status for every run.
+
+## SauceNAO form transport
+
+This adapter sends API parameters in the multipart POST body rather than a credential-bearing URL. That placement is supported by the maintained MIT-licensed Sagiri client's published implementation: https://github.com/ClarityCafe/Sagiri and https://app.unpkg.com/sagiri%404.3.0/files/dist/sagiri.cjs (FormData api_key/output_type/numres and POST to search.php). The official protected API-settings page was not readable during research, so this is client-source evidence, not a claim of a live end-to-end test. The tool never copies or executes this third-party source.

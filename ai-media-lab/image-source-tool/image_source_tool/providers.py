@@ -44,6 +44,8 @@ def parse_trace(payload):
         links = []
         if isinstance(identifier, int) and not isinstance(identifier, bool) and identifier > 0:
             links.append(f"https://anilist.co/anime/{identifier}")
+        if not links:
+            continue
         score = native_score(item.get("similarity"), 1)
         candidates.append({
             "id": f"trace_moe:{len(candidates)+1}", "kind": "anime_frame_work",
@@ -55,6 +57,8 @@ def parse_trace(payload):
             "caution": "Anime frame match only; does not establish character or original illustration artist."
                        + (" Official guidance warns similarities below 0.9 are usually wrong." if score["value"] is not None and score["value"] < 0.9 else ""),
         })
+    if payload["result"] and not candidates:
+        return result("trace_moe", "invalid_response", "Provider returned candidates without a valid work identifier")
     return result("trace_moe", "matches" if candidates else "no_match", "Candidate anime frames; verify visually and against the work" if candidates else "Provider returned no candidates", candidates)
 
 
@@ -96,7 +100,7 @@ def parse_saucenao(payload):
 
 
 def choose_animetrace_model(payload):
-    if payload.get("code") not in (0, 200, 17720) or not isinstance(payload.get("data"), list):
+    if isinstance(payload.get("code"), bool) or payload.get("code") not in (0, 200, 17720) or not isinstance(payload.get("data"), list):
         raise TransportError("invalid_response", "AnimeTrace model list is unavailable or malformed; no image uploaded")
     enabled = [item for item in payload["data"][:100] if isinstance(item, dict) and item.get("enabled") is True]
     default = next((item for item in enabled if item.get("default") is True), None)
@@ -112,7 +116,7 @@ def choose_animetrace_model(payload):
 
 
 def parse_animetrace(payload, model):
-    if payload.get("code") not in (0, 200, 17720):
+    if isinstance(payload.get("code"), bool) or payload.get("code") not in (0, 200, 17720):
         return result("animetrace", "service_error", "AnimeTrace reported a service error; raw server text omitted", model=model)
     if not isinstance(payload.get("data"), list):
         return result("animetrace", "invalid_response", "Missing AnimeTrace data list", model=model)

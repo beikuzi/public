@@ -4,6 +4,8 @@
 
 ## 项目
 
+- **image-source-tool**：本地优先的图片溯源CLI；分开记录角色/作品线索与原图/作者线索，在线适配器逐服务显式授权，生成私有静态HTML/JSON报告。默认不联网；测试使用合成图和模拟响应，不保证在线服务覆盖。入口：`image-source-tool/README.md`及`image-source-tool/research/provider-review-2026-10-05.md`。
+
 - **character-audio-lab**：5–10秒角色音频准备、上下文分离、机器语音活动/说话人证据与逐阶段测试。公开代码、合成测试、来源许可及经隐私审查的数值证据；不公开影片、转录集合、声纹向量、权重或参考音频。结果尚未经人工听审，不是训练就绪数据。入口：`character-audio-lab/SCOPE.md`、`character-audio-lab/pipeline/README.md`、`character-audio-lab/speaker-verification/README-public.md`。
 
 - **video-workflow**：本地视频/音频→字幕、ASR、OCR与质量关卡；含可移植SenseVoice CLI与失败对照。B站匿名浏览仅取得元数据及3条匿名可见记录，未取得完整视频/评论，不推断总体观点比例。
@@ -35,3 +37,4 @@
 - 抖音前10相对06:30保留5/10。榜单类型、指标、抽样范围不同，不做跨平台总体热度或人口画像占比。
 
 这些是非随机时点快照，缓存/平台刷新时间未知。完整来源、捕获时间和缺失语义见trend-research/temporal/及前端证据面板。不是连续轨迹或标题事实核验。
+

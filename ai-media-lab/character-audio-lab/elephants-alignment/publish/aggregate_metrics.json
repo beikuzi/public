@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "dataset": "Elephants Dream official production dialogue versus final stereo mix",
+  "source_files_processed": 20,
+  "analysis_rate_hz": 4000,
+  "native_rate_hz": 48000,
+  "human_auditory_review": false,
+  "clean_purity_verified": false,
+  "overlap_free_verified": false,
+  "complete_utterance_boundaries_verified": false,
+  "proog": {
+    "matched_interiors": 42,
+    "matched_seconds_including_alternates": 97.368,
+    "unique_movie_matched_seconds": 85.769625,
+    "source_vad_seconds_including_alternates": 153.568
+  },
+  "emo": {
+    "matched_interiors": 22,
+    "matched_seconds_including_alternates": 45.252,
+    "unique_movie_matched_seconds": 37.145,
+    "source_vad_seconds_including_alternates": 79.74
+  },
+  "candidate_cross_role_overlap_count": 1,
+  "candidate_cross_role_overlap_seconds": 0.355,
+  "synthetic_tests_passed": 7,
+  "interpretation": "Machine-supported coverage only; not usable clean training seconds. Piecewise edits, incomplete matching and duplicate alternates prevent scene-level alignment or no-overlap claims."
+}

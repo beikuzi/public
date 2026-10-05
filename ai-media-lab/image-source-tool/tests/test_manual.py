@@ -50,6 +50,11 @@ class ManualTests(unittest.TestCase):
         self.assertEqual(row["status"], "blocked")
         self.assertEqual(row["upload_state"], "not_submitted")
         self.assertEqual(row["candidates"], [])
+        payload["searches"][0]["status"] = "not_run"
+        self.assertEqual(parse_manual_records(payload, HASH)[0]["status"], "not_run")
+        payload["searches"][0]["upload_state"] = "unknown"
+        with self.assertRaises(InputError):
+            parse_manual_records(payload, HASH)
 
     def test_rejects_inconsistent_outcomes(self):
         payloads = []
@@ -83,7 +88,7 @@ class ManualTests(unittest.TestCase):
                 parse_manual_records(payload,HASH)
 
     def test_all_failure_states_preserved(self):
-        for status in ("blocked","rate_limited","network_error","service_error","no_match"):
+        for status in ("blocked","rate_limited","network_error","service_error","no_match","inconclusive"):
             row=parse_manual_records(sample(status=status),HASH)[0]
             self.assertEqual(row["status"],status)
 
@@ -108,7 +113,7 @@ class ManualTests(unittest.TestCase):
             self.assertIn("ascii2d · manual color",html)
             self.assertIn("manual_record_imported",html)
             self.assertIn("Recorded upload: submitted",html)
-            self.assertIn("Searched at:",html)
+            self.assertIn("Recorded attempt/checkpoint:",html)
             self.assertNotIn("<script>",html)
             self.assertTrue(all(v["status"]=="unresolved" for v in report["conclusions"].values()))
 

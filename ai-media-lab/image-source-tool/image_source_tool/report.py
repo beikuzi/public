@@ -74,7 +74,7 @@ def render_html(report):
             score_label = f'Native similarity {score["value"]} / {score["range"][1]}' if score["range"] else "No numerical score supplied"
             rows.append(f'<article class="candidate"><div class="row"><strong>{e(candidate["kind"])}</strong><span>{e(score_label)}</span></div><dl>{"".join(details)}</dl><p class="muted">{e(candidate["caution"])}</p><div class="links">{"".join(anchor(link) for link in candidate["links"]) or "No safe source link returned"}</div></article>')
         label = provider["provider"] + (f' · manual {provider["method"]}' if provider.get("execution_mode") == "manual_record" else "")
-        recorded = f'<p class="muted">Recorded upload: {e(provider["upload_state"])} · Searched at: {e(provider["searched_at"])}</p>' if provider.get("execution_mode") == "manual_record" else ""
+        recorded = f'<p class="muted">Recorded upload: {e(provider["upload_state"])} · Recorded attempt/checkpoint: {e(provider["searched_at"])}</p>' if provider.get("execution_mode") == "manual_record" else ""
         cards.append(f'<section><div class="row"><h2>{e(label)}</h2><span class="badge">{e(provider["status"])}</span></div><p>{e(provider["message"])}</p>{recorded}{"".join(rows)}</section>')
     conclusions = "".join(f'<div><small>{e(key.replace("_", " "))}</small><strong>{e(value["status"])}</strong><p>{e(value["reason"])}</p></div>' for key, value in report["conclusions"].items())
     routes = "".join(f'<li>{anchor(route["url"], route["provider"])} · {e(route["purpose"])} <span class="muted">[{e(route["status"])}]</span></li>' for route in report["manual_routes"])

@@ -7,7 +7,7 @@ from .network import safe_link
 from .providers import clean_text, native_score, result
 
 MAX_MANUAL_BYTES = 256 * 1024
-ALLOWED_STATUS = {"matches", "no_match", "blocked", "rate_limited", "network_error", "service_error"}
+ALLOWED_STATUS = {"matches", "no_match", "blocked", "rate_limited", "network_error", "service_error", "inconclusive", "not_run"}
 METHODS = {"ascii2d": {"color", "bovw", "browser"}, "saucenao": {"browser"}}
 
 
@@ -53,6 +53,8 @@ def parse_manual_records(payload, image_sha256):
         upload = search["upload_state"]
         if not isinstance(upload, str) or upload not in {"not_submitted", "submitted", "unknown"}:
             raise InputError("Manual record must state whether an image was submitted")
+        if status == "not_run" and upload != "not_submitted":
+            raise InputError("A not_run record must have upload_state not_submitted")
         if status in {"matches", "no_match"} and upload != "submitted":
             raise InputError("A completed manual search requires upload_state submitted")
         timestamp = search["searched_at"]

@@ -48,7 +48,9 @@ Importing makes no network request, uploads no image and fetches no result link.
 Replace all placeholders and example outcomes with what actually happened. Use the real timestamp with timezone. The file must match the exact original input hash; a recompressed or edited file has a different hash.
 
 - Providers/methods: `ascii2d` with `color`, `bovw`, or `browser`; `saucenao` with `browser`. Use `browser` for a site-level attempt that never reached a particular result mode.
-- Status: `matches`, `no_match`, `blocked`, `rate_limited`, `network_error`, or `service_error`.
+- Status: `matches`, `no_match`, `blocked`, `rate_limited`, `network_error`, `service_error`, `inconclusive`, or `not_run`.
+- `inconclusive` means the workflow did not establish a service outcome, such as a stalled UI call with unknown upload completion. It does not claim that the provider or network failed. `not_run` means no attempt occurred and requires `not_submitted`.
+- `searched_at` records the attempt or status-checkpoint time; for `not_run` it is a checkpoint timestamp, not a claim that a search happened.
 - Upload state: `submitted`, `not_submitted`, or `unknown`. Do not report `matches` or `no_match` unless the image was submitted and the service returned an outcome.
 - `matches` requires candidates. Other states require an empty candidate list. A challenge, failed submission, or inaccessible site is not a no-match result.
 - Candidate fields: required `links`; optional `title`, `work`, `reported_artist`, `rank`; only SauceNAO allows `similarity` in its native 0–100 scale. Ranking is not similarity or attribution probability.

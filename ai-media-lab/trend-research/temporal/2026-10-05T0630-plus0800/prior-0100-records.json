@@ -1,0 +1,623 @@
+{
+  "provenance": "verbatim normalized observed01:00 snapshot fields",
+  "records": [
+    {
+      "id": "BH01",
+      "platform": "bilibili",
+      "title": "ピノキオピー - えねみぃ feat. 初音ミク・重音テト",
+      "url": "https://www.bilibili.com/video/BV1UGa961Ejt",
+      "captured_at": "2026-10-04T17:04:29Z",
+      "observed_metrics": {
+        "rank": 1,
+        "views_display": "196.3万",
+        "danmaku_display": "4.1万"
+      }
+    },
+    {
+      "id": "BH02",
+      "platform": "bilibili",
+      "title": "逻辑折叠深度解析！华为Mate 90系列韬定律芯片有多强？",
+      "url": "https://www.bilibili.com/video/BV1heam6TExz",
+      "captured_at": "2026-10-04T17:04:29Z",
+      "observed_metrics": {
+        "rank": 2,
+        "views_display": "218.6万",
+        "danmaku_display": "1.7万"
+      }
+    },
+    {
+      "id": "BH03",
+      "platform": "bilibili",
+      "title": "你离开的事实原创高至豪偶遇粉丝，于是为她演奏一曲",
+      "url": "https://www.bilibili.com/video/BV1wAYP6YEif",
+      "captured_at": "2026-10-04T17:04:29Z",
+      "observed_metrics": {
+        "rank": 3,
+        "views_display": "325.4万",
+        "danmaku_display": "2119"
+      }
+    },
+    {
+      "id": "BH04",
+      "platform": "bilibili",
+      "title": "章鱼哥，快乐都去哪了呢？",
+      "url": "https://www.bilibili.com/video/BV1mjad6DEK1",
+      "captured_at": "2026-10-04T17:04:29Z",
+      "observed_metrics": {
+        "rank": 4,
+        "views_display": "397.7万",
+        "danmaku_display": "7744"
+      }
+    },
+    {
+      "id": "BH05",
+      "platform": "bilibili",
+      "title": "24位博主为粉丝争夺30万元！",
+      "url": "https://www.bilibili.com/video/BV15far6dEjT",
+      "captured_at": "2026-10-04T17:04:29Z",
+      "observed_metrics": {
+        "rank": 5,
+        "views_display": "238.8万",
+        "danmaku_display": "2.1万"
+      }
+    },
+    {
+      "id": "BH06",
+      "platform": "bilibili",
+      "title": "4名枪匪闯入豪宅，中国男子4秒13枪疯狂反击！",
+      "url": "https://www.bilibili.com/video/BV18Bam6eEBd",
+      "captured_at": "2026-10-04T17:04:29Z",
+      "observed_metrics": {
+        "rank": 6,
+        "views_display": "1123.3万",
+        "danmaku_display": "2.7万"
+      }
+    },
+    {
+      "id": "BH07",
+      "platform": "bilibili",
+      "title": "【亿万级特效！】猫核老鼠：量子网球对决！（全程高能！）",
+      "url": "https://www.bilibili.com/video/BV1s3Yc68EJK",
+      "captured_at": "2026-10-04T17:04:29Z",
+      "observed_metrics": {
+        "rank": 7,
+        "views_display": "324.4万",
+        "danmaku_display": "3185"
+      }
+    },
+    {
+      "id": "BH08",
+      "platform": "bilibili",
+      "title": "《原神》剧情PV-「燕归来」",
+      "url": "https://www.bilibili.com/video/BV1cQap6UEr2",
+      "captured_at": "2026-10-04T17:04:29Z",
+      "observed_metrics": {
+        "rank": 8,
+        "views_display": "120.4万",
+        "danmaku_display": "3413"
+      }
+    },
+    {
+      "id": "BH10",
+      "platform": "bilibili",
+      "title": "有用版新植物：空调寒冰",
+      "url": "https://www.bilibili.com/video/BV1W7HY6xErH",
+      "captured_at": "2026-10-04T17:04:29Z",
+      "observed_metrics": {
+        "rank": 9,
+        "views_display": "634.5万",
+        "danmaku_display": "1615"
+      }
+    },
+    {
+      "id": "bilibili-0100-10",
+      "platform": "bilibili",
+      "title": "77年前的今天 新中国成立了",
+      "url": "https://www.bilibili.com/video/BV1baYP6CEwY",
+      "captured_at": "2026-10-04T17:04:29Z",
+      "observed_metrics": {
+        "rank": 10,
+        "views_display": "319.1万",
+        "danmaku_display": "0"
+      }
+    },
+    {
+      "id": "BH09",
+      "platform": "bilibili",
+      "title": "《下一个是谁》第七季（5）",
+      "url": "https://www.bilibili.com/video/BV1cAYP6YEvj",
+      "captured_at": "2026-10-04T17:04:29Z",
+      "observed_metrics": {
+        "rank": 11,
+        "views_display": "288.9万",
+        "danmaku_display": "14.3万"
+      }
+    },
+    {
+      "id": "BH49",
+      "platform": "bilibili",
+      "title": "我的东京留学生活不可能那么二次元！【AI全民制作人】",
+      "url": "https://www.bilibili.com/video/BV1mrao6WEKK",
+      "captured_at": "2026-10-04T17:04:29Z",
+      "observed_metrics": {
+        "rank": 54,
+        "views_display": "104.6万",
+        "danmaku_display": "1338"
+      }
+    },
+    {
+      "id": "BH98",
+      "platform": "bilibili",
+      "title": "有一个人前来借寿【AI全民制作人】",
+      "url": "https://www.bilibili.com/video/BV17vak6wErn",
+      "captured_at": "2026-10-04T17:04:29Z",
+      "observed_metrics": {
+        "rank": 98,
+        "views_display": "128.4万",
+        "danmaku_display": "6255"
+      }
+    },
+    {
+      "id": "douyin-0100-1",
+      "platform": "douyin",
+      "title": "市井人家的炊烟笑语总是令人心安",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "rank": 1,
+        "heat_display": "1245.4万"
+      }
+    },
+    {
+      "id": "douyin-0100-2",
+      "platform": "douyin",
+      "title": "是谁在重庆免费听了soldout",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "rank": 2,
+        "heat_display": "1167.1万"
+      }
+    },
+    {
+      "id": "douyin-0100-3",
+      "platform": "douyin",
+      "title": "我国假日经济持续升温",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "rank": 3,
+        "heat_display": "1125.4万"
+      }
+    },
+    {
+      "id": "douyin-0100-4",
+      "platform": "douyin",
+      "title": "你说得对人是应该多出去走走",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "rank": 4,
+        "heat_display": "1114.4万"
+      }
+    },
+    {
+      "id": "douyin-0100-5",
+      "platform": "douyin",
+      "title": "国庆自驾搭子集体陷入沉默",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "rank": 5,
+        "heat_display": "1054.7万"
+      }
+    },
+    {
+      "id": "douyin-0100-6",
+      "platform": "douyin",
+      "title": "第二十届亚运会闭幕",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "rank": 6,
+        "heat_display": "1054.7万"
+      }
+    },
+    {
+      "id": "douyin-0100-7",
+      "platform": "douyin",
+      "title": "张堃鹏追平个人最佳战绩",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "rank": 7,
+        "heat_display": "937.6万"
+      }
+    },
+    {
+      "id": "douyin-0100-8",
+      "platform": "douyin",
+      "title": "长长长假美食判官",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "rank": 8,
+        "heat_display": "927.2万"
+      }
+    },
+    {
+      "id": "douyin-0100-9",
+      "platform": "douyin",
+      "title": "苏超苏州2:1常州",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "rank": 9,
+        "heat_display": "922.2万"
+      }
+    },
+    {
+      "id": "douyin-0100-10",
+      "platform": "douyin",
+      "title": "苏超盐城2:0宿迁",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "rank": 10,
+        "heat_display": "921.1万"
+      }
+    },
+    {
+      "id": "douyin-0100-11",
+      "platform": "douyin",
+      "title": "这顿饭已严肃品鉴不烧心",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "rank": 11,
+        "heat_display": "914.6万"
+      }
+    },
+    {
+      "id": "douyin-0100-17",
+      "platform": "douyin",
+      "title": "国庆假期宅家无聊怎么办",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "rank": 17,
+        "heat_display": "907.2万"
+      }
+    },
+    {
+      "id": "weibo-0100-1",
+      "platform": "weibo",
+      "title": "教你一招彻底删除隐私记录",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 1,
+        "displayed_heat": 116945
+      }
+    },
+    {
+      "id": "weibo-0100-2",
+      "platform": "weibo",
+      "title": "中国正编织六张超级大网",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 2,
+        "displayed_heat": 105250
+      }
+    },
+    {
+      "id": "weibo-0100-3",
+      "platform": "weibo",
+      "title": "老胡称人工智能不是共产主义入口",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 3,
+        "displayed_heat": 94725
+      }
+    },
+    {
+      "id": "weibo-0100-4",
+      "platform": "weibo",
+      "title": "芯片制程提升故事讲不下去",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 4,
+        "displayed_heat": 85252
+      }
+    },
+    {
+      "id": "weibo-0100-5",
+      "platform": "weibo",
+      "title": "苹果确认iPhone18ProMax存缺陷",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 5,
+        "displayed_heat": 76727
+      }
+    },
+    {
+      "id": "weibo-0100-6",
+      "platform": "weibo",
+      "title": "开启智驾不能脱手脱眼",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 6,
+        "displayed_heat": 69054
+      }
+    },
+    {
+      "id": "weibo-0100-7",
+      "platform": "weibo",
+      "title": "荣耀称Magic9系列正24小时加急生产",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 7,
+        "displayed_heat": 62149
+      }
+    },
+    {
+      "id": "weibo-0100-8",
+      "platform": "weibo",
+      "title": "OPPO三2亿让青春有了高清版",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 8,
+        "displayed_heat": 55934
+      }
+    },
+    {
+      "id": "weibo-0100-9",
+      "platform": "weibo",
+      "title": "iPhone18ProMax网络",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 9,
+        "displayed_heat": 50340
+      }
+    },
+    {
+      "id": "weibo-0100-10",
+      "platform": "weibo",
+      "title": "马斯克称SpaceXAI将更名为SpaceXSI",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 10,
+        "displayed_heat": 45306
+      }
+    },
+    {
+      "id": "weibo-0100-11",
+      "platform": "weibo",
+      "title": "固件或致量产机黑屏重启",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 11,
+        "displayed_heat": 40776
+      }
+    },
+    {
+      "id": "weibo-0100-12",
+      "platform": "weibo",
+      "title": "看完才发现视频是AI生成",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 12,
+        "displayed_heat": 36698
+      }
+    },
+    {
+      "id": "weibo-0100-13",
+      "platform": "weibo",
+      "title": "全网最压抑的AI视频太窒息了",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 13,
+        "displayed_heat": 33028
+      }
+    },
+    {
+      "id": "weibo-0100-14",
+      "platform": "weibo",
+      "title": "特朗普宣布成立超级智能特别工作组",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 14,
+        "displayed_heat": 29746
+      }
+    },
+    {
+      "id": "weibo-0100-15",
+      "platform": "weibo",
+      "title": "麒麟9050Pro评测出炉",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 15,
+        "displayed_heat": 26771
+      }
+    },
+    {
+      "id": "weibo-0100-16",
+      "platform": "weibo",
+      "title": "绘圈为什么反感AI",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 16,
+        "displayed_heat": 24094
+      }
+    },
+    {
+      "id": "weibo-0100-17",
+      "platform": "weibo",
+      "title": "雷军看了老章说车7个视频",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 17,
+        "displayed_heat": 21684
+      }
+    },
+    {
+      "id": "weibo-0100-18",
+      "platform": "weibo",
+      "title": "德国AI影响下岗位逆势增长",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 18,
+        "displayed_heat": 19516
+      }
+    },
+    {
+      "id": "weibo-0100-19",
+      "platform": "weibo",
+      "title": "国庆iPhone18Pro销量持续走高",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 19,
+        "displayed_heat": 17564
+      }
+    },
+    {
+      "id": "weibo-0100-20",
+      "platform": "weibo",
+      "title": "智驾功能下司机仍是最终责任主体",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 20,
+        "displayed_heat": 15808
+      }
+    },
+    {
+      "id": "weibo-0100-21",
+      "platform": "weibo",
+      "title": "老章说车回应雷军看他视频",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 21,
+        "displayed_heat": 15800
+      }
+    },
+    {
+      "id": "weibo-0100-22",
+      "platform": "weibo",
+      "title": "越来越多开发者不逐个审代码",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 22,
+        "displayed_heat": 14220
+      }
+    },
+    {
+      "id": "weibo-0100-23",
+      "platform": "weibo",
+      "title": "美国AI投资比例骇人",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 23,
+        "displayed_heat": 12798
+      }
+    },
+    {
+      "id": "weibo-0100-24",
+      "platform": "weibo",
+      "title": "iPhone18ProMax 品控",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 24,
+        "displayed_heat": 11518
+      }
+    },
+    {
+      "id": "weibo-0100-25",
+      "platform": "weibo",
+      "title": "中国空间站也有双节仪式感",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 25,
+        "displayed_heat": 10366
+      }
+    },
+    {
+      "id": "weibo-0100-26",
+      "platform": "weibo",
+      "title": "AI时代体面的定义变了",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 26,
+        "displayed_heat": 9329
+      }
+    },
+    {
+      "id": "weibo-0100-27",
+      "platform": "weibo",
+      "title": "余承东 余总转发文案",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 27,
+        "displayed_heat": 8396
+      }
+    },
+    {
+      "id": "weibo-0100-28",
+      "platform": "weibo",
+      "title": "美版18ProMax用高通基带",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 28,
+        "displayed_heat": 7557
+      }
+    },
+    {
+      "id": "weibo-0100-29",
+      "platform": "weibo",
+      "title": "离职员工爆料OpenAI风险意识不足",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 29,
+        "displayed_heat": 6801
+      }
+    },
+    {
+      "id": "weibo-0100-30",
+      "platform": "weibo",
+      "title": "麒麟9050Pro逻辑折叠",
+      "url": null,
+      "captured_at": "2026-10-04T17:01:48Z",
+      "observed_metrics": {
+        "category_rank": 30,
+        "displayed_heat": 6469
+      }
+    }
+  ]
+}

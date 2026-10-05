@@ -1,0 +1,12 @@
+private-input/
+private-output/
+.cache/
+.env
+.env.*
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/

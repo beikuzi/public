@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Image Source Tool report v1",
+  "type": "object",
+  "required": ["schema_version", "created_at", "input", "privacy", "conclusions", "providers", "lead_groups", "manual_routes"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "created_at": {"type": "string"},
+    "input": {"type": "object"},
+    "privacy": {"type": "object"},
+    "conclusions": {"type": "object", "required": ["character", "work", "exact_image", "original_artist"]},
+    "providers": {"type": "array", "items": {"$ref": "#/$defs/provider"}},
+    "lead_groups": {"type": "array"},
+    "manual_routes": {"type": "array"}
+  },
+  "$defs": {
+    "provider": {
+      "type": "object",
+      "required": ["provider", "status", "message", "candidates"],
+      "properties": {
+        "provider": {"enum": ["trace_moe", "saucenao", "animetrace"]},
+        "status": {"enum": ["not_requested", "consent_required", "missing_credentials", "matches", "no_match", "blocked", "rate_limited", "service_error", "network_error", "invalid_response", "input_rejected"]},
+        "message": {"type": "string"},
+        "candidates": {"type": "array", "items": {"type": "object", "required": ["id", "kind", "evidence_status", "native_score", "links"]}}
+      }
+    }
+  }
+}

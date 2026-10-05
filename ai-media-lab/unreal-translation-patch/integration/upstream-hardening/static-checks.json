@@ -1,0 +1,36 @@
+{
+  "upstream_commit": "b4e2e11db91a37351a99e7c8f46d3862383f9dd5",
+  "executed_upstream_code": false,
+  "compiled": false,
+  "in_game_tested": false,
+  "files": {
+    "include/DebugLogger.hpp": {
+      "original_sha256": "0319e8a160509ca7ff70ecb07ca24aedcee327d5ecc00f4f513d871c1e6bc5e9",
+      "patched_sha256": "ed0bdcf10d0f8126a789ae2a306ead010cf4d95e7efe42960f20d989d11e1fc9"
+    },
+    "include/VocabularyCache.hpp": {
+      "original_sha256": "5fcdfe4938a6ee1c3809ab982cb3a063e29d97c1f5cc75a2b69bcd0881caa458",
+      "patched_sha256": "382d3d505759640c7ecc057920356898117cc0775be2647d3e78bd6e74b62268"
+    },
+    "src/AIProvider.cpp": {
+      "original_sha256": "46bbce816faee6d1652698a8f583562d9370e98bfbcb4b5439f5fe88a0d7620f",
+      "patched_sha256": "3118cf036487538d66169c72a264f8a8eb6dfd855849d3e24790c7c6762f48db"
+    },
+    "src/NetworkClient.cpp": {
+      "original_sha256": "7716e9bd44ca4887db34918c54e65258e64ef6c67af191c962d6102e1527e375",
+      "patched_sha256": "1534fc0b182763bda6f8edfad1dfff4143cdfc0b263b358fc2fe531766b408c5"
+    },
+    "src/TextHookManager.cpp": {
+      "original_sha256": "f2d5e14f3e502750438d71d018c1b14cb1bf1d2e87e21fef73e734253c5c6ee4",
+      "patched_sha256": "da93cfb41232d976d58adb2e3c680596a7422b3603e3d16837c92536cc73d922"
+    },
+    "src/TranslationMod.cpp": {
+      "original_sha256": "ca4abd9c55704f31686ab5ba3916097fa79009ebc76b0e36c84804f3b65b480c",
+      "patched_sha256": "40172e5c5abfc776678c88d0645270769c7d22e4e70d2c5e09da1b3e1e001266"
+    },
+    "src/VocabularyCache.cpp": {
+      "original_sha256": "7ce1a7e83479ea53739e899ab52e3207f8630e795a9b77a0501b9d2e260c5889",
+      "patched_sha256": "c4c1b1447b8e339ceef4b8a050d0ce94d42a75383f0711c3ee98ba0e39083e72"
+    }
+  }
+}

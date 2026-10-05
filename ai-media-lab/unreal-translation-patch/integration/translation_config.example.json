@@ -1,0 +1,23 @@
+{
+  "ai_provider": {
+    "api_endpoint": "http://127.0.0.1:18765/v1/chat/completions",
+    "api_key": "REPLACE_WITH_LOCAL_EPHEMERAL_TOKEN_NOT_PROVIDER_KEY",
+    "model": "bridge",
+    "timeout_ms": 10000,
+    "max_retries": 1,
+    "request_interval_ms": 1100,
+    "max_requests_per_second": 1
+  },
+  "translation": {
+    "source_language": "auto",
+    "target_language": "zh-CN"
+  },
+  "hooks": {
+    "min_text_length": 2
+  },
+  "vocabulary": {
+    "file_path": "vocabulary.json",
+    "auto_save": false,
+    "save_interval_ms": 5000
+  }
+}

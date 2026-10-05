@@ -71,3 +71,5 @@ python pipeline/verify.py private-output --output private-output/qa.json
 ```
 
 The processed assemblies are float32 stereo WAV at 48 kHz to preserve model values. Their sample counts match raw PCM16 originals exactly. Mapping and model metadata identify every contextual file and trim. QA verifies hashes, frame counts, 5–10 second lengths, source-to-clip mapping and duration accounting; waveform metrics describe clipping/silence but do not establish perceptual quality. Synthetic fixtures are out-of-sample mechanical tests, never evidence of separation quality on the film.
+
+A segment can set `review_quarantine: true` plus a `review_quarantine_reason` to force exclusion while preserving its original speaker confidence and acoustic class. Independent speaker audits should use this rather than silently altering acoustic labels.

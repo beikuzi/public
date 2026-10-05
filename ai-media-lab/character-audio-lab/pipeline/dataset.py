@@ -49,6 +49,7 @@ def prepare_segments(data, duration, threshold=.9, allow_unverified_overlap=Fals
         s['start_sample']=round(a*RATE); s['end_sample']=min(round(b*RATE),round(duration*RATE))
         s['start']=s['start_sample']/RATE; s['end']=s['end_sample']/RATE
         reasons=[]
+        if s.get('review_quarantine'): reasons.append('review_quarantine')
         confidence=finite(s.get('confidence',0))
         if not 0<=confidence<=1: raise ValueError('Confidence outside [0,1]')
         if s.get('speaker')!=target: reasons.append('other_speaker')
@@ -101,6 +102,7 @@ def build(annotation_path, source, output, gap=.12, fade=.005, threshold=.9, all
     if not source.is_file(): raise ValueError('Source is missing')
     if output.exists() and any(output.iterdir()): raise ValueError('Output must not already contain files')
     if not 0<=gap<=1 or not 0<=fade<=.05: raise ValueError('Invalid gap/fade')
+    if not math.isfinite(threshold) or not 0<=threshold<=1: raise ValueError('Confidence threshold outside [0,1]')
     data=json.loads(annotation_path.read_text())
     source_hash=sha256(source)
     if not data.get('source_sha256') or data['source_sha256']!=source_hash: raise ValueError('Annotation source_sha256 does not match media')

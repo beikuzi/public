@@ -81,5 +81,9 @@ class DatasetTests(unittest.TestCase):
         self.assertEqual(result['clips'][0]['voice_only']['provenance'][0]['trim_start_frame'],d.RATE)
         from verify import verify
         self.assertEqual(verify(out)['mechanical_status'],'passed')
+    def test_explicit_review_quarantine(self):
+        r=self.row(0,5); r['review_quarantine']=True
+        m=d.build(self.annotation([r]),self.source,self.root/'out')
+        self.assertFalse(m['clips']); self.assertIn('review_quarantine',m['excluded'][0]['exclusion_reasons'])
     def test_union(self): self.assertEqual(d.union_seconds([(0,3),(1,4),(6,7)]),5)
 if __name__=='__main__': unittest.main()

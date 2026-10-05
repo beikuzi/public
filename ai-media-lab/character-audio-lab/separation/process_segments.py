@@ -10,7 +10,7 @@ from separate import separate, MODEL_SHA256
 
 SAFE_ID = re.compile(r'[A-Za-z0-9][A-Za-z0-9_-]{0,127}\Z')
 
-def validate_segments(annotations, duration, context):
+def validate_segments(annotations, duration, context, include_unknown=False):
     if not math.isfinite(context) or not 0 <= context <= 30:
         raise ValueError('context must be finite and between 0 and 30 seconds')
     if not math.isfinite(duration) or duration <= 0:
@@ -29,10 +29,10 @@ def validate_segments(annotations, duration, context):
             raise ValueError('Segment times must be numeric')
         if not math.isfinite(start) or not math.isfinite(end) or not 0 <= start < end <= duration:
             raise ValueError('Segment bounds outside source')
-        if segment.get('target') and segment.get('quality') == 'noisy':
+        if segment.get('target') and not segment.get('review_quarantine') and (segment.get('quality') == 'noisy' or (include_unknown and segment.get('quality') == 'unknown')):
             selected.append(segment)
     if not selected:
-        raise ValueError('No target noisy segments to process')
+        raise ValueError('No eligible target segments to process')
     return selected
 
 def prepare_output_directory(path):
@@ -54,6 +54,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('source'); parser.add_argument('annotations'); parser.add_argument('output_dir')
     parser.add_argument('--context', type=float, default=1.0)
+    parser.add_argument('--include-unknown', action='store_true', help='Explicit diagnostic processing of unknown-quality spans; never relabels them as noisy or clean')
     args = parser.parse_args()
     source = Path(args.source).resolve()
     annotations = json.loads(Path(args.annotations).read_text())
@@ -65,7 +66,7 @@ def main():
         raise ValueError('Source has no audio stream')
     info = probe['streams'][0]
     sr, duration = int(info['sample_rate']), float(info['duration'])
-    selected = validate_segments(annotations, duration, args.context)
+    selected = validate_segments(annotations, duration, args.context, args.include_unknown)
     out = prepare_output_directory(args.output_dir)
     rows = []; wall = time.perf_counter()
     for segment in selected:
@@ -80,7 +81,7 @@ def main():
         if got_sr != sr or len(samples) != last - first:
             raise ValueError('Decoded context length mismatch')
         metrics = separate(raw, processed)
-        rows.append({'segment_id': segment['id'], 'output_path': str(processed), 'output_source_start': first / sr, 'output_source_start_sample': first, 'output_source_end_sample': last, 'sample_rate': sr, 'samples': last - first, 'source_sha256': actual_hash, 'model': 'HDEMUCS_HIGH_MUSDB_PLUS', 'model_version': 'torchaudio 2.8.0+cpu', 'model_sha256': MODEL_SHA256, 'method': f'Neural vocal-stem separation of contiguous source with {args.context:g}s context; trim annotated target interval only after separation', 'limitations': ['All vocals, not target-speaker isolation', 'Annotation boundaries and overlap require separate verification', 'No auditory review; residual background and artifacts possible'], 'metrics': metrics})
+        rows.append({'segment_id': segment['id'], 'input_quality_label': segment.get('quality'), 'output_path': str(processed), 'output_source_start': first / sr, 'output_source_start_sample': first, 'output_source_end_sample': last, 'sample_rate': sr, 'samples': last - first, 'source_sha256': actual_hash, 'model': 'HDEMUCS_HIGH_MUSDB_PLUS', 'model_version': 'torchaudio 2.8.0+cpu', 'model_sha256': MODEL_SHA256, 'method': f'Neural vocal-stem separation of contiguous source with {args.context:g}s context; trim annotated target interval only after separation', 'limitations': ['All vocals, not target-speaker isolation', 'Annotation boundaries and overlap require separate verification', 'No auditory review; residual background and artifacts possible'], 'metrics': metrics})
         write_report(out, {'schema_version': 1, 'complete': False, 'segments': rows})
         print(segment['id'], round(metrics['wall_seconds'], 2), flush=True)
     result = {'schema_version': 1, 'complete': True, 'context_seconds': args.context, 'source_sha256': actual_hash, 'wall_seconds': time.perf_counter() - wall, 'segments': rows}

@@ -4,6 +4,14 @@ from process_segments import validate_segments, prepare_output_directory
 class SegmentSafetyTests(unittest.TestCase):
  def make(self, identifier='clip_01', start=1., end=2.):
   return {'segments':[{'id':identifier,'start':start,'end':end,'target':True,'quality':'noisy'}]}
+ def test_quarantine_never_selected(self):
+  a=self.make();a['segments'][0]['review_quarantine']=True
+  with self.assertRaises(ValueError):validate_segments(a,10,1,True)
+ def test_unknown_explicit_opt_in(self):
+  a=self.make();a['segments'][0]['quality']='unknown'
+  with self.assertRaises(ValueError):validate_segments(a,10,1)
+  self.assertEqual(len(validate_segments(a,10,1,True)),1)
+  self.assertEqual(a['segments'][0]['quality'],'unknown')
  def test_valid(self):self.assertEqual(len(validate_segments(self.make(),10,1)),1)
  def test_reject_path_ids(self):
   for bad in ['../escape','/tmp/escape','a/b','a\\b','.','..','a.wav','', 'x'*129]:

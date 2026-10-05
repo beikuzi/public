@@ -1,0 +1,12 @@
+**/runtime/
+**/config.json
+**/.env
+**/.env.*
+**/__pycache__/
+*.pyc
+*.sqlite*
+*.db
+*.dll
+*.exe
+**/node_modules/
+**/local-token.txt

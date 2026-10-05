@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "texts": [
+    {"id": "welcome", "text": "  Hello {PlayerName}!\n<Emphasis>Welcome</>  "},
+    {"id": "start", "text": "Start game"},
+    {"id": "count", "text": "100"}
+  ]
+}

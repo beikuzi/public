@@ -1,0 +1,9 @@
+{
+  "provider": "mock",
+  "source": "auto",
+  "target": "zh",
+  "max_chars_per_text": 1000,
+  "daily_character_limit": 10000,
+  "daily_request_limit": 100,
+  "request_interval_seconds": 1.1
+}

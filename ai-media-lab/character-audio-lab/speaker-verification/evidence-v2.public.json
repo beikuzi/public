@@ -1,0 +1,3210 @@
+{
+  "source_sha256": "bcdfe981cb705d2dbf5a4d6341172865be41eb745cea5ceb6c58bf123b095750",
+  "boundary_proposals_sha256": "978cc95d8983d54c16c66030f2de05676a50f66a989ecd169e75cee25deb5f23",
+  "limitations": [
+    "All boundary and speaker evidence is machine-generated, not human listening.",
+    "No overlap assessment or calibrated identity/error-rate conclusion.",
+    "VAD-positive duration is model-detected speech, not ground-truth voiced duration.",
+    "Alternative anchors chosen after initial failed experiment; v2 is exploratory, not a clean independent benchmark.",
+    "Neural view scores use center prototypes and are diagnostic only.",
+    "Concatenating VAD regions removes pauses and may affect embeddings.",
+    "Missing VAD proposals remain quarantined even if scores appear consistent."
+  ],
+  "experiments": {
+    "fixed_original": {
+      "anchors": {
+        "Sintel": [
+          "srt_013",
+          "srt_014"
+        ],
+        "Shaman": [
+          "srt_007",
+          "srt_009"
+        ]
+      },
+      "summary": {
+        "Sintel": {
+          "passing_ids": [],
+          "passing_model_speech_seconds": 0,
+          "non_enrolled_passing_ids": [],
+          "non_enrolled_passing_model_speech_seconds": 0,
+          "quarantined_ids": [
+            "srt_005",
+            "srt_008",
+            "srt_010",
+            "srt_012",
+            "srt_013",
+            "srt_014",
+            "srt_015",
+            "srt_016",
+            "srt_017",
+            "srt_018",
+            "srt_019",
+            "srt_020",
+            "srt_024",
+            "srt_025",
+            "srt_026"
+          ],
+          "training_ready_seconds": 0
+        },
+        "Shaman": {
+          "passing_ids": [
+            "srt_003",
+            "srt_007",
+            "srt_009",
+            "srt_011"
+          ],
+          "passing_model_speech_seconds": 9.592,
+          "non_enrolled_passing_ids": [
+            "srt_003",
+            "srt_011"
+          ],
+          "non_enrolled_passing_model_speech_seconds": 5.104,
+          "quarantined_ids": [
+            "srt_001",
+            "srt_002",
+            "srt_004",
+            "srt_006",
+            "srt_021",
+            "srt_022",
+            "srt_023"
+          ],
+          "training_ready_seconds": 0
+        }
+      },
+      "segments": [
+        {
+          "id": "srt_001",
+          "speaker": "Shaman",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 3.25,
+          "model_detected_speech_seconds": 2.164,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": -0.09791550040245056,
+                "Shaman": 0.5432361364364624
+              },
+              "winner": "Shaman",
+              "margin": 0.641151636838913,
+              "regions": [
+                {
+                  "start_sample": 5145888,
+                  "end_sample": 5249760
+                }
+              ],
+              "model_detected_speech_seconds": 2.164,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": -0.10507040470838547,
+                "Shaman": 0.5184075832366943
+              },
+              "winner": "Shaman",
+              "margin": 0.6234779879450798,
+              "regions": [
+                {
+                  "start_sample": 5145888,
+                  "end_sample": 5249760
+                }
+              ],
+              "model_detected_speech_seconds": 2.164,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "quarantine",
+          "reasons": [
+            "no_supported_boundary_proposal"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_002",
+          "speaker": "Shaman",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 4.0,
+          "model_detected_speech_seconds": 2.228,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": -0.08854131400585175,
+                "Shaman": 0.5414469242095947
+              },
+              "winner": "Shaman",
+              "margin": 0.6299882382154465,
+              "regions": [
+                {
+                  "start_sample": 5364288,
+                  "end_sample": 5471232
+                }
+              ],
+              "model_detected_speech_seconds": 2.228,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": -0.07502474635839462,
+                "Shaman": 0.48874932527542114
+              },
+              "winner": "Shaman",
+              "margin": 0.5637740716338158,
+              "regions": [
+                {
+                  "start_sample": 5364288,
+                  "end_sample": 5485056
+                }
+              ],
+              "model_detected_speech_seconds": 2.516,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "quarantine",
+          "reasons": [
+            "no_supported_boundary_proposal"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_003",
+          "speaker": "Shaman",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 3.45,
+          "model_detected_speech_seconds": 2.936,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": -0.005260508507490158,
+                "Shaman": 0.6564785242080688
+              },
+              "winner": "Shaman",
+              "margin": 0.661739032715559,
+              "regions": [
+                {
+                  "start_sample": 5647872,
+                  "end_sample": 5788800
+                }
+              ],
+              "model_detected_speech_seconds": 2.936,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": -0.024127976968884468,
+                "Shaman": 0.6249948740005493
+              },
+              "winner": "Shaman",
+              "margin": 0.6491228509694338,
+              "regions": [
+                {
+                  "start_sample": 5647872,
+                  "end_sample": 5788800
+                }
+              ],
+              "model_detected_speech_seconds": 2.936,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "machine_consistent_provisional",
+          "reasons": [],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_004",
+          "speaker": "Shaman",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 3.05,
+          "model_detected_speech_seconds": 1.332,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": -0.0182202011346817,
+                "Shaman": 0.4617834687232971
+              },
+              "winner": "Shaman",
+              "margin": 0.4800036698579788,
+              "regions": [
+                {
+                  "start_sample": 5841888,
+                  "end_sample": 5905824
+                }
+              ],
+              "model_detected_speech_seconds": 1.332,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.023439347743988037,
+                "Shaman": 0.4616836905479431
+              },
+              "winner": "Shaman",
+              "margin": 0.4382443428039551,
+              "regions": [
+                {
+                  "start_sample": 5841888,
+                  "end_sample": 5907360
+                }
+              ],
+              "model_detected_speech_seconds": 1.364,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "quarantine",
+          "reasons": [
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_005",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 1.05,
+          "model_detected_speech_seconds": 0.276,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.08113483339548111,
+                "Shaman": 0.15253639221191406
+              },
+              "winner": "Shaman",
+              "margin": 0.07140155881643295,
+              "regions": [
+                {
+                  "start_sample": 6009888,
+                  "end_sample": 6023136
+                }
+              ],
+              "model_detected_speech_seconds": 0.276,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.05167889595031738,
+                "Shaman": 0.2344682216644287
+              },
+              "winner": "Shaman",
+              "margin": 0.18278932571411133,
+              "regions": [
+                {
+                  "start_sample": 6009888,
+                  "end_sample": 6023136
+                }
+              ],
+              "model_detected_speech_seconds": 0.276,
+              "boundary_supported": false
+            },
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.10468725860118866,
+                "Shaman": 0.19086551666259766
+              },
+              "winner": "Shaman",
+              "margin": 0.086178258061409,
+              "regions": [
+                {
+                  "start_sample": 6009888,
+                  "end_sample": 6024672
+                }
+              ],
+              "model_detected_speech_seconds": 0.308,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_cosine_below_gate",
+            "center_margin_below_gate",
+            "center_scene_label_disagreement",
+            "stereo_cosine_below_gate",
+            "stereo_scene_label_disagreement",
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_006",
+          "speaker": "Shaman",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 1.5,
+          "model_detected_speech_seconds": 0.628,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": -0.02005193382501602,
+                "Shaman": 0.42259564995765686
+              },
+              "winner": "Shaman",
+              "margin": 0.4426475837826729,
+              "regions": [
+                {
+                  "start_sample": 6117888,
+                  "end_sample": 6148032
+                }
+              ],
+              "model_detected_speech_seconds": 0.628,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.0044769831001758575,
+                "Shaman": 0.33202439546585083
+              },
+              "winner": "Shaman",
+              "margin": 0.327547412365675,
+              "regions": [
+                {
+                  "start_sample": 6117888,
+                  "end_sample": 6146496
+                }
+              ],
+              "model_detected_speech_seconds": 0.596,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "stereo_cosine_below_gate",
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_007",
+          "speaker": "Shaman",
+          "enrollment": true,
+          "evaluation_partition": "enrollment_leave_one_out",
+          "original_caption_seconds": 4.4,
+          "model_detected_speech_seconds": 2.36,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.015089783817529678,
+                "Shaman": 0.4377710223197937
+              },
+              "winner": "Shaman",
+              "margin": 0.422681238502264,
+              "regions": [
+                {
+                  "start_sample": 6201216,
+                  "end_sample": 6314496
+                }
+              ],
+              "model_detected_speech_seconds": 2.36,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.012084580957889557,
+                "Shaman": 0.4036564826965332
+              },
+              "winner": "Shaman",
+              "margin": 0.39157190173864365,
+              "regions": [
+                {
+                  "start_sample": 6201216,
+                  "end_sample": 6314496
+                }
+              ],
+              "model_detected_speech_seconds": 2.36,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "machine_consistent_provisional",
+          "reasons": [],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_008",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 2.5,
+          "model_detected_speech_seconds": 1.464,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.23621568083763123,
+                "Shaman": 0.09790439903736115
+              },
+              "winner": "Sintel",
+              "margin": 0.13831128180027008,
+              "regions": [
+                {
+                  "start_sample": 6479232,
+                  "end_sample": 6549504
+                }
+              ],
+              "model_detected_speech_seconds": 1.464,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.15787610411643982,
+                "Shaman": 0.0989038273692131
+              },
+              "winner": "Sintel",
+              "margin": 0.058972276747226715,
+              "regions": [
+                {
+                  "start_sample": 6479232,
+                  "end_sample": 6549504
+                }
+              ],
+              "model_detected_speech_seconds": 1.464,
+              "boundary_supported": true
+            },
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.19292235374450684,
+                "Shaman": 0.08305305987596512
+              },
+              "winner": "Sintel",
+              "margin": 0.10986929386854172,
+              "regions": [
+                {
+                  "start_sample": 6479232,
+                  "end_sample": 6549504
+                }
+              ],
+              "model_detected_speech_seconds": 1.464,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_cosine_below_gate",
+            "stereo_cosine_below_gate",
+            "stereo_margin_below_gate",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_009",
+          "speaker": "Shaman",
+          "enrollment": true,
+          "evaluation_partition": "enrollment_leave_one_out",
+          "original_caption_seconds": 4.2,
+          "model_detected_speech_seconds": 2.128,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": -0.021344579756259918,
+                "Shaman": 0.4377710819244385
+              },
+              "winner": "Shaman",
+              "margin": 0.4591156616806984,
+              "regions": [
+                {
+                  "start_sample": 6604800,
+                  "end_sample": 6664320
+                },
+                {
+                  "start_sample": 6716928,
+                  "end_sample": 6759552
+                }
+              ],
+              "model_detected_speech_seconds": 2.128,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": -0.008684523403644562,
+                "Shaman": 0.4036564826965332
+              },
+              "winner": "Shaman",
+              "margin": 0.41234100610017776,
+              "regions": [
+                {
+                  "start_sample": 6604800,
+                  "end_sample": 6664320
+                },
+                {
+                  "start_sample": 6716928,
+                  "end_sample": 6759552
+                }
+              ],
+              "model_detected_speech_seconds": 2.128,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "machine_consistent_provisional",
+          "reasons": [],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_010",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 1.6,
+          "model_detected_speech_seconds": 0.82,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.14308802783489227,
+                "Shaman": 0.16068217158317566
+              },
+              "winner": "Shaman",
+              "margin": 0.017594143748283386,
+              "regions": [
+                {
+                  "start_sample": 6881088,
+                  "end_sample": 6920448
+                }
+              ],
+              "model_detected_speech_seconds": 0.82,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.14254683256149292,
+                "Shaman": 0.15808403491973877
+              },
+              "winner": "Shaman",
+              "margin": 0.01553720235824585,
+              "regions": [
+                {
+                  "start_sample": 6881088,
+                  "end_sample": 6920448
+                }
+              ],
+              "model_detected_speech_seconds": 0.82,
+              "boundary_supported": false
+            },
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.08766148239374161,
+                "Shaman": 0.219148188829422
+              },
+              "winner": "Shaman",
+              "margin": 0.1314867064356804,
+              "regions": [
+                {
+                  "start_sample": 6881088,
+                  "end_sample": 6920448
+                }
+              ],
+              "model_detected_speech_seconds": 0.82,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_cosine_below_gate",
+            "center_margin_below_gate",
+            "center_scene_label_disagreement",
+            "stereo_cosine_below_gate",
+            "stereo_margin_below_gate",
+            "stereo_scene_label_disagreement",
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_011",
+          "speaker": "Shaman",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 2.9,
+          "model_detected_speech_seconds": 2.168,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": -0.04099598899483681,
+                "Shaman": 0.5511385202407837
+              },
+              "winner": "Shaman",
+              "margin": 0.5921345092356205,
+              "regions": [
+                {
+                  "start_sample": 7145568,
+                  "end_sample": 7249632
+                }
+              ],
+              "model_detected_speech_seconds": 2.168,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": -0.07915006577968597,
+                "Shaman": 0.4977567195892334
+              },
+              "winner": "Shaman",
+              "margin": 0.5769067853689194,
+              "regions": [
+                {
+                  "start_sample": 7145568,
+                  "end_sample": 7249632
+                }
+              ],
+              "model_detected_speech_seconds": 2.168,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "machine_consistent_provisional",
+          "reasons": [],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_012",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 2.92,
+          "model_detected_speech_seconds": 2.008,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.239711731672287,
+                "Shaman": 0.1511286199092865
+              },
+              "winner": "Sintel",
+              "margin": 0.08858311176300049,
+              "regions": [
+                {
+                  "start_sample": 7353120,
+                  "end_sample": 7449504
+                }
+              ],
+              "model_detected_speech_seconds": 2.008,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.1977287083864212,
+                "Shaman": 0.12887747585773468
+              },
+              "winner": "Sintel",
+              "margin": 0.06885123252868652,
+              "regions": [
+                {
+                  "start_sample": 7353120,
+                  "end_sample": 7449504
+                }
+              ],
+              "model_detected_speech_seconds": 2.008,
+              "boundary_supported": true
+            },
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.19262614846229553,
+                "Shaman": 0.1545097827911377
+              },
+              "winner": "Sintel",
+              "margin": 0.03811636567115784,
+              "regions": [
+                {
+                  "start_sample": 7353120,
+                  "end_sample": 7449504
+                }
+              ],
+              "model_detected_speech_seconds": 2.008,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_cosine_below_gate",
+            "center_margin_below_gate",
+            "stereo_cosine_below_gate",
+            "stereo_margin_below_gate"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_013",
+          "speaker": "Sintel",
+          "enrollment": true,
+          "evaluation_partition": "enrollment_leave_one_out",
+          "original_caption_seconds": 3.25,
+          "model_detected_speech_seconds": 1.154,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.37912458181381226,
+                "Shaman": -0.008358795195817947
+              },
+              "winner": "Sintel",
+              "margin": 0.3874833770096302,
+              "regions": [
+                {
+                  "start_sample": 9945888,
+                  "end_sample": 9948384
+                },
+                {
+                  "start_sample": 9974880,
+                  "end_sample": 10023648
+                },
+                {
+                  "start_sample": 10097760,
+                  "end_sample": 10101888
+                }
+              ],
+              "model_detected_speech_seconds": 1.154,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.36723288893699646,
+                "Shaman": 0.002965867519378662
+              },
+              "winner": "Sintel",
+              "margin": 0.3642670214176178,
+              "regions": [
+                {
+                  "start_sample": 9945888,
+                  "end_sample": 9954528
+                },
+                {
+                  "start_sample": 9974880,
+                  "end_sample": 10025184
+                },
+                {
+                  "start_sample": 10099296,
+                  "end_sample": 10101888
+                }
+              ],
+              "model_detected_speech_seconds": 1.282,
+              "boundary_supported": false
+            },
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.3387853801250458,
+                "Shaman": 0.04606693983078003
+              },
+              "winner": "Sintel",
+              "margin": 0.29271844029426575,
+              "regions": [
+                {
+                  "start_sample": 9945888,
+                  "end_sample": 9952992
+                },
+                {
+                  "start_sample": 9974880,
+                  "end_sample": 10026720
+                },
+                {
+                  "start_sample": 10099296,
+                  "end_sample": 10101888
+                }
+              ],
+              "model_detected_speech_seconds": 1.282,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "quarantine",
+          "reasons": [
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_014",
+          "speaker": "Sintel",
+          "enrollment": true,
+          "evaluation_partition": "enrollment_leave_one_out",
+          "original_caption_seconds": 2.75,
+          "model_detected_speech_seconds": 1.528,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.37912458181381226,
+                "Shaman": 0.002232886850833893
+              },
+              "winner": "Sintel",
+              "margin": 0.37689169496297836,
+              "regions": [
+                {
+                  "start_sample": 10098336,
+                  "end_sample": 10171680
+                }
+              ],
+              "model_detected_speech_seconds": 1.528,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.3672328591346741,
+                "Shaman": 0.00038977712392807007
+              },
+              "winner": "Sintel",
+              "margin": 0.366843082010746,
+              "regions": [
+                {
+                  "start_sample": 10098336,
+                  "end_sample": 10171680
+                }
+              ],
+              "model_detected_speech_seconds": 1.528,
+              "boundary_supported": true
+            },
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.3726450800895691,
+                "Shaman": 0.018371768295764923
+              },
+              "winner": "Sintel",
+              "margin": 0.35427331179380417,
+              "regions": [
+                {
+                  "start_sample": 10098336,
+                  "end_sample": 10171680
+                }
+              ],
+              "model_detected_speech_seconds": 1.528,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "quarantine",
+          "reasons": [
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_015",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 4.0,
+          "model_detected_speech_seconds": 0.788,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.3201013207435608,
+                "Shaman": 0.22930309176445007
+              },
+              "winner": "Sintel",
+              "margin": 0.09079822897911072,
+              "regions": [
+                {
+                  "start_sample": 10953888,
+                  "end_sample": 10991712
+                }
+              ],
+              "model_detected_speech_seconds": 0.788,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.2862001359462738,
+                "Shaman": 0.194374680519104
+              },
+              "winner": "Sintel",
+              "margin": 0.0918254554271698,
+              "regions": [
+                {
+                  "start_sample": 10953888,
+                  "end_sample": 10991712
+                }
+              ],
+              "model_detected_speech_seconds": 0.788,
+              "boundary_supported": false
+            },
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.28559428453445435,
+                "Shaman": 0.22423698008060455
+              },
+              "winner": "Sintel",
+              "margin": 0.06135730445384979,
+              "regions": [
+                {
+                  "start_sample": 10953888,
+                  "end_sample": 10991712
+                }
+              ],
+              "model_detected_speech_seconds": 0.788,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_cosine_below_gate",
+            "center_margin_below_gate",
+            "stereo_cosine_below_gate",
+            "stereo_margin_below_gate",
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_016",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 3.5,
+          "model_detected_speech_seconds": 2.104,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.1369331181049347,
+                "Shaman": -0.006013527512550354
+              },
+              "winner": "Sintel",
+              "margin": 0.14294664561748505,
+              "regions": [
+                {
+                  "start_sample": 11989920,
+                  "end_sample": 12090912
+                }
+              ],
+              "model_detected_speech_seconds": 2.104,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.14561161398887634,
+                "Shaman": -0.05005297064781189
+              },
+              "winner": "Sintel",
+              "margin": 0.19566458463668823,
+              "regions": [
+                {
+                  "start_sample": 11989920,
+                  "end_sample": 12090912
+                }
+              ],
+              "model_detected_speech_seconds": 2.104,
+              "boundary_supported": true
+            },
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.14838089048862457,
+                "Shaman": -0.016567181795835495
+              },
+              "winner": "Sintel",
+              "margin": 0.16494807228446007,
+              "regions": [
+                {
+                  "start_sample": 11989920,
+                  "end_sample": 12090912
+                }
+              ],
+              "model_detected_speech_seconds": 2.104,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_cosine_below_gate",
+            "stereo_cosine_below_gate"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_017",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 3.0,
+          "model_detected_speech_seconds": 0.372,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.07576163113117218,
+                "Shaman": 0.00266069732606411
+              },
+              "winner": "Sintel",
+              "margin": 0.07310093380510807,
+              "regions": [
+                {
+                  "start_sample": 12729888,
+                  "end_sample": 12747744
+                }
+              ],
+              "model_detected_speech_seconds": 0.372,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.08278509974479675,
+                "Shaman": -0.03193218261003494
+              },
+              "winner": "Sintel",
+              "margin": 0.1147172823548317,
+              "regions": [
+                {
+                  "start_sample": 12729888,
+                  "end_sample": 12747744
+                }
+              ],
+              "model_detected_speech_seconds": 0.372,
+              "boundary_supported": false
+            },
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.05786343663930893,
+                "Shaman": -0.05969295650720596
+              },
+              "winner": "Sintel",
+              "margin": 0.11755639314651489,
+              "regions": [
+                {
+                  "start_sample": 12729888,
+                  "end_sample": 12747744
+                }
+              ],
+              "model_detected_speech_seconds": 0.372,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_cosine_below_gate",
+            "center_margin_below_gate",
+            "stereo_cosine_below_gate",
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_018",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 3.5,
+          "model_detected_speech_seconds": 0.0,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {},
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_no_vad_audio",
+            "stereo_no_vad_audio",
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_019",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 3.25,
+          "model_detected_speech_seconds": 0.28,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": -0.004503345116972923,
+                "Shaman": -0.14635136723518372
+              },
+              "winner": "Sintel",
+              "margin": 0.1418480221182108,
+              "regions": [
+                {
+                  "start_sample": 16265376,
+                  "end_sample": 16278816
+                }
+              ],
+              "model_detected_speech_seconds": 0.28,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": -0.00611419603228569,
+                "Shaman": 0.05307435989379883
+              },
+              "winner": "Shaman",
+              "margin": 0.05918855592608452,
+              "regions": [
+                {
+                  "start_sample": 16269984,
+                  "end_sample": 16281888
+                }
+              ],
+              "model_detected_speech_seconds": 0.248,
+              "boundary_supported": false
+            },
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.13280904293060303,
+                "Shaman": 0.06648820638656616
+              },
+              "winner": "Sintel",
+              "margin": 0.06632083654403687,
+              "regions": [
+                {
+                  "start_sample": 16268448,
+                  "end_sample": 16286496
+                }
+              ],
+              "model_detected_speech_seconds": 0.376,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_cosine_below_gate",
+            "stereo_cosine_below_gate",
+            "stereo_margin_below_gate",
+            "stereo_scene_label_disagreement",
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_020",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 1.65,
+          "model_detected_speech_seconds": 1.176,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.2836550176143646,
+                "Shaman": 0.08422794193029404
+              },
+              "winner": "Sintel",
+              "margin": 0.1994270756840706,
+              "regions": [
+                {
+                  "start_sample": 21390816,
+                  "end_sample": 21447264
+                }
+              ],
+              "model_detected_speech_seconds": 1.176,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.2286168336868286,
+                "Shaman": 0.029323745518922806
+              },
+              "winner": "Sintel",
+              "margin": 0.1992930881679058,
+              "regions": [
+                {
+                  "start_sample": 21390816,
+                  "end_sample": 21447264
+                }
+              ],
+              "model_detected_speech_seconds": 1.176,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_cosine_below_gate",
+            "stereo_cosine_below_gate",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_021",
+          "speaker": "Shaman",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 3.7,
+          "model_detected_speech_seconds": 1.688,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": -0.042602866888046265,
+                "Shaman": 0.4460001587867737
+              },
+              "winner": "Shaman",
+              "margin": 0.48860302567481995,
+              "regions": [
+                {
+                  "start_sample": 21722880,
+                  "end_sample": 21803904
+                }
+              ],
+              "model_detected_speech_seconds": 1.688,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": -0.06234167516231537,
+                "Shaman": 0.45626577734947205
+              },
+              "winner": "Shaman",
+              "margin": 0.5186074525117874,
+              "regions": [
+                {
+                  "start_sample": 21722880,
+                  "end_sample": 21803904
+                }
+              ],
+              "model_detected_speech_seconds": 1.688,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "quarantine",
+          "reasons": [
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_022",
+          "speaker": "Shaman",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 2.7,
+          "model_detected_speech_seconds": 1.88,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.053572967648506165,
+                "Shaman": 0.6147147417068481
+              },
+              "winner": "Shaman",
+              "margin": 0.561141774058342,
+              "regions": [
+                {
+                  "start_sample": 21961344,
+                  "end_sample": 22051584
+                }
+              ],
+              "model_detected_speech_seconds": 1.88,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.02800785005092621,
+                "Shaman": 0.5741795301437378
+              },
+              "winner": "Shaman",
+              "margin": 0.5461716800928116,
+              "regions": [
+                {
+                  "start_sample": 21961344,
+                  "end_sample": 22051584
+                }
+              ],
+              "model_detected_speech_seconds": 1.88,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "quarantine",
+          "reasons": [
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_023",
+          "speaker": "Shaman",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 3.15,
+          "model_detected_speech_seconds": 1.336,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": -0.11739526689052582,
+                "Shaman": 0.6165928244590759
+              },
+              "winner": "Shaman",
+              "margin": 0.7339880913496017,
+              "regions": [
+                {
+                  "start_sample": 22098528,
+                  "end_sample": 22162656
+                }
+              ],
+              "model_detected_speech_seconds": 1.336,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": -0.12824206054210663,
+                "Shaman": 0.6101886034011841
+              },
+              "winner": "Shaman",
+              "margin": 0.7384306639432907,
+              "regions": [
+                {
+                  "start_sample": 22098528,
+                  "end_sample": 22162656
+                }
+              ],
+              "model_detected_speech_seconds": 1.336,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "quarantine",
+          "reasons": [
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_024",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 1.9,
+          "model_detected_speech_seconds": 0.248,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.04735659435391426,
+                "Shaman": -0.06806445121765137
+              },
+              "winner": "Sintel",
+              "margin": 0.11542104557156563,
+              "regions": [
+                {
+                  "start_sample": 26787072,
+                  "end_sample": 26798976
+                }
+              ],
+              "model_detected_speech_seconds": 0.248,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.13762837648391724,
+                "Shaman": -0.012340210378170013
+              },
+              "winner": "Sintel",
+              "margin": 0.14996858686208725,
+              "regions": [
+                {
+                  "start_sample": 26788608,
+                  "end_sample": 26803584
+                },
+                {
+                  "start_sample": 26827008,
+                  "end_sample": 26849664
+                }
+              ],
+              "model_detected_speech_seconds": 0.784,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_cosine_below_gate",
+            "stereo_cosine_below_gate",
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_025",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 2.4,
+          "model_detected_speech_seconds": 0.532,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.12477792799472809,
+                "Shaman": 0.16271936893463135
+              },
+              "winner": "Shaman",
+              "margin": 0.03794144093990326,
+              "regions": [
+                {
+                  "start_sample": 29834688,
+                  "end_sample": 29860224
+                }
+              ],
+              "model_detected_speech_seconds": 0.532,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.1757201850414276,
+                "Shaman": 0.13138644397258759
+              },
+              "winner": "Sintel",
+              "margin": 0.04433374106884003,
+              "regions": [
+                {
+                  "start_sample": 29834688,
+                  "end_sample": 29860224
+                },
+                {
+                  "start_sample": 29897472,
+                  "end_sample": 29910912
+                }
+              ],
+              "model_detected_speech_seconds": 0.812,
+              "boundary_supported": false
+            },
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.0933036282658577,
+                "Shaman": 0.16423845291137695
+              },
+              "winner": "Shaman",
+              "margin": 0.07093482464551926,
+              "regions": [
+                {
+                  "start_sample": 29834688,
+                  "end_sample": 29860224
+                }
+              ],
+              "model_detected_speech_seconds": 0.532,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_cosine_below_gate",
+            "center_margin_below_gate",
+            "center_scene_label_disagreement",
+            "stereo_cosine_below_gate",
+            "stereo_margin_below_gate",
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_026",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 3.6,
+          "model_detected_speech_seconds": 0.0,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": -0.019834548234939575,
+                "Shaman": 0.12269242852926254
+              },
+              "winner": "Shaman",
+              "margin": 0.14252697676420212,
+              "regions": [
+                {
+                  "start_sample": 30055488,
+                  "end_sample": 30071808
+                }
+              ],
+              "model_detected_speech_seconds": 0.34,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_no_vad_audio",
+            "stereo_no_vad_audio",
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        }
+      ]
+    },
+    "asr_supported": {
+      "anchors": {
+        "Sintel": [
+          "srt_008",
+          "srt_012",
+          "srt_020"
+        ],
+        "Shaman": [
+          "srt_007",
+          "srt_009"
+        ]
+      },
+      "summary": {
+        "Sintel": {
+          "passing_ids": [],
+          "passing_model_speech_seconds": 0,
+          "non_enrolled_passing_ids": [],
+          "non_enrolled_passing_model_speech_seconds": 0,
+          "quarantined_ids": [
+            "srt_005",
+            "srt_008",
+            "srt_010",
+            "srt_012",
+            "srt_013",
+            "srt_014",
+            "srt_015",
+            "srt_016",
+            "srt_017",
+            "srt_018",
+            "srt_019",
+            "srt_020",
+            "srt_024",
+            "srt_025",
+            "srt_026"
+          ],
+          "training_ready_seconds": 0
+        },
+        "Shaman": {
+          "passing_ids": [
+            "srt_003",
+            "srt_007",
+            "srt_009",
+            "srt_011"
+          ],
+          "passing_model_speech_seconds": 9.592,
+          "non_enrolled_passing_ids": [
+            "srt_003",
+            "srt_011"
+          ],
+          "non_enrolled_passing_model_speech_seconds": 5.104,
+          "quarantined_ids": [
+            "srt_001",
+            "srt_002",
+            "srt_004",
+            "srt_006",
+            "srt_021",
+            "srt_022",
+            "srt_023"
+          ],
+          "training_ready_seconds": 0
+        }
+      },
+      "segments": [
+        {
+          "id": "srt_001",
+          "speaker": "Shaman",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 3.25,
+          "model_detected_speech_seconds": 2.164,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.0939345508813858,
+                "Shaman": 0.5432361364364624
+              },
+              "winner": "Shaman",
+              "margin": 0.4493015855550766,
+              "regions": [
+                {
+                  "start_sample": 5145888,
+                  "end_sample": 5249760
+                }
+              ],
+              "model_detected_speech_seconds": 2.164,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.05521991848945618,
+                "Shaman": 0.5184075832366943
+              },
+              "winner": "Shaman",
+              "margin": 0.46318766474723816,
+              "regions": [
+                {
+                  "start_sample": 5145888,
+                  "end_sample": 5249760
+                }
+              ],
+              "model_detected_speech_seconds": 2.164,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "quarantine",
+          "reasons": [
+            "no_supported_boundary_proposal"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_002",
+          "speaker": "Shaman",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 4.0,
+          "model_detected_speech_seconds": 2.228,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.05796382948756218,
+                "Shaman": 0.5414469242095947
+              },
+              "winner": "Shaman",
+              "margin": 0.48348309472203255,
+              "regions": [
+                {
+                  "start_sample": 5364288,
+                  "end_sample": 5471232
+                }
+              ],
+              "model_detected_speech_seconds": 2.228,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.011045434512197971,
+                "Shaman": 0.48874932527542114
+              },
+              "winner": "Shaman",
+              "margin": 0.47770389076322317,
+              "regions": [
+                {
+                  "start_sample": 5364288,
+                  "end_sample": 5485056
+                }
+              ],
+              "model_detected_speech_seconds": 2.516,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "quarantine",
+          "reasons": [
+            "no_supported_boundary_proposal"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_003",
+          "speaker": "Shaman",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 3.45,
+          "model_detected_speech_seconds": 2.936,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.0569365993142128,
+                "Shaman": 0.6564785242080688
+              },
+              "winner": "Shaman",
+              "margin": 0.599541924893856,
+              "regions": [
+                {
+                  "start_sample": 5647872,
+                  "end_sample": 5788800
+                }
+              ],
+              "model_detected_speech_seconds": 2.936,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.008298749104142189,
+                "Shaman": 0.6249948740005493
+              },
+              "winner": "Shaman",
+              "margin": 0.6166961248964071,
+              "regions": [
+                {
+                  "start_sample": 5647872,
+                  "end_sample": 5788800
+                }
+              ],
+              "model_detected_speech_seconds": 2.936,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "machine_consistent_provisional",
+          "reasons": [],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_004",
+          "speaker": "Shaman",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 3.05,
+          "model_detected_speech_seconds": 1.332,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.14284084737300873,
+                "Shaman": 0.4617834687232971
+              },
+              "winner": "Shaman",
+              "margin": 0.3189426213502884,
+              "regions": [
+                {
+                  "start_sample": 5841888,
+                  "end_sample": 5905824
+                }
+              ],
+              "model_detected_speech_seconds": 1.332,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.10202917456626892,
+                "Shaman": 0.4616836905479431
+              },
+              "winner": "Shaman",
+              "margin": 0.3596545159816742,
+              "regions": [
+                {
+                  "start_sample": 5841888,
+                  "end_sample": 5907360
+                }
+              ],
+              "model_detected_speech_seconds": 1.364,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "quarantine",
+          "reasons": [
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_005",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 1.05,
+          "model_detected_speech_seconds": 0.276,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.16858592629432678,
+                "Shaman": 0.15253639221191406
+              },
+              "winner": "Sintel",
+              "margin": 0.01604953408241272,
+              "regions": [
+                {
+                  "start_sample": 6009888,
+                  "end_sample": 6023136
+                }
+              ],
+              "model_detected_speech_seconds": 0.276,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.12412790954113007,
+                "Shaman": 0.2344682216644287
+              },
+              "winner": "Shaman",
+              "margin": 0.11034031212329865,
+              "regions": [
+                {
+                  "start_sample": 6009888,
+                  "end_sample": 6023136
+                }
+              ],
+              "model_detected_speech_seconds": 0.276,
+              "boundary_supported": false
+            },
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.07809749245643616,
+                "Shaman": 0.19086551666259766
+              },
+              "winner": "Shaman",
+              "margin": 0.1127680242061615,
+              "regions": [
+                {
+                  "start_sample": 6009888,
+                  "end_sample": 6024672
+                }
+              ],
+              "model_detected_speech_seconds": 0.308,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_cosine_below_gate",
+            "center_margin_below_gate",
+            "stereo_cosine_below_gate",
+            "stereo_scene_label_disagreement",
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_006",
+          "speaker": "Shaman",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 1.5,
+          "model_detected_speech_seconds": 0.628,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.03486422449350357,
+                "Shaman": 0.42259564995765686
+              },
+              "winner": "Shaman",
+              "margin": 0.3877314254641533,
+              "regions": [
+                {
+                  "start_sample": 6117888,
+                  "end_sample": 6148032
+                }
+              ],
+              "model_detected_speech_seconds": 0.628,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.0024141669273376465,
+                "Shaman": 0.33202439546585083
+              },
+              "winner": "Shaman",
+              "margin": 0.3296102285385132,
+              "regions": [
+                {
+                  "start_sample": 6117888,
+                  "end_sample": 6146496
+                }
+              ],
+              "model_detected_speech_seconds": 0.596,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "stereo_cosine_below_gate",
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_007",
+          "speaker": "Shaman",
+          "enrollment": true,
+          "evaluation_partition": "enrollment_leave_one_out",
+          "original_caption_seconds": 4.4,
+          "model_detected_speech_seconds": 2.36,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.11236220598220825,
+                "Shaman": 0.4377710223197937
+              },
+              "winner": "Shaman",
+              "margin": 0.32540881633758545,
+              "regions": [
+                {
+                  "start_sample": 6201216,
+                  "end_sample": 6314496
+                }
+              ],
+              "model_detected_speech_seconds": 2.36,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.06966955959796906,
+                "Shaman": 0.4036564826965332
+              },
+              "winner": "Shaman",
+              "margin": 0.33398692309856415,
+              "regions": [
+                {
+                  "start_sample": 6201216,
+                  "end_sample": 6314496
+                }
+              ],
+              "model_detected_speech_seconds": 2.36,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "machine_consistent_provisional",
+          "reasons": [],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_008",
+          "speaker": "Sintel",
+          "enrollment": true,
+          "evaluation_partition": "enrollment_leave_one_out",
+          "original_caption_seconds": 2.5,
+          "model_detected_speech_seconds": 1.464,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.45156538486480713,
+                "Shaman": 0.09790439903736115
+              },
+              "winner": "Sintel",
+              "margin": 0.353660985827446,
+              "regions": [
+                {
+                  "start_sample": 6479232,
+                  "end_sample": 6549504
+                }
+              ],
+              "model_detected_speech_seconds": 1.464,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.42295041680336,
+                "Shaman": 0.0989038273692131
+              },
+              "winner": "Sintel",
+              "margin": 0.3240465894341469,
+              "regions": [
+                {
+                  "start_sample": 6479232,
+                  "end_sample": 6549504
+                }
+              ],
+              "model_detected_speech_seconds": 1.464,
+              "boundary_supported": true
+            },
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.41393154859542847,
+                "Shaman": 0.08305305987596512
+              },
+              "winner": "Sintel",
+              "margin": 0.33087848871946335,
+              "regions": [
+                {
+                  "start_sample": 6479232,
+                  "end_sample": 6549504
+                }
+              ],
+              "model_detected_speech_seconds": 1.464,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "quarantine",
+          "reasons": [
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_009",
+          "speaker": "Shaman",
+          "enrollment": true,
+          "evaluation_partition": "enrollment_leave_one_out",
+          "original_caption_seconds": 4.2,
+          "model_detected_speech_seconds": 2.128,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.15174973011016846,
+                "Shaman": 0.4377710819244385
+              },
+              "winner": "Shaman",
+              "margin": 0.28602135181427,
+              "regions": [
+                {
+                  "start_sample": 6604800,
+                  "end_sample": 6664320
+                },
+                {
+                  "start_sample": 6716928,
+                  "end_sample": 6759552
+                }
+              ],
+              "model_detected_speech_seconds": 2.128,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.13320057094097137,
+                "Shaman": 0.4036564826965332
+              },
+              "winner": "Shaman",
+              "margin": 0.27045591175556183,
+              "regions": [
+                {
+                  "start_sample": 6604800,
+                  "end_sample": 6664320
+                },
+                {
+                  "start_sample": 6716928,
+                  "end_sample": 6759552
+                }
+              ],
+              "model_detected_speech_seconds": 2.128,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "machine_consistent_provisional",
+          "reasons": [],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_010",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 1.6,
+          "model_detected_speech_seconds": 0.82,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.4962732791900635,
+                "Shaman": 0.16068217158317566
+              },
+              "winner": "Sintel",
+              "margin": 0.3355911076068878,
+              "regions": [
+                {
+                  "start_sample": 6881088,
+                  "end_sample": 6920448
+                }
+              ],
+              "model_detected_speech_seconds": 0.82,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.39692848920822144,
+                "Shaman": 0.15808403491973877
+              },
+              "winner": "Sintel",
+              "margin": 0.23884445428848267,
+              "regions": [
+                {
+                  "start_sample": 6881088,
+                  "end_sample": 6920448
+                }
+              ],
+              "model_detected_speech_seconds": 0.82,
+              "boundary_supported": false
+            },
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.4544176459312439,
+                "Shaman": 0.219148188829422
+              },
+              "winner": "Sintel",
+              "margin": 0.2352694571018219,
+              "regions": [
+                {
+                  "start_sample": 6881088,
+                  "end_sample": 6920448
+                }
+              ],
+              "model_detected_speech_seconds": 0.82,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "quarantine",
+          "reasons": [
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_011",
+          "speaker": "Shaman",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 2.9,
+          "model_detected_speech_seconds": 2.168,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.23909074068069458,
+                "Shaman": 0.5511385202407837
+              },
+              "winner": "Shaman",
+              "margin": 0.3120477795600891,
+              "regions": [
+                {
+                  "start_sample": 7145568,
+                  "end_sample": 7249632
+                }
+              ],
+              "model_detected_speech_seconds": 2.168,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.18527653813362122,
+                "Shaman": 0.4977567195892334
+              },
+              "winner": "Shaman",
+              "margin": 0.3124801814556122,
+              "regions": [
+                {
+                  "start_sample": 7145568,
+                  "end_sample": 7249632
+                }
+              ],
+              "model_detected_speech_seconds": 2.168,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "machine_consistent_provisional",
+          "reasons": [],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_012",
+          "speaker": "Sintel",
+          "enrollment": true,
+          "evaluation_partition": "enrollment_leave_one_out",
+          "original_caption_seconds": 2.92,
+          "model_detected_speech_seconds": 2.008,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.35214170813560486,
+                "Shaman": 0.1511286199092865
+              },
+              "winner": "Sintel",
+              "margin": 0.20101308822631836,
+              "regions": [
+                {
+                  "start_sample": 7353120,
+                  "end_sample": 7449504
+                }
+              ],
+              "model_detected_speech_seconds": 2.008,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.28728532791137695,
+                "Shaman": 0.12887747585773468
+              },
+              "winner": "Sintel",
+              "margin": 0.15840785205364227,
+              "regions": [
+                {
+                  "start_sample": 7353120,
+                  "end_sample": 7449504
+                }
+              ],
+              "model_detected_speech_seconds": 2.008,
+              "boundary_supported": true
+            },
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.33277472853660583,
+                "Shaman": 0.1545097827911377
+              },
+              "winner": "Sintel",
+              "margin": 0.17826494574546814,
+              "regions": [
+                {
+                  "start_sample": 7353120,
+                  "end_sample": 7449504
+                }
+              ],
+              "model_detected_speech_seconds": 2.008,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "stereo_cosine_below_gate"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_013",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 3.25,
+          "model_detected_speech_seconds": 1.154,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.23763835430145264,
+                "Shaman": -0.008358795195817947
+              },
+              "winner": "Sintel",
+              "margin": 0.24599714949727058,
+              "regions": [
+                {
+                  "start_sample": 9945888,
+                  "end_sample": 9948384
+                },
+                {
+                  "start_sample": 9974880,
+                  "end_sample": 10023648
+                },
+                {
+                  "start_sample": 10097760,
+                  "end_sample": 10101888
+                }
+              ],
+              "model_detected_speech_seconds": 1.154,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.16998806595802307,
+                "Shaman": 0.002965867519378662
+              },
+              "winner": "Sintel",
+              "margin": 0.1670221984386444,
+              "regions": [
+                {
+                  "start_sample": 9945888,
+                  "end_sample": 9954528
+                },
+                {
+                  "start_sample": 9974880,
+                  "end_sample": 10025184
+                },
+                {
+                  "start_sample": 10099296,
+                  "end_sample": 10101888
+                }
+              ],
+              "model_detected_speech_seconds": 1.282,
+              "boundary_supported": false
+            },
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.249615877866745,
+                "Shaman": 0.04606693983078003
+              },
+              "winner": "Sintel",
+              "margin": 0.20354893803596497,
+              "regions": [
+                {
+                  "start_sample": 9945888,
+                  "end_sample": 9952992
+                },
+                {
+                  "start_sample": 9974880,
+                  "end_sample": 10026720
+                },
+                {
+                  "start_sample": 10099296,
+                  "end_sample": 10101888
+                }
+              ],
+              "model_detected_speech_seconds": 1.282,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_cosine_below_gate",
+            "stereo_cosine_below_gate",
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_014",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 2.75,
+          "model_detected_speech_seconds": 1.528,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.351931631565094,
+                "Shaman": 0.002232886850833893
+              },
+              "winner": "Sintel",
+              "margin": 0.3496987447142601,
+              "regions": [
+                {
+                  "start_sample": 10098336,
+                  "end_sample": 10171680
+                }
+              ],
+              "model_detected_speech_seconds": 1.528,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.2849748432636261,
+                "Shaman": 0.00038977712392807007
+              },
+              "winner": "Sintel",
+              "margin": 0.28458506613969803,
+              "regions": [
+                {
+                  "start_sample": 10098336,
+                  "end_sample": 10171680
+                }
+              ],
+              "model_detected_speech_seconds": 1.528,
+              "boundary_supported": true
+            },
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.29898810386657715,
+                "Shaman": 0.018371768295764923
+              },
+              "winner": "Sintel",
+              "margin": 0.2806163355708122,
+              "regions": [
+                {
+                  "start_sample": 10098336,
+                  "end_sample": 10171680
+                }
+              ],
+              "model_detected_speech_seconds": 1.528,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "stereo_cosine_below_gate",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_015",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 4.0,
+          "model_detected_speech_seconds": 0.788,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.35082921385765076,
+                "Shaman": 0.22930309176445007
+              },
+              "winner": "Sintel",
+              "margin": 0.12152612209320068,
+              "regions": [
+                {
+                  "start_sample": 10953888,
+                  "end_sample": 10991712
+                }
+              ],
+              "model_detected_speech_seconds": 0.788,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.25575029850006104,
+                "Shaman": 0.194374680519104
+              },
+              "winner": "Sintel",
+              "margin": 0.06137561798095703,
+              "regions": [
+                {
+                  "start_sample": 10953888,
+                  "end_sample": 10991712
+                }
+              ],
+              "model_detected_speech_seconds": 0.788,
+              "boundary_supported": false
+            },
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.36550474166870117,
+                "Shaman": 0.22423698008060455
+              },
+              "winner": "Sintel",
+              "margin": 0.14126776158809662,
+              "regions": [
+                {
+                  "start_sample": 10953888,
+                  "end_sample": 10991712
+                }
+              ],
+              "model_detected_speech_seconds": 0.788,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "stereo_cosine_below_gate",
+            "stereo_margin_below_gate",
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_016",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 3.5,
+          "model_detected_speech_seconds": 2.104,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.23046782612800598,
+                "Shaman": -0.006013527512550354
+              },
+              "winner": "Sintel",
+              "margin": 0.23648135364055634,
+              "regions": [
+                {
+                  "start_sample": 11989920,
+                  "end_sample": 12090912
+                }
+              ],
+              "model_detected_speech_seconds": 2.104,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.19777262210845947,
+                "Shaman": -0.05005297064781189
+              },
+              "winner": "Sintel",
+              "margin": 0.24782559275627136,
+              "regions": [
+                {
+                  "start_sample": 11989920,
+                  "end_sample": 12090912
+                }
+              ],
+              "model_detected_speech_seconds": 2.104,
+              "boundary_supported": true
+            },
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.18803784251213074,
+                "Shaman": -0.016567181795835495
+              },
+              "winner": "Sintel",
+              "margin": 0.20460502430796623,
+              "regions": [
+                {
+                  "start_sample": 11989920,
+                  "end_sample": 12090912
+                }
+              ],
+              "model_detected_speech_seconds": 2.104,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_cosine_below_gate",
+            "stereo_cosine_below_gate"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_017",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 3.0,
+          "model_detected_speech_seconds": 0.372,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.160847008228302,
+                "Shaman": 0.00266069732606411
+              },
+              "winner": "Sintel",
+              "margin": 0.1581863109022379,
+              "regions": [
+                {
+                  "start_sample": 12729888,
+                  "end_sample": 12747744
+                }
+              ],
+              "model_detected_speech_seconds": 0.372,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.13189643621444702,
+                "Shaman": -0.03193218261003494
+              },
+              "winner": "Sintel",
+              "margin": 0.16382861882448196,
+              "regions": [
+                {
+                  "start_sample": 12729888,
+                  "end_sample": 12747744
+                }
+              ],
+              "model_detected_speech_seconds": 0.372,
+              "boundary_supported": false
+            },
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.16658245027065277,
+                "Shaman": -0.05969295650720596
+              },
+              "winner": "Sintel",
+              "margin": 0.22627540677785873,
+              "regions": [
+                {
+                  "start_sample": 12729888,
+                  "end_sample": 12747744
+                }
+              ],
+              "model_detected_speech_seconds": 0.372,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_cosine_below_gate",
+            "stereo_cosine_below_gate",
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_018",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 3.5,
+          "model_detected_speech_seconds": 0.0,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {},
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_no_vad_audio",
+            "stereo_no_vad_audio",
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_019",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 3.25,
+          "model_detected_speech_seconds": 0.28,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.025218306109309196,
+                "Shaman": -0.14635136723518372
+              },
+              "winner": "Sintel",
+              "margin": 0.1715696733444929,
+              "regions": [
+                {
+                  "start_sample": 16265376,
+                  "end_sample": 16278816
+                }
+              ],
+              "model_detected_speech_seconds": 0.28,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.023808015510439873,
+                "Shaman": 0.05307435989379883
+              },
+              "winner": "Shaman",
+              "margin": 0.029266344383358955,
+              "regions": [
+                {
+                  "start_sample": 16269984,
+                  "end_sample": 16281888
+                }
+              ],
+              "model_detected_speech_seconds": 0.248,
+              "boundary_supported": false
+            },
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.1408374309539795,
+                "Shaman": 0.06648820638656616
+              },
+              "winner": "Sintel",
+              "margin": 0.07434922456741333,
+              "regions": [
+                {
+                  "start_sample": 16268448,
+                  "end_sample": 16286496
+                }
+              ],
+              "model_detected_speech_seconds": 0.376,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_cosine_below_gate",
+            "stereo_cosine_below_gate",
+            "stereo_margin_below_gate",
+            "stereo_scene_label_disagreement",
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_020",
+          "speaker": "Sintel",
+          "enrollment": true,
+          "evaluation_partition": "enrollment_leave_one_out",
+          "original_caption_seconds": 1.65,
+          "model_detected_speech_seconds": 1.176,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.2066384255886078,
+                "Shaman": 0.08422794193029404
+              },
+              "winner": "Sintel",
+              "margin": 0.12241048365831375,
+              "regions": [
+                {
+                  "start_sample": 21390816,
+                  "end_sample": 21447264
+                }
+              ],
+              "model_detected_speech_seconds": 1.176,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.2526412010192871,
+                "Shaman": 0.029323745518922806
+              },
+              "winner": "Sintel",
+              "margin": 0.2233174555003643,
+              "regions": [
+                {
+                  "start_sample": 21390816,
+                  "end_sample": 21447264
+                }
+              ],
+              "model_detected_speech_seconds": 1.176,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_cosine_below_gate",
+            "stereo_cosine_below_gate",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_021",
+          "speaker": "Shaman",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 3.7,
+          "model_detected_speech_seconds": 1.688,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.2190454751253128,
+                "Shaman": 0.4460001587867737
+              },
+              "winner": "Shaman",
+              "margin": 0.22695468366146088,
+              "regions": [
+                {
+                  "start_sample": 21722880,
+                  "end_sample": 21803904
+                }
+              ],
+              "model_detected_speech_seconds": 1.688,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.16716501116752625,
+                "Shaman": 0.45626577734947205
+              },
+              "winner": "Shaman",
+              "margin": 0.2891007661819458,
+              "regions": [
+                {
+                  "start_sample": 21722880,
+                  "end_sample": 21803904
+                }
+              ],
+              "model_detected_speech_seconds": 1.688,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "quarantine",
+          "reasons": [
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_022",
+          "speaker": "Shaman",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 2.7,
+          "model_detected_speech_seconds": 1.88,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.157515749335289,
+                "Shaman": 0.6147147417068481
+              },
+              "winner": "Shaman",
+              "margin": 0.45719899237155914,
+              "regions": [
+                {
+                  "start_sample": 21961344,
+                  "end_sample": 22051584
+                }
+              ],
+              "model_detected_speech_seconds": 1.88,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.1391947865486145,
+                "Shaman": 0.5741795301437378
+              },
+              "winner": "Shaman",
+              "margin": 0.4349847435951233,
+              "regions": [
+                {
+                  "start_sample": 21961344,
+                  "end_sample": 22051584
+                }
+              ],
+              "model_detected_speech_seconds": 1.88,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "quarantine",
+          "reasons": [
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_023",
+          "speaker": "Shaman",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 3.15,
+          "model_detected_speech_seconds": 1.336,
+          "boundary_status": "machine_supported_candidate",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.10482022166252136,
+                "Shaman": 0.6165928244590759
+              },
+              "winner": "Shaman",
+              "margin": 0.5117726027965546,
+              "regions": [
+                {
+                  "start_sample": 22098528,
+                  "end_sample": 22162656
+                }
+              ],
+              "model_detected_speech_seconds": 1.336,
+              "boundary_supported": true
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.0537734217941761,
+                "Shaman": 0.6101886034011841
+              },
+              "winner": "Shaman",
+              "margin": 0.556415181607008,
+              "regions": [
+                {
+                  "start_sample": 22098528,
+                  "end_sample": 22162656
+                }
+              ],
+              "model_detected_speech_seconds": 1.336,
+              "boundary_supported": true
+            }
+          },
+          "acoustic_similarity_gates_pass": true,
+          "triage": "quarantine",
+          "reasons": [
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_024",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 1.9,
+          "model_detected_speech_seconds": 0.248,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.0884566530585289,
+                "Shaman": -0.06806445121765137
+              },
+              "winner": "Sintel",
+              "margin": 0.15652110427618027,
+              "regions": [
+                {
+                  "start_sample": 26787072,
+                  "end_sample": 26798976
+                }
+              ],
+              "model_detected_speech_seconds": 0.248,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.04770971089601517,
+                "Shaman": -0.012340210378170013
+              },
+              "winner": "Sintel",
+              "margin": 0.06004992127418518,
+              "regions": [
+                {
+                  "start_sample": 26788608,
+                  "end_sample": 26803584
+                },
+                {
+                  "start_sample": 26827008,
+                  "end_sample": 26849664
+                }
+              ],
+              "model_detected_speech_seconds": 0.784,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_cosine_below_gate",
+            "stereo_cosine_below_gate",
+            "stereo_margin_below_gate",
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_025",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 2.4,
+          "model_detected_speech_seconds": 0.532,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "center": {
+              "cosine": {
+                "Sintel": 0.27607396245002747,
+                "Shaman": 0.16271936893463135
+              },
+              "winner": "Sintel",
+              "margin": 0.11335459351539612,
+              "regions": [
+                {
+                  "start_sample": 29834688,
+                  "end_sample": 29860224
+                }
+              ],
+              "model_detected_speech_seconds": 0.532,
+              "boundary_supported": false
+            },
+            "stereo": {
+              "cosine": {
+                "Sintel": 0.23623092472553253,
+                "Shaman": 0.13138644397258759
+              },
+              "winner": "Sintel",
+              "margin": 0.10484448075294495,
+              "regions": [
+                {
+                  "start_sample": 29834688,
+                  "end_sample": 29860224
+                },
+                {
+                  "start_sample": 29897472,
+                  "end_sample": 29910912
+                }
+              ],
+              "model_detected_speech_seconds": 0.812,
+              "boundary_supported": false
+            },
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.2682116627693176,
+                "Shaman": 0.16423845291137695
+              },
+              "winner": "Sintel",
+              "margin": 0.10397320985794067,
+              "regions": [
+                {
+                  "start_sample": 29834688,
+                  "end_sample": 29860224
+                }
+              ],
+              "model_detected_speech_seconds": 0.532,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_cosine_below_gate",
+            "stereo_cosine_below_gate",
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        },
+        {
+          "id": "srt_026",
+          "speaker": "Sintel",
+          "enrollment": false,
+          "evaluation_partition": "non_enrolled_candidate",
+          "original_caption_seconds": 3.6,
+          "model_detected_speech_seconds": 0.0,
+          "boundary_status": "quarantine_ambiguous",
+          "acoustic_results": {
+            "neural_vocals": {
+              "cosine": {
+                "Sintel": 0.0479600690305233,
+                "Shaman": 0.12269242852926254
+              },
+              "winner": "Shaman",
+              "margin": 0.07473235949873924,
+              "regions": [
+                {
+                  "start_sample": 30055488,
+                  "end_sample": 30071808
+                }
+              ],
+              "model_detected_speech_seconds": 0.34,
+              "boundary_supported": false
+            }
+          },
+          "acoustic_similarity_gates_pass": false,
+          "triage": "quarantine",
+          "reasons": [
+            "center_no_vad_audio",
+            "stereo_no_vad_audio",
+            "no_supported_boundary_proposal",
+            "model_detected_speech_below_2s"
+          ],
+          "overlap": null,
+          "human_auditory_review": false,
+          "training_ready": false
+        }
+      ]
+    }
+  },
+  "publication_note": "Two exploratory experiments; non-enrolled is not equivalent to human-validated independent ground truth. Scalar evidence only, no audio or embeddings."
+}

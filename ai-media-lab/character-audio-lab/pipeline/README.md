@@ -50,3 +50,7 @@ Import validates IDs, hashes, path containment, provenance, uncompressed WAV, 5â
 Rejects path traversal, symlinks, stale source hashes, nonfinite/invalid timestamps, duplicate annotation IDs and nonempty output directories; separator import refuses overwrites. No pickle or model loading, network calls, third-party upload, or training in this module. CLI paths are operator-supplied; annotate only media you are entitled to process. FFmpeg/version and model provenance should be retained with run reports.
 
 Tests synthesize tones locally and exercise stitching, exact endpoint crops, overlap quarantine, confidence, long and very short utterances, 5â€“10 second lengths, padding accounting, source hashes, path safety, missing models and separator import. Passing these tests validates mechanics, not source annotations or perceptual separation quality.
+
+## Provisional source annotations
+
+Unknown speaker overlap is excluded by default. `--allow-unverified-overlap` is an explicit experimental mode that retains unknown overlap labels in mappings and marks the entire manifest provisional. Known overlap is always quarantined. Use this only to prepare review examples, never to claim verified training-ready identity data. FFmpeg version is recorded in each manifest.

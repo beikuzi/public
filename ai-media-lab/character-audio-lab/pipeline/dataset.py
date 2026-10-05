@@ -3,7 +3,7 @@
 import argparse, array, hashlib, json, math, os, shutil, subprocess, sys, tempfile, wave
 from pathlib import Path
 
-VERSION = '0.1.0'
+VERSION = '0.2.0'
 RATE = 48000
 CHANNELS = 2
 
@@ -37,7 +37,7 @@ def finite(value):
     if not math.isfinite(result): raise ValueError('Nonfinite annotation number')
     return result
 
-def prepare_segments(data, duration, threshold=.9):
+def prepare_segments(data, duration, threshold=.9, allow_unverified_overlap=False):
     target=data['target_speaker']; accepted=[]; excluded=[]; ids=set()
     rows=data['segments']
     for i,row in enumerate(rows):
@@ -53,7 +53,8 @@ def prepare_segments(data, duration, threshold=.9):
         if not 0<=confidence<=1: raise ValueError('Confidence outside [0,1]')
         if s.get('speaker')!=target: reasons.append('other_speaker')
         if confidence<threshold: reasons.append('low_confidence')
-        if s.get('overlap',False): reasons.append('annotated_overlap')
+        if s.get('overlap') is True: reasons.append('annotated_overlap')
+        elif s.get('overlap') is not False and not allow_unverified_overlap: reasons.append('unverified_overlap')
         if s.get('quality') not in ('clean','noisy'): reasons.append('unknown_quality')
         if not s.get('quality_evidence'): reasons.append('missing_quality_evidence')
         if s['end_sample']-s['start_sample']>10*RATE: reasons.append('long_utterance_needs_natural_pause_annotation')
@@ -95,7 +96,7 @@ def wav_info(path):
         rate=int(s['sample_rate']); duration=float(s['duration']); frames=round(duration*rate)
         return {'frames':frames,'sample_rate':rate,'channels':int(s['channels']),'sample_width':int(s.get('bits_per_sample',0))//8,'codec_name':s['codec_name'],'duration_seconds':frames/rate}
 
-def build(annotation_path, source, output, gap=.12, fade=.005, threshold=.9):
+def build(annotation_path, source, output, gap=.12, fade=.005, threshold=.9, allow_unverified_overlap=False):
     source=safe_path(source); annotation_path=safe_path(annotation_path); output=safe_path(output)
     if not source.is_file(): raise ValueError('Source is missing')
     if output.exists() and any(output.iterdir()): raise ValueError('Output must not already contain files')
@@ -112,12 +113,12 @@ def build(annotation_path, source, output, gap=.12, fade=.005, threshold=.9):
         with wave.open(str(pcm),'rb') as w: audio=array.array('h',w.readframes(w.getnframes()))
         if sys.byteorder!='little': audio.byteswap()
         duration=len(audio)/(RATE*CHANNELS)
-        accepted,excluded=prepare_segments(data,duration,threshold)
+        accepted,excluded=prepare_segments(data,duration,threshold,allow_unverified_overlap)
         output.mkdir(parents=True,exist_ok=True)
         for group in ('clean','noisy'):
             (output/group/'raw').mkdir(parents=True,exist_ok=True)
         (output/'noisy'/'voice_only').mkdir(exist_ok=True)
-        manifest={'schema_version':1,'pipeline_version':VERSION,'source':{'filename':source.name,'sha256':source_hash,'decoded_duration_seconds':duration,'timebase':'decoded_audio_seconds','input_probe':metadata},'annotation_sha256':sha256(annotation_path),'target_speaker':data['target_speaker'],'speaker_label_method':data.get('speaker_label_method','explicit annotations; not automatic speaker identification'),'quality_criteria':data.get('quality_criteria','clean requires affirmative listening/measurement evidence; unknown is excluded'),'rendering':{'sample_rate':RATE,'channels':CHANNELS,'pcm_bits':16,'downmix':'ffmpeg stereo rendering of first audio stream; preserves stereo when present','gap_seconds':gap,'edge_fade_seconds':fade,'time_stretch':False,'normalization':False},'clips':[],'excluded':excluded,'separation':{'status':'not_run','reason':'No separator output imported; raw is not voice_only'},'limitations':['Annotation-derived intervals are not measured pure speech; they may include breath or silence.','Concatenated utterances do not form a continuous original sentence.','Padding and inter-utterance gaps are not usable voice.','This pipeline does not automatically identify characters or certify training fitness.']}
+        manifest={'schema_version':1,'pipeline_version':VERSION,'provisional_unverified_overlap_allowed':allow_unverified_overlap,'ffmpeg_version':subprocess.check_output(['ffmpeg','-version'],text=True).splitlines()[0],'source':{'filename':source.name,'sha256':source_hash,'decoded_duration_seconds':duration,'timebase':'decoded_audio_seconds','input_probe':metadata},'annotation_sha256':sha256(annotation_path),'target_speaker':data['target_speaker'],'speaker_label_method':data.get('speaker_label_method','explicit annotations; not automatic speaker identification'),'quality_criteria':data.get('quality_criteria','clean requires affirmative listening/measurement evidence; unknown is excluded'),'rendering':{'sample_rate':RATE,'channels':CHANNELS,'pcm_bits':16,'downmix':'ffmpeg stereo rendering of first audio stream; preserves stereo when present','gap_seconds':gap,'edge_fade_seconds':fade,'time_stretch':False,'normalization':False},'clips':[],'excluded':excluded,'separation':{'status':'not_run','reason':'No separator output imported; raw is not voice_only'},'limitations':['Annotation-derived intervals are not measured pure speech; they may include breath or silence.','Concatenated utterances do not form a continuous original sentence.','Padding and inter-utterance gaps are not usable voice.','This pipeline does not automatically identify characters or certify training fitness.']}
         gap_n=round(gap*RATE); fade_n=round(fade*RATE)
         for group in ('clean','noisy'):
             for idx,items in enumerate(batches([s for s in accepted if s['quality']==group],gap_n)):
@@ -183,10 +184,10 @@ def import_separation(dataset, report, allowed_root):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__); sub=p.add_subparsers(dest='command',required=True)
-    b=sub.add_parser('build'); b.add_argument('--annotations',required=True); b.add_argument('--source',required=True); b.add_argument('--output',required=True); b.add_argument('--gap',type=float,default=.12); b.add_argument('--fade',type=float,default=.005); b.add_argument('--confidence',type=float,default=.9)
+    b=sub.add_parser('build'); b.add_argument('--annotations',required=True); b.add_argument('--source',required=True); b.add_argument('--output',required=True); b.add_argument('--gap',type=float,default=.12); b.add_argument('--fade',type=float,default=.005); b.add_argument('--confidence',type=float,default=.9); b.add_argument('--allow-unverified-overlap',action='store_true',help='Explicit experimental mode: retain unknown overlap labels; not training-ready')
     s=sub.add_parser('import-separation'); s.add_argument('--dataset',required=True); s.add_argument('--report',required=True); s.add_argument('--allowed-root',required=True)
     a=p.parse_args()
-    if a.command=='build': result=build(a.annotations,a.source,a.output,a.gap,a.fade,a.confidence)
+    if a.command=='build': result=build(a.annotations,a.source,a.output,a.gap,a.fade,a.confidence,a.allow_unverified_overlap)
     else: result=import_separation(a.dataset,a.report,a.allowed_root)
     print(json.dumps(result['statistics'],indent=2))
 if __name__=='__main__': main()

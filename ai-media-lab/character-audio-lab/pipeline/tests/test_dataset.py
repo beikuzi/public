@@ -13,7 +13,7 @@ class DatasetTests(unittest.TestCase):
     def annotation(self,rows):
         path=self.root/'annotations.json'; path.write_text(json.dumps({'source_sha256':d.sha256(self.source),'timebase':'decoded_audio_seconds','target_speaker':'A','segments':rows})); return path
     def row(self,a,b,**kw):
-        return dict(start=a,end=b,speaker='A',confidence=1,quality='clean',quality_evidence='Synthetic known source',**kw)
+        return dict(start=a,end=b,speaker='A',confidence=1,quality='clean',quality_evidence='Synthetic known source',overlap=False,**kw)
     def test_build_crop_stitch_padding(self):
         a=self.annotation([self.row(0,3),self.row(5,8),self.row(15.98,16)])
         m=d.build(a,self.source,self.root/'out')
@@ -62,5 +62,15 @@ class DatasetTests(unittest.TestCase):
         self.assertEqual(result['statistics']['noisy']['processed_clip_count'],1)
         self.assertEqual(result['statistics']['noisy']['processed_file_duration_seconds'],5)
         with self.assertRaises(ValueError): d.import_separation(out,report,proc)
+    def test_unknown_overlap_strict_and_provisional(self):
+        r=self.row(0,5); r['overlap']=None; a=self.annotation([r])
+        m=d.build(a,self.source,self.root/'strict'); self.assertFalse(m['clips'])
+        p=d.build(a,self.source,self.root/'provisional',allow_unverified_overlap=True)
+        self.assertTrue(p['provisional_unverified_overlap_allowed']); self.assertEqual(len(p['clips']),1)
+    def test_float_separator_probe(self):
+        import subprocess
+        f=self.root/'float.wav'
+        subprocess.run(['ffmpeg','-v','error','-i',str(self.source),'-c:a','pcm_f32le',str(f)],check=True)
+        self.assertEqual(d.wav_info(f)['duration_seconds'],16)
     def test_union(self): self.assertEqual(d.union_seconds([(0,3),(1,4),(6,7)]),5)
 if __name__=='__main__': unittest.main()

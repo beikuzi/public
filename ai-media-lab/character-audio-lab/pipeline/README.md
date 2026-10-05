@@ -54,3 +54,20 @@ Tests synthesize tones locally and exercise stitching, exact endpoint crops, ove
 ## Provisional source annotations
 
 Unknown speaker overlap is excluded by default. `--allow-unverified-overlap` is an explicit experimental mode that retains unknown overlap labels in mappings and marks the entire manifest provisional. Known overlap is always quarantined. Use this only to prepare review examples, never to claim verified training-ready identity data. FFmpeg version is recorded in each manifest.
+
+## Prefer contextual separation before assembly
+
+Run the neural model on each original contiguous utterance with context (for example ±1 second), not on stitched unrelated utterances. Record each processed contextual WAV in a JSON report:
+
+```json
+{"outputs":[{"segment_id":"a001","source_sha256":"EXACT_SOURCE_HASH","output_path":"/absolute/allowed/root/a001.wav","output_source_start":0.2,"model":"hdemucs","model_version":"exact checkpoint/version","method":"contextual music-source separation","limitations":["not speaker-specific"]}]}
+```
+
+Then trim context at exact source frame positions and reproduce identical gaps, fades and padding:
+
+```sh
+python pipeline/dataset.py assemble-separated-segments --dataset private-output --report segment-report.json --allowed-root /absolute/allowed/root
+python pipeline/verify.py private-output --output private-output/qa.json
+```
+
+The processed assemblies are float32 stereo WAV at 48 kHz to preserve model values. Their sample counts match raw PCM16 originals exactly. Mapping and model metadata identify every contextual file and trim. QA verifies hashes, frame counts, 5–10 second lengths, source-to-clip mapping and duration accounting; waveform metrics describe clipping/silence but do not establish perceptual quality. Synthetic fixtures are out-of-sample mechanical tests, never evidence of separation quality on the film.

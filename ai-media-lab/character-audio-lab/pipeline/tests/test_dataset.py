@@ -72,5 +72,14 @@ class DatasetTests(unittest.TestCase):
         f=self.root/'float.wav'
         subprocess.run(['ffmpeg','-v','error','-i',str(self.source),'-c:a','pcm_f32le',str(f)],check=True)
         self.assertEqual(d.wav_info(f)['duration_seconds'],16)
+    def test_context_separation_before_assembly(self):
+        r=self.row(1,4); r['quality']='noisy'; out=self.root/'out'
+        m=d.build(self.annotation([r]),self.source,out); seg=m['clips'][0]['source_mappings'][0]
+        report=self.root/'context.json'; report.write_text(json.dumps({'outputs':[{'segment_id':seg['id'],'source_sha256':m['source']['sha256'],'output_path':str(self.source),'output_source_start':0,'model':'synthetic identity fixture','model_version':'test','method':'test only','limitations':['not actual separation']}]}))
+        result=d.assemble_separated_segments(out,report,self.root)
+        self.assertEqual(result['clips'][0]['voice_only']['audio']['frames'],5*d.RATE)
+        self.assertEqual(result['clips'][0]['voice_only']['provenance'][0]['trim_start_frame'],d.RATE)
+        from verify import verify
+        self.assertEqual(verify(out)['mechanical_status'],'passed')
     def test_union(self): self.assertEqual(d.union_seconds([(0,3),(1,4),(6,7)]),5)
 if __name__=='__main__': unittest.main()

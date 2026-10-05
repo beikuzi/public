@@ -182,12 +182,60 @@ def import_separation(dataset, report, allowed_root):
     (dataset/'manifest.json').write_text(json.dumps(m,indent=2,ensure_ascii=False)+'\n'); (dataset/'statistics.json').write_text(json.dumps(m['statistics'],indent=2)+'\n')
     return m
 
+def assemble_separated_segments(dataset, report, allowed_root):
+    """Trim context-processed contiguous source spans, then reproduce raw assembly."""
+    dataset=safe_path(dataset); report=safe_path(report); root=safe_path(allowed_root)
+    m=json.loads((dataset/'manifest.json').read_text()); entries=json.loads(report.read_text())['outputs']
+    by_id={e['segment_id']:e for e in entries}
+    if len(by_id)!=len(entries): raise ValueError('Duplicate separated segment IDs')
+    staged=[]
+    for c in m['clips']:
+        if c['quality']!='noisy': continue
+        if c.get('voice_only'): raise ValueError('Refusing to overwrite existing processed clip')
+        assembled=array.array('f',[0.0])*(c['raw_audio']['frames']*CHANNELS); provenance=[]
+        for seg in c['source_mappings']:
+            e=by_id[seg['id']]
+            if e['source_sha256']!=m['source']['sha256']: raise ValueError('Separated segment source hash mismatch')
+            for key in ('model','model_version','method','limitations','output_source_start'):
+                if key not in e: raise ValueError(f'Missing separator provenance: {key}')
+            src=safe_path(e['output_path'],root); info=wav_info(src)
+            if info['sample_rate']!=RATE or info['channels']!=CHANNELS: raise ValueError('Segment sample rate/channels must match raw rendering')
+            blob=subprocess.check_output(['ffmpeg','-nostdin','-v','error','-i',str(src),'-f','f32le','-acodec','pcm_f32le','-'])
+            audio=array.array('f'); audio.frombytes(blob)
+            if sys.byteorder!='little': audio.byteswap()
+            if not all(math.isfinite(v) for v in audio): raise ValueError('Nonfinite separator samples')
+            origin=round(finite(e['output_source_start'])*RATE)
+            begin=seg['start_sample']-origin; end=seg['end_sample']-origin
+            if begin<0 or end*CHANNELS>len(audio): raise ValueError('Processed context does not cover source interval')
+            piece=audio[begin*CHANNELS:end*CHANNELS]; nfade=seg['fade_samples_per_edge']
+            for j in range(nfade):
+                for ch in range(CHANNELS):
+                    weight=j/max(1,nfade); piece[j*CHANNELS+ch]*=weight; piece[-(j+1)*CHANNELS+ch]*=weight
+            a=seg['clip_start_sample']*CHANNELS; b=seg['clip_end_sample']*CHANNELS
+            assembled[a:b]=piece
+            provenance.append({**e,'processed_context_sha256':sha256(src),'trim_start_frame':begin,'trim_end_frame':end})
+        dst=safe_path(dataset/'noisy'/'voice_only'/f'{c["clip_id"]}.wav',dataset)
+        if dst.exists(): raise ValueError('Refusing to overwrite separated audio')
+        staged.append((c,assembled,dst,provenance))
+    for c,a,dst,provenance in staged:
+        if sys.byteorder!='little': a.byteswap()
+        subprocess.run(['ffmpeg','-nostdin','-v','error','-f','f32le','-ar',str(RATE),'-ac',str(CHANNELS),'-i','pipe:0','-c:a','pcm_f32le',str(dst)],input=a.tobytes(),check=True)
+        info=wav_info(dst)
+        if info['frames']!=c['raw_audio']['frames']: raise AssertionError('Processed assembly frame drift')
+        c['voice_only']={'path':str(dst.relative_to(dataset)),'sha256':sha256(dst),'audio':info,'provenance':provenance,'processing_order':'Separate original contiguous source with context; trim to annotations; fade and stitch; append same gaps/padding as raw','quality_status':'provisional; requires listening; not guaranteed pure target voice'}
+    m['separation']={'status':'complete','report_sha256':sha256(report),'processing_order':'contextual contiguous source separation before assembly'}
+    m['statistics']=statistics(m)
+    (dataset/'manifest.json').write_text(json.dumps(m,indent=2,ensure_ascii=False)+'\n'); (dataset/'statistics.json').write_text(json.dumps(m['statistics'],indent=2)+'\n')
+    return m
+
 def main():
     p=argparse.ArgumentParser(description=__doc__); sub=p.add_subparsers(dest='command',required=True)
     b=sub.add_parser('build'); b.add_argument('--annotations',required=True); b.add_argument('--source',required=True); b.add_argument('--output',required=True); b.add_argument('--gap',type=float,default=.12); b.add_argument('--fade',type=float,default=.005); b.add_argument('--confidence',type=float,default=.9); b.add_argument('--allow-unverified-overlap',action='store_true',help='Explicit experimental mode: retain unknown overlap labels; not training-ready')
     s=sub.add_parser('import-separation'); s.add_argument('--dataset',required=True); s.add_argument('--report',required=True); s.add_argument('--allowed-root',required=True)
+    g=sub.add_parser('assemble-separated-segments'); g.add_argument('--dataset',required=True); g.add_argument('--report',required=True); g.add_argument('--allowed-root',required=True)
     a=p.parse_args()
     if a.command=='build': result=build(a.annotations,a.source,a.output,a.gap,a.fade,a.confidence,a.allow_unverified_overlap)
-    else: result=import_separation(a.dataset,a.report,a.allowed_root)
+    elif a.command=='import-separation': result=import_separation(a.dataset,a.report,a.allowed_root)
+    else: result=assemble_separated_segments(a.dataset,a.report,a.allowed_root)
     print(json.dumps(result['statistics'],indent=2))
 if __name__=='__main__': main()

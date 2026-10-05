@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "method": "Anonymous observation of the official rendered public ranking page",
+  "captureTimeSource": "UTC observation clock",
+  "platformDataTimestamp": null,
+  "baselineComparison": "comparison-initial.json, comparison-0100.json and comparison-0630.json",
+  "claimsVerified": false,
+  "limitations": [
+    "Ranking topic wording records a platform observation, not factual verification of the topic claim.",
+    "Metrics are platform-specific, not unique people, support, or comparable across platforms.",
+    "Server refresh time and caching status are unknown."
+  ],
+  "platform": "douyin",
+  "sourceUrl": "https://www.douyin.com/hot",
+  "capturedAt": "2026-10-05T00:30:44Z",
+  "captureWindowStart": "2026-10-05T00:30:28Z",
+  "scope": "抖音热榜 numbered top10 plus five tracked prior top10 exits; three other tracked items absent from inspected50; unnumbered featured item excluded",
+  "status": "success_public_ranking_visible",
+  "loginNote": "Login panel appeared but public ranking was readable; no login interaction performed.",
+  "metricLabel": "热度",
+  "rankNote": "Ranks 1–3 inferred from ordered podium positions immediately before explicit rank 4.",
+  "featuredUnnumbered": [
+    {
+      "topicId": "2681453",
+      "title": "把个人小我融入国家大我",
+      "rank": null,
+      "metric": null
+    }
+  ],
+  "entries": [
+    {
+      "rank": 1,
+      "topicId": "2681101",
+      "title": "是谁在重庆免费听了soldout",
+      "metricRaw": "1212.5万",
+      "metricApprox": 12125000
+    },
+    {
+      "rank": 2,
+      "topicId": "2681268",
+      "title": "第二十届亚运会闭幕",
+      "metricRaw": "1199.0万",
+      "metricApprox": 11990000
+    },
+    {
+      "rank": 3,
+      "topicId": "2681400",
+      "title": "我国假日经济持续升温",
+      "metricRaw": "1124.7万",
+      "metricApprox": 11247000
+    },
+    {
+      "rank": 4,
+      "topicId": "2681499",
+      "title": "国庆漂亮旗袍妆",
+      "metricRaw": "1077.1万",
+      "metricApprox": 10771000
+    },
+    {
+      "rank": 5,
+      "topicId": "2681416",
+      "title": "你说得对人是应该多出去走走",
+      "metricRaw": "938.6万",
+      "metricApprox": 9386000
+    },
+    {
+      "rank": 6,
+      "topicId": "2681248",
+      "title": "国庆假期过得飞快",
+      "metricRaw": "923.4万",
+      "metricApprox": 9234000
+    },
+    {
+      "rank": 7,
+      "topicId": "2680965",
+      "title": "全世界的东北人都得回家扒苞米",
+      "metricRaw": "794.9万",
+      "metricApprox": 7949000
+    },
+    {
+      "rank": 8,
+      "topicId": "2680559",
+      "title": "穷游富游不如少年游",
+      "metricRaw": "781.4万",
+      "metricApprox": 7814000
+    },
+    {
+      "rank": 9,
+      "topicId": "2680419",
+      "title": "这顿饭已严肃品鉴不烧心",
+      "metricRaw": "775.8万",
+      "metricApprox": 7758000
+    },
+    {
+      "rank": 10,
+      "topicId": "2681364",
+      "title": "我的国庆安排belike",
+      "metricRaw": "775.4万",
+      "metricApprox": 7754000
+    },
+    {
+      "rank": 12,
+      "topicId": "2680834",
+      "title": "市井人家的炊烟笑语总是令人心安",
+      "metricRaw": "772.6万",
+      "metricApprox": 7726000
+    },
+    {
+      "rank": 15,
+      "topicId": "2680493",
+      "title": "B费谈C罗离队",
+      "metricRaw": "770.5万",
+      "metricApprox": 7705000
+    },
+    {
+      "rank": 32,
+      "topicId": "2680932",
+      "title": "国庆假期宅家无聊怎么办",
+      "metricRaw": "763.9万",
+      "metricApprox": 7639000
+    },
+    {
+      "rank": 35,
+      "topicId": "2680661",
+      "title": "长长长假美食判官",
+      "metricRaw": "763.4万",
+      "metricApprox": 7634000
+    },
+    {
+      "rank": 41,
+      "topicId": "2680433",
+      "title": "国庆自驾搭子集体陷入沉默",
+      "metricRaw": "762.8万",
+      "metricApprox": 7628000
+    }
+  ],
+  "capturedAtPlus0800": "2026-10-05T08:30:44+08:00",
+  "serverFreshness": "Unknown; new browser observation is not proof of uncached server data.",
+  "methodNote": "Official public ranking loaded normally in fresh cloud browser tab; no login or reload.",
+  "observedRankingRowCount": 50,
+  "trackedAbsent": [
+    {
+      "title": "张堃鹏追平个人最佳战绩",
+      "rank": null,
+      "metricRaw": null,
+      "status": "not_observed_in_full_current_top50"
+    },
+    {
+      "title": "苏超苏州2:1常州",
+      "rank": null,
+      "metricRaw": null,
+      "status": "not_observed_in_full_current_top50"
+    },
+    {
+      "title": "苏超盐城2:0宿迁",
+      "rank": null,
+      "metricRaw": null,
+      "status": "not_observed_in_full_current_top50"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "model": "HDEMUCS_HIGH_MUSDB_PLUS",
+  "architecture": "Hybrid Demucs (not Hybrid Transformer Demucs)",
+  "official_documentation": "https://docs.pytorch.org/audio/2.8/generated/torchaudio.pipelines.HDEMUCS_HIGH_MUSDB_PLUS.html",
+  "download_url": "https://download.pytorch.org/torchaudio/models/hdemucs_high_trained.pt",
+  "downloaded_bytes": 334697255,
+  "sha256": "a004b2790d73ffeaa535db458a1a79b539dfdbafbccc31f275d07e632ebd7816",
+  "torch": "2.8.0+cpu",
+  "torchaudio": "2.8.0+cpu",
+  "safe_loading": "torch.load(weights_only=True,map_location=cpu); official architecture constructor; no trust_remote_code or unsafe pickle",
+  "software_licenses": {
+    "torchaudio": "BSD-2-Clause https://github.com/pytorch/audio/blob/v2.8.0/LICENSE",
+    "original_demucs": "MIT https://github.com/facebookresearch/demucs/blob/main/LICENSE"
+  },
+  "checkpoint_license_note": "Official Torchaudio checkpoint provenance verified. Pipeline documentation does not state a separate checkpoint license. Original Demucs repository releases project under MIT; do not assume this establishes rights to every training recording, film performer likeness, or voice cloning. Verify intended downstream rights independently.",
+  "training_description": "MUSDB-HQ train and test sets plus 150 additional Meta-produced songs per official pipeline documentation",
+  "processing": "4 CPU threads; 44.1kHz internal resampling; 5s windows with 0.5s crossfade overlap; return original rate/sample count; no peak normalization",
+  "api_cost_usd": 0,
+  "infrastructure_cost": "not priced",
+  "disk_installed_venv_mib_approx": 767
+}

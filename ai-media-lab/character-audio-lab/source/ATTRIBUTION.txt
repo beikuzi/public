@@ -1,0 +1,28 @@
+Sintel (2010), Blender Foundation / Durian Open Movie Project
+© copyright Blender Foundation | durian.blender.org
+
+Source and license:
+https://durian.blender.org/download/
+https://durian.blender.org/sharing/
+https://creativecommons.org/licenses/by/3.0/
+
+Original film credited voice: Sintel — Halina Reijn; Shaman — Thom Hoffman.
+Source film, audio, and captions are used under Creative Commons Attribution 3.0.
+Full source movie retains its original credits. See source-manifest.json for
+precise source URLs, hashes, media metadata and version/timebase details.
+
+Changes in this demonstration: selected dialogue excerpts, segmentation,
+channel/downmix conversion, concatenation, and audio-separation experiments.
+Processed audio must not be represented as an original unmodified master.
+No endorsement by the Blender Foundation or performers is implied.
+
+The film's copyright license is not a representation of separate permission
+to clone a performer's voice or use their identity/personality commercially.
+No voice model training, synthesis, or impersonation is part of this demo.
+
+Reference-label limitations:
+Target annotations are based on official captions, visual scene inspection,
+film credits, and dialogue context. Caption timing is not exact speech timing.
+No claim of human auditory verification is made. Uncaptioned vocalizations,
+breaths, action grunts and credits vocals are not included in target labels.
+Unknown quality and overlap labels require downstream measurement/review.

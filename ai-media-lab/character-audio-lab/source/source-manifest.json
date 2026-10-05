@@ -1,0 +1,45 @@
+{
+  "work": "Sintel (2010), original 2K release / 1024-wide encode",
+  "license": "CC BY 3.0",
+  "license_url": "https://creativecommons.org/licenses/by/3.0/",
+  "license_evidence_url": "https://durian.blender.org/sharing/",
+  "official_download_page": "https://durian.blender.org/download/",
+  "credit_source": "https://durian.blender.org/news/casting-line-up-thom-hoffman-and-halina-reijn/",
+  "required_attribution": "© copyright Blender Foundation | durian.blender.org",
+  "rights_limits": "Film copyright license is not a representation of separately obtained voice-cloning, performer personality/publicity or endorsement rights. No voice model training or identity clone is performed in this demonstration.",
+  "timebase_notes": "Lossless master starts at 0; 48000Hz, 42624000 samples, 888s. SRT timing is caption timing, not sample-accurate speech boundaries. Verify alignment between separately encoded video, masters and M+E before subtraction. Measured video decoded audio is delayed 44ms relative to 5.1 master in six windows (correlation >0.998). Target annotations subtract 44ms from caption/video timestamps to use decoded master seconds.",
+  "scope": "Source provenance only. The repository does not redistribute referenced audio, video or subtitle files.",
+  "files": [
+    {
+      "path": "sintel-video.mp4",
+      "origin_url": "https://peach.themazzone.com/durian/movies/sintel-1024-surround.mp4",
+      "bytes": 129241752,
+      "sha256": "1dc6f2ca9762dfcc7d1b1843129a3e4f351d1fe935dea2241c7b359c11ebc1d8"
+    },
+    {
+      "path": "sintel-master-51.flac",
+      "origin_url": "https://media.xiph.org/sintel/sintel-master-51.flac",
+      "bytes": 137640623,
+      "sha256": "bcdfe981cb705d2dbf5a4d6341172865be41eb745cea5ceb6c58bf123b095750"
+    },
+    {
+      "path": "sintel-m+e-st.flac",
+      "origin_url": "https://media.xiph.org/sintel/sintel-m+e-st.flac",
+      "bytes": 74266467,
+      "sha256": "777f238aed789a0e3a25f8ba156fae182c11a61568c1aa87b7a8bc3b15807785"
+    },
+    {
+      "path": "sintel-master-st.flac",
+      "origin_url": "https://media.xiph.org/sintel/sintel-master-st.flac",
+      "bytes": 71533398,
+      "sha256": "49b279400b6fcad23f6a8862ae65a2a22f21f249cd7576b09991880da221412b"
+    },
+    {
+      "path": "sintel_en.srt",
+      "origin_url": "https://media.xiph.org/sintel/subtitles/sintel_en.srt",
+      "bytes": 1514,
+      "sha256": "4ed7e1f1bc5ff69fe33606960e4c048ba6766237bf33b132fef76e1a92cb64b2"
+    }
+  ],
+  "review_limits": "No human auditory verification; machine annotations and inferred speaker labels remain provisional. Film copyright permission does not establish voice-cloning or performer-personality permissions."
+}

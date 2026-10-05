@@ -1,0 +1,10 @@
+{
+  "name": "utp-cursor-account-batch",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=22.13.0"},
+  "scripts": {"test": "node --test *.test.mjs"},
+  "peerDependencies": {"@cursor/sdk": "*"},
+  "peerDependenciesMeta": {"@cursor/sdk": {"optional": true}}
+}

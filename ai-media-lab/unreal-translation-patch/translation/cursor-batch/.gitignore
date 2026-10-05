@@ -1,0 +1,6 @@
+node_modules/
+.env*
+*.ndjson
+*.sqlite*
+my-texts.json
+my-translations.json

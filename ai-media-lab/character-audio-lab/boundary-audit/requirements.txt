@@ -1,0 +1,15 @@
+# Install --target deps --no-deps with separation's existing torch==2.8.0+cpu.
+silero-vad==6.2.3
+openai-whisper==20250625
+tiktoken==0.14.0
+more-itertools==11.1.0
+tqdm==4.70.1
+numba==0.68.0
+llvmlite==0.50.0
+regex==2026.9.29
+soundfile==0.14.0
+cffi==2.1.0
+pycparser==3.0
+packaging==26.3
+# Host NumPy/SciPy; Whisper tokenizer additionally uses requests.
+requests==2.34.2

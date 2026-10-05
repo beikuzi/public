@@ -118,12 +118,17 @@ def main():
     parser.add_argument('input', type=Path)
     parser.add_argument('--json', type=Path, required=True)
     parser.add_argument('--csv', type=Path)
+    parser.add_argument('--force', action='store_true', help='overwrite existing output files (never the input)')
     args = parser.parse_args()
     try:
         data = read(args.input)
+        if args.csv and args.csv.resolve() == args.json.resolve():
+            raise LocresError('JSON and CSV outputs must be different files')
         for out in (args.json, args.csv):
             if out and out.resolve() == args.input.resolve():
                 raise LocresError('output must not overwrite input')
+            if out and out.exists() and not args.force:
+                raise LocresError(f'output already exists; choose a new path or use --force: {out}')
         args.json.parent.mkdir(parents=True, exist_ok=True)
         args.json.write_text(json.dumps(data, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
         if args.csv:

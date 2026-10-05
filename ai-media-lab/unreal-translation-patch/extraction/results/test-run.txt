@@ -1,15 +1,19 @@
 test_bad_string_index (test_locres.ExtractionTests.test_bad_string_index) ... ok
+test_cli_refuses_output_collision_and_existing_file (test_locres.ExtractionTests.test_cli_refuses_output_collision_and_existing_file) ... ok
+test_duplicate_identity_not_silently_collapsed (test_locres.ExtractionTests.test_duplicate_identity_not_silently_collapsed) ... ok
 test_empty_legacy (test_locres.ExtractionTests.test_empty_legacy) ... ok
 test_every_truncation_rejected (test_locres.ExtractionTests.test_every_truncation_rejected) ... ok
 test_invalid_version_and_counts (test_locres.ExtractionTests.test_invalid_version_and_counts) ... ok
 test_malformed_utf16_and_terminator (test_locres.ExtractionTests.test_malformed_utf16_and_terminator) ... ok
 test_negative_or_out_of_bounds_offset (test_locres.ExtractionTests.test_negative_or_out_of_bounds_offset) ... ok
+test_real_binary_every_truncation_rejected (test_locres.ExtractionTests.test_real_binary_every_truncation_rejected) ... ok
 test_real_resources_exact_reference (test_locres.ExtractionTests.test_real_resources_exact_reference) ... ok
+test_tampered_fixture_pin_rejected (test_locres.ExtractionTests.test_tampered_fixture_pin_rejected) ... ok
 test_trailing_garbage (test_locres.ExtractionTests.test_trailing_garbage) ... ok
 test_unicode_placeholders_duplicates_versions (test_locres.ExtractionTests.test_unicode_placeholders_duplicates_versions) ... ok
 
 ----------------------------------------------------------------------
-Ran 9 tests in 0.014s
+Ran 13 tests in 0.121s
 
 OK
 {

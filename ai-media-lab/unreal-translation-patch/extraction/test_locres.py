@@ -1,9 +1,12 @@
 import json
 from pathlib import Path
 import struct
+import subprocess
+import sys
+import tempfile
 import unittest
 from locres import MAGIC, LocresError, Reader, parse
-from verify_samples import verify
+from verify_samples import verify, validate_pins
 
 
 def integer(x): return struct.pack('<I', x)
@@ -47,6 +50,22 @@ class ExtractionTests(unittest.TestCase):
                 with self.subTest(version=version, cut=cut):
                     with self.assertRaises(LocresError): parse(data[:cut])
 
+    def test_real_binary_every_truncation_rejected(self):
+        root = Path(__file__).resolve().parent/'fixtures'
+        for path in root.rglob('*.locres'):
+            data = path.read_bytes()
+            for cut in range(len(data)):
+                with self.subTest(file=path.name, language=path.parent.name, cut=cut):
+                    with self.assertRaises(LocresError): parse(data[:cut])
+
+    def test_duplicate_identity_not_silently_collapsed(self):
+        data = fixture(0).replace(string('key2'), string('key1'))
+        entries = parse(data)['entries']
+        self.assertEqual(len(entries), 3)
+        self.assertEqual(entries[1]['key'], entries[2]['key'])
+        self.assertEqual(entries[1]['text'], entries[2]['text'])
+        self.assertNotEqual(entries[1]['source_hash'], entries[2]['source_hash'])
+
     def test_negative_or_out_of_bounds_offset(self):
         for offset in (-1, 0, 24, 10**9):
             data=bytearray(fixture());struct.pack_into('<q',data,17,offset)
@@ -68,6 +87,37 @@ class ExtractionTests(unittest.TestCase):
     def test_malformed_utf16_and_terminator(self):
         for raw in (struct.pack('<i',-2)+b'\x00\xd8\0\0', struct.pack('<i',2)+b'ab', struct.pack('<i',-2147483648)):
             with self.assertRaises(LocresError):Reader(raw).string()
+
+    def test_tampered_fixture_pin_rejected(self):
+        import hashlib
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            data = root/'fixtures'/'sample'/'file.locres'
+            data.parent.mkdir(parents=True)
+            original = fixture()
+            data.write_bytes(original+b'tamper')
+            (root/'samples.json').write_text(json.dumps([{'name':'sample', 'files':['file.locres'], 'sha256':{'file.locres':hashlib.sha256(original).hexdigest()}}]))
+            with self.assertRaisesRegex(ValueError, 'SHA-256 mismatch'):
+                validate_pins(root)
+
+    def test_cli_refuses_output_collision_and_existing_file(self):
+        tool = Path(__file__).resolve().parent/'locres.py'
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            source, output = root/'sample.locres', root/'out.json'
+            source.write_bytes(fixture())
+            output.write_text('keep me')
+            commands = [
+                [str(source), '--json', str(output)],
+                [str(source), '--json', str(root/'same'), '--csv', str(root/'same')],
+                [str(source), '--json', str(source), '--force'],
+            ]
+            for args in commands:
+                result = subprocess.run([sys.executable, str(tool), *args], capture_output=True)
+                self.assertEqual(result.returncode, 2)
+            self.assertEqual(output.read_text(), 'keep me')
+            self.assertEqual(source.read_bytes(), fixture())
+            self.assertFalse((root/'same').exists())
 
     def test_empty_legacy(self):
         self.assertEqual(parse(integer(0))['entries'],[])

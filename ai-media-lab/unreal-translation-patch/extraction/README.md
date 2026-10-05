@@ -1,5 +1,7 @@
 # Unreal text extraction: real resource verification
 
+[繁體中文快速開始](快速開始.md)
+
 Current result: **17/17 entries match independent source references exactly**, across five real compiled `.locres` files from two author-published MIT Unreal sample projects. This is an extraction tool, independent of the translation subsystem.
 
 This proves decoding of **loose localization resource binaries**, not unpacking a shipped game's PAK/IoStore containers and not capture of visible runtime text. Neither game executable nor third-party program was executed. No encryption keys, DRM bypass, anti-cheat modification, or memory injection are involved.
@@ -17,7 +19,7 @@ python locres.py fixtures/video-example/Content/Localization/Game/fr-FR/Game.loc
 
 `fetch_samples.py` downloads only a few small localization/project/license data files from immutable commit URLs and checks every SHA-256 against `samples.json`. It downloads no executables or full game assets. Fixtures and full extracted strings are excluded from source synchronization; recreate them with the command above. Tests require fetched samples, rather than silently skipping the real-resource verification.
 
-The CLI emits UTF-8 JSON and optional CSV. `text` is the string stored in the selected language resource, **not necessarily original/native text**. Namespace, key, source hash, namespace hash, key hash, and string pool index are retained. Entries are a list: duplicate text and duplicate identities are not silently collapsed. Outputs must not overwrite the input. Keep CSV as data: spreadsheet software may interpret leading formula characters if opened directly.
+The CLI emits UTF-8 JSON and optional CSV. `text` is the string stored in the selected language resource, **not necessarily original/native text**. Namespace, key, source hash, namespace hash, key hash, and string pool index are retained. Entries are a list: duplicate text and duplicate identities are not silently collapsed. Outputs must not overwrite the input or each other. Existing output files are refused unless `--force` is explicitly supplied; all destination checks run before any output writes. Keep CSV as data: spreadsheet software may interpret leading formula characters if opened directly.
 
 ## Actual sample coverage
 
@@ -25,11 +27,13 @@ The CLI emits UTF-8 JSON and optional CSV. `text` is the string stored in the se
 - [Zompi UE4EasyLocalizationToolExample](https://github.com/zompi2/UE4EasyLocalizationToolExample), project engine association UE4.27. English, German and Polish resources: one entry each, compared with author `TestLocA.csv`. The plugin intentionally uses the **key as source text**, so its source hash is checked against `TEST_EXAMPLE`, not the English translation. `TestLocB.csv` is a different modified version, not the compiled resource reference.
 - All five actual resources use locres version 3. Real-world v0/v1/v2 were not validated.
 
+Verification enforces the immutable hashes in `samples.json` before comparison or output; tampered fixtures fail closed.
+
 `results/verification.json` records per-file counts and hashes. `results/test-run.txt` records the validation run. Full per-resource JSON/CSV files are generated locally in `results/`.
 
 ## Additional synthetic tests
 
-The separate generated tests exercise versions 0–3, Chinese, UTF-16 surrogate pairs (emoji), placeholders, line breaks, duplicate text with distinct keys, exact UTF-8 output, every byte truncation of each generated resource, negative/out-of-bounds pool offsets, unsupported version, impossible counts, invalid string indices, malformed UTF-16, missing terminators and trailing garbage. These tests do not pretend to be real game extraction. Non-wide strings accept ASCII only; ambiguous high-bit ANSI bytes fail explicitly rather than being replaced or misdecoded. Parser has a 128 MiB input limit and validates counts and boundaries.
+The separate generated tests exercise versions 0–3, Chinese, UTF-16 surrogate pairs (emoji), placeholders, line breaks, duplicate text with distinct keys, exact UTF-8 output, every byte truncation of all five actual resources and each generated resource, negative/out-of-bounds pool offsets, unsupported version, impossible counts, invalid string indices, malformed UTF-16, missing terminators and trailing garbage. These tests do not pretend to be real game extraction. Non-wide strings accept ASCII only; ambiguous high-bit ANSI bytes fail explicitly rather than being replaced or misdecoded. Parser has a 128 MiB input limit and validates counts and boundaries.
 
 ## Limits
 
@@ -37,6 +41,8 @@ No claim of whole-game text coverage. Locres can omit hardcoded text, generated 
 
 ## Licensing and references
 
-Both sample repositories publish root MIT licenses, copied alongside each local fixture. VideoExample copyright © 2023 Lucas Guichard; EasyLocalizationToolExample copyright is retained verbatim in its downloaded LICENSE. Only author-created localization/sample metadata is fetched; no third-party art, engine source or game binaries are included. No separate conflicting license was found for those selected files. See immutable license URLs derived from each `samples.json` commit for auditability.
+Both sample repositories publish root MIT licenses, copied alongside each local fixture. VideoExample copyright © 2023 Lucas Guichard; EasyLocalizationToolExample copyright © 2023 Damian Nowakowski; its notice is retained verbatim in the downloaded LICENSE. Only author-created localization/sample metadata is fetched; no third-party art, engine source or game binaries are included. No separate conflicting license was found for those selected files. See immutable license URLs derived from each `samples.json` commit for auditability.
 
 Format was inspected in [pylocres](https://github.com/stas96111/pylocres) (MIT); no third-party implementation was executed or vendored. The bounded reader here is independently implemented. [Epic's localization overview](https://dev.epicgames.com/documentation/unreal-engine/localization-overview-for-unreal-engine) distinguishes source archives from compiled runtime localization resources.
+
+The EasyLocalizationTool source-hash convention is verified in the [author importer at pinned commit 2c59fe8](https://github.com/zompi2/UE4EasyLocalizationTool/blob/2c59fe8f8fa0a69dc50e558dd651f699ebf8971f/Source/EasyLocalizationToolImporter/Private/ELTImporter.cpp): `AddEntry` receives the key as the source string.

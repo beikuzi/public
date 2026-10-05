@@ -18,7 +18,19 @@ def archive_entries(node, parent=''):
         yield from archive_entries(child, namespace)
 
 
+def validate_pins(root=ROOT):
+    samples = json.loads((root/'samples.json').read_text())
+    for sample in samples:
+        for relative in sample['files']:
+            path = root/'fixtures'/sample['name']/relative
+            actual = hashlib.sha256(path.read_bytes()).hexdigest()
+            if actual != sample['sha256'][relative]:
+                raise ValueError(f'Pinned fixture SHA-256 mismatch: {sample["name"]}/{relative}')
+    return samples
+
+
 def verify():
+    validate_pins()
     results = []
     output = ROOT/'results'
     output.mkdir(exist_ok=True)

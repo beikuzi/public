@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "platform": "bilibili",
+  "sourceUrl": "https://www.bilibili.com/v/popular/rank/all",
+  "capturedAt": "2026-10-05T00:30:09Z",
+  "captureWindowStart": "2026-10-05T00:30:09Z",
+  "captureTimeSource": "UTC observation clock",
+  "platformDataTimestamp": null,
+  "status": "success_public_ranking_visible",
+  "method": "Anonymous observation of the official rendered public ranking page",
+  "scope": "全站排行榜 top10 plus tracked prior top10 exits and known AI entry; full100 inspected, absent tracked video recorded separately",
+  "rankingRuleDisplay": "排行榜根据稿件内容质量，近期的数据综合展示，动态更新",
+  "entries": [
+    {
+      "rank": 1,
+      "title": "ピノキオピー - えねみぃ feat. 初音ミク・重音テト",
+      "url": "https://www.bilibili.com/video/BV1UGa961Ejt",
+      "author": "ピノキオピー_official",
+      "viewsRaw": "201.1万",
+      "danmakuRaw": "4.1万",
+      "baselineRecordId": "BH01"
+    },
+    {
+      "rank": 2,
+      "title": "逻辑折叠深度解析！华为Mate 90系列韬定律芯片有多强？",
+      "url": "https://www.bilibili.com/video/BV1heam6TExz",
+      "author": "极客湾Geekerwan",
+      "viewsRaw": "220.7万",
+      "danmakuRaw": "1.7万",
+      "baselineRecordId": "BH02"
+    },
+    {
+      "rank": 3,
+      "title": "你离开的事实原创高至豪偶遇粉丝，于是为她演奏一曲",
+      "url": "https://www.bilibili.com/video/BV1wAYP6YEif",
+      "author": "Pianoboy高至豪",
+      "viewsRaw": "330.7万",
+      "danmakuRaw": "2147",
+      "baselineRecordId": "BH03"
+    },
+    {
+      "rank": 4,
+      "title": "24位博主为粉丝争夺30万元！",
+      "url": "https://www.bilibili.com/video/BV15far6dEjT",
+      "author": "飓多多StormCrew",
+      "viewsRaw": "240.9万",
+      "danmakuRaw": "2.1万",
+      "baselineRecordId": "BH05"
+    },
+    {
+      "rank": 5,
+      "title": "章鱼哥，快乐都去哪了呢？",
+      "url": "https://www.bilibili.com/video/BV1mjad6DEK1",
+      "author": "就叫阿路8",
+      "viewsRaw": "402.2万",
+      "danmakuRaw": "7877",
+      "baselineRecordId": "BH04"
+    },
+    {
+      "rank": 6,
+      "title": "4名枪匪闯入豪宅，中国男子4秒13枪疯狂反击！",
+      "url": "https://www.bilibili.com/video/BV18Bam6eEBd",
+      "author": "红蓝守护者",
+      "viewsRaw": "1148.3万",
+      "danmakuRaw": "2.8万",
+      "baselineRecordId": "BH06"
+    },
+    {
+      "rank": 7,
+      "title": "《原神》剧情PV-「燕归来」",
+      "url": "https://www.bilibili.com/video/BV1cQap6UEr2",
+      "author": "原神",
+      "viewsRaw": "122.2万",
+      "danmakuRaw": "3471",
+      "baselineRecordId": "BH08"
+    },
+    {
+      "rank": 8,
+      "title": "有用版新植物：空调寒冰",
+      "url": "https://www.bilibili.com/video/BV1W7HY6xErH",
+      "author": "小易EXS",
+      "viewsRaw": "648.8万",
+      "danmakuRaw": "1658",
+      "baselineRecordId": "BH10"
+    },
+    {
+      "rank": 9,
+      "title": "自学动画 爆肝俩月 自创一集《海绵宝宝》【手搓动画大赛】",
+      "url": "https://www.bilibili.com/video/BV1TXHY6aETi",
+      "author": "小蒙古包卓拉",
+      "viewsRaw": "181.7万",
+      "danmakuRaw": "1432",
+      "baselineRecordId": null
+    },
+    {
+      "rank": 10,
+      "title": "【亿万级特效！】猫核老鼠：量子网球对决！（全程高能！）",
+      "url": "https://www.bilibili.com/video/BV1s3Yc68EJK",
+      "author": "6老铁2333",
+      "viewsRaw": "327.8万",
+      "danmakuRaw": "3295",
+      "baselineRecordId": "BH07"
+    },
+    {
+      "rank": 11,
+      "title": "77年前的今天 新中国成立了",
+      "url": "https://www.bilibili.com/video/BV1baYP6CEwY",
+      "author": "刑部尚书也画画",
+      "viewsRaw": "322.5万",
+      "danmakuRaw": "0",
+      "baselineRecordId": null
+    },
+    {
+      "rank": 13,
+      "title": "《下一个是谁》第七季（5）",
+      "url": "https://www.bilibili.com/video/BV1cAYP6YEvj",
+      "author": "在下哲别",
+      "viewsRaw": "291.1万",
+      "danmakuRaw": "14.3万",
+      "baselineRecordId": "BH09"
+    },
+    {
+      "rank": 57,
+      "title": "我的东京留学生活不可能那么二次元！【AI全民制作人】",
+      "url": "https://www.bilibili.com/video/BV1mrao6WEKK",
+      "author": "嘿秀文化",
+      "viewsRaw": "106.2万",
+      "danmakuRaw": "1362",
+      "baselineRecordId": "BH49"
+    }
+  ],
+  "limitations": [
+    "Same official ranking surface compared; detail-page and historical best ranks excluded.",
+    "Displayed views/danmaku are rounded where shown in 万; not unique people, comments, or support.",
+    "Two tracked AI entries are purposively selected and do not enumerate all AI content.",
+    "Topic claims not fact checked."
+  ],
+  "capturedAtPlus0800": "2026-10-05T08:30:09+08:00",
+  "baselineComparison": "comparison-initial.json, comparison-0100.json and comparison-0630.json",
+  "serverFreshness": "Unknown; new browser observation is not proof of uncached server data.",
+  "trackedAbsent": [
+    {
+      "title": "有一个人前来借寿【AI全民制作人】",
+      "url": "https://www.bilibili.com/video/BV17vak6wErn",
+      "rank": null,
+      "viewsRaw": null,
+      "danmakuRaw": null,
+      "status": "not_observed_in_full_current_top100",
+      "meaning": "Not observed in current top100; no exact rank, metric, deletion, or platform-wide disappearance inferred."
+    }
+  ],
+  "observedRankingRowCount": 100
+}

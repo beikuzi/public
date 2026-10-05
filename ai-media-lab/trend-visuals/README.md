@@ -1,21 +1,25 @@
 # 澄镜 · 六平台讨论观察
 
-Static observatory with four distinct layouts. Each includes six platform pages and one summary:28 workspaces plus chooser.
+A static discussion observatory with four distinct reading layouts. Each has six platform pages plus a cross-platform summary:28 workspaces and one chooser.
 
-Serve `dist/` as the public root. No application runtime dependencies, backend or API keys. `python build_data.py --check` verifies local evidence inputs; `python build_data.py` performs an atomic data-only compilation. See `docs/PROVENANCE.md` for provenance and update rules.
+## Run
 
-## Initial sample and temporal observations
+Serve `dist/` as the website root. No application dependencies, backend, credentials or API keys are required. For example: `python -m http.server 8000 --directory dist`.
 
-The versioned initial dataset contains90 records,88 counted coverage records,3 official snapshot sources and5 bounded qualitative synthesis groups. X03 is historical official background rather than an X post; X13 is a weak undated lead. Both remain outside coverage metrics.
+To validate local data inputs: `python build_data.py --check`.
+To compile them: `python build_data.py`.
 
-Later Bilibili, Weibo and Douyin ranking observations are separate. Compact panels compare only matched items and metrics, with original and subsequent capture times. Top10 interval entrants are not called new platform-wide trends. Weibo's incomplete initial selection cannot establish exhaustive new entries. Browser-observed changes do not prove cache or server freshness.
+## Contents
 
-## Interaction and export
+-90 initial evidence records;88 counted coverage records
+-Five bounded cross-platform synthesis groups
+-Four observation points and selectable same-item temporal comparisons
+-Keyword, domain, source and content-date filters
+-Evidence/role drawers, source links and side-by-side comparison
+-Separate initial-sample and temporal JSON exports; spreadsheet-safe CSV
 
-Keyword, domain, source and content-date filters act on the initial sample. Evidence dialogs preserve roles, source grade, content/capture dates, original links, AI disclosures and separate detail metrics. Manual evidence comparison and CSV/JSON sample exports are supported. Temporal panels have an independent JSON export.
+See `docs/DATA.md` for evidence boundaries, chronology and update rules. Initial sample records are preserved; later observations do not increase initial coverage counts. Unknown ranks and metrics stay null. No representative opinion percentages or inferred demographic profiles are supplied.
 
-CSV neutralizes spreadsheet formula prefixes after whitespace/control characters; JSON keeps original records. Missing values remain null. There are no audience/opinion percentages or inferred demographics. Role panels retain public self-descriptions or explicit publication/discussion relationships, with evidence and unknown identities.
+## Tests
 
-## QA limitations
-
-DOM and source checks are not full browser, mobile rendering or accessibility validation. This release does not claim those checks. The optional browser helper requires explicitly authorized sandboxed browser execution; it was syntax-checked only.
+The source package's `qa/` folder contains DOM/data tests. Install its development dependency with `npm install --prefix qa`, then run the documented scripts. These checks are not browser visual, mobile or accessibility validation. Browser rendering has not been verified in the execution environment. Any optional browser helper keeps sandboxing enabled and must only be used where its preview access is permitted.

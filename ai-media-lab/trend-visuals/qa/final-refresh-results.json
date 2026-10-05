@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "kind": "DOM/data checks only; not browser QA",
+  "checks": [
+    "four observation points and all prior history",
+    "six selectable comparison intervals",
+    "06:30→08:30 latest default",
+    "AI video13→2 with verified adjacent values",
+    "initial90/88 unchanged",
+    "initial date versus last observation/export time",
+    "BH98 null rank/delta/metrics",
+    "3 Douyin fullTop50 absences remain null",
+    "scope-aware missing-item language",
+    "complete30 versus partial12 Weibo scopes"
+  ]
+}

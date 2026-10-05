@@ -1,11 +1,14 @@
-# Portable QA
+# Regression checks
 
-From this source root:
-- `python build_data.py --check`
-- `python qa/build-test.py`
-- `npm install --prefix qa`
-- `node qa/dom-test.cjs`
+Install development test dependency: npm install --prefix qa.
 
-DOM tests cover28routes,16temporal panels, unchanged90/88initial records,5synthesis groups, filters, dialogs, export metadata and CSV formula safety. Build checks cover missing inputs, bad hashes, semantic mismatch and deterministic compilation. They use disposable copies.
+Run from the source root:
+- node qa/dom-test.cjs
+- node qa/morning-test.cjs
+- node qa/final-refresh-test.cjs
+- python qa/build-test.py
+- python build_data.py --check
 
-These are DOM/source checks, not full browser rendering or accessibility QA. `test.cjs` is an optional sandbox-required browser helper and has only been syntax-checked for this release. No generated screenshots or browser-success claims are included.
+The checks cover28 routes, preserved initial records, snapshot/date boundaries, historical comparison selection, JSON/CSV exports, unknown values and deterministic fail-closed input compilation. They use DOM/data simulations and are not browser visual, mobile or accessibility validation.
+
+The optional test.cjs browser helper requires separately installed Playwright and an explicitly authorized preview URL. It keeps Chromium sandboxing enabled. It was syntax-checked only for this release; browser QA was not performed. Do not disable sandboxing or work around denied access.

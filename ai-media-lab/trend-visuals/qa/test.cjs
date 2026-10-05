@@ -1,6 +1,4 @@
 'use strict';
-// Optional sandbox-required browser QA helper.
-// Syntax-checked only for this source release. Do not weaken sandboxing.
 const {chromium}=require('playwright');
 (async()=>{
   if(process.env.ALLOW_SANDBOXED_SITE_QA!=='1')throw Error('Browser QA disabled. Use only in an environment where sandboxed browser access to this preview is permitted.');

@@ -15,13 +15,24 @@ def clean_text(value, limit=500):
 
 
 def native_score(value, scale):
+    if isinstance(value, bool):
+        value = None
     try:
         value = float(value)
         if math.isfinite(value) and 0 <= value <= scale:
             return {"value": value, "range": [0, scale], "meaning": "provider similarity, not attribution probability"}
-    except (TypeError, ValueError):
+    except (TypeError, ValueError, OverflowError):
         pass
     return {"value": None, "range": [0, scale], "meaning": "score absent or invalid"}
+
+
+def finite_number(value):
+    if not isinstance(value, (int, float)) or isinstance(value, bool):
+        return False
+    try:
+        return math.isfinite(value)
+    except OverflowError:
+        return False
 
 
 def result(provider, status, message, candidates=None, **extra):
@@ -52,7 +63,7 @@ def parse_trace(payload):
             "evidence_status": "unverified_candidate", "native_score": score,
             "work": clean_text(title.get("english") or title.get("romaji") or title.get("native")),
             "episode": clean_text(item.get("episode")),
-            "time_seconds": {k: v for k in ("from", "to", "at") if isinstance((v := item.get(k)), (int, float)) and not isinstance(v, bool) and math.isfinite(v) and v >= 0},
+            "time_seconds": {k: v for k in ("from", "to", "at") if finite_number(v := item.get(k)) and v >= 0},
             "links": links,
             "caution": "Anime frame match only; does not establish character or original illustration artist."
                        + (" Official guidance warns similarities below 0.9 are usually wrong." if score["value"] is not None and score["value"] < 0.9 else ""),
@@ -71,7 +82,7 @@ def parse_saucenao(payload):
     except (ValueError, TypeError):
         status = -999
     quota = {key: value for key in ("short_remaining", "long_remaining")
-             if isinstance((value := header.get(key)), (int, float)) and math.isfinite(value)}
+             if finite_number(value := header.get(key))}
     if status != 0:
         limited = any(value <= 0 for value in quota.values())
         return result("saucenao", "rate_limited" if limited else "service_error", "SauceNAO reported a quota or service error; raw server text omitted", quota=quota)
@@ -125,7 +136,7 @@ def parse_animetrace(payload, model):
         if not isinstance(region, dict) or not isinstance(region.get("character"), list):
             continue
         box = region.get("box")
-        box = box if isinstance(box, list) and len(box) == 4 and all(isinstance(v, (int, float)) and not isinstance(v, bool) and math.isfinite(v) for v in box) else None
+        box = box if isinstance(box, list) and len(box) == 4 and all(finite_number(v) for v in box) else None
         for character in region["character"][:10]:
             if not isinstance(character, dict):
                 continue

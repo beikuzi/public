@@ -18,9 +18,11 @@
       "type": "object",
       "required": ["provider", "status", "message", "candidates"],
       "properties": {
-        "provider": {"enum": ["trace_moe", "saucenao", "animetrace"]},
+        "provider": {"enum": ["trace_moe", "saucenao", "animetrace", "ascii2d"]},
         "status": {"enum": ["not_requested", "consent_required", "missing_credentials", "matches", "no_match", "blocked", "rate_limited", "service_error", "network_error", "invalid_response", "input_rejected"]},
         "message": {"type": "string"},
+        "execution_mode": {"enum": ["manual_record"]},
+        "method": {"enum": ["color", "bovw", "browser"]},
         "candidates": {"type": "array", "items": {"type": "object", "required": ["id", "kind", "evidence_status", "native_score", "links"]}}
       }
     }

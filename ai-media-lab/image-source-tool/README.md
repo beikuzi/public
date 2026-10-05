@@ -7,7 +7,7 @@ A local-first investigation CLI. It separates **which character/work is pictured
 - Offline inspection: decoded image validation, local SHA-256, dimensions, metadata inventory; no network by default.
 - Explicit provider-by-provider upload consent; sanitize pixels into a fresh PNG before sending, stripping EXIF, location, comments, filenames and other embedded metadata. This does **not** anonymize visible image content.
 - trace.moe for anime-frame/work candidates; SauceNAO for illustration/source candidates with an existing environment API key; experimental AnimeTrace for character/work candidates. Native provider scores remain separate.
-- IQDB, ascii2d, Google Lens, TinEye and other browser-only routes are clearly labeled manual leads, never reported as completed searches.
+- IQDB, ascii2d, Google Lens, TinEye and other browser-only routes are clearly labeled manual leads, never represented as searches performed automatically. Imported Ascii2D/SauceNAO browser records retain their separate manual provenance.
 - Static local HTML + JSON report; no trackers, remote images, image rehosting or public upload URLs. The original image is not embedded in the report.
 - No invented probability, automatic artist attribution, circular-repost consensus, account creation, or paid-call automation.
 
@@ -52,10 +52,14 @@ AnimeTrace is experimental. Its official API example uses no account or key, but
 
 No URL input/fetch, no arbitrary URL proxy, no automatic candidate-link fetching. Network requests are fixed HTTPS POST endpoints with TLS verification, no redirects, bounded response size and timeouts, and rejection of non-public resolved provider IPs. Returned links are validated as public HTTPS/HTTP web links before display; credentials, local/private hosts and unsupported schemes are omitted. Open result links only after your own review.
 
-Upload metadata is removed in memory; sanitized pixels are not saved. Provider requests are not cached; reports are the only persistent findings, written with owner-only permissions. On POSIX, choose a fresh output directory or an existing directory with mode 0700; symlink output paths are rejected. On Windows, privacy depends on your user account and directory ACLs: choose a private, non-shared folder. Parent directories should be under your control. Known credential-bearing result URL query parameters are rejected, but review all findings before sharing them. Hashes are for exact local-file identity, not perceptual equivalence or public proof. Do not commit inputs or reports. No provider calls are retried automatically, avoiding duplicate uploads and quota consumption; a user may retry explicitly after checking the status.
+Upload metadata is removed in memory; sanitized pixels are not saved. Provider requests are not cached; generated reports are the only findings persisted by the CLI (any user-supplied manual record remains its own input file). On POSIX reports use owner-only permissions. On POSIX, choose a fresh output directory or an existing directory with mode 0700; symlink output paths are rejected. On Windows, privacy depends on your user account and directory ACLs: choose a private, non-shared folder. Parent directories should be under your control. Known credential-bearing result URL query parameters are rejected, but review all findings before sharing them. Hashes are for exact local-file identity, not perceptual equivalence or public proof. Do not commit inputs or reports. No provider calls are retried automatically, avoiding duplicate uploads and quota consumption; a user may retry explicitly after checking the status.
 
 ### Limitations
 
 This is an investigation helper, not a universal character recognizer. It has no local recognition model and does not scrape or bypass browser challenges. Trace.moe is primarily anime screenshot search, not a generic anime-art recognizer. Exact artwork and artist identification needs a first-party source and manual verification. The JSON schema and report record these limitations explicitly.
 
 See docs/result-schema.json and docs/provider-notes.md. Third-party services have their own privacy policies and terms. Upload only images you are authorized to share with the selected service.
+
+## Ascii2D + SauceNAO browser records
+
+Ascii2D is still manual, not an automated search adapter. Use `--manual-results local-records.json` to include actual browser outcomes from Ascii2D (color/BOVW) or SauceNAO alongside API evidence. Records must match the input SHA-256; import is offline and never upgrades a candidate into verified attribution. See [the manual record format](docs/manual-results.md). Live availability is recorded separately from implementation and tests; see [provider status](docs/provider-status.md).

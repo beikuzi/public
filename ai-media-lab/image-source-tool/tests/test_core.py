@@ -102,6 +102,10 @@ class CoreTests(unittest.TestCase):
         row = parse_trace({"result": [{"anilist": 1, "similarity": float("nan")}]})
         self.assertIsNone(row["candidates"][0]["native_score"]["value"])
         json.dumps(row, allow_nan=False)
+        huge = 10 ** 400
+        extreme = parse_trace({"result": [{"anilist": 1, "similarity": huge, "from": huge}]})
+        self.assertIsNone(extreme["candidates"][0]["native_score"]["value"])
+        self.assertEqual(extreme["candidates"][0]["time_seconds"], {})
 
     def test_url_validation(self):
         bad = ["file:///etc/passwd", "javascript:alert(1)", "https://user:secret@example.com", "http://localhost/", "http://127.0.0.1/", "http://127.1/", "http://2130706433/", "http://[::1]/", "https://example.com:444/", "https://example.com\\@127.0.0.1/", "https://example.com/\nfoo", "http://192.168.1.2/"]

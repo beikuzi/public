@@ -1,0 +1,42 @@
+{
+  "edition": "The Question bundled with RenPy 8.5.3",
+  "scope": "complete short example visual novel, not commercial-length title",
+  "distribution_sha256": "eb0a9be7f0fb13632fe25ceade9a8bed5a1b4d6b6e83bd19eeeb29e1a1bb4a45",
+  "download_bytes": 153611590,
+  "official_checksum_match": true,
+  "gate": "available_source_complete_scene_mapped",
+  "source_files": 52,
+  "source_lines_preserved": 26161,
+  "compiled_without_source": [],
+  "english_story_files": 1,
+  "english_story_lines": 252,
+  "english_labels": [
+    "start",
+    "rightaway",
+    "game",
+    "book",
+    "marry",
+    "later"
+  ],
+  "translations": [
+    "czech",
+    "danish",
+    "french",
+    "italian",
+    "japanese",
+    "korean",
+    "malay",
+    "russian",
+    "schinese",
+    "spanish",
+    "tchinese",
+    "ukrainian"
+  ],
+  "script_assets": 120,
+  "limitations": [
+    "100% means all supplied source files preserved, not all paths executed or translations linguistically verified.",
+    "Only the small English baseline story branch graph is manually verified.",
+    "Line index is not a universal RenPy parser.",
+    "No screenshot or save compatibility result is implied."
+  ]
+}

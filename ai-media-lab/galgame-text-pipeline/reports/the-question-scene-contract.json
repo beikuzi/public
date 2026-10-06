@@ -1,0 +1,29 @@
+{
+  "edition": "The Question bundled with RenPy 8.5.3",
+  "language": "English/base",
+  "distribution_sha256": "eb0a9be7f0fb13632fe25ceade9a8bed5a1b4d6b6e83bd19eeeb29e1a1bb4a45",
+  "source_sha256": "733633c0d33804e2cc728632c308370e993dc1e13d754f4383b42effa8576d19",
+  "location_id": "3ed7dd1dead790e8b4334e2b",
+  "label": "marry",
+  "line": 188,
+  "short_excerpt": "Will you marry me?",
+  "choice_path": [
+    "To ask her right away.",
+    "It's a videogame."
+  ],
+  "state": {
+    "book": false
+  },
+  "expected_visuals": {
+    "background": "images/bg club.jpg",
+    "sprite": "images/sylvie blue giggle.png",
+    "speaker": "Sylvie",
+    "transition": "dissolve completed",
+    "window": "ADV dialogue"
+  },
+  "asset_sha256": {
+    "images/bg club.jpg": "e7452b6f41d9ecdaf6d3001b3509b561ad09d1109990f0f2eb47e28069bf3475",
+    "images/sylvie blue giggle.png": "7d2bc06f91f0530df32a7c82322f691cc0ba4eb333e0aa8018397238f50e3261"
+  },
+  "runtime_frame_verified": false
+}

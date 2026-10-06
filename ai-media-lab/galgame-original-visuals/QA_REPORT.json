@@ -1,0 +1,45 @@
+{
+  "video_decode": "ffmpeg full 90-second decode passed",
+  "duration": 90,
+  "dimensions": [
+    1280,
+    720
+  ],
+  "fps": 24,
+  "audio": {
+    "codec": "aac",
+    "channels": 2,
+    "sample_rate": "44100"
+  },
+  "original_assets_verified": 24,
+  "security_tests_passed": 16,
+  "old_video_unchanged_sha256": "93e6adf3a3a6b32c724e272116319623c639e812d1e86b285fed60d3e41272a2",
+  "engine_capture": false,
+  "scope": "Official Act 1 v5 demo only",
+  "visual_checks": [
+    "Original dialogue PNG and original Chinese font; no custom dialogue box",
+    "Native 4:3 viewport preserved without 16:9 crop",
+    "Original sprite variants and scripted night transform",
+    "Original city/hill/fireworks assets and source-coordinate reconstruction",
+    "Seven exact original lines in ascending order",
+    "Decoded 14s and 60s frames reviewed"
+  ],
+  "known_deviations": [
+    "Pillow/FreeType rasterization instead of original SDL_ttf; synthesized bold may differ",
+    "Source-based fireworks with deterministic new random seed, not original engine random run",
+    "Source-based transform/blend calculations may differ at rounding/edge antialiasing",
+    "Abridged same seven original lines; pacing is editorial",
+    "Original 4:3 screen uniformly enlarged 1.2x then pillarboxed",
+    "Independent last-four-second credits card"
+  ],
+  "files": {
+    "galgame-original-visuals-route-A.mp4": {
+      "bytes": 9648419,
+      "sha256": "ac878fe805aa4be1092fba45290f03ba3c594d63193de89cda82e5be28aac9de"
+    },
+    "contact-sheet.jpg": {
+      "bytes": 177815,
+      "sha256": "af2368171e02eb6ed0f792b433694c4adc2ec47770779c4999e83cc87b25edb1"
+    }
+  }
+}

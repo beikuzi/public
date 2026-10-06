@@ -1,0 +1,50 @@
+{
+  "reference_actual_size": [
+    1180,
+    663
+  ],
+  "recomposition_native_size": [
+    1280,
+    720
+  ],
+  "normalization": "A Lanczos resized to exact reference dimensions; metrics are not native-pixel identity and include engine scaling differences",
+  "metrics": {
+    "scene_above_dialogue": {
+      "mean_absolute_rgb_error": 2.4088607739998396,
+      "box_reference_pixels": [
+        0,
+        0,
+        1180,
+        493
+      ]
+    },
+    "name": {
+      "mean_absolute_rgb_error": 14.118233618233619,
+      "box_reference_pixels": [
+        210,
+        493,
+        330,
+        532
+      ]
+    },
+    "dialogue": {
+      "mean_absolute_rgb_error": 7.62919621749409,
+      "box_reference_pixels": [
+        235,
+        533,
+        475,
+        580
+      ]
+    },
+    "quick_menu": {
+      "mean_absolute_rgb_error": 8.588529139685477,
+      "box_reference_pixels": [
+        355,
+        640,
+        825,
+        663
+      ]
+    }
+  },
+  "calibration": "After reference inspection, corrected Pillow anchor to ascender-aligned and showed Skip/Q.Load disabled, matching runtime state. Fonts/assets/coordinates remained source-based."
+}

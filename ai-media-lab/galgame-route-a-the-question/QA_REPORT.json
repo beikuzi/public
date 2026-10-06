@@ -1,0 +1,51 @@
+{
+  "scope": "Route A complete short-VN controlled baseline; independent from KS final creative choice",
+  "engine_capture": false,
+  "full_decode_pass": true,
+  "duration": 32,
+  "resolution": [
+    1280,
+    720
+  ],
+  "fps": 24,
+  "contract_label": "marry",
+  "contract_line": 188,
+  "book": false,
+  "target_in_video_seconds": [
+    23,
+    30
+  ],
+  "source_sha256_verified": "733633c0d33804e2cc728632c308370e993dc1e13d754f4383b42effa8576d19",
+  "left_and_right_background_above_ui_exact_original_pixels": true,
+  "voice_added": false,
+  "original_font_verified": "3fdf69cabf06049ea70a00b5919340e2ce1e6d02b0cc3c4b44fb6801bd1e0d22",
+  "engine_screenshot_comparison": {
+    "route": "C normal UI play",
+    "path": "galgame-route-c/the_question/tests/screenshots/07-target-proposal.png",
+    "size": [
+      1180,
+      663
+    ],
+    "reference_sha256": "ae1a27ca9cb04cb376a09533cb16d44ca77f3c11239e6a4bf9ddb3928953e464",
+    "comparison_file": "COMPARISON_METRICS.json",
+    "result": "Scene/UI layout and original assets visually checked; font baseline calibrated; not pixel identical"
+  },
+  "files": {
+    "route-A-the-question.mp4": {
+      "bytes": 2535748,
+      "sha256": "3d779caab912c1351832d5b1c26d2ac97f7268214675fbbf2dd0ea114a0c9153"
+    },
+    "target-frame.png": {
+      "bytes": 1377274,
+      "sha256": "8c0c0f00ac203bea058504efa169cb76b9a2cb4e6e2fd3834198620ddca91b65"
+    },
+    "contact-sheet.jpg": {
+      "bytes": 535728,
+      "sha256": "f68ef25c818cecb8f67e208680cc0b2f0196f9fb1946a4c292b49a617614e5a8"
+    },
+    "engine-vs-recomposition.jpg": {
+      "bytes": 244712,
+      "sha256": "273ff857a9a928c6b61aa84e411a74b81d70fd0d2ea567fbdf8a2ab4d3a7df11"
+    }
+  }
+}
